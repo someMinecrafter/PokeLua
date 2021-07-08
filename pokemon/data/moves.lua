@@ -1,16 +1,115 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
-require("lualib_bundle");
+require("lualib_bundle")
 
 local ____exports = {}
 
 ____exports.Moves = {
-    ["10000000voltthunderbolt"] = {num = 719, accuracy = true, basePower = 195, category = "Special", isNonstandard = "Past", name = "10,000,000 Volt Thunderbolt", pp = 1, priority = 0, flags = {}, isZ = "pikashuniumz", critRatio = 3, secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
-    absorb = {num = 71, accuracy = 100, basePower = 20, category = "Special", name = "Absorb", pp = 25, priority = 0, flags = {protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Grass", contestType = "Clever"},
-    accelerock = {num = 709, accuracy = 100, basePower = 40, category = "Physical", name = "Accelerock", pp = 20, priority = 1, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Rock", contestType = "Cool"},
-    acid = {num = 51, accuracy = 100, basePower = 40, category = "Special", name = "Acid", pp = 30, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "allAdjacentFoes", type = "Poison", contestType = "Clever"},
-    acidarmor = {num = 151, accuracy = true, basePower = 0, category = "Status", name = "Acid Armor", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {def = 2}, secondary = nil, target = "self", type = "Poison", zMove = {effect = "clearnegativeboost"}, contestType = "Tough"},
-    aciddownpour = {num = 628, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Acid Downpour", pp = 1, priority = 0, flags = {}, isZ = "poisoniumz", secondary = nil, target = "normal", type = "Poison", contestType = "Cool"},
-    acidspray = {num = 491, accuracy = 100, basePower = 40, category = "Special", name = "Acid Spray", pp = 20, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spd = -2}}, target = "normal", type = "Poison", contestType = "Beautiful"},
+    ["10000000voltthunderbolt"] = {
+        num = 719,
+        accuracy = true,
+        basePower = 195,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "10,000,000 Volt Thunderbolt",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "pikashuniumz",
+        critRatio = 3,
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    absorb = {
+        num = 71,
+        accuracy = 100,
+        basePower = 20,
+        category = "Special",
+        name = "Absorb",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Clever"
+    },
+    accelerock = {
+        num = 709,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Accelerock",
+        pp = 20,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Cool"
+    },
+    acid = {
+        num = 51,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Acid",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "allAdjacentFoes",
+        type = "Poison",
+        contestType = "Clever"
+    },
+    acidarmor = {
+        num = 151,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Acid Armor",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 2},
+        secondary = nil,
+        target = "self",
+        type = "Poison",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Tough"
+    },
+    aciddownpour = {
+        num = 628,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Acid Downpour",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "poisoniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        contestType = "Cool"
+    },
+    acidspray = {
+        num = 491,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Acid Spray",
+        pp = 20,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spd = -2}},
+        target = "normal",
+        type = "Poison",
+        contestType = "Beautiful"
+    },
     acrobatics = {
         num = 512,
         accuracy = 100,
@@ -65,8 +164,35 @@ ____exports.Moves = {
         zMove = {effect = "crit2"},
         contestType = "Tough"
     },
-    aerialace = {num = 332, accuracy = true, basePower = 60, category = "Physical", name = "Aerial Ace", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
-    aeroblast = {num = 177, accuracy = 95, basePower = 100, category = "Special", name = "Aeroblast", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, distance = 1}, critRatio = 2, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
+    aerialace = {
+        num = 332,
+        accuracy = true,
+        basePower = 60,
+        category = "Physical",
+        name = "Aerial Ace",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    aeroblast = {
+        num = 177,
+        accuracy = 95,
+        basePower = 100,
+        category = "Special",
+        name = "Aeroblast",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, distance = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
     afteryou = {
         num = 495,
         accuracy = true,
@@ -94,10 +220,67 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Cute"
     },
-    agility = {num = 97, accuracy = true, basePower = 0, category = "Status", name = "Agility", pp = 30, priority = 0, flags = {snatch = 1}, boosts = {spe = 2}, secondary = nil, target = "self", type = "Psychic", zMove = {effect = "clearnegativeboost"}, contestType = "Cool"},
-    aircutter = {num = 314, accuracy = 95, basePower = 60, category = "Special", name = "Air Cutter", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "allAdjacentFoes", type = "Flying", contestType = "Cool"},
-    airslash = {num = 403, accuracy = 95, basePower = 75, category = "Special", name = "Air Slash", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, distance = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "any", type = "Flying", contestType = "Cool"},
-    alloutpummeling = {num = 624, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "All-Out Pummeling", pp = 1, priority = 0, flags = {}, isZ = "fightiniumz", secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
+    agility = {
+        num = 97,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Agility",
+        pp = 30,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spe = 2},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cool"
+    },
+    aircutter = {
+        num = 314,
+        accuracy = 95,
+        basePower = 60,
+        category = "Special",
+        name = "Air Cutter",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    airslash = {
+        num = 403,
+        accuracy = 95,
+        basePower = 75,
+        category = "Special",
+        name = "Air Slash",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, distance = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    alloutpummeling = {
+        num = 624,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "All-Out Pummeling",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "fightiniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     allyswitch = {
         num = 502,
         accuracy = true,
@@ -116,7 +299,11 @@ ____exports.Moves = {
             end
         end,
         onHit = function(self, pokemon)
-            local newPosition = (((pokemon.position == 0) and (function() return pokemon.side.active.length - 1 end)) or (function() return 0 end))()
+            local newPosition = (((pokemon.position == 0) and (function()
+                    return pokemon.side.active.length - 1
+                end)) or (function()
+                    return 0
+                end))()
             if not pokemon.side.active[newPosition] then
                 return false
             end
@@ -131,7 +318,22 @@ ____exports.Moves = {
         zMove = {boost = {spe = 2}},
         contestType = "Clever"
     },
-    amnesia = {num = 133, accuracy = true, basePower = 0, category = "Status", name = "Amnesia", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {spd = 2}, secondary = nil, target = "self", type = "Psychic", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
+    amnesia = {
+        num = 133,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Amnesia",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spd = 2},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
     anchorshot = {
         num = 677,
         accuracy = 100,
@@ -153,9 +355,47 @@ ____exports.Moves = {
         type = "Steel",
         contestType = "Tough"
     },
-    ancientpower = {num = 246, accuracy = 100, basePower = 60, category = "Special", name = "Ancient Power", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}}, target = "normal", type = "Rock", contestType = "Tough"},
-    appleacid = {num = 787, accuracy = 100, basePower = 80, category = "Special", name = "Apple Acid", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spd = -1}}, target = "normal", type = "Grass"},
-    aquajet = {num = 453, accuracy = 100, basePower = 40, category = "Physical", name = "Aqua Jet", pp = 20, priority = 1, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Water", contestType = "Cool"},
+    ancientpower = {
+        num = 246,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        name = "Ancient Power",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}},
+        target = "normal",
+        type = "Rock",
+        contestType = "Tough"
+    },
+    appleacid = {
+        num = 787,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Apple Acid",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spd = -1}},
+        target = "normal",
+        type = "Grass"
+    },
+    aquajet = {
+        num = 453,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Aqua Jet",
+        pp = 20,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Cool"
+    },
     aquaring = {
         num = 392,
         accuracy = true,
@@ -181,8 +421,35 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Beautiful"
     },
-    aquatail = {num = 401, accuracy = 90, basePower = 90, category = "Physical", name = "Aqua Tail", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Water", contestType = "Beautiful"},
-    armthrust = {num = 292, accuracy = 100, basePower = 15, category = "Physical", name = "Arm Thrust", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
+    aquatail = {
+        num = 401,
+        accuracy = 90,
+        basePower = 90,
+        category = "Physical",
+        name = "Aqua Tail",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    armthrust = {
+        num = 292,
+        accuracy = 100,
+        basePower = 15,
+        category = "Physical",
+        name = "Arm Thrust",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
     aromatherapy = {
         num = 312,
         accuracy = true,
@@ -197,7 +464,10 @@ ____exports.Moves = {
             local success = false
             for ____, ally in __TS__Iterator(pokemon.side.pokemon) do
                 do
-                    if (ally ~= source) and (ally:hasAbility("sapsipper") or (ally.volatiles.substitute and (not move.infiltrates))) then
+                    if
+                        (ally ~= source) and
+                            (ally:hasAbility("sapsipper") or (ally.volatiles.substitute and (not move.infiltrates)))
+                     then
                         goto __continue24
                     end
                     if ally:cureStatus() then
@@ -213,7 +483,22 @@ ____exports.Moves = {
         zMove = {effect = "heal"},
         contestType = "Clever"
     },
-    aromaticmist = {num = 597, accuracy = true, basePower = 0, category = "Status", name = "Aromatic Mist", pp = 20, priority = 0, flags = {authentic = 1}, boosts = {spd = 1}, secondary = nil, target = "adjacentAlly", type = "Fairy", zMove = {boost = {spd = 2}}, contestType = "Beautiful"},
+    aromaticmist = {
+        num = 597,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Aromatic Mist",
+        pp = 20,
+        priority = 0,
+        flags = {authentic = 1},
+        boosts = {spd = 1},
+        secondary = nil,
+        target = "adjacentAlly",
+        type = "Fairy",
+        zMove = {boost = {spd = 2}},
+        contestType = "Beautiful"
+    },
     assist = {
         num = 274,
         accuracy = true,
@@ -225,7 +510,58 @@ ____exports.Moves = {
         priority = 0,
         flags = {},
         onHit = function(self, target)
-            local noAssist = {"assist", "banefulbunker", "beakblast", "belch", "bestow", "bounce", "celebrate", "chatter", "circlethrow", "copycat", "counter", "covet", "destinybond", "detect", "dig", "dive", "dragontail", "endure", "feint", "fly", "focuspunch", "followme", "helpinghand", "holdhands", "kingsshield", "matblock", "mefirst", "metronome", "mimic", "mirrorcoat", "mirrormove", "naturepower", "phantomforce", "protect", "ragepowder", "roar", "shadowforce", "shelltrap", "sketch", "skydrop", "sleeptalk", "snatch", "spikyshield", "spotlight", "struggle", "switcheroo", "thief", "transform", "trick", "whirlwind"}
+            local noAssist = {
+                "assist",
+                "banefulbunker",
+                "beakblast",
+                "belch",
+                "bestow",
+                "bounce",
+                "celebrate",
+                "chatter",
+                "circlethrow",
+                "copycat",
+                "counter",
+                "covet",
+                "destinybond",
+                "detect",
+                "dig",
+                "dive",
+                "dragontail",
+                "endure",
+                "feint",
+                "fly",
+                "focuspunch",
+                "followme",
+                "helpinghand",
+                "holdhands",
+                "kingsshield",
+                "matblock",
+                "mefirst",
+                "metronome",
+                "mimic",
+                "mirrorcoat",
+                "mirrormove",
+                "naturepower",
+                "phantomforce",
+                "protect",
+                "ragepowder",
+                "roar",
+                "shadowforce",
+                "shelltrap",
+                "sketch",
+                "skydrop",
+                "sleeptalk",
+                "snatch",
+                "spikyshield",
+                "spotlight",
+                "struggle",
+                "switcheroo",
+                "thief",
+                "transform",
+                "trick",
+                "whirlwind"
+            }
             local moves = {}
             for ____, pokemon in __TS__Iterator(target.side.pokemon) do
                 do
@@ -284,9 +620,48 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Clever"
     },
-    astonish = {num = 310, accuracy = 100, basePower = 30, category = "Physical", name = "Astonish", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Ghost", contestType = "Cute"},
-    astralbarrage = {num = 825, accuracy = 100, basePower = 120, category = "Special", name = "Astral Barrage", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "allAdjacentFoes", type = "Ghost"},
-    attackorder = {num = 454, accuracy = 100, basePower = 90, category = "Physical", name = "Attack Order", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Bug", contestType = "Clever"},
+    astonish = {
+        num = 310,
+        accuracy = 100,
+        basePower = 30,
+        category = "Physical",
+        name = "Astonish",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cute"
+    },
+    astralbarrage = {
+        num = 825,
+        accuracy = 100,
+        basePower = 120,
+        category = "Special",
+        name = "Astral Barrage",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Ghost"
+    },
+    attackorder = {
+        num = 454,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Attack Order",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Clever"
+    },
     attract = {
         num = 213,
         accuracy = 100,
@@ -300,7 +675,10 @@ ____exports.Moves = {
         condition = {
             noCopy = true,
             onStart = function(self, pokemon, source, effect)
-                if (not ((pokemon.gender == "M") and (source.gender == "F"))) and (not ((pokemon.gender == "F") and (source.gender == "M"))) then
+                if
+                    (not ((pokemon.gender == "M") and (source.gender == "F"))) and
+                        (not ((pokemon.gender == "F") and (source.gender == "M")))
+                 then
                     self:debug("incompatible gender")
                     return false
                 end
@@ -309,41 +687,22 @@ ____exports.Moves = {
                     return false
                 end
                 if effect.id == "cutecharm" then
-                    self:add(
-                        "-start",
-                        pokemon,
-                        "Attract",
-                        "[from] ability: Cute Charm",
-                        "[of] " .. tostring(source)
-                    )
+                    self:add("-start", pokemon, "Attract", "[from] ability: Cute Charm", "[of] " .. tostring(source))
                 elseif effect.id == "destinyknot" then
-                    self:add(
-                        "-start",
-                        pokemon,
-                        "Attract",
-                        "[from] item: Destiny Knot",
-                        "[of] " .. tostring(source)
-                    )
+                    self:add("-start", pokemon, "Attract", "[from] item: Destiny Knot", "[of] " .. tostring(source))
                 else
                     self:add("-start", pokemon, "Attract")
                 end
             end,
             onUpdate = function(self, pokemon)
                 if (self.effectState.source and (not self.effectState.source.isActive)) and pokemon.volatiles.attract then
-                    self:debug(
-                        "Removing Attract volatile on " .. tostring(pokemon)
-                    )
+                    self:debug("Removing Attract volatile on " .. tostring(pokemon))
                     pokemon:removeVolatile("attract")
                 end
             end,
             onBeforeMovePriority = 2,
             onBeforeMove = function(self, pokemon, target, move)
-                self:add(
-                    "-activate",
-                    pokemon,
-                    "move: Attract",
-                    "[of] " .. tostring(self.effectState.source)
-                )
+                self:add("-activate", pokemon, "move: Attract", "[of] " .. tostring(self.effectState.source))
                 if self:randomChance(1, 2) then
                     self:add("cant", pokemon, "Attract")
                     return false
@@ -359,7 +718,20 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Cute"
     },
-    aurasphere = {num = 396, accuracy = true, basePower = 80, category = "Special", name = "Aura Sphere", pp = 20, priority = 0, flags = {bullet = 1, protect = 1, pulse = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Fighting", contestType = "Beautiful"},
+    aurasphere = {
+        num = 396,
+        accuracy = true,
+        basePower = 80,
+        category = "Special",
+        name = "Aura Sphere",
+        pp = 20,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, pulse = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Fighting",
+        contestType = "Beautiful"
+    },
     aurawheel = {
         num = 783,
         accuracy = 100,
@@ -389,7 +761,20 @@ ____exports.Moves = {
         target = "normal",
         type = "Electric"
     },
-    aurorabeam = {num = 62, accuracy = 100, basePower = 65, category = "Special", name = "Aurora Beam", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {atk = -1}}, target = "normal", type = "Ice", contestType = "Beautiful"},
+    aurorabeam = {
+        num = 62,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        name = "Aurora Beam",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {atk = -1}},
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
     auroraveil = {
         num = 694,
         accuracy = true,
@@ -413,7 +798,10 @@ ____exports.Moves = {
             end,
             onAnyModifyDamage = function(self, damage, source, target, move)
                 if (target ~= source) and self.effectState.target:hasAlly(target) then
-                    if (target.side:getSideCondition("reflect") and (self:getCategory(move) == "Physical")) or (target.side:getSideCondition("lightscreen") and (self:getCategory(move) == "Special")) then
+                    if
+                        (target.side:getSideCondition("reflect") and (self:getCategory(move) == "Physical")) or
+                            (target.side:getSideCondition("lightscreen") and (self:getCategory(move) == "Special"))
+                     then
                         return
                     end
                     if (not target:getMoveHitData(move).crit) and (not move.infiltrates) then
@@ -473,13 +861,14 @@ ____exports.Moves = {
         accuracy = 100,
         basePower = 60,
         basePowerCallback = function(self, pokemon, target, move)
-            local damagedByTarget = pokemon.attackedBy:some(
-                function(____, p) return ((p.source == target) and (p.damage > 0)) and p.thisTurn end
+            local damagedByTarget =
+                pokemon.attackedBy:some(
+                function(____, p)
+                    return ((p.source == target) and (p.damage > 0)) and p.thisTurn
+                end
             )
             if damagedByTarget then
-                self:debug(
-                    "Boosted for getting hit by " .. tostring(target)
-                )
+                self:debug("Boosted for getting hit by " .. tostring(target))
                 return move.basePower * 2
             end
             return move.basePower
@@ -494,8 +883,38 @@ ____exports.Moves = {
         type = "Ice",
         contestType = "Beautiful"
     },
-    babydolleyes = {num = 608, accuracy = 100, basePower = 0, category = "Status", name = "Baby-Doll Eyes", pp = 30, priority = 1, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, boosts = {atk = -1}, secondary = nil, target = "normal", type = "Fairy", zMove = {boost = {def = 1}}, contestType = "Cute"},
-    baddybad = {num = 737, accuracy = 95, basePower = 80, category = "Special", isNonstandard = "LGPE", name = "Baddy Bad", pp = 15, priority = 0, flags = {protect = 1}, self = {sideCondition = "reflect"}, secondary = nil, target = "normal", type = "Dark", contestType = "Clever"},
+    babydolleyes = {
+        num = 608,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Baby-Doll Eyes",
+        pp = 30,
+        priority = 1,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        boosts = {atk = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
+    baddybad = {
+        num = 737,
+        accuracy = 95,
+        basePower = 80,
+        category = "Special",
+        isNonstandard = "LGPE",
+        name = "Baddy Bad",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1},
+        self = {sideCondition = "reflect"},
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Clever"
+    },
     banefulbunker = {
         num = 661,
         accuracy = true,
@@ -557,8 +976,39 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Tough"
     },
-    barrage = {num = 140, accuracy = 85, basePower = 15, category = "Physical", isNonstandard = "Past", name = "Barrage", pp = 20, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", contestType = "Cute"},
-    barrier = {num = 112, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Barrier", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {def = 2}, secondary = nil, target = "self", type = "Psychic", zMove = {effect = "clearnegativeboost"}, contestType = "Cool"},
+    barrage = {
+        num = 140,
+        accuracy = 85,
+        basePower = 15,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Barrage",
+        pp = 20,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cute"
+    },
+    barrier = {
+        num = 112,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Barrier",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 2},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cool"
+    },
     batonpass = {
         num = 226,
         accuracy = true,
@@ -617,9 +1067,7 @@ ____exports.Moves = {
         accuracy = 100,
         basePower = 0,
         basePowerCallback = function(self, pokemon, target, move)
-            return 5 + math.floor(
-                move.allies:shift().species.baseStats.atk / 10
-            )
+            return 5 + math.floor(move.allies:shift().species.baseStats.atk / 10)
         end,
         category = "Physical",
         name = "Beat Up",
@@ -627,8 +1075,11 @@ ____exports.Moves = {
         priority = 0,
         flags = {protect = 1, mirror = 1, mystery = 1},
         onModifyMove = function(self, move, pokemon)
-            move.allies = pokemon.side.pokemon:filter(
-                function(____, ally) return (ally == pokemon) or ((not ally.fainted) and (not ally.status)) end
+            move.allies =
+                pokemon.side.pokemon:filter(
+                function(____, ally)
+                    return (ally == pokemon) or ((not ally.fainted) and (not ally.status))
+                end
             )
             move.multihit = move.allies.length
         end,
@@ -637,9 +1088,46 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Clever"
     },
-    behemothbash = {num = 782, accuracy = 100, basePower = 100, category = "Physical", name = "Behemoth Bash", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Steel"},
-    behemothblade = {num = 781, accuracy = 100, basePower = 100, category = "Physical", name = "Behemoth Blade", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Steel"},
-    belch = {num = 562, accuracy = 90, basePower = 120, category = "Special", name = "Belch", pp = 10, priority = 0, flags = {protect = 1}, secondary = nil, target = "normal", type = "Poison", contestType = "Tough"},
+    behemothbash = {
+        num = 782,
+        accuracy = 100,
+        basePower = 100,
+        category = "Physical",
+        name = "Behemoth Bash",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel"
+    },
+    behemothblade = {
+        num = 781,
+        accuracy = 100,
+        basePower = 100,
+        category = "Physical",
+        name = "Behemoth Blade",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel"
+    },
+    belch = {
+        num = 562,
+        accuracy = 90,
+        basePower = 120,
+        category = "Special",
+        name = "Belch",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
     bellydrum = {
         num = 187,
         accuracy = true,
@@ -680,17 +1168,14 @@ ____exports.Moves = {
             if not myItem then
                 return false
             end
-            if (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem)) or (not target:setItem(myItem)) then
+            if
+                (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem)) or
+                    (not target:setItem(myItem))
+             then
                 source.item = myItem.id
                 return false
             end
-            self:add(
-                "-item",
-                target,
-                myItem.name,
-                "[from] move: Bestow",
-                "[of] " .. tostring(source)
-            )
+            self:add("-item", target, myItem.name, "[from] move: Bestow", "[of] " .. tostring(source))
         end,
         secondary = nil,
         target = "normal",
@@ -741,17 +1226,24 @@ ____exports.Moves = {
                         return false
                     end
                     if not target.isActive then
-                        local possibleTarget = self:getRandomTarget(
-                            pokemon,
-                            self.dex.moves:get("pound")
-                        )
+                        local possibleTarget = self:getRandomTarget(pokemon, self.dex.moves:get("pound"))
                         if not possibleTarget then
                             self:add("-miss", pokemon)
                             return false
                         end
                         target = possibleTarget
                     end
-                    local moveData = {id = "bide", name = "Bide", accuracy = true, damage = self.effectState.totalDamage * 2, category = "Physical", priority = 1, flags = {contact = 1, protect = 1}, effectType = "Move", type = "Normal"}
+                    local moveData = {
+                        id = "bide",
+                        name = "Bide",
+                        accuracy = true,
+                        damage = self.effectState.totalDamage * 2,
+                        category = "Physical",
+                        priority = 1,
+                        flags = {contact = 1, protect = 1},
+                        effectType = "Move",
+                        type = "Normal"
+                    }
                     self.actions:tryMoveHit(target, pokemon, moveData)
                     pokemon:removeVolatile("bide")
                     return false
@@ -770,11 +1262,81 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Tough"
     },
-    bind = {num = 20, accuracy = 85, basePower = 15, category = "Physical", name = "Bind", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    bite = {num = 44, accuracy = 100, basePower = 60, category = "Physical", name = "Bite", pp = 25, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Dark", contestType = "Tough"},
-    blackholeeclipse = {num = 654, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Black Hole Eclipse", pp = 1, priority = 0, flags = {}, isZ = "darkiniumz", secondary = nil, target = "normal", type = "Dark", contestType = "Cool"},
-    blastburn = {num = 307, accuracy = 90, basePower = 150, category = "Special", name = "Blast Burn", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Fire", contestType = "Beautiful"},
-    blazekick = {num = 299, accuracy = 90, basePower = 85, category = "Physical", name = "Blaze Kick", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Cool"},
+    bind = {
+        num = 20,
+        accuracy = 85,
+        basePower = 15,
+        category = "Physical",
+        name = "Bind",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    bite = {
+        num = 44,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Bite",
+        pp = 25,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Dark",
+        contestType = "Tough"
+    },
+    blackholeeclipse = {
+        num = 654,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Black Hole Eclipse",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "darkiniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Cool"
+    },
+    blastburn = {
+        num = 307,
+        accuracy = 90,
+        basePower = 150,
+        category = "Special",
+        name = "Blast Burn",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    blazekick = {
+        num = 299,
+        accuracy = 90,
+        basePower = 85,
+        category = "Physical",
+        name = "Blaze Kick",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cool"
+    },
     blizzard = {
         num = 59,
         accuracy = 70,
@@ -812,10 +1374,64 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Cute"
     },
-    bloomdoom = {num = 644, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Bloom Doom", pp = 1, priority = 0, flags = {}, isZ = "grassiumz", secondary = nil, target = "normal", type = "Grass", contestType = "Cool"},
-    blueflare = {num = 551, accuracy = 85, basePower = 130, category = "Special", name = "Blue Flare", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    bodypress = {num = 776, accuracy = 100, basePower = 80, category = "Physical", name = "Body Press", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, useSourceDefensiveAsOffensive = true, secondary = nil, target = "normal", type = "Fighting"},
-    bodyslam = {num = 34, accuracy = 100, basePower = 85, category = "Physical", name = "Body Slam", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1}, secondary = {chance = 30, status = "par"}, target = "normal", type = "Normal", contestType = "Tough"},
+    bloomdoom = {
+        num = 644,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Bloom Doom",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "grassiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    blueflare = {
+        num = 551,
+        accuracy = 85,
+        basePower = 130,
+        category = "Special",
+        name = "Blue Flare",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    bodypress = {
+        num = 776,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Body Press",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        useSourceDefensiveAsOffensive = true,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting"
+    },
+    bodyslam = {
+        num = 34,
+        accuracy = 100,
+        basePower = 85,
+        category = "Physical",
+        name = "Body Slam",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     boltbeak = {
         num = 754,
         accuracy = 100,
@@ -837,11 +1453,82 @@ ____exports.Moves = {
         target = "normal",
         type = "Electric"
     },
-    boltstrike = {num = 550, accuracy = 85, basePower = 130, category = "Physical", name = "Bolt Strike", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, status = "par"}, target = "normal", type = "Electric", contestType = "Beautiful"},
-    boneclub = {num = 125, accuracy = 85, basePower = 65, category = "Physical", isNonstandard = "Past", name = "Bone Club", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "flinch"}, target = "normal", type = "Ground", contestType = "Tough"},
-    bonemerang = {num = 155, accuracy = 90, basePower = 50, category = "Physical", name = "Bonemerang", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Ground", maxMove = {basePower = 130}, contestType = "Tough"},
-    bonerush = {num = 198, accuracy = 90, basePower = 25, category = "Physical", name = "Bone Rush", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Ground", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Tough"},
-    boomburst = {num = 586, accuracy = 100, basePower = 140, category = "Special", name = "Boomburst", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = nil, target = "allAdjacent", type = "Normal", contestType = "Tough"},
+    boltstrike = {
+        num = 550,
+        accuracy = 85,
+        basePower = 130,
+        category = "Physical",
+        name = "Bolt Strike",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Beautiful"
+    },
+    boneclub = {
+        num = 125,
+        accuracy = 85,
+        basePower = 65,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Bone Club",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Ground",
+        contestType = "Tough"
+    },
+    bonemerang = {
+        num = 155,
+        accuracy = 90,
+        basePower = 50,
+        category = "Physical",
+        name = "Bonemerang",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        maxMove = {basePower = 130},
+        contestType = "Tough"
+    },
+    bonerush = {
+        num = 198,
+        accuracy = 90,
+        basePower = 25,
+        category = "Physical",
+        name = "Bone Rush",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Tough"
+    },
+    boomburst = {
+        num = 586,
+        accuracy = 100,
+        basePower = 140,
+        category = "Special",
+        name = "Boomburst",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Normal",
+        contestType = "Tough"
+    },
     bounce = {
         num = 340,
         accuracy = 85,
@@ -865,7 +1552,11 @@ ____exports.Moves = {
         condition = {
             duration = 2,
             onInvulnerability = function(self, target, source, move)
-                if ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(move.id) then
+                if
+                    ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(
+                        move.id
+                    )
+                 then
                     return
                 end
                 return false
@@ -881,11 +1572,79 @@ ____exports.Moves = {
         type = "Flying",
         contestType = "Cute"
     },
-    bouncybubble = {num = 733, accuracy = 100, basePower = 60, category = "Special", isNonstandard = "LGPE", name = "Bouncy Bubble", pp = 20, priority = 0, flags = {protect = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Water", contestType = "Clever"},
-    branchpoke = {num = 785, accuracy = 100, basePower = 40, category = "Physical", name = "Branch Poke", pp = 40, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass"},
-    bravebird = {num = 413, accuracy = 100, basePower = 120, category = "Physical", name = "Brave Bird", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, recoil = {33, 100}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
-    breakingswipe = {num = 784, accuracy = 100, basePower = 60, category = "Physical", name = "Breaking Swipe", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {atk = -1}}, target = "allAdjacentFoes", type = "Dragon"},
-    breakneckblitz = {num = 622, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Breakneck Blitz", pp = 1, priority = 0, flags = {}, isZ = "normaliumz", secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
+    bouncybubble = {
+        num = 733,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        isNonstandard = "LGPE",
+        name = "Bouncy Bubble",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Clever"
+    },
+    branchpoke = {
+        num = 785,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Branch Poke",
+        pp = 40,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass"
+    },
+    bravebird = {
+        num = 413,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Brave Bird",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        recoil = {33, 100},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    breakingswipe = {
+        num = 784,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Breaking Swipe",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {atk = -1}},
+        target = "allAdjacentFoes",
+        type = "Dragon"
+    },
+    breakneckblitz = {
+        num = 622,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Breakneck Blitz",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "normaliumz",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     brickbreak = {
         num = 280,
         accuracy = 100,
@@ -924,9 +1683,49 @@ ____exports.Moves = {
         type = "Water",
         contestType = "Tough"
     },
-    brutalswing = {num = 693, accuracy = 100, basePower = 60, category = "Physical", name = "Brutal Swing", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "allAdjacent", type = "Dark", contestType = "Tough"},
-    bubble = {num = 145, accuracy = 100, basePower = 40, category = "Special", isNonstandard = "Past", name = "Bubble", pp = 30, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spe = -1}}, target = "allAdjacentFoes", type = "Water", contestType = "Cute"},
-    bubblebeam = {num = 61, accuracy = 100, basePower = 65, category = "Special", name = "Bubble Beam", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spe = -1}}, target = "normal", type = "Water", contestType = "Beautiful"},
+    brutalswing = {
+        num = 693,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Brutal Swing",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Dark",
+        contestType = "Tough"
+    },
+    bubble = {
+        num = 145,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Bubble",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spe = -1}},
+        target = "allAdjacentFoes",
+        type = "Water",
+        contestType = "Cute"
+    },
+    bubblebeam = {
+        num = 61,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        name = "Bubble Beam",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spe = -1}},
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
     bugbite = {
         num = 450,
         accuracy = 100,
@@ -963,11 +1762,81 @@ ____exports.Moves = {
         type = "Bug",
         contestType = "Cute"
     },
-    bugbuzz = {num = 405, accuracy = 100, basePower = 90, category = "Special", name = "Bug Buzz", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Bug", contestType = "Beautiful"},
-    bulkup = {num = 339, accuracy = true, basePower = 0, category = "Status", name = "Bulk Up", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {atk = 1, def = 1}, secondary = nil, target = "self", type = "Fighting", zMove = {boost = {atk = 1}}, contestType = "Cool"},
-    bulldoze = {num = 523, accuracy = 100, basePower = 60, category = "Physical", name = "Bulldoze", pp = 20, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "allAdjacent", type = "Ground", contestType = "Tough"},
-    bulletpunch = {num = 418, accuracy = 100, basePower = 40, category = "Physical", name = "Bullet Punch", pp = 30, priority = 1, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = nil, target = "normal", type = "Steel", contestType = "Tough"},
-    bulletseed = {num = 331, accuracy = 100, basePower = 25, category = "Physical", name = "Bullet Seed", pp = 30, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Grass", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Cool"},
+    bugbuzz = {
+        num = 405,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Bug Buzz",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Bug",
+        contestType = "Beautiful"
+    },
+    bulkup = {
+        num = 339,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Bulk Up",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1, def = 1},
+        secondary = nil,
+        target = "self",
+        type = "Fighting",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cool"
+    },
+    bulldoze = {
+        num = 523,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Bulldoze",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "allAdjacent",
+        type = "Ground",
+        contestType = "Tough"
+    },
+    bulletpunch = {
+        num = 418,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Bullet Punch",
+        pp = 30,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Tough"
+    },
+    bulletseed = {
+        num = 331,
+        accuracy = 100,
+        basePower = 25,
+        category = "Physical",
+        name = "Bullet Seed",
+        pp = 30,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Cool"
+    },
     burningjealousy = {
         num = 807,
         accuracy = 100,
@@ -1010,16 +1879,12 @@ ____exports.Moves = {
             onHit = function(self, pokemon)
                 pokemon:setType(
                     pokemon:getTypes(true):map(
-                        function(____, ____type) return ((____type == "Fire") and "???") or ____type end
+                        function(____, ____type)
+                            return ((____type == "Fire") and "???") or ____type
+                        end
                     )
                 )
-                self:add(
-                    "-start",
-                    pokemon,
-                    "typechange",
-                    pokemon.types:join("/"),
-                    "[from] move: Burn Up"
-                )
+                self:add("-start", pokemon, "typechange", pokemon.types:join("/"), "[from] move: Burn Up")
             end
         },
         secondary = nil,
@@ -1027,8 +1892,37 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Clever"
     },
-    buzzybuzz = {num = 734, accuracy = 100, basePower = 60, category = "Special", isNonstandard = "LGPE", name = "Buzzy Buzz", pp = 20, priority = 0, flags = {protect = 1}, secondary = {chance = 100, status = "par"}, target = "normal", type = "Electric", contestType = "Clever"},
-    calmmind = {num = 347, accuracy = true, basePower = 0, category = "Status", name = "Calm Mind", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {spa = 1, spd = 1}, secondary = nil, target = "self", type = "Psychic", zMove = {effect = "clearnegativeboost"}, contestType = "Clever"},
+    buzzybuzz = {
+        num = 734,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        isNonstandard = "LGPE",
+        name = "Buzzy Buzz",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1},
+        secondary = {chance = 100, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Clever"
+    },
+    calmmind = {
+        num = 347,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Calm Mind",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spa = 1, spd = 1},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Clever"
+    },
     camouflage = {
         num = 293,
         accuracy = true,
@@ -1072,7 +1966,8 @@ ____exports.Moves = {
         priority = 0,
         flags = {protect = 1, reflectable = 1, mirror = 1},
         onTryImmunity = function(self, pokemon, source)
-            return ((pokemon.gender == "M") and (source.gender == "F")) or ((pokemon.gender == "F") and (source.gender == "M"))
+            return ((pokemon.gender == "M") and (source.gender == "F")) or
+                ((pokemon.gender == "F") and (source.gender == "M"))
         end,
         boosts = {spa = -2},
         secondary = nil,
@@ -1081,7 +1976,22 @@ ____exports.Moves = {
         zMove = {boost = {spd = 2}},
         contestType = "Cute"
     },
-    catastropika = {num = 658, accuracy = true, basePower = 210, category = "Physical", isNonstandard = "Past", name = "Catastropika", pp = 1, priority = 0, flags = {contact = 1}, isZ = "pikaniumz", secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
+    catastropika = {
+        num = 658,
+        accuracy = true,
+        basePower = 210,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Catastropika",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "pikaniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
     celebrate = {
         num = 606,
         accuracy = true,
@@ -1133,13 +2043,114 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Clever"
     },
-    chargebeam = {num = 451, accuracy = 90, basePower = 50, category = "Special", name = "Charge Beam", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 70, self = {boosts = {spa = 1}}}, target = "normal", type = "Electric", contestType = "Beautiful"},
-    charm = {num = 204, accuracy = 100, basePower = 0, category = "Status", name = "Charm", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, boosts = {atk = -2}, secondary = nil, target = "normal", type = "Fairy", zMove = {boost = {def = 1}}, contestType = "Cute"},
-    chatter = {num = 448, accuracy = 100, basePower = 65, category = "Special", isNonstandard = "Past", name = "Chatter", pp = 20, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, distance = 1, authentic = 1}, noSketch = true, secondary = {chance = 100, volatileStatus = "confusion"}, target = "any", type = "Flying", contestType = "Cute"},
-    chipaway = {num = 498, accuracy = 100, basePower = 70, category = "Physical", isNonstandard = "Past", name = "Chip Away", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ignoreDefensive = true, ignoreEvasion = true, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    circlethrow = {num = 509, accuracy = 90, basePower = 60, category = "Physical", name = "Circle Throw", pp = 10, priority = -6, flags = {contact = 1, protect = 1, mirror = 1}, forceSwitch = true, target = "normal", type = "Fighting", contestType = "Cool"},
-    clamp = {num = 128, accuracy = 85, basePower = 35, category = "Physical", isNonstandard = "Past", name = "Clamp", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Water", contestType = "Tough"},
-    clangingscales = {num = 691, accuracy = 100, basePower = 110, category = "Special", name = "Clanging Scales", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, selfBoost = {boosts = {def = -1}}, secondary = nil, target = "allAdjacentFoes", type = "Dragon", contestType = "Tough"},
+    chargebeam = {
+        num = 451,
+        accuracy = 90,
+        basePower = 50,
+        category = "Special",
+        name = "Charge Beam",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 70, self = {boosts = {spa = 1}}},
+        target = "normal",
+        type = "Electric",
+        contestType = "Beautiful"
+    },
+    charm = {
+        num = 204,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Charm",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        boosts = {atk = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
+    chatter = {
+        num = 448,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Chatter",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, distance = 1, authentic = 1},
+        noSketch = true,
+        secondary = {chance = 100, volatileStatus = "confusion"},
+        target = "any",
+        type = "Flying",
+        contestType = "Cute"
+    },
+    chipaway = {
+        num = 498,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Chip Away",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ignoreDefensive = true,
+        ignoreEvasion = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    circlethrow = {
+        num = 509,
+        accuracy = 90,
+        basePower = 60,
+        category = "Physical",
+        name = "Circle Throw",
+        pp = 10,
+        priority = -6,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        forceSwitch = true,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    clamp = {
+        num = 128,
+        accuracy = 85,
+        basePower = 35,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Clamp",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Tough"
+    },
+    clangingscales = {
+        num = 691,
+        accuracy = 100,
+        basePower = 110,
+        category = "Special",
+        name = "Clanging Scales",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        selfBoost = {boosts = {def = -1}},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Dragon",
+        contestType = "Tough"
+    },
     clangoroussoul = {
         num = 775,
         accuracy = 100,
@@ -1168,7 +2179,23 @@ ____exports.Moves = {
         target = "self",
         type = "Dragon"
     },
-    clangoroussoulblaze = {num = 728, accuracy = true, basePower = 185, category = "Special", isNonstandard = "Past", name = "Clangorous Soulblaze", pp = 1, priority = 0, flags = {sound = 1, authentic = 1}, selfBoost = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}, isZ = "kommoniumz", secondary = {}, target = "allAdjacentFoes", type = "Dragon", contestType = "Cool"},
+    clangoroussoulblaze = {
+        num = 728,
+        accuracy = true,
+        basePower = 185,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Clangorous Soulblaze",
+        pp = 1,
+        priority = 0,
+        flags = {sound = 1, authentic = 1},
+        selfBoost = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}},
+        isZ = "kommoniumz",
+        secondary = {},
+        target = "allAdjacentFoes",
+        type = "Dragon",
+        contestType = "Cool"
+    },
     clearsmog = {
         num = 499,
         accuracy = true,
@@ -1187,15 +2214,145 @@ ____exports.Moves = {
         type = "Poison",
         contestType = "Beautiful"
     },
-    closecombat = {num = 370, accuracy = 100, basePower = 120, category = "Physical", name = "Close Combat", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, self = {boosts = {def = -1, spd = -1}}, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
-    coaching = {num = 811, accuracy = true, basePower = 0, category = "Status", name = "Coaching", pp = 10, priority = 0, flags = {authentic = 1}, secondary = nil, boosts = {atk = 1, def = 1}, target = "adjacentAlly", type = "Fighting"},
-    coil = {num = 489, accuracy = true, basePower = 0, category = "Status", name = "Coil", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {atk = 1, def = 1, accuracy = 1}, secondary = nil, target = "self", type = "Poison", zMove = {effect = "clearnegativeboost"}, contestType = "Tough"},
-    cometpunch = {num = 4, accuracy = 85, basePower = 18, category = "Physical", isNonstandard = "Past", name = "Comet Punch", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", maxMove = {basePower = 100}, contestType = "Tough"},
-    confide = {num = 590, accuracy = true, basePower = 0, category = "Status", name = "Confide", pp = 20, priority = 0, flags = {reflectable = 1, mirror = 1, sound = 1, authentic = 1}, boosts = {spa = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spd = 1}}, contestType = "Cute"},
-    confuseray = {num = 109, accuracy = 100, basePower = 0, category = "Status", name = "Confuse Ray", pp = 10, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, volatileStatus = "confusion", secondary = nil, target = "normal", type = "Ghost", zMove = {boost = {spa = 1}}, contestType = "Clever"},
-    confusion = {num = 93, accuracy = 100, basePower = 50, category = "Special", name = "Confusion", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "confusion"}, target = "normal", type = "Psychic", contestType = "Clever"},
-    constrict = {num = 132, accuracy = 100, basePower = 10, category = "Physical", isNonstandard = "Past", name = "Constrict", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spe = -1}}, target = "normal", type = "Normal", contestType = "Tough"},
-    continentalcrush = {num = 632, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Continental Crush", pp = 1, priority = 0, flags = {}, isZ = "rockiumz", secondary = nil, target = "normal", type = "Rock", contestType = "Cool"},
+    closecombat = {
+        num = 370,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Close Combat",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        self = {boosts = {def = -1, spd = -1}},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
+    coaching = {
+        num = 811,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Coaching",
+        pp = 10,
+        priority = 0,
+        flags = {authentic = 1},
+        secondary = nil,
+        boosts = {atk = 1, def = 1},
+        target = "adjacentAlly",
+        type = "Fighting"
+    },
+    coil = {
+        num = 489,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Coil",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1, def = 1, accuracy = 1},
+        secondary = nil,
+        target = "self",
+        type = "Poison",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Tough"
+    },
+    cometpunch = {
+        num = 4,
+        accuracy = 85,
+        basePower = 18,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Comet Punch",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        maxMove = {basePower = 100},
+        contestType = "Tough"
+    },
+    confide = {
+        num = 590,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Confide",
+        pp = 20,
+        priority = 0,
+        flags = {reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        boosts = {spa = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spd = 1}},
+        contestType = "Cute"
+    },
+    confuseray = {
+        num = 109,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Confuse Ray",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        volatileStatus = "confusion",
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        zMove = {boost = {spa = 1}},
+        contestType = "Clever"
+    },
+    confusion = {
+        num = 93,
+        accuracy = 100,
+        basePower = 50,
+        category = "Special",
+        name = "Confusion",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    constrict = {
+        num = 132,
+        accuracy = 100,
+        basePower = 10,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Constrict",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spe = -1}},
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    continentalcrush = {
+        num = 632,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Continental Crush",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "rockiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Cool"
+    },
     conversion = {
         num = 160,
         accuracy = true,
@@ -1233,9 +2390,7 @@ ____exports.Moves = {
             end
             local possibleTypes = {}
             local attackType = target.lastMoveUsed.type
-            for ____, ____type in __TS__Iterator(
-                self.dex.types:names()
-            ) do
+            for ____, ____type in __TS__Iterator(self.dex.types:names()) do
                 do
                     if source:hasType(____type) then
                         goto __continue159
@@ -1247,7 +2402,7 @@ ____exports.Moves = {
                 end
                 ::__continue159::
             end
-            if not #possibleTypes then
+            if not (#possibleTypes) then
                 return false
             end
             local randomType = self:sample(possibleTypes)
@@ -1272,7 +2427,56 @@ ____exports.Moves = {
         priority = 0,
         flags = {},
         onHit = function(self, pokemon)
-            local noCopycat = {"assist", "banefulbunker", "beakblast", "behemothbash", "behemothblade", "belch", "bestow", "celebrate", "chatter", "circlethrow", "copycat", "counter", "covet", "craftyshield", "destinybond", "detect", "dragontail", "dynamaxcannon", "endure", "feint", "focuspunch", "followme", "helpinghand", "holdhands", "kingsshield", "matblock", "mefirst", "metronome", "mimic", "mirrorcoat", "mirrormove", "naturepower", "obstruct", "protect", "ragepowder", "roar", "shelltrap", "sketch", "sleeptalk", "snatch", "spikyshield", "spotlight", "struggle", "switcheroo", "thief", "transform", "trick", "whirlwind"}
+            local noCopycat = {
+                "assist",
+                "banefulbunker",
+                "beakblast",
+                "behemothbash",
+                "behemothblade",
+                "belch",
+                "bestow",
+                "celebrate",
+                "chatter",
+                "circlethrow",
+                "copycat",
+                "counter",
+                "covet",
+                "craftyshield",
+                "destinybond",
+                "detect",
+                "dragontail",
+                "dynamaxcannon",
+                "endure",
+                "feint",
+                "focuspunch",
+                "followme",
+                "helpinghand",
+                "holdhands",
+                "kingsshield",
+                "matblock",
+                "mefirst",
+                "metronome",
+                "mimic",
+                "mirrorcoat",
+                "mirrormove",
+                "naturepower",
+                "obstruct",
+                "protect",
+                "ragepowder",
+                "roar",
+                "shelltrap",
+                "sketch",
+                "sleeptalk",
+                "snatch",
+                "spikyshield",
+                "spotlight",
+                "struggle",
+                "switcheroo",
+                "thief",
+                "transform",
+                "trick",
+                "whirlwind"
+            }
             local move = self.lastMove
             if not move then
                 return
@@ -1324,7 +2528,22 @@ ____exports.Moves = {
         zMove = {basePower = 140},
         contestType = "Tough"
     },
-    corkscrewcrash = {num = 638, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Corkscrew Crash", pp = 1, priority = 0, flags = {}, isZ = "steeliumz", secondary = nil, target = "normal", type = "Steel", contestType = "Cool"},
+    corkscrewcrash = {
+        num = 638,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Corkscrew Crash",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "steeliumz",
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     corrosivegas = {
         num = 810,
         accuracy = 100,
@@ -1337,13 +2556,7 @@ ____exports.Moves = {
         onHit = function(self, target, source)
             local item = target:takeItem(source)
             if item then
-                self:add(
-                    "-enditem",
-                    target,
-                    item.name,
-                    "[from] move: Corrosive Gas",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-enditem", target, item.name, "[from] move: Corrosive Gas", "[of] " .. tostring(source))
             else
                 self:add("-fail", target, "move: Corrosive Gas")
             end
@@ -1352,9 +2565,54 @@ ____exports.Moves = {
         target = "allAdjacent",
         type = "Poison"
     },
-    cosmicpower = {num = 322, accuracy = true, basePower = 0, category = "Status", name = "Cosmic Power", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {def = 1, spd = 1}, secondary = nil, target = "self", type = "Psychic", zMove = {boost = {spd = 1}}, contestType = "Beautiful"},
-    cottonguard = {num = 538, accuracy = true, basePower = 0, category = "Status", name = "Cotton Guard", pp = 10, priority = 0, flags = {snatch = 1}, boosts = {def = 3}, secondary = nil, target = "self", type = "Grass", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
-    cottonspore = {num = 178, accuracy = 100, basePower = 0, category = "Status", name = "Cotton Spore", pp = 40, priority = 0, flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1}, boosts = {spe = -2}, secondary = nil, target = "allAdjacentFoes", type = "Grass", zMove = {effect = "clearnegativeboost"}, contestType = "Beautiful"},
+    cosmicpower = {
+        num = 322,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Cosmic Power",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 1, spd = 1},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {boost = {spd = 1}},
+        contestType = "Beautiful"
+    },
+    cottonguard = {
+        num = 538,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Cotton Guard",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 3},
+        secondary = nil,
+        target = "self",
+        type = "Grass",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
+    cottonspore = {
+        num = 178,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Cotton Spore",
+        pp = 40,
+        priority = 0,
+        flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1},
+        boosts = {spe = -2},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Grass",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Beautiful"
+    },
     counter = {
         num = 68,
         accuracy = 100,
@@ -1421,7 +2679,25 @@ ____exports.Moves = {
         priority = 0,
         flags = {mirror = 1},
         onHitField = function(self, target, source)
-            local sideConditions = {"mist", "lightscreen", "reflect", "spikes", "safeguard", "tailwind", "toxicspikes", "stealthrock", "waterpledge", "firepledge", "grasspledge", "stickyweb", "auroraveil", "gmaxsteelsurge", "gmaxcannonade", "gmaxvinelash", "gmaxwildfire"}
+            local sideConditions = {
+                "mist",
+                "lightscreen",
+                "reflect",
+                "spikes",
+                "safeguard",
+                "tailwind",
+                "toxicspikes",
+                "stealthrock",
+                "waterpledge",
+                "firepledge",
+                "grasspledge",
+                "stickyweb",
+                "auroraveil",
+                "gmaxsteelsurge",
+                "gmaxcannonade",
+                "gmaxvinelash",
+                "gmaxwildfire"
+            }
             local success = false
             if self.gameType == "freeforall" then
                 local offset = self:random(3) + 1
@@ -1447,7 +2723,11 @@ ____exports.Moves = {
                         if not someCondition then
                             goto __continue191
                         end
-                        sides[1].sideConditions[id], sides[2].sideConditions[id], sides[3].sideConditions[id], sides[4].sideConditions[id] = __TS__Unpack(
+                        sides[1].sideConditions[id],
+                            sides[2].sideConditions[id],
+                            sides[3].sideConditions[id],
+                            sides[4].sideConditions[id] =
+                            __TS__Unpack(
                             {
                                 __TS__Unpack(rotatedSides)
                             }
@@ -1476,7 +2756,8 @@ ____exports.Moves = {
                     do
                         local effectName = self.dex.conditions:get(id).name
                         if sourceSide.sideConditions[id] and targetSide.sideConditions[id] then
-                            sourceSide.sideConditions[id], targetSide.sideConditions[id] = __TS__Unpack({targetSide.sideConditions[id], sourceSide.sideConditions[id]})
+                            sourceSide.sideConditions[id], targetSide.sideConditions[id] =
+                                __TS__Unpack({targetSide.sideConditions[id], sourceSide.sideConditions[id]})
                             self:add("-sideend", sourceSide, effectName, "[silent]")
                             self:add("-sideend", targetSide, effectName, "[silent]")
                         elseif sourceSide.sideConditions[id] and (not targetSide.sideConditions[id]) then
@@ -1490,8 +2771,16 @@ ____exports.Moves = {
                         else
                             goto __continue200
                         end
-                        local sourceLayers = ((sourceSide.sideConditions[id] and (function() return sourceSide.sideConditions[id].layers or 1 end)) or (function() return 0 end))()
-                        local targetLayers = ((targetSide.sideConditions[id] and (function() return targetSide.sideConditions[id].layers or 1 end)) or (function() return 0 end))()
+                        local sourceLayers = ((sourceSide.sideConditions[id] and (function()
+                                return sourceSide.sideConditions[id].layers or 1
+                            end)) or (function()
+                                return 0
+                            end))()
+                        local targetLayers = ((targetSide.sideConditions[id] and (function()
+                                return targetSide.sideConditions[id].layers or 1
+                            end)) or (function()
+                                return 0
+                            end))()
                         do
                             while sourceLayers > 0 do
                                 self:add("-sidestart", sourceSide, effectName, "[silent]")
@@ -1535,24 +2824,35 @@ ____exports.Moves = {
             if not yourItem then
                 return
             end
-            if (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)) or (not source:setItem(yourItem)) then
+            if
+                (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)) or
+                    (not source:setItem(yourItem))
+             then
                 target.item = yourItem.id
                 return
             end
-            self:add(
-                "-item",
-                source,
-                yourItem,
-                "[from] move: Covet",
-                "[of] " .. tostring(target)
-            )
+            self:add("-item", source, yourItem, "[from] move: Covet", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
         type = "Normal",
         contestType = "Cute"
     },
-    crabhammer = {num = 152, accuracy = 90, basePower = 100, category = "Physical", name = "Crabhammer", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Water", contestType = "Tough"},
+    crabhammer = {
+        num = 152,
+        accuracy = 90,
+        basePower = 100,
+        category = "Physical",
+        name = "Crabhammer",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Tough"
+    },
     craftyshield = {
         num = 578,
         accuracy = true,
@@ -1586,19 +2886,71 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Clever"
     },
-    crosschop = {num = 238, accuracy = 80, basePower = 100, category = "Physical", name = "Cross Chop", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    crosspoison = {num = 440, accuracy = 100, basePower = 70, category = "Physical", name = "Cross Poison", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, status = "psn"}, critRatio = 2, target = "normal", type = "Poison", contestType = "Cool"},
-    crunch = {num = 242, accuracy = 100, basePower = 80, category = "Physical", name = "Crunch", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, boosts = {def = -1}}, target = "normal", type = "Dark", contestType = "Tough"},
-    crushclaw = {num = 306, accuracy = 95, basePower = 75, category = "Physical", name = "Crush Claw", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {def = -1}}, target = "normal", type = "Normal", contestType = "Cool"},
+    crosschop = {
+        num = 238,
+        accuracy = 80,
+        basePower = 100,
+        category = "Physical",
+        name = "Cross Chop",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    crosspoison = {
+        num = 440,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Cross Poison",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "psn"},
+        critRatio = 2,
+        target = "normal",
+        type = "Poison",
+        contestType = "Cool"
+    },
+    crunch = {
+        num = 242,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Crunch",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, boosts = {def = -1}},
+        target = "normal",
+        type = "Dark",
+        contestType = "Tough"
+    },
+    crushclaw = {
+        num = 306,
+        accuracy = 95,
+        basePower = 75,
+        category = "Physical",
+        name = "Crush Claw",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {def = -1}},
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     crushgrip = {
         num = 462,
         accuracy = 100,
         basePower = 0,
         basePowerCallback = function(self, pokemon, target)
             return math.floor(
-                math.floor(
-                    (((120 * (100 * math.floor((target.hp * 4096) / target.maxhp))) + 2048) - 1) / 4096
-                ) / 100
+                math.floor((((120 * (100 * math.floor((target.hp * 4096) / target.maxhp))) + 2048) - 1) / 4096) / 100
             ) or 1
         end,
         category = "Physical",
@@ -1642,12 +2994,7 @@ ____exports.Moves = {
         end,
         condition = {
             onStart = function(self, pokemon, source)
-                self:add(
-                    "-start",
-                    pokemon,
-                    "Curse",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-start", pokemon, "Curse", "[of] " .. tostring(source))
             end,
             onResidualOrder = 12,
             onResidual = function(self, pokemon)
@@ -1661,9 +3008,50 @@ ____exports.Moves = {
         zMove = {effect = "curse"},
         contestType = "Tough"
     },
-    cut = {num = 15, accuracy = 95, basePower = 50, category = "Physical", name = "Cut", pp = 30, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    darkestlariat = {num = 663, accuracy = 100, basePower = 85, category = "Physical", name = "Darkest Lariat", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ignoreEvasion = true, ignoreDefensive = true, secondary = nil, target = "normal", type = "Dark", contestType = "Cool"},
-    darkpulse = {num = 399, accuracy = 100, basePower = 80, category = "Special", name = "Dark Pulse", pp = 15, priority = 0, flags = {protect = 1, pulse = 1, mirror = 1, distance = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "any", type = "Dark", contestType = "Cool"},
+    cut = {
+        num = 15,
+        accuracy = 95,
+        basePower = 50,
+        category = "Physical",
+        name = "Cut",
+        pp = 30,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    darkestlariat = {
+        num = 663,
+        accuracy = 100,
+        basePower = 85,
+        category = "Physical",
+        name = "Darkest Lariat",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ignoreEvasion = true,
+        ignoreDefensive = true,
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Cool"
+    },
+    darkpulse = {
+        num = 399,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Dark Pulse",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, pulse = 1, mirror = 1, distance = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "any",
+        type = "Dark",
+        contestType = "Cool"
+    },
     darkvoid = {
         num = 464,
         accuracy = 50,
@@ -1689,10 +3077,68 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Clever"
     },
-    dazzlinggleam = {num = 605, accuracy = 100, basePower = 80, category = "Special", name = "Dazzling Gleam", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "allAdjacentFoes", type = "Fairy", contestType = "Beautiful"},
-    decorate = {num = 777, accuracy = true, basePower = 0, category = "Status", name = "Decorate", pp = 15, priority = 0, flags = {mystery = 1}, secondary = nil, boosts = {atk = 2, spa = 2}, target = "normal", type = "Fairy"},
-    defendorder = {num = 455, accuracy = true, basePower = 0, category = "Status", name = "Defend Order", pp = 10, priority = 0, flags = {snatch = 1}, boosts = {def = 1, spd = 1}, secondary = nil, target = "self", type = "Bug", zMove = {boost = {def = 1}}, contestType = "Clever"},
-    defensecurl = {num = 111, accuracy = true, basePower = 0, category = "Status", name = "Defense Curl", pp = 40, priority = 0, flags = {snatch = 1}, boosts = {def = 1}, volatileStatus = "defensecurl", condition = {noCopy = true}, secondary = nil, target = "self", type = "Normal", zMove = {boost = {accuracy = 1}}, contestType = "Cute"},
+    dazzlinggleam = {
+        num = 605,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Dazzling Gleam",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Fairy",
+        contestType = "Beautiful"
+    },
+    decorate = {
+        num = 777,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Decorate",
+        pp = 15,
+        priority = 0,
+        flags = {mystery = 1},
+        secondary = nil,
+        boosts = {atk = 2, spa = 2},
+        target = "normal",
+        type = "Fairy"
+    },
+    defendorder = {
+        num = 455,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Defend Order",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 1, spd = 1},
+        secondary = nil,
+        target = "self",
+        type = "Bug",
+        zMove = {boost = {def = 1}},
+        contestType = "Clever"
+    },
+    defensecurl = {
+        num = 111,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Defense Curl",
+        pp = 40,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 1},
+        volatileStatus = "defensecurl",
+        condition = {noCopy = true},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {boost = {accuracy = 1}},
+        contestType = "Cute"
+    },
     defog = {
         num = 432,
         accuracy = true,
@@ -1707,7 +3153,18 @@ ____exports.Moves = {
             if (not target.volatiles.substitute) or move.infiltrates then
                 success = not (not self:boost({evasion = -1}))
             end
-            local removeTarget = {"reflect", "lightscreen", "auroraveil", "safeguard", "mist", "spikes", "toxicspikes", "stealthrock", "stickyweb", "gmaxsteelsurge"}
+            local removeTarget = {
+                "reflect",
+                "lightscreen",
+                "auroraveil",
+                "safeguard",
+                "mist",
+                "spikes",
+                "toxicspikes",
+                "stealthrock",
+                "stickyweb",
+                "gmaxsteelsurge"
+            }
             local removeAll = {"spikes", "toxicspikes", "stealthrock", "stickyweb", "gmaxsteelsurge"}
             for ____, targetCondition in ipairs(removeTarget) do
                 do
@@ -1819,8 +3276,37 @@ ____exports.Moves = {
         zMove = {boost = {evasion = 1}},
         contestType = "Cool"
     },
-    devastatingdrake = {num = 652, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Devastating Drake", pp = 1, priority = 0, flags = {}, isZ = "dragoniumz", secondary = nil, target = "normal", type = "Dragon", contestType = "Cool"},
-    diamondstorm = {num = 591, accuracy = 95, basePower = 100, category = "Physical", name = "Diamond Storm", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {chance = 50, boosts = {def = 2}}, secondary = {}, target = "allAdjacentFoes", type = "Rock", contestType = "Beautiful"},
+    devastatingdrake = {
+        num = 652,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Devastating Drake",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "dragoniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Cool"
+    },
+    diamondstorm = {
+        num = 591,
+        accuracy = 95,
+        basePower = 100,
+        category = "Physical",
+        name = "Diamond Storm",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {chance = 50, boosts = {def = 2}},
+        secondary = {},
+        target = "allAdjacentFoes",
+        type = "Rock",
+        contestType = "Beautiful"
+    },
     dig = {
         num = 91,
         accuracy = 100,
@@ -1876,7 +3362,10 @@ ____exports.Moves = {
         flags = {protect = 1, reflectable = 1, mirror = 1, authentic = 1},
         volatileStatus = "disable",
         onTryHit = function(self, target)
-            if (((not target.lastMove) or target.lastMove.isZ) or target.lastMove.isMax) or (target.lastMove.id == "struggle") then
+            if
+                (((not target.lastMove) or target.lastMove.isZ) or target.lastMove.isMax) or
+                    (target.lastMove.id == "struggle")
+             then
                 return false
             end
         end,
@@ -1884,7 +3373,10 @@ ____exports.Moves = {
             duration = 5,
             noCopy = true,
             onStart = function(self, pokemon, source, effect)
-                if self.queue:willMove(pokemon) or (((pokemon == self.activePokemon) and self.activeMove) and (not self.activeMove.isExternal)) then
+                if
+                    self.queue:willMove(pokemon) or
+                        (((pokemon == self.activePokemon) and self.activeMove) and (not self.activeMove.isExternal))
+                 then
                     local ____obj, ____index = self.effectState, "duration"
                     ____obj[____index] = ____obj[____index] - 1
                 end
@@ -1939,8 +3431,34 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Clever"
     },
-    disarmingvoice = {num = 574, accuracy = true, basePower = 40, category = "Special", name = "Disarming Voice", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = nil, target = "allAdjacentFoes", type = "Fairy", contestType = "Cute"},
-    discharge = {num = 435, accuracy = 100, basePower = 80, category = "Special", name = "Discharge", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "par"}, target = "allAdjacent", type = "Electric", contestType = "Beautiful"},
+    disarmingvoice = {
+        num = 574,
+        accuracy = true,
+        basePower = 40,
+        category = "Special",
+        name = "Disarming Voice",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Fairy",
+        contestType = "Cute"
+    },
+    discharge = {
+        num = 435,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Discharge",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "allAdjacent",
+        type = "Electric",
+        contestType = "Beautiful"
+    },
     dive = {
         num = 291,
         accuracy = 100,
@@ -1954,7 +3472,10 @@ ____exports.Moves = {
             if attacker:removeVolatile(move.id) then
                 return
             end
-            if (attacker:hasAbility("gulpmissile") and (attacker.species.name == "Cramorant")) and (not attacker.transformed) then
+            if
+                (attacker:hasAbility("gulpmissile") and (attacker.species.name == "Cramorant")) and
+                    (not attacker.transformed)
+             then
                 local forme = ((attacker.hp <= (attacker.maxhp / 2)) and "cramorantgorging") or "cramorantgulping"
                 attacker:formeChange(forme, move)
             end
@@ -1989,7 +3510,21 @@ ____exports.Moves = {
         type = "Water",
         contestType = "Beautiful"
     },
-    dizzypunch = {num = 146, accuracy = 100, basePower = 70, category = "Physical", isNonstandard = "Past", name = "Dizzy Punch", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 20, volatileStatus = "confusion"}, target = "normal", type = "Normal", contestType = "Cute"},
+    dizzypunch = {
+        num = 146,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Dizzy Punch",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 20, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Cute"
+    },
     doomdesire = {
         num = 353,
         accuracy = 100,
@@ -2004,7 +3539,25 @@ ____exports.Moves = {
             if not target.side:addSlotCondition(target, "futuremove") then
                 return false
             end
-            __TS__ObjectAssign(target.side.slotConditions[target.position].futuremove, {move = "doomdesire", source = source, moveData = {id = "doomdesire", name = "Doom Desire", accuracy = 100, basePower = 140, category = "Special", priority = 0, flags = {}, effectType = "Move", isFutureMove = true, type = "Steel"}})
+            __TS__ObjectAssign(
+                target.side.slotConditions[target.position].futuremove,
+                {
+                    move = "doomdesire",
+                    source = source,
+                    moveData = {
+                        id = "doomdesire",
+                        name = "Doom Desire",
+                        accuracy = 100,
+                        basePower = 140,
+                        category = "Special",
+                        priority = 0,
+                        flags = {},
+                        effectType = "Move",
+                        isFutureMove = true,
+                        type = "Steel"
+                    }
+                }
+            )
             self:add("-start", source, "Doom Desire")
             return self.NOT_FAIL
         end,
@@ -2013,18 +3566,192 @@ ____exports.Moves = {
         type = "Steel",
         contestType = "Beautiful"
     },
-    doubleedge = {num = 38, accuracy = 100, basePower = 120, category = "Physical", name = "Double-Edge", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {33, 100}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    doublehit = {num = 458, accuracy = 90, basePower = 35, category = "Physical", name = "Double Hit", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Normal", zMove = {basePower = 140}, maxMove = {basePower = 120}, contestType = "Cool"},
-    doubleironbash = {num = 742, accuracy = 100, basePower = 60, category = "Physical", name = "Double Iron Bash", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, multihit = 2, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Steel", zMove = {basePower = 180}, maxMove = {basePower = 140}, contestType = "Clever"},
-    doublekick = {num = 24, accuracy = 100, basePower = 30, category = "Physical", name = "Double Kick", pp = 30, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Fighting", maxMove = {basePower = 80}, contestType = "Cool"},
-    doubleslap = {num = 3, accuracy = 85, basePower = 15, category = "Physical", isNonstandard = "Past", name = "Double Slap", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", contestType = "Cute"},
-    doubleteam = {num = 104, accuracy = true, basePower = 0, category = "Status", name = "Double Team", pp = 15, priority = 0, flags = {snatch = 1}, boosts = {evasion = 1}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Cool"},
-    dracometeor = {num = 434, accuracy = 90, basePower = 130, category = "Special", name = "Draco Meteor", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {boosts = {spa = -2}}, secondary = nil, target = "normal", type = "Dragon", contestType = "Beautiful"},
-    dragonascent = {num = 620, accuracy = 100, basePower = 120, category = "Physical", name = "Dragon Ascent", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, self = {boosts = {def = -1, spd = -1}}, target = "any", type = "Flying", contestType = "Beautiful"},
-    dragonbreath = {num = 225, accuracy = 100, basePower = 60, category = "Special", name = "Dragon Breath", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "par"}, target = "normal", type = "Dragon", contestType = "Cool"},
-    dragonclaw = {num = 337, accuracy = 100, basePower = 80, category = "Physical", name = "Dragon Claw", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dragon", contestType = "Cool"},
-    dragondance = {num = 349, accuracy = true, basePower = 0, category = "Status", name = "Dragon Dance", pp = 20, priority = 0, flags = {snatch = 1, dance = 1}, boosts = {atk = 1, spe = 1}, secondary = nil, target = "self", type = "Dragon", zMove = {effect = "clearnegativeboost"}, contestType = "Cool"},
-    dragondarts = {num = 751, accuracy = 100, basePower = 50, category = "Physical", name = "Dragon Darts", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, multihit = 2, smartTarget = true, secondary = nil, target = "normal", type = "Dragon", maxMove = {basePower = 130}},
+    doubleedge = {
+        num = 38,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Double-Edge",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {33, 100},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    doublehit = {
+        num = 458,
+        accuracy = 90,
+        basePower = 35,
+        category = "Physical",
+        name = "Double Hit",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 120},
+        contestType = "Cool"
+    },
+    doubleironbash = {
+        num = 742,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Double Iron Bash",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        multihit = 2,
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Steel",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 140},
+        contestType = "Clever"
+    },
+    doublekick = {
+        num = 24,
+        accuracy = 100,
+        basePower = 30,
+        category = "Physical",
+        name = "Double Kick",
+        pp = 30,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        maxMove = {basePower = 80},
+        contestType = "Cool"
+    },
+    doubleslap = {
+        num = 3,
+        accuracy = 85,
+        basePower = 15,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Double Slap",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cute"
+    },
+    doubleteam = {
+        num = 104,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Double Team",
+        pp = 15,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {evasion = 1},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cool"
+    },
+    dracometeor = {
+        num = 434,
+        accuracy = 90,
+        basePower = 130,
+        category = "Special",
+        name = "Draco Meteor",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {boosts = {spa = -2}},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Beautiful"
+    },
+    dragonascent = {
+        num = 620,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Dragon Ascent",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        self = {boosts = {def = -1, spd = -1}},
+        target = "any",
+        type = "Flying",
+        contestType = "Beautiful"
+    },
+    dragonbreath = {
+        num = 225,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        name = "Dragon Breath",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "normal",
+        type = "Dragon",
+        contestType = "Cool"
+    },
+    dragonclaw = {
+        num = 337,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Dragon Claw",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Cool"
+    },
+    dragondance = {
+        num = 349,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Dragon Dance",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1, dance = 1},
+        boosts = {atk = 1, spe = 1},
+        secondary = nil,
+        target = "self",
+        type = "Dragon",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cool"
+    },
+    dragondarts = {
+        num = 751,
+        accuracy = 100,
+        basePower = 50,
+        category = "Physical",
+        name = "Dragon Darts",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = 2,
+        smartTarget = true,
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        maxMove = {basePower = 130}
+    },
     dragonenergy = {
         num = 820,
         accuracy = 100,
@@ -2041,13 +3768,108 @@ ____exports.Moves = {
         target = "allAdjacentFoes",
         type = "Dragon"
     },
-    dragonhammer = {num = 692, accuracy = 100, basePower = 90, category = "Physical", name = "Dragon Hammer", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dragon", contestType = "Tough"},
-    dragonpulse = {num = 406, accuracy = 100, basePower = 85, category = "Special", name = "Dragon Pulse", pp = 10, priority = 0, flags = {protect = 1, pulse = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Dragon", contestType = "Beautiful"},
-    dragonrage = {num = 82, accuracy = 100, basePower = 0, damage = 40, category = "Special", isNonstandard = "Past", name = "Dragon Rage", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dragon", contestType = "Cool"},
-    dragonrush = {num = 407, accuracy = 75, basePower = 100, category = "Physical", name = "Dragon Rush", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "normal", type = "Dragon", contestType = "Tough"},
-    dragontail = {num = 525, accuracy = 90, basePower = 60, category = "Physical", name = "Dragon Tail", pp = 10, priority = -6, flags = {contact = 1, protect = 1, mirror = 1}, forceSwitch = true, target = "normal", type = "Dragon", contestType = "Tough"},
-    drainingkiss = {num = 577, accuracy = 100, basePower = 50, category = "Special", name = "Draining Kiss", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, heal = 1}, drain = {3, 4}, secondary = nil, target = "normal", type = "Fairy", contestType = "Cute"},
-    drainpunch = {num = 409, accuracy = 100, basePower = 75, category = "Physical", name = "Drain Punch", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
+    dragonhammer = {
+        num = 692,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Dragon Hammer",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Tough"
+    },
+    dragonpulse = {
+        num = 406,
+        accuracy = 100,
+        basePower = 85,
+        category = "Special",
+        name = "Dragon Pulse",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, pulse = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Dragon",
+        contestType = "Beautiful"
+    },
+    dragonrage = {
+        num = 82,
+        accuracy = 100,
+        basePower = 0,
+        damage = 40,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Dragon Rage",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Cool"
+    },
+    dragonrush = {
+        num = 407,
+        accuracy = 75,
+        basePower = 100,
+        category = "Physical",
+        name = "Dragon Rush",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Dragon",
+        contestType = "Tough"
+    },
+    dragontail = {
+        num = 525,
+        accuracy = 90,
+        basePower = 60,
+        category = "Physical",
+        name = "Dragon Tail",
+        pp = 10,
+        priority = -6,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        forceSwitch = true,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Tough"
+    },
+    drainingkiss = {
+        num = 577,
+        accuracy = 100,
+        basePower = 50,
+        category = "Special",
+        name = "Draining Kiss",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, heal = 1},
+        drain = {3, 4},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Cute"
+    },
+    drainpunch = {
+        num = 409,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Drain Punch",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
     dreameater = {
         num = 138,
         accuracy = 100,
@@ -2066,15 +3888,134 @@ ____exports.Moves = {
         type = "Psychic",
         contestType = "Clever"
     },
-    drillpeck = {num = 65, accuracy = 100, basePower = 80, category = "Physical", name = "Drill Peck", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
-    drillrun = {num = 529, accuracy = 95, basePower = 80, category = "Physical", name = "Drill Run", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Ground", contestType = "Tough"},
-    drumbeating = {num = 778, accuracy = 100, basePower = 80, category = "Physical", name = "Drum Beating", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "normal", type = "Grass"},
-    dualchop = {num = 530, accuracy = 90, basePower = 40, category = "Physical", name = "Dual Chop", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Dragon", maxMove = {basePower = 130}, contestType = "Tough"},
-    dualwingbeat = {num = 814, accuracy = 90, basePower = 40, category = "Physical", name = "Dual Wingbeat", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Flying", maxMove = {basePower = 130}},
-    dynamaxcannon = {num = 744, accuracy = 100, basePower = 100, category = "Special", name = "Dynamax Cannon", pp = 5, priority = 0, flags = {protect = 1}, secondary = nil, target = "normal", type = "Dragon"},
-    dynamicpunch = {num = 223, accuracy = 50, basePower = 100, category = "Physical", name = "Dynamic Punch", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 100, volatileStatus = "confusion"}, target = "normal", type = "Fighting", contestType = "Cool"},
-    earthpower = {num = 414, accuracy = 100, basePower = 90, category = "Special", name = "Earth Power", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Ground", contestType = "Beautiful"},
-    earthquake = {num = 89, accuracy = 100, basePower = 100, category = "Physical", name = "Earthquake", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = nil, target = "allAdjacent", type = "Ground", contestType = "Tough"},
+    drillpeck = {
+        num = 65,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Drill Peck",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    drillrun = {
+        num = 529,
+        accuracy = 95,
+        basePower = 80,
+        category = "Physical",
+        name = "Drill Run",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        contestType = "Tough"
+    },
+    drumbeating = {
+        num = 778,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Drum Beating",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "normal",
+        type = "Grass"
+    },
+    dualchop = {
+        num = 530,
+        accuracy = 90,
+        basePower = 40,
+        category = "Physical",
+        name = "Dual Chop",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        maxMove = {basePower = 130},
+        contestType = "Tough"
+    },
+    dualwingbeat = {
+        num = 814,
+        accuracy = 90,
+        basePower = 40,
+        category = "Physical",
+        name = "Dual Wingbeat",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Flying",
+        maxMove = {basePower = 130}
+    },
+    dynamaxcannon = {
+        num = 744,
+        accuracy = 100,
+        basePower = 100,
+        category = "Special",
+        name = "Dynamax Cannon",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon"
+    },
+    dynamicpunch = {
+        num = 223,
+        accuracy = 50,
+        basePower = 100,
+        category = "Physical",
+        name = "Dynamic Punch",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 100, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    earthpower = {
+        num = 414,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Earth Power",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Ground",
+        contestType = "Beautiful"
+    },
+    earthquake = {
+        num = 89,
+        accuracy = 100,
+        basePower = 100,
+        category = "Physical",
+        name = "Earthquake",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Ground",
+        contestType = "Tough"
+    },
     echoedvoice = {
         num = 497,
         accuracy = 100,
@@ -2113,7 +4054,22 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Beautiful"
     },
-    eerieimpulse = {num = 598, accuracy = 100, basePower = 0, category = "Status", name = "Eerie Impulse", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {spa = -2}, secondary = nil, target = "normal", type = "Electric", zMove = {boost = {spd = 1}}, contestType = "Clever"},
+    eerieimpulse = {
+        num = 598,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Eerie Impulse",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {spa = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        zMove = {boost = {spd = 1}},
+        contestType = "Clever"
+    },
     eeriespell = {
         num = 826,
         accuracy = 100,
@@ -2146,7 +4102,21 @@ ____exports.Moves = {
         target = "normal",
         type = "Psychic"
     },
-    eggbomb = {num = 121, accuracy = 75, basePower = 100, category = "Physical", isNonstandard = "Past", name = "Egg Bomb", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cute"},
+    eggbomb = {
+        num = 121,
+        accuracy = 75,
+        basePower = 100,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Egg Bomb",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cute"
+    },
     electricterrain = {
         num = 604,
         accuracy = true,
@@ -2252,18 +4222,12 @@ ____exports.Moves = {
         accuracy = 100,
         basePower = 0,
         basePowerCallback = function(self, pokemon, target)
-            local ratio = math.floor(
-                pokemon:getStat("spe") / target:getStat("spe")
-            )
-            if not __TS__NumberIsFinite(
-                __TS__Number(ratio)
-            ) then
+            local ratio = math.floor(pokemon:getStat("spe") / target:getStat("spe"))
+            if not __TS__NumberIsFinite(__TS__Number(ratio)) then
                 ratio = 0
             end
             local bp = ({40, 60, 80, 120, 150})[math.min(ratio, 4) + 1]
-            self:debug(
-                tostring(bp) .. " bp"
-            )
+            self:debug(tostring(bp) .. " bp")
             return bp
         end,
         category = "Special",
@@ -2278,7 +4242,20 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Cool"
     },
-    electroweb = {num = 527, accuracy = 95, basePower = 55, category = "Special", name = "Electroweb", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "allAdjacentFoes", type = "Electric", contestType = "Beautiful"},
+    electroweb = {
+        num = 527,
+        accuracy = 95,
+        basePower = 55,
+        category = "Special",
+        name = "Electroweb",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "allAdjacentFoes",
+        type = "Electric",
+        contestType = "Beautiful"
+    },
     embargo = {
         num = 373,
         accuracy = 100,
@@ -2306,7 +4283,20 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Clever"
     },
-    ember = {num = 52, accuracy = 100, basePower = 40, category = "Special", name = "Ember", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Cute"},
+    ember = {
+        num = 52,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Ember",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cute"
+    },
     encore = {
         num = 227,
         accuracy = 100,
@@ -2321,7 +4311,20 @@ ____exports.Moves = {
             duration = 3,
             noCopy = true,
             onStart = function(self, target)
-                local noEncore = {"assist", "copycat", "encore", "mefirst", "metronome", "mimic", "mirrormove", "naturepower", "sketch", "sleeptalk", "struggle", "transform"}
+                local noEncore = {
+                    "assist",
+                    "copycat",
+                    "encore",
+                    "mefirst",
+                    "metronome",
+                    "mimic",
+                    "mirrormove",
+                    "naturepower",
+                    "sketch",
+                    "sleeptalk",
+                    "struggle",
+                    "transform"
+                }
                 local move = target.lastMove
                 if (not move) or target.volatiles.dynamax then
                     return false
@@ -2330,7 +4333,10 @@ ____exports.Moves = {
                     move = self.dex.moves:get(move.baseMove)
                 end
                 local moveIndex = target.moves:indexOf(move.id)
-                if ((move.isZ or noEncore:includes(move.id)) or (not target.moveSlots[moveIndex])) or (target.moveSlots[moveIndex].pp <= 0) then
+                if
+                    ((move.isZ or noEncore:includes(move.id)) or (not target.moveSlots[moveIndex])) or
+                        (target.moveSlots[moveIndex].pp <= 0)
+                 then
                     return false
                 end
                 self.effectState.move = move.id
@@ -2347,7 +4353,10 @@ ____exports.Moves = {
             end,
             onResidualOrder = 16,
             onResidual = function(self, target)
-                if target.moves:includes(self.effectState.move) and (target.moveSlots[target.moves:indexOf(self.effectState.move)].pp <= 0) then
+                if
+                    target.moves:includes(self.effectState.move) and
+                        (target.moveSlots[target.moves:indexOf(self.effectState.move)].pp <= 0)
+                 then
                     target:removeVolatile("encore")
                 end
             end,
@@ -2429,7 +4438,20 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Tough"
     },
-    energyball = {num = 412, accuracy = 100, basePower = 90, category = "Special", name = "Energy Ball", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Grass", contestType = "Beautiful"},
+    energyball = {
+        num = 412,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Energy Ball",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Grass",
+        contestType = "Beautiful"
+    },
     entrainment = {
         num = 494,
         accuracy = 100,
@@ -2443,20 +4465,31 @@ ____exports.Moves = {
             if (target == source) or target.volatiles.dynamax then
                 return false
             end
-            local additionalBannedSourceAbilities = {"flowergift", "forecast", "hungerswitch", "illusion", "imposter", "neutralizinggas", "powerofalchemy", "receiver", "trace", "zenmode"}
-            if ((((target.ability == source.ability) or target:getAbility().isPermanent) or (target.ability == "truant")) or source:getAbility().isPermanent) or additionalBannedSourceAbilities:includes(source.ability) then
+            local additionalBannedSourceAbilities = {
+                "flowergift",
+                "forecast",
+                "hungerswitch",
+                "illusion",
+                "imposter",
+                "neutralizinggas",
+                "powerofalchemy",
+                "receiver",
+                "trace",
+                "zenmode"
+            }
+            if
+                ((((target.ability == source.ability) or target:getAbility().isPermanent) or
+                    (target.ability == "truant")) or
+                    source:getAbility().isPermanent) or
+                    additionalBannedSourceAbilities:includes(source.ability)
+             then
                 return false
             end
         end,
         onHit = function(self, target, source)
             local oldAbility = target:setAbility(source.ability)
             if oldAbility then
-                self:add(
-                    "-ability",
-                    target,
-                    target:getAbility().name,
-                    "[from] move: Entrainment"
-                )
+                self:add("-ability", target, target:getAbility().name, "[from] move: Entrainment")
                 if not target:isAlly(source) then
                     target.volatileStaleness = "external"
                 end
@@ -2487,7 +4520,20 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Beautiful"
     },
-    eternabeam = {num = 795, accuracy = 90, basePower = 160, category = "Special", name = "Eternabeam", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Dragon"},
+    eternabeam = {
+        num = 795,
+        accuracy = 90,
+        basePower = 160,
+        category = "Special",
+        name = "Eternabeam",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon"
+    },
     expandingforce = {
         num = 797,
         accuracy = 100,
@@ -2512,10 +4558,66 @@ ____exports.Moves = {
         target = "normal",
         type = "Psychic"
     },
-    explosion = {num = 153, accuracy = 100, basePower = 250, category = "Physical", name = "Explosion", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, selfdestruct = "always", secondary = nil, target = "allAdjacent", type = "Normal", contestType = "Beautiful"},
-    extrasensory = {num = 326, accuracy = 100, basePower = 80, category = "Special", name = "Extrasensory", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "flinch"}, target = "normal", type = "Psychic", contestType = "Cool"},
-    extremeevoboost = {num = 702, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Extreme Evoboost", pp = 1, priority = 0, flags = {}, isZ = "eeviumz", boosts = {atk = 2, def = 2, spa = 2, spd = 2, spe = 2}, secondary = nil, target = "self", type = "Normal", contestType = "Beautiful"},
-    extremespeed = {num = 245, accuracy = 100, basePower = 80, category = "Physical", name = "Extreme Speed", pp = 5, priority = 2, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
+    explosion = {
+        num = 153,
+        accuracy = 100,
+        basePower = 250,
+        category = "Physical",
+        name = "Explosion",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        selfdestruct = "always",
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Normal",
+        contestType = "Beautiful"
+    },
+    extrasensory = {
+        num = 326,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Extrasensory",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cool"
+    },
+    extremeevoboost = {
+        num = 702,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Extreme Evoboost",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "eeviumz",
+        boosts = {atk = 2, def = 2, spa = 2, spd = 2, spe = 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        contestType = "Beautiful"
+    },
+    extremespeed = {
+        num = 245,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Extreme Speed",
+        pp = 5,
+        priority = 2,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     facade = {
         num = 263,
         accuracy = 100,
@@ -2560,7 +4662,20 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Clever"
     },
-    fairywind = {num = 584, accuracy = 100, basePower = 40, category = "Special", name = "Fairy Wind", pp = 30, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fairy", contestType = "Beautiful"},
+    fairywind = {
+        num = 584,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Fairy Wind",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Beautiful"
+    },
     fakeout = {
         num = 252,
         accuracy = 100,
@@ -2581,8 +4696,35 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cute"
     },
-    faketears = {num = 313, accuracy = 100, basePower = 0, category = "Status", name = "Fake Tears", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, boosts = {spd = -2}, secondary = nil, target = "normal", type = "Dark", zMove = {boost = {spa = 1}}, contestType = "Cute"},
-    falsesurrender = {num = 793, accuracy = true, basePower = 80, category = "Physical", name = "False Surrender", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dark"},
+    faketears = {
+        num = 313,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Fake Tears",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        boosts = {spd = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        zMove = {boost = {spa = 1}},
+        contestType = "Cute"
+    },
+    falsesurrender = {
+        num = 793,
+        accuracy = true,
+        basePower = 80,
+        category = "Physical",
+        name = "False Surrender",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dark"
+    },
     falseswipe = {
         num = 206,
         accuracy = 100,
@@ -2603,9 +4745,52 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    featherdance = {num = 297, accuracy = 100, basePower = 0, category = "Status", name = "Feather Dance", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1, dance = 1}, boosts = {atk = -2}, secondary = nil, target = "normal", type = "Flying", zMove = {boost = {def = 1}}, contestType = "Beautiful"},
-    feint = {num = 364, accuracy = 100, basePower = 30, category = "Physical", name = "Feint", pp = 10, priority = 2, flags = {mirror = 1}, breaksProtect = true, secondary = nil, target = "normal", type = "Normal", contestType = "Clever"},
-    feintattack = {num = 185, accuracy = true, basePower = 60, category = "Physical", isNonstandard = "Past", name = "Feint Attack", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dark", contestType = "Clever"},
+    featherdance = {
+        num = 297,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Feather Dance",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1, dance = 1},
+        boosts = {atk = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Flying",
+        zMove = {boost = {def = 1}},
+        contestType = "Beautiful"
+    },
+    feint = {
+        num = 364,
+        accuracy = 100,
+        basePower = 30,
+        category = "Physical",
+        name = "Feint",
+        pp = 10,
+        priority = 2,
+        flags = {mirror = 1},
+        breaksProtect = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Clever"
+    },
+    feintattack = {
+        num = 185,
+        accuracy = true,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Feint Attack",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Clever"
+    },
     fellstinger = {
         num = 565,
         accuracy = 100,
@@ -2625,8 +4810,33 @@ ____exports.Moves = {
         type = "Bug",
         contestType = "Cool"
     },
-    fierydance = {num = 552, accuracy = 100, basePower = 80, category = "Special", name = "Fiery Dance", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, dance = 1}, secondary = {chance = 50, self = {boosts = {spa = 1}}}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    fierywrath = {num = 822, accuracy = 100, basePower = 90, category = "Special", name = "Fiery Wrath", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "allAdjacentFoes", type = "Dark"},
+    fierydance = {
+        num = 552,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Fiery Dance",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, dance = 1},
+        secondary = {chance = 50, self = {boosts = {spa = 1}}},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    fierywrath = {
+        num = 822,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Fiery Wrath",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "allAdjacentFoes",
+        type = "Dark"
+    },
     finalgambit = {
         num = 515,
         accuracy = 100,
@@ -2648,9 +4858,48 @@ ____exports.Moves = {
         zMove = {basePower = 180},
         contestType = "Tough"
     },
-    fireblast = {num = 126, accuracy = 85, basePower = 110, category = "Special", name = "Fire Blast", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    firefang = {num = 424, accuracy = 95, basePower = 65, category = "Physical", name = "Fire Fang", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondaries = {{chance = 10, status = "brn"}, {chance = 10, volatileStatus = "flinch"}}, target = "normal", type = "Fire", contestType = "Cool"},
-    firelash = {num = 680, accuracy = 100, basePower = 80, category = "Physical", name = "Fire Lash", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {def = -1}}, target = "normal", type = "Fire", contestType = "Cute"},
+    fireblast = {
+        num = 126,
+        accuracy = 85,
+        basePower = 110,
+        category = "Special",
+        name = "Fire Blast",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    firefang = {
+        num = 424,
+        accuracy = 95,
+        basePower = 65,
+        category = "Physical",
+        name = "Fire Fang",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondaries = {{chance = 10, status = "brn"}, {chance = 10, volatileStatus = "flinch"}},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cool"
+    },
+    firelash = {
+        num = 680,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Fire Lash",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {def = -1}},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cute"
+    },
     firepledge = {
         num = 519,
         accuracy = 100,
@@ -2670,7 +4919,11 @@ ____exports.Moves = {
         onPrepareHit = function(self, target, source, move)
             for ____, action in ipairs(self.queue.list) do
                 do
-                    if ((((not action.move) or (not action.pokemon.isActive)) or action.pokemon.fainted) or action.maxMove) or action.zmove then
+                    if
+                        ((((not action.move) or (not action.pokemon.isActive)) or action.pokemon.fainted) or
+                            action.maxMove) or
+                            action.zmove
+                     then
                         goto __continue365
                     end
                     if action.pokemon:isAlly(source) and ({"grasspledge", "waterpledge"}):includes(action.move.id) then
@@ -2717,8 +4970,35 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Beautiful"
     },
-    firepunch = {num = 7, accuracy = 100, basePower = 75, category = "Physical", name = "Fire Punch", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Tough"},
-    firespin = {num = 83, accuracy = 85, basePower = 35, category = "Special", name = "Fire Spin", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Fire", contestType = "Beautiful"},
+    firepunch = {
+        num = 7,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Fire Punch",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Tough"
+    },
+    firespin = {
+        num = 83,
+        accuracy = 85,
+        basePower = 35,
+        category = "Special",
+        name = "Fire Spin",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
     firstimpression = {
         num = 660,
         accuracy = 100,
@@ -2760,7 +5040,23 @@ ____exports.Moves = {
         target = "normal",
         type = "Water"
     },
-    fissure = {num = 90, accuracy = 30, basePower = 0, category = "Physical", name = "Fissure", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, ohko = true, secondary = nil, target = "normal", type = "Ground", zMove = {basePower = 180}, maxMove = {basePower = 130}, contestType = "Tough"},
+    fissure = {
+        num = 90,
+        accuracy = 30,
+        basePower = 0,
+        category = "Physical",
+        name = "Fissure",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        ohko = true,
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 130},
+        contestType = "Tough"
+    },
     flail = {
         num = 175,
         accuracy = 100,
@@ -2807,27 +5103,13 @@ ____exports.Moves = {
         priority = 0,
         flags = {protect = 1, mirror = 1},
         onHit = function(self, target, source, move)
-            for ____, ally in __TS__Iterator(
-                target:adjacentAllies()
-            ) do
-                self:damage(
-                    ally.baseMaxhp / 16,
-                    ally,
-                    source,
-                    self.dex.conditions:get("Flame Burst")
-                )
+            for ____, ally in __TS__Iterator(target:adjacentAllies()) do
+                self:damage(ally.baseMaxhp / 16, ally, source, self.dex.conditions:get("Flame Burst"))
             end
         end,
         onAfterSubDamage = function(self, damage, target, source, move)
-            for ____, ally in __TS__Iterator(
-                target:adjacentAllies()
-            ) do
-                self:damage(
-                    ally.baseMaxhp / 16,
-                    ally,
-                    source,
-                    self.dex.conditions:get("Flame Burst")
-                )
+            for ____, ally in __TS__Iterator(target:adjacentAllies()) do
+                self:damage(ally.baseMaxhp / 16, ally, source, self.dex.conditions:get("Flame Burst"))
             end
         end,
         secondary = nil,
@@ -2835,14 +5117,126 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Beautiful"
     },
-    flamecharge = {num = 488, accuracy = 100, basePower = 50, category = "Physical", name = "Flame Charge", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, self = {boosts = {spe = 1}}}, target = "normal", type = "Fire", contestType = "Cool"},
-    flamewheel = {num = 172, accuracy = 100, basePower = 60, category = "Physical", name = "Flame Wheel", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, defrost = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    flamethrower = {num = 53, accuracy = 100, basePower = 90, category = "Special", name = "Flamethrower", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    flareblitz = {num = 394, accuracy = 100, basePower = 120, category = "Physical", name = "Flare Blitz", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, defrost = 1}, recoil = {33, 100}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire", contestType = "Cool"},
-    flash = {num = 148, accuracy = 100, basePower = 0, category = "Status", isNonstandard = "Past", name = "Flash", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {accuracy = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {evasion = 1}}, contestType = "Beautiful"},
-    flashcannon = {num = 430, accuracy = 100, basePower = 80, category = "Special", name = "Flash Cannon", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Steel", contestType = "Beautiful"},
-    flatter = {num = 260, accuracy = 100, basePower = 0, category = "Status", name = "Flatter", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, volatileStatus = "confusion", boosts = {spa = 1}, secondary = nil, target = "normal", type = "Dark", zMove = {boost = {spd = 1}}, contestType = "Clever"},
-    fleurcannon = {num = 705, accuracy = 90, basePower = 130, category = "Special", name = "Fleur Cannon", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {boosts = {spa = -2}}, secondary = nil, target = "normal", type = "Fairy", contestType = "Beautiful"},
+    flamecharge = {
+        num = 488,
+        accuracy = 100,
+        basePower = 50,
+        category = "Physical",
+        name = "Flame Charge",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, self = {boosts = {spe = 1}}},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cool"
+    },
+    flamewheel = {
+        num = 172,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Flame Wheel",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, defrost = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    flamethrower = {
+        num = 53,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Flamethrower",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    flareblitz = {
+        num = 394,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Flare Blitz",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, defrost = 1},
+        recoil = {33, 100},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Cool"
+    },
+    flash = {
+        num = 148,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Flash",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {accuracy = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {evasion = 1}},
+        contestType = "Beautiful"
+    },
+    flashcannon = {
+        num = 430,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Flash Cannon",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Beautiful"
+    },
+    flatter = {
+        num = 260,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Flatter",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        volatileStatus = "confusion",
+        boosts = {spa = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        zMove = {boost = {spd = 1}},
+        contestType = "Clever"
+    },
+    fleurcannon = {
+        num = 705,
+        accuracy = 90,
+        basePower = 130,
+        category = "Special",
+        name = "Fleur Cannon",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {boosts = {spa = -2}},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Beautiful"
+    },
     fling = {
         num = 374,
         accuracy = 100,
@@ -2906,8 +5300,35 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Cute"
     },
-    flipturn = {num = 812, accuracy = 100, basePower = 60, category = "Physical", name = "Flip Turn", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, selfSwitch = true, secondary = nil, target = "normal", type = "Water"},
-    floatyfall = {num = 731, accuracy = 95, basePower = 90, category = "Physical", isNonstandard = "LGPE", name = "Floaty Fall", pp = 15, priority = 0, flags = {contact = 1, protect = 1, gravity = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Flying", contestType = "Cool"},
+    flipturn = {
+        num = 812,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Flip Turn",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        selfSwitch = true,
+        secondary = nil,
+        target = "normal",
+        type = "Water"
+    },
+    floatyfall = {
+        num = 731,
+        accuracy = 95,
+        basePower = 90,
+        category = "Physical",
+        isNonstandard = "LGPE",
+        name = "Floaty Fall",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, gravity = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Flying",
+        contestType = "Cool"
+    },
     floralhealing = {
         num = 666,
         accuracy = true,
@@ -2920,13 +5341,9 @@ ____exports.Moves = {
         onHit = function(self, target, source)
             local success = false
             if self.field:isTerrain("grassyterrain") then
-                success = not (not self:heal(
-                    self:modify(target.baseMaxhp, 0.667)
-                ))
+                success = not (not self:heal(self:modify(target.baseMaxhp, 0.667)))
             else
-                success = not (not self:heal(
-                    math.ceil(target.baseMaxhp * 0.5)
-                ))
+                success = not (not self:heal(math.ceil(target.baseMaxhp * 0.5)))
             end
             if success and (not target:isAlly(source)) then
                 target.staleness = "external"
@@ -2950,10 +5367,11 @@ ____exports.Moves = {
         flags = {distance = 1},
         onHitField = function(self, t, source, move)
             local targets = {}
-            for ____, pokemon in __TS__Iterator(
-                self:getAllActive()
-            ) do
-                if pokemon:hasType("Grass") and ((not pokemon.volatiles.maxguard) or self:runEvent("TryHit", pokemon, source, move)) then
+            for ____, pokemon in __TS__Iterator(self:getAllActive()) do
+                if
+                    pokemon:hasType("Grass") and
+                        ((not pokemon.volatiles.maxguard) or self:runEvent("TryHit", pokemon, source, move))
+                 then
                     __TS__ArrayPush(targets, pokemon)
                 end
             end
@@ -2992,7 +5410,11 @@ ____exports.Moves = {
         condition = {
             duration = 2,
             onInvulnerability = function(self, target, source, move)
-                if ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(move.id) then
+                if
+                    ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(
+                        move.id
+                    )
+                 then
                     return
                 end
                 return false
@@ -3026,7 +5448,20 @@ ____exports.Moves = {
         zMove = {basePower = 170},
         contestType = "Tough"
     },
-    focusblast = {num = 411, accuracy = 70, basePower = 120, category = "Special", name = "Focus Blast", pp = 5, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Fighting", contestType = "Cool"},
+    focusblast = {
+        num = 411,
+        accuracy = 70,
+        basePower = 120,
+        category = "Special",
+        name = "Focus Blast",
+        pp = 5,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     focusenergy = {
         num = 116,
         accuracy = true,
@@ -3120,7 +5555,10 @@ ____exports.Moves = {
             end,
             onFoeRedirectTargetPriority = 1,
             onFoeRedirectTarget = function(self, target, source, source2, move)
-                if (not self.effectState.target:isSkyDropped()) and self:validTarget(self.effectState.target, source, move.target) then
+                if
+                    (not self.effectState.target:isSkyDropped()) and
+                        self:validTarget(self.effectState.target, source, move.target)
+                 then
                     if move.smartTarget then
                         move.smartTarget = false
                     end
@@ -3135,7 +5573,20 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Cute"
     },
-    forcepalm = {num = 395, accuracy = 100, basePower = 60, category = "Physical", name = "Force Palm", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "par"}, target = "normal", type = "Fighting", contestType = "Cool"},
+    forcepalm = {
+        num = 395,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Force Palm",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     foresight = {
         num = 193,
         accuracy = true,
@@ -3198,7 +5649,21 @@ ____exports.Moves = {
         zMove = {boost = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}},
         contestType = "Clever"
     },
-    foulplay = {num = 492, accuracy = 100, basePower = 95, category = "Physical", name = "Foul Play", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, useTargetOffensive = true, secondary = nil, target = "normal", type = "Dark", contestType = "Clever"},
+    foulplay = {
+        num = 492,
+        accuracy = 100,
+        basePower = 95,
+        category = "Physical",
+        name = "Foul Play",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        useTargetOffensive = true,
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Clever"
+    },
     freezedry = {
         num = 573,
         accuracy = 100,
@@ -3243,7 +5708,19 @@ ____exports.Moves = {
         type = "Ice",
         contestType = "Beautiful"
     },
-    freezingglare = {num = 821, accuracy = 100, basePower = 90, category = "Special", name = "Freezing Glare", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "frz"}, target = "normal", type = "Psychic"},
+    freezingglare = {
+        num = 821,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Freezing Glare",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "frz"},
+        target = "normal",
+        type = "Psychic"
+    },
     freezyfrost = {
         num = 739,
         accuracy = 90,
@@ -3256,9 +5733,7 @@ ____exports.Moves = {
         flags = {protect = 1},
         onHit = function(self)
             self:add("-clearallboost")
-            for ____, pokemon in __TS__Iterator(
-                self:getAllActive()
-            ) do
+            for ____, pokemon in __TS__Iterator(self:getAllActive()) do
                 pokemon:clearBoosts()
             end
         end,
@@ -3267,8 +5742,36 @@ ____exports.Moves = {
         type = "Ice",
         contestType = "Clever"
     },
-    frenzyplant = {num = 338, accuracy = 90, basePower = 150, category = "Special", name = "Frenzy Plant", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1, nonsky = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Grass", contestType = "Cool"},
-    frostbreath = {num = 524, accuracy = 90, basePower = 60, category = "Special", name = "Frost Breath", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, willCrit = true, secondary = nil, target = "normal", type = "Ice", contestType = "Beautiful"},
+    frenzyplant = {
+        num = 338,
+        accuracy = 90,
+        basePower = 150,
+        category = "Special",
+        name = "Frenzy Plant",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1, nonsky = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    frostbreath = {
+        num = 524,
+        accuracy = 90,
+        basePower = 60,
+        category = "Special",
+        name = "Frost Breath",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        willCrit = true,
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
     frustration = {
         num = 218,
         accuracy = 100,
@@ -3289,7 +5792,21 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Cute"
     },
-    furyattack = {num = 31, accuracy = 85, basePower = 15, category = "Physical", name = "Fury Attack", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
+    furyattack = {
+        num = 31,
+        accuracy = 85,
+        basePower = 15,
+        category = "Physical",
+        name = "Fury Attack",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     furycutter = {
         num = 210,
         accuracy = 95,
@@ -3323,7 +5840,22 @@ ____exports.Moves = {
         type = "Bug",
         contestType = "Cool"
     },
-    furyswipes = {num = 154, accuracy = 80, basePower = 18, category = "Physical", name = "Fury Swipes", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", maxMove = {basePower = 100}, contestType = "Tough"},
+    furyswipes = {
+        num = 154,
+        accuracy = 80,
+        basePower = 18,
+        category = "Physical",
+        name = "Fury Swipes",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        maxMove = {basePower = 100},
+        contestType = "Tough"
+    },
     fusionbolt = {
         num = 559,
         accuracy = 100,
@@ -3379,7 +5911,27 @@ ____exports.Moves = {
             if not target.side:addSlotCondition(target, "futuremove") then
                 return false
             end
-            __TS__ObjectAssign(target.side.slotConditions[target.position].futuremove, {duration = 3, move = "futuresight", source = source, moveData = {id = "futuresight", name = "Future Sight", accuracy = 100, basePower = 120, category = "Special", priority = 0, flags = {}, ignoreImmunity = false, effectType = "Move", isFutureMove = true, type = "Psychic"}})
+            __TS__ObjectAssign(
+                target.side.slotConditions[target.position].futuremove,
+                {
+                    duration = 3,
+                    move = "futuresight",
+                    source = source,
+                    moveData = {
+                        id = "futuresight",
+                        name = "Future Sight",
+                        accuracy = 100,
+                        basePower = 120,
+                        category = "Special",
+                        priority = 0,
+                        flags = {},
+                        ignoreImmunity = false,
+                        effectType = "Move",
+                        isFutureMove = true,
+                        type = "Psychic"
+                    }
+                }
+            )
             self:add("-start", source, "move: Future Sight")
             return self.NOT_FAIL
         end,
@@ -3406,14 +5958,7 @@ ____exports.Moves = {
         condition = {
             onStart = function(self, pokemon)
                 self:add("-endability", pokemon)
-                self:singleEvent(
-                    "End",
-                    pokemon:getAbility(),
-                    pokemon.abilityState,
-                    pokemon,
-                    pokemon,
-                    "gastroacid"
-                )
+                self:singleEvent("End", pokemon:getAbility(), pokemon.abilityState, pokemon, pokemon, "gastroacid")
             end,
             onCopy = function(self, pokemon)
                 if pokemon:getAbility().isPermanent then
@@ -3427,7 +5972,23 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Tough"
     },
-    geargrind = {num = 544, accuracy = 85, basePower = 50, category = "Physical", name = "Gear Grind", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = 2, secondary = nil, target = "normal", type = "Steel", zMove = {basePower = 180}, maxMove = {basePower = 130}, contestType = "Clever"},
+    geargrind = {
+        num = 544,
+        accuracy = 85,
+        basePower = 50,
+        category = "Physical",
+        name = "Gear Grind",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 130},
+        contestType = "Clever"
+    },
     gearup = {
         num = 674,
         accuracy = true,
@@ -3438,8 +5999,12 @@ ____exports.Moves = {
         priority = 0,
         flags = {snatch = 1, authentic = 1},
         onHitSide = function(self, side, source, move)
-            local targets = side:allies():filter(
-                function(____, target) return target:hasAbility({"plus", "minus"}) and ((not target.volatiles.maxguard) or self:runEvent("TryHit", target, source, move)) end
+            local targets =
+                side:allies():filter(
+                function(____, target)
+                    return target:hasAbility({"plus", "minus"}) and
+                        ((not target.volatiles.maxguard) or self:runEvent("TryHit", target, source, move))
+                end
             )
             if not targets.length then
                 return false
@@ -3506,13 +6071,111 @@ ____exports.Moves = {
         zMove = {boost = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}},
         contestType = "Beautiful"
     },
-    gigadrain = {num = 202, accuracy = 100, basePower = 75, category = "Special", name = "Giga Drain", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Grass", contestType = "Clever"},
-    gigaimpact = {num = 416, accuracy = 90, basePower = 150, category = "Physical", name = "Giga Impact", pp = 5, priority = 0, flags = {contact = 1, recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    gigavolthavoc = {num = 646, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Gigavolt Havoc", pp = 1, priority = 0, flags = {}, isZ = "electriumz", secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
-    glaciallance = {num = 824, accuracy = 100, basePower = 130, category = "Physical", name = "Glacial Lance", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "allAdjacentFoes", type = "Ice"},
-    glaciate = {num = 549, accuracy = 95, basePower = 65, category = "Special", name = "Glaciate", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "allAdjacentFoes", type = "Ice", contestType = "Beautiful"},
-    glare = {num = 137, accuracy = 100, basePower = 0, category = "Status", name = "Glare", pp = 30, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "par", secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spd = 1}}, contestType = "Tough"},
-    glitzyglow = {num = 736, accuracy = 95, basePower = 80, category = "Special", isNonstandard = "LGPE", name = "Glitzy Glow", pp = 15, priority = 0, flags = {protect = 1}, self = {sideCondition = "lightscreen"}, secondary = nil, target = "normal", type = "Psychic", contestType = "Clever"},
+    gigadrain = {
+        num = 202,
+        accuracy = 100,
+        basePower = 75,
+        category = "Special",
+        name = "Giga Drain",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Clever"
+    },
+    gigaimpact = {
+        num = 416,
+        accuracy = 90,
+        basePower = 150,
+        category = "Physical",
+        name = "Giga Impact",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    gigavolthavoc = {
+        num = 646,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Gigavolt Havoc",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "electriumz",
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    glaciallance = {
+        num = 824,
+        accuracy = 100,
+        basePower = 130,
+        category = "Physical",
+        name = "Glacial Lance",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Ice"
+    },
+    glaciate = {
+        num = 549,
+        accuracy = 95,
+        basePower = 65,
+        category = "Special",
+        name = "Glaciate",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "allAdjacentFoes",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
+    glare = {
+        num = 137,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Glare",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "par",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spd = 1}},
+        contestType = "Tough"
+    },
+    glitzyglow = {
+        num = 736,
+        accuracy = 95,
+        basePower = 80,
+        category = "Special",
+        isNonstandard = "LGPE",
+        name = "Glitzy Glow",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1},
+        self = {sideCondition = "lightscreen"},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
     gmaxbefuddle = {
         num = 1000,
         accuracy = true,
@@ -3526,9 +6189,7 @@ ____exports.Moves = {
         isMax = "Butterfree",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     local result = self:random(3)
                     if result == 0 then
                         pokemon:trySetStatus("slp", source)
@@ -3557,9 +6218,7 @@ ____exports.Moves = {
         isMax = "Blastoise",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("gmaxcannonade")
                 end
             end
@@ -3600,14 +6259,8 @@ ____exports.Moves = {
         isMax = "Centiskorch",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
-                    pokemon:addVolatile(
-                        "partiallytrapped",
-                        source,
-                        self.dex:getActiveMove("G-Max Centiferno")
-                    )
+                for ____, pokemon in __TS__Iterator(source:foes()) do
+                    pokemon:addVolatile("partiallytrapped", source, self.dex:getActiveMove("G-Max Centiferno"))
                 end
             end
         },
@@ -3629,9 +6282,7 @@ ____exports.Moves = {
         isMax = "Machamp",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     pokemon:addVolatile("gmaxchistrike")
                 end
             end
@@ -3676,9 +6327,7 @@ ____exports.Moves = {
         isMax = "Eevee",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:addVolatile("attract")
                 end
             end
@@ -3701,9 +6350,7 @@ ____exports.Moves = {
         isMax = "Duraludon",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     do
                         local move = pokemon.lastMove
                         if (not move) or move.isZ then
@@ -3726,7 +6373,23 @@ ____exports.Moves = {
         type = "Dragon",
         contestType = "Cool"
     },
-    gmaxdrumsolo = {num = 1000, accuracy = true, basePower = 160, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Drum Solo", pp = 5, priority = 0, flags = {}, isMax = "Rillaboom", ignoreAbility = true, secondary = nil, target = "adjacentFoe", type = "Grass", contestType = "Cool"},
+    gmaxdrumsolo = {
+        num = 1000,
+        accuracy = true,
+        basePower = 160,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Drum Solo",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Rillaboom",
+        ignoreAbility = true,
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Grass",
+        contestType = "Cool"
+    },
     gmaxfinale = {
         num = 1000,
         accuracy = true,
@@ -3740,9 +6403,7 @@ ____exports.Moves = {
         isMax = "Alcremie",
         self = {
             onHit = function(self, target, source, move)
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:heal(pokemon.maxhp / 6, pokemon, source, move)
                 end
             end
@@ -3752,7 +6413,23 @@ ____exports.Moves = {
         type = "Fairy",
         contestType = "Cool"
     },
-    gmaxfireball = {num = 1000, accuracy = true, basePower = 160, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Fireball", pp = 5, priority = 0, flags = {}, isMax = "Cinderace", ignoreAbility = true, secondary = nil, target = "adjacentFoe", type = "Fire", contestType = "Cool"},
+    gmaxfireball = {
+        num = 1000,
+        accuracy = true,
+        basePower = 160,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Fireball",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Cinderace",
+        ignoreAbility = true,
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Fire",
+        contestType = "Cool"
+    },
     gmaxfoamburst = {
         num = 1000,
         accuracy = true,
@@ -3766,9 +6443,7 @@ ____exports.Moves = {
         isMax = "Kingler",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({spe = -2}, pokemon)
                 end
             end
@@ -3791,9 +6466,7 @@ ____exports.Moves = {
         isMax = "Meowth",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:addVolatile("confusion")
                 end
             end
@@ -3803,8 +6476,39 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    gmaxgravitas = {num = 1000, accuracy = true, basePower = 10, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Gravitas", pp = 5, priority = 0, flags = {}, isMax = "Orbeetle", self = {pseudoWeather = "gravity"}, target = "adjacentFoe", type = "Psychic", contestType = "Cool"},
-    gmaxhydrosnipe = {num = 1000, accuracy = true, basePower = 160, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Hydrosnipe", pp = 5, priority = 0, flags = {}, isMax = "Inteleon", ignoreAbility = true, secondary = nil, target = "adjacentFoe", type = "Water", contestType = "Cool"},
+    gmaxgravitas = {
+        num = 1000,
+        accuracy = true,
+        basePower = 10,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Gravitas",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Orbeetle",
+        self = {pseudoWeather = "gravity"},
+        target = "adjacentFoe",
+        type = "Psychic",
+        contestType = "Cool"
+    },
+    gmaxhydrosnipe = {
+        num = 1000,
+        accuracy = true,
+        basePower = 160,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Hydrosnipe",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Inteleon",
+        ignoreAbility = true,
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Water",
+        contestType = "Cool"
+    },
     gmaxmalodor = {
         num = 1000,
         accuracy = true,
@@ -3818,9 +6522,7 @@ ____exports.Moves = {
         isMax = "Garbodor",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:trySetStatus("psn", source)
                 end
             end
@@ -3842,9 +6544,7 @@ ____exports.Moves = {
         isMax = "Melmetal",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     if not pokemon.volatiles.dynamax then
                         pokemon:addVolatile("torment")
                     end
@@ -3856,8 +6556,38 @@ ____exports.Moves = {
         type = "Steel",
         contestType = "Cool"
     },
-    gmaxoneblow = {num = 1000, accuracy = true, basePower = 10, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max One Blow", pp = 5, priority = 0, flags = {}, isMax = "Urshifu", secondary = nil, target = "adjacentFoe", type = "Dark", contestType = "Cool"},
-    gmaxrapidflow = {num = 1000, accuracy = true, basePower = 10, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Rapid Flow", pp = 5, priority = 0, flags = {}, isMax = "Urshifu-Rapid-Strike", secondary = nil, target = "adjacentFoe", type = "Water", contestType = "Cool"},
+    gmaxoneblow = {
+        num = 1000,
+        accuracy = true,
+        basePower = 10,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max One Blow",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Urshifu",
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Dark",
+        contestType = "Cool"
+    },
+    gmaxrapidflow = {
+        num = 1000,
+        accuracy = true,
+        basePower = 10,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Rapid Flow",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Urshifu-Rapid-Strike",
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Water",
+        contestType = "Cool"
+    },
     gmaxreplenish = {
         num = 1000,
         accuracy = true,
@@ -3874,9 +6604,7 @@ ____exports.Moves = {
                 if self:random(2) == 0 then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     do
                         if pokemon.item then
                             goto __continue523
@@ -3884,12 +6612,7 @@ ____exports.Moves = {
                         if pokemon.lastItem and self.dex.items:get(pokemon.lastItem).isBerry then
                             local item = pokemon.lastItem
                             pokemon.lastItem = ""
-                            self:add(
-                                "-item",
-                                pokemon,
-                                self.dex.items:get(item),
-                                "[from] move: G-Max Replenish"
-                            )
+                            self:add("-item", pokemon, self.dex.items:get(item), "[from] move: G-Max Replenish")
                             pokemon:setItem(item)
                         end
                     end
@@ -3902,7 +6625,23 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    gmaxresonance = {num = 1000, accuracy = true, basePower = 10, category = "Physical", isNonstandard = "Gigantamax", name = "G-Max Resonance", pp = 5, priority = 0, flags = {}, isMax = "Lapras", self = {sideCondition = "auroraveil"}, secondary = nil, target = "adjacentFoe", type = "Ice", contestType = "Cool"},
+    gmaxresonance = {
+        num = 1000,
+        accuracy = true,
+        basePower = 10,
+        category = "Physical",
+        isNonstandard = "Gigantamax",
+        name = "G-Max Resonance",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        isMax = "Lapras",
+        self = {sideCondition = "auroraveil"},
+        secondary = nil,
+        target = "adjacentFoe",
+        type = "Ice",
+        contestType = "Cool"
+    },
     gmaxsandblast = {
         num = 1000,
         accuracy = true,
@@ -3916,14 +6655,8 @@ ____exports.Moves = {
         isMax = "Sandaconda",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
-                    pokemon:addVolatile(
-                        "partiallytrapped",
-                        source,
-                        self.dex:getActiveMove("G-Max Sandblast")
-                    )
+                for ____, pokemon in __TS__Iterator(source:foes()) do
+                    pokemon:addVolatile("partiallytrapped", source, self.dex:getActiveMove("G-Max Sandblast"))
                 end
             end
         },
@@ -3945,9 +6678,7 @@ ____exports.Moves = {
         isMax = "Hatterene",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:addVolatile("confusion", source)
                 end
             end
@@ -4004,9 +6735,7 @@ ____exports.Moves = {
         isMax = "Copperajah",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("gmaxsteelsurge")
                 end
             end
@@ -4021,14 +6750,8 @@ ____exports.Moves = {
                 end
                 local steelHazard = self.dex:getActiveMove("Stealth Rock")
                 steelHazard.type = "Steel"
-                local typeMod = self:clampIntRange(
-                    pokemon:runEffectiveness(steelHazard),
-                    -6,
-                    6
-                )
-                self:damage(
-                    (pokemon.maxhp * math.pow(2, typeMod)) / 8
-                )
+                local typeMod = self:clampIntRange(pokemon:runEffectiveness(steelHazard), -6, 6)
+                self:damage((pokemon.maxhp * math.pow(2, typeMod)) / 8)
             end
         },
         secondary = nil,
@@ -4049,9 +6772,7 @@ ____exports.Moves = {
         isMax = "Drednaw",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("stealthrock")
                 end
             end
@@ -4074,9 +6795,7 @@ ____exports.Moves = {
         isMax = "Toxtricity",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     local result = self:random(2)
                     if result == 0 then
                         pokemon:trySetStatus("par", source)
@@ -4127,9 +6846,7 @@ ____exports.Moves = {
         isMax = "Flapple",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({evasion = -1}, pokemon)
                 end
             end
@@ -4152,9 +6869,7 @@ ____exports.Moves = {
         isMax = "Gengar",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:addVolatile("trapped", source, nil, "trapper")
                 end
             end
@@ -4177,9 +6892,7 @@ ____exports.Moves = {
         isMax = "Venusaur",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("gmaxvinelash")
                 end
             end
@@ -4220,9 +6933,7 @@ ____exports.Moves = {
         isMax = "Coalossal",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("gmaxvolcalith")
                 end
             end
@@ -4263,9 +6974,7 @@ ____exports.Moves = {
         isMax = "Pikachu",
         self = {
             onHit = function(self, source)
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     pokemon:trySetStatus("par", source)
                 end
             end
@@ -4288,9 +6997,7 @@ ____exports.Moves = {
         isMax = "Charizard",
         self = {
             onHit = function(self, source)
-                for ____, side in __TS__Iterator(
-                    source.side:foeSidesWithConditions()
-                ) do
+                for ____, side in __TS__Iterator(source.side:foeSidesWithConditions()) do
                     side:addSideCondition("gmaxwildfire")
                 end
             end
@@ -4332,7 +7039,17 @@ ____exports.Moves = {
         self = {
             onHit = function(self, source)
                 local success = false
-                local removeTarget = {"reflect", "lightscreen", "auroraveil", "safeguard", "mist", "spikes", "toxicspikes", "stealthrock", "stickyweb"}
+                local removeTarget = {
+                    "reflect",
+                    "lightscreen",
+                    "auroraveil",
+                    "safeguard",
+                    "mist",
+                    "spikes",
+                    "toxicspikes",
+                    "stealthrock",
+                    "stickyweb"
+                }
                 local removeAll = {"spikes", "toxicspikes", "stealthrock", "stickyweb", "gmaxsteelsurge"}
                 for ____, targetCondition in ipairs(removeTarget) do
                     do
@@ -4440,7 +7157,11 @@ ____exports.Moves = {
         onPrepareHit = function(self, target, source, move)
             for ____, action in ipairs(self.queue.list) do
                 do
-                    if ((((not action.move) or (not action.pokemon.isActive)) or action.pokemon.fainted) or action.maxMove) or action.zmove then
+                    if
+                        ((((not action.move) or (not action.pokemon.isActive)) or action.pokemon.fainted) or
+                            action.maxMove) or
+                            action.zmove
+                     then
                         goto __continue590
                     end
                     if action.pokemon:isAlly(source) and ({"waterpledge", "firepledge"}):includes(action.move.id) then
@@ -4483,7 +7204,23 @@ ____exports.Moves = {
         type = "Grass",
         contestType = "Beautiful"
     },
-    grasswhistle = {num = 320, accuracy = 55, basePower = 0, category = "Status", isNonstandard = "Past", name = "Grass Whistle", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1}, status = "slp", secondary = nil, target = "normal", type = "Grass", zMove = {boost = {spe = 1}}, contestType = "Clever"},
+    grasswhistle = {
+        num = 320,
+        accuracy = 55,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Grass Whistle",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {boost = {spe = 1}},
+        contestType = "Clever"
+    },
     grassyglide = {
         num = 803,
         accuracy = 100,
@@ -4605,9 +7342,7 @@ ____exports.Moves = {
             end,
             onFieldStart = function(self)
                 self:add("-fieldstart", "move: Gravity")
-                for ____, pokemon in __TS__Iterator(
-                    self:getAllActive()
-                ) do
+                for ____, pokemon in __TS__Iterator(self:getAllActive()) do
                     local applies = false
                     if pokemon:removeVolatile("bounce") or pokemon:removeVolatile("fly") then
                         applies = true
@@ -4674,7 +7409,22 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Clever"
     },
-    growl = {num = 45, accuracy = 100, basePower = 0, category = "Status", name = "Growl", pp = 40, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1}, boosts = {atk = -1}, secondary = nil, target = "allAdjacentFoes", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Cute"},
+    growl = {
+        num = 45,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Growl",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        boosts = {atk = -1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
     growth = {
         num = 74,
         accuracy = true,
@@ -4685,9 +7435,7 @@ ____exports.Moves = {
         priority = 0,
         flags = {snatch = 1},
         onModifyMove = function(self, move, pokemon)
-            if ({"sunnyday", "desolateland"}):includes(
-                pokemon:effectiveWeather()
-            ) then
+            if ({"sunnyday", "desolateland"}):includes(pokemon:effectiveWeather()) then
                 move.boosts = {atk = 2, spa = 2}
             end
         end,
@@ -4746,15 +7494,14 @@ ____exports.Moves = {
         accuracy = true,
         basePower = 0,
         damageCallback = function(self, pokemon, target)
-            local hp75 = math.floor(
-                (target:getUndynamaxedHP() * 3) / 4
-            )
-            if (((target.volatiles.protect or target.volatiles.banefulbunker) or target.volatiles.kingsshield) or target.volatiles.spikyshield) or target.side:getSideCondition("matblock") then
+            local hp75 = math.floor((target:getUndynamaxedHP() * 3) / 4)
+            if
+                (((target.volatiles.protect or target.volatiles.banefulbunker) or target.volatiles.kingsshield) or
+                    target.volatiles.spikyshield) or
+                    target.side:getSideCondition("matblock")
+             then
                 self:add("-zbroken", target)
-                return self:clampIntRange(
-                    math.ceil((hp75 / 4) - 0.5),
-                    1
-                )
+                return self:clampIntRange(math.ceil((hp75 / 4) - 0.5), 1)
             end
             return self:clampIntRange(hp75, 1)
         end,
@@ -4786,12 +7533,7 @@ ____exports.Moves = {
             local newspd = math.floor((target.storedStats.spd + source.storedStats.spd) / 2)
             target.storedStats.spd = newspd
             source.storedStats.spd = newspd
-            self:add(
-                "-activate",
-                source,
-                "move: Guard Split",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Guard Split", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
@@ -4826,28 +7568,64 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Clever"
     },
-    guillotine = {num = 12, accuracy = 30, basePower = 0, category = "Physical", name = "Guillotine", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ohko = true, secondary = nil, target = "normal", type = "Normal", zMove = {basePower = 180}, maxMove = {basePower = 130}, contestType = "Cool"},
-    gunkshot = {num = 441, accuracy = 80, basePower = 120, category = "Physical", name = "Gunk Shot", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "psn"}, target = "normal", type = "Poison", contestType = "Tough"},
-    gust = {num = 16, accuracy = 100, basePower = 40, category = "Special", name = "Gust", pp = 35, priority = 0, flags = {protect = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Flying", contestType = "Clever"},
+    guillotine = {
+        num = 12,
+        accuracy = 30,
+        basePower = 0,
+        category = "Physical",
+        name = "Guillotine",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ohko = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 130},
+        contestType = "Cool"
+    },
+    gunkshot = {
+        num = 441,
+        accuracy = 80,
+        basePower = 120,
+        category = "Physical",
+        name = "Gunk Shot",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
+    gust = {
+        num = 16,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Gust",
+        pp = 35,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Clever"
+    },
     gyroball = {
         num = 360,
         accuracy = 100,
         basePower = 0,
         basePowerCallback = function(self, pokemon, target)
-            local power = math.floor(
-                (25 * target:getStat("spe")) / pokemon:getStat("spe")
-            ) + 1
-            if not __TS__NumberIsFinite(
-                __TS__Number(power)
-            ) then
+            local power = math.floor((25 * target:getStat("spe")) / pokemon:getStat("spe")) + 1
+            if not __TS__NumberIsFinite(__TS__Number(power)) then
                 power = 1
             end
             if power > 150 then
                 power = 150
             end
-            self:debug(
-                tostring(power) .. " bp"
-            )
+            self:debug(tostring(power) .. " bp")
             return power
         end,
         category = "Physical",
@@ -4862,8 +7640,37 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Cool"
     },
-    hail = {num = 258, accuracy = true, basePower = 0, category = "Status", name = "Hail", pp = 10, priority = 0, flags = {}, weather = "hail", secondary = nil, target = "all", type = "Ice", zMove = {boost = {spe = 1}}, contestType = "Beautiful"},
-    hammerarm = {num = 359, accuracy = 90, basePower = 100, category = "Physical", name = "Hammer Arm", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, self = {boosts = {spe = -1}}, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
+    hail = {
+        num = 258,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Hail",
+        pp = 10,
+        priority = 0,
+        flags = {},
+        weather = "hail",
+        secondary = nil,
+        target = "all",
+        type = "Ice",
+        zMove = {boost = {spe = 1}},
+        contestType = "Beautiful"
+    },
+    hammerarm = {
+        num = 359,
+        accuracy = 90,
+        basePower = 100,
+        category = "Physical",
+        name = "Hammer Arm",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        self = {boosts = {spe = -1}},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
     happyhour = {
         num = 603,
         accuracy = true,
@@ -4882,7 +7689,22 @@ ____exports.Moves = {
         zMove = {boost = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}},
         contestType = "Cute"
     },
-    harden = {num = 106, accuracy = true, basePower = 0, category = "Status", name = "Harden", pp = 30, priority = 0, flags = {snatch = 1}, boosts = {def = 1}, secondary = nil, target = "self", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Tough"},
+    harden = {
+        num = 106,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Harden",
+        pp = 30,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 1},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Tough"
+    },
     haze = {
         num = 114,
         accuracy = true,
@@ -4894,9 +7716,7 @@ ____exports.Moves = {
         flags = {authentic = 1},
         onHitField = function(self)
             self:add("-clearallboost")
-            for ____, pokemon in __TS__Iterator(
-                self:getAllActive()
-            ) do
+            for ____, pokemon in __TS__Iterator(self:getAllActive()) do
                 pokemon:clearBoosts()
             end
         end,
@@ -4906,9 +7726,50 @@ ____exports.Moves = {
         zMove = {effect = "heal"},
         contestType = "Beautiful"
     },
-    headbutt = {num = 29, accuracy = 100, basePower = 70, category = "Physical", name = "Headbutt", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Normal", contestType = "Tough"},
-    headcharge = {num = 543, accuracy = 100, basePower = 120, category = "Physical", name = "Head Charge", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {1, 4}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    headsmash = {num = 457, accuracy = 80, basePower = 150, category = "Physical", name = "Head Smash", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {1, 2}, secondary = nil, target = "normal", type = "Rock", contestType = "Tough"},
+    headbutt = {
+        num = 29,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Headbutt",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    headcharge = {
+        num = 543,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Head Charge",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {1, 4},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    headsmash = {
+        num = 457,
+        accuracy = 80,
+        basePower = 150,
+        category = "Physical",
+        name = "Head Smash",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Tough"
+    },
     healbell = {
         num = 215,
         accuracy = true,
@@ -5039,7 +7900,23 @@ ____exports.Moves = {
         type = "Psychic",
         contestType = "Beautiful"
     },
-    healorder = {num = 456, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Heal Order", pp = 10, priority = 0, flags = {snatch = 1, heal = 1}, heal = {1, 2}, secondary = nil, target = "self", type = "Bug", zMove = {effect = "clearnegativeboost"}, contestType = "Clever"},
+    healorder = {
+        num = 456,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Heal Order",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1},
+        heal = {1, 2},
+        secondary = nil,
+        target = "self",
+        type = "Bug",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Clever"
+    },
     healpulse = {
         num = 505,
         accuracy = true,
@@ -5052,13 +7929,9 @@ ____exports.Moves = {
         onHit = function(self, target, source)
             local success = false
             if source:hasAbility("megalauncher") then
-                success = not (not self:heal(
-                    self:modify(target.baseMaxhp, 0.75)
-                ))
+                success = not (not self:heal(self:modify(target.baseMaxhp, 0.75)))
             else
-                success = not (not self:heal(
-                    math.ceil(target.baseMaxhp * 0.5)
-                ))
+                success = not (not self:heal(math.ceil(target.baseMaxhp * 0.5)))
             end
             if success and (not target:isAlly(source)) then
                 target.staleness = "external"
@@ -5071,7 +7944,21 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Beautiful"
     },
-    heartstamp = {num = 531, accuracy = 100, basePower = 60, category = "Physical", isNonstandard = "Past", name = "Heart Stamp", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Psychic", contestType = "Cute"},
+    heartstamp = {
+        num = 531,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Heart Stamp",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cute"
+    },
     heartswap = {
         num = 391,
         accuracy = true,
@@ -5141,7 +8028,20 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Tough"
     },
-    heatwave = {num = 257, accuracy = 90, basePower = 95, category = "Special", name = "Heat Wave", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "brn"}, target = "allAdjacentFoes", type = "Fire", contestType = "Beautiful"},
+    heatwave = {
+        num = 257,
+        accuracy = 90,
+        basePower = 95,
+        category = "Special",
+        name = "Heat Wave",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "allAdjacentFoes",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
     heavyslam = {
         num = 484,
         accuracy = 100,
@@ -5201,28 +8101,16 @@ ____exports.Moves = {
             duration = 1,
             onStart = function(self, target, source)
                 self.effectState.multiplier = 1.5
-                self:add(
-                    "-singleturn",
-                    target,
-                    "Helping Hand",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-singleturn", target, "Helping Hand", "[of] " .. tostring(source))
             end,
             onRestart = function(self, target, source)
                 local ____obj, ____index = self.effectState, "multiplier"
                 ____obj[____index] = ____obj[____index] * 1.5
-                self:add(
-                    "-singleturn",
-                    target,
-                    "Helping Hand",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-singleturn", target, "Helping Hand", "[of] " .. tostring(source))
             end,
             onBasePowerPriority = 10,
             onBasePower = function(self, basePower)
-                self:debug(
-                    "Boosting from Helping Hand: " .. tostring(self.effectState.multiplier)
-                )
+                self:debug("Boosting from Helping Hand: " .. tostring(self.effectState.multiplier))
                 return self:chainModify(self.effectState.multiplier)
             end
         },
@@ -5271,23 +8159,276 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Clever"
     },
-    hiddenpowerbug = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Bug", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Bug", contestType = "Clever"},
-    hiddenpowerdark = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Dark", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dark", contestType = "Clever"},
-    hiddenpowerdragon = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Dragon", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Dragon", contestType = "Clever"},
-    hiddenpowerelectric = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Electric", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Electric", contestType = "Clever"},
-    hiddenpowerfighting = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Fighting", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Clever"},
-    hiddenpowerfire = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Fire", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fire", contestType = "Clever"},
-    hiddenpowerflying = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Flying", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Flying", contestType = "Clever"},
-    hiddenpowerghost = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Ghost", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ghost", contestType = "Clever"},
-    hiddenpowergrass = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Grass", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Clever"},
-    hiddenpowerground = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Ground", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ground", contestType = "Clever"},
-    hiddenpowerice = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Ice", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ice", contestType = "Clever"},
-    hiddenpowerpoison = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Poison", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Poison", contestType = "Clever"},
-    hiddenpowerpsychic = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Psychic", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Psychic", contestType = "Clever"},
-    hiddenpowerrock = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Rock", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Rock", contestType = "Clever"},
-    hiddenpowersteel = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Steel", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Steel", contestType = "Clever"},
-    hiddenpowerwater = {num = 237, accuracy = 100, basePower = 60, category = "Special", realMove = "Hidden Power", isNonstandard = "Past", name = "Hidden Power Water", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Water", contestType = "Clever"},
-    highhorsepower = {num = 667, accuracy = 95, basePower = 95, category = "Physical", name = "High Horsepower", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ground", contestType = "Tough"},
+    hiddenpowerbug = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Bug",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Clever"
+    },
+    hiddenpowerdark = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Dark",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Clever"
+    },
+    hiddenpowerdragon = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Dragon",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Clever"
+    },
+    hiddenpowerelectric = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Electric",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Clever"
+    },
+    hiddenpowerfighting = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Fighting",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Clever"
+    },
+    hiddenpowerfire = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Fire",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Clever"
+    },
+    hiddenpowerflying = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Flying",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Flying",
+        contestType = "Clever"
+    },
+    hiddenpowerghost = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Ghost",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    hiddenpowergrass = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Grass",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Clever"
+    },
+    hiddenpowerground = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Ground",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        contestType = "Clever"
+    },
+    hiddenpowerice = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Ice",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        contestType = "Clever"
+    },
+    hiddenpowerpoison = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Poison",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        contestType = "Clever"
+    },
+    hiddenpowerpsychic = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Psychic",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    hiddenpowerrock = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Rock",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Clever"
+    },
+    hiddenpowersteel = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Steel",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Clever"
+    },
+    hiddenpowerwater = {
+        num = 237,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        realMove = "Hidden Power",
+        isNonstandard = "Past",
+        name = "Hidden Power Water",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Clever"
+    },
+    highhorsepower = {
+        num = 667,
+        accuracy = 95,
+        basePower = 95,
+        category = "Physical",
+        name = "High Horsepower",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        contestType = "Tough"
+    },
     highjumpkick = {
         num = 136,
         accuracy = 90,
@@ -5299,12 +8440,7 @@ ____exports.Moves = {
         flags = {contact = 1, protect = 1, mirror = 1, gravity = 1},
         hasCrashDamage = true,
         onMoveFail = function(self, target, source, move)
-            self:damage(
-                source.baseMaxhp / 2,
-                source,
-                source,
-                self.dex.conditions:get("High Jump Kick")
-            )
+            self:damage(source.baseMaxhp / 2, source, source, self.dex.conditions:get("High Jump Kick"))
         end,
         secondary = nil,
         target = "normal",
@@ -5331,12 +8467,99 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    holdhands = {num = 607, accuracy = true, basePower = 0, category = "Status", name = "Hold Hands", pp = 40, priority = 0, flags = {authentic = 1}, secondary = nil, target = "adjacentAlly", type = "Normal", zMove = {boost = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}, contestType = "Cute"},
-    honeclaws = {num = 468, accuracy = true, basePower = 0, category = "Status", name = "Hone Claws", pp = 15, priority = 0, flags = {snatch = 1}, boosts = {atk = 1, accuracy = 1}, secondary = nil, target = "self", type = "Dark", zMove = {boost = {atk = 1}}, contestType = "Cute"},
-    hornattack = {num = 30, accuracy = 100, basePower = 65, category = "Physical", name = "Horn Attack", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    horndrill = {num = 32, accuracy = 30, basePower = 0, category = "Physical", name = "Horn Drill", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ohko = true, secondary = nil, target = "normal", type = "Normal", zMove = {basePower = 180}, maxMove = {basePower = 130}, contestType = "Cool"},
-    hornleech = {num = 532, accuracy = 100, basePower = 75, category = "Physical", name = "Horn Leech", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Grass", contestType = "Tough"},
-    howl = {num = 336, accuracy = true, basePower = 0, category = "Status", name = "Howl", pp = 40, priority = 0, flags = {snatch = 1, sound = 1}, boosts = {atk = 1}, secondary = nil, target = "allies", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Cool"},
+    holdhands = {
+        num = 607,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Hold Hands",
+        pp = 40,
+        priority = 0,
+        flags = {authentic = 1},
+        secondary = nil,
+        target = "adjacentAlly",
+        type = "Normal",
+        zMove = {boost = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}},
+        contestType = "Cute"
+    },
+    honeclaws = {
+        num = 468,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Hone Claws",
+        pp = 15,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1, accuracy = 1},
+        secondary = nil,
+        target = "self",
+        type = "Dark",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cute"
+    },
+    hornattack = {
+        num = 30,
+        accuracy = 100,
+        basePower = 65,
+        category = "Physical",
+        name = "Horn Attack",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    horndrill = {
+        num = 32,
+        accuracy = 30,
+        basePower = 0,
+        category = "Physical",
+        name = "Horn Drill",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ohko = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 130},
+        contestType = "Cool"
+    },
+    hornleech = {
+        num = 532,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Horn Leech",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Tough"
+    },
+    howl = {
+        num = 336,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Howl",
+        pp = 40,
+        priority = 0,
+        flags = {snatch = 1, sound = 1},
+        boosts = {atk = 1},
+        secondary = nil,
+        target = "allies",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cool"
+    },
     hurricane = {
         num = 542,
         accuracy = 70,
@@ -5381,11 +8604,81 @@ ____exports.Moves = {
         type = "Flying",
         contestType = "Tough"
     },
-    hydrocannon = {num = 308, accuracy = 90, basePower = 150, category = "Special", name = "Hydro Cannon", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Water", contestType = "Beautiful"},
-    hydropump = {num = 56, accuracy = 80, basePower = 110, category = "Special", name = "Hydro Pump", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Water", contestType = "Beautiful"},
-    hydrovortex = {num = 642, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Hydro Vortex", pp = 1, priority = 0, flags = {}, isZ = "wateriumz", secondary = nil, target = "normal", type = "Water", contestType = "Cool"},
-    hyperbeam = {num = 63, accuracy = 90, basePower = 150, category = "Special", name = "Hyper Beam", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    hyperfang = {num = 158, accuracy = 90, basePower = 80, category = "Physical", isNonstandard = "Past", name = "Hyper Fang", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "flinch"}, target = "normal", type = "Normal", contestType = "Cool"},
+    hydrocannon = {
+        num = 308,
+        accuracy = 90,
+        basePower = 150,
+        category = "Special",
+        name = "Hydro Cannon",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    hydropump = {
+        num = 56,
+        accuracy = 80,
+        basePower = 110,
+        category = "Special",
+        name = "Hydro Pump",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    hydrovortex = {
+        num = 642,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Hydro Vortex",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "wateriumz",
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Cool"
+    },
+    hyperbeam = {
+        num = 63,
+        accuracy = 90,
+        basePower = 150,
+        category = "Special",
+        name = "Hyper Beam",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    hyperfang = {
+        num = 158,
+        accuracy = 90,
+        basePower = 80,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Hyper Fang",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     hyperspacefury = {
         num = 621,
         accuracy = true,
@@ -5417,9 +8710,52 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Tough"
     },
-    hyperspacehole = {num = 593, accuracy = true, basePower = 80, category = "Special", isNonstandard = "Past", name = "Hyperspace Hole", pp = 5, priority = 0, flags = {mirror = 1, authentic = 1}, breaksProtect = true, secondary = nil, target = "normal", type = "Psychic", contestType = "Clever"},
-    hypervoice = {num = 304, accuracy = 100, basePower = 90, category = "Special", name = "Hyper Voice", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = nil, target = "allAdjacentFoes", type = "Normal", contestType = "Cool"},
-    hypnosis = {num = 95, accuracy = 60, basePower = 0, category = "Status", name = "Hypnosis", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "slp", secondary = nil, target = "normal", type = "Psychic", zMove = {boost = {spe = 1}}, contestType = "Clever"},
+    hyperspacehole = {
+        num = 593,
+        accuracy = true,
+        basePower = 80,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Hyperspace Hole",
+        pp = 5,
+        priority = 0,
+        flags = {mirror = 1, authentic = 1},
+        breaksProtect = true,
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    hypervoice = {
+        num = 304,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Hyper Voice",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    hypnosis = {
+        num = 95,
+        accuracy = 60,
+        basePower = 0,
+        category = "Status",
+        name = "Hypnosis",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        zMove = {boost = {spe = 1}},
+        contestType = "Clever"
+    },
     iceball = {
         num = 301,
         accuracy = 90,
@@ -5435,9 +8771,7 @@ ____exports.Moves = {
             if pokemon.volatiles.defensecurl then
                 bp = bp * 2
             end
-            self:debug(
-                "Ice Ball bp: " .. tostring(bp)
-            )
+            self:debug("Ice Ball bp: " .. tostring(bp))
             return bp
         end,
         category = "Physical",
@@ -5470,7 +8804,20 @@ ____exports.Moves = {
         type = "Ice",
         contestType = "Beautiful"
     },
-    icebeam = {num = 58, accuracy = 100, basePower = 90, category = "Special", name = "Ice Beam", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "frz"}, target = "normal", type = "Ice", contestType = "Beautiful"},
+    icebeam = {
+        num = 58,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Ice Beam",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "frz"},
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
     iceburn = {
         num = 554,
         accuracy = 90,
@@ -5496,13 +8843,109 @@ ____exports.Moves = {
         type = "Ice",
         contestType = "Beautiful"
     },
-    icefang = {num = 423, accuracy = 95, basePower = 65, category = "Physical", name = "Ice Fang", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondaries = {{chance = 10, status = "frz"}, {chance = 10, volatileStatus = "flinch"}}, target = "normal", type = "Ice", contestType = "Cool"},
-    icehammer = {num = 665, accuracy = 90, basePower = 100, category = "Physical", isNonstandard = "Past", name = "Ice Hammer", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, self = {boosts = {spe = -1}}, secondary = nil, target = "normal", type = "Ice", contestType = "Tough"},
-    icepunch = {num = 8, accuracy = 100, basePower = 75, category = "Physical", name = "Ice Punch", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 10, status = "frz"}, target = "normal", type = "Ice", contestType = "Beautiful"},
-    iceshard = {num = 420, accuracy = 100, basePower = 40, category = "Physical", name = "Ice Shard", pp = 30, priority = 1, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ice", contestType = "Beautiful"},
-    iciclecrash = {num = 556, accuracy = 90, basePower = 85, category = "Physical", name = "Icicle Crash", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Ice", contestType = "Beautiful"},
-    iciclespear = {num = 333, accuracy = 100, basePower = 25, category = "Physical", name = "Icicle Spear", pp = 30, priority = 0, flags = {protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Ice", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Beautiful"},
-    icywind = {num = 196, accuracy = 95, basePower = 55, category = "Special", name = "Icy Wind", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "allAdjacentFoes", type = "Ice", contestType = "Beautiful"},
+    icefang = {
+        num = 423,
+        accuracy = 95,
+        basePower = 65,
+        category = "Physical",
+        name = "Ice Fang",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondaries = {{chance = 10, status = "frz"}, {chance = 10, volatileStatus = "flinch"}},
+        target = "normal",
+        type = "Ice",
+        contestType = "Cool"
+    },
+    icehammer = {
+        num = 665,
+        accuracy = 90,
+        basePower = 100,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Ice Hammer",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        self = {boosts = {spe = -1}},
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        contestType = "Tough"
+    },
+    icepunch = {
+        num = 8,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Ice Punch",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 10, status = "frz"},
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
+    iceshard = {
+        num = 420,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Ice Shard",
+        pp = 30,
+        priority = 1,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
+    iciclecrash = {
+        num = 556,
+        accuracy = 90,
+        basePower = 85,
+        category = "Physical",
+        name = "Icicle Crash",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
+    iciclespear = {
+        num = 333,
+        accuracy = 100,
+        basePower = 25,
+        category = "Physical",
+        name = "Icicle Spear",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Beautiful"
+    },
+    icywind = {
+        num = 196,
+        accuracy = 95,
+        basePower = 55,
+        category = "Special",
+        name = "Icy Wind",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "allAdjacentFoes",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
     imprison = {
         num = 286,
         accuracy = true,
@@ -5532,7 +8975,10 @@ ____exports.Moves = {
             end,
             onFoeBeforeMovePriority = 4,
             onFoeBeforeMove = function(self, attacker, defender, move)
-                if (((move.id ~= "struggle") and self.effectState.source:hasMove(move.id)) and (not move.isZ)) and (not move.isMax) then
+                if
+                    (((move.id ~= "struggle") and self.effectState.source:hasMove(move.id)) and (not move.isZ)) and
+                        (not move.isMax)
+                 then
                     self:add("cant", attacker, "move: Imprison", move)
                     return false
                 end
@@ -5565,9 +9011,51 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Tough"
     },
-    inferno = {num = 517, accuracy = 50, basePower = 100, category = "Special", name = "Inferno", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    infernooverdrive = {num = 640, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Inferno Overdrive", pp = 1, priority = 0, flags = {}, isZ = "firiumz", secondary = nil, target = "normal", type = "Fire", contestType = "Cool"},
-    infestation = {num = 611, accuracy = 100, basePower = 20, category = "Special", name = "Infestation", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Bug", contestType = "Cute"},
+    inferno = {
+        num = 517,
+        accuracy = 50,
+        basePower = 100,
+        category = "Special",
+        name = "Inferno",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    infernooverdrive = {
+        num = 640,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Inferno Overdrive",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "firiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Cool"
+    },
+    infestation = {
+        num = 611,
+        accuracy = 100,
+        basePower = 20,
+        category = "Special",
+        name = "Infestation",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Cute"
+    },
     ingrain = {
         num = 275,
         accuracy = true,
@@ -5615,16 +9103,46 @@ ____exports.Moves = {
             end
             local lastMove = target.lastMove
             local moveIndex = target.moves:indexOf(lastMove.id)
-            local noInstruct = {"assist", "beakblast", "belch", "bide", "celebrate", "copycat", "dynamaxcannon", "focuspunch", "iceball", "instruct", "kingsshield", "mefirst", "metronome", "mimic", "mirrormove", "naturepower", "obstruct", "outrage", "petaldance", "rollout", "shelltrap", "sketch", "sleeptalk", "struggle", "thrash", "transform", "uproar"}
-            if (((((((noInstruct:includes(lastMove.id) or lastMove.isZ) or lastMove.isMax) or lastMove.flags.charge) or lastMove.flags.recharge) or target.volatiles.beakblast) or target.volatiles.focuspunch) or target.volatiles.shelltrap) or (target.moveSlots[moveIndex] and (target.moveSlots[moveIndex].pp <= 0)) then
+            local noInstruct = {
+                "assist",
+                "beakblast",
+                "belch",
+                "bide",
+                "celebrate",
+                "copycat",
+                "dynamaxcannon",
+                "focuspunch",
+                "iceball",
+                "instruct",
+                "kingsshield",
+                "mefirst",
+                "metronome",
+                "mimic",
+                "mirrormove",
+                "naturepower",
+                "obstruct",
+                "outrage",
+                "petaldance",
+                "rollout",
+                "shelltrap",
+                "sketch",
+                "sleeptalk",
+                "struggle",
+                "thrash",
+                "transform",
+                "uproar"
+            }
+            if
+                (((((((noInstruct:includes(lastMove.id) or lastMove.isZ) or lastMove.isMax) or lastMove.flags.charge) or
+                    lastMove.flags.recharge) or
+                    target.volatiles.beakblast) or
+                    target.volatiles.focuspunch) or
+                    target.volatiles.shelltrap) or
+                    (target.moveSlots[moveIndex] and (target.moveSlots[moveIndex].pp <= 0))
+             then
                 return false
             end
-            self:add(
-                "-singleturn",
-                target,
-                "move: Instruct",
-                "[of] " .. tostring(source)
-            )
+            self:add("-singleturn", target, "move: Instruct", "[of] " .. tostring(source))
             self.actions:runMove(target.lastMove.id, target, target.lastMoveTargetLoc)
         end,
         secondary = nil,
@@ -5648,17 +9166,13 @@ ____exports.Moves = {
             duration = 1,
             onStart = function(self, target, source, sourceEffect)
                 self:add("-fieldactivate", "move: Ion Deluge")
-                self:hint(
-                    ("Normal-type moves become Electric-type after using " .. tostring(sourceEffect)) .. "."
-                )
+                self:hint(("Normal-type moves become Electric-type after using " .. tostring(sourceEffect)) .. ".")
             end,
             onModifyTypePriority = -2,
             onModifyType = function(self, move)
                 if move.type == "Normal" then
                     move.type = "Electric"
-                    self:debug(
-                        tostring(move.name) .. "'s type changed to Electric"
-                    )
+                    self:debug(tostring(move.name) .. "'s type changed to Electric")
                 end
             end
         },
@@ -5668,9 +9182,50 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Beautiful"
     },
-    irondefense = {num = 334, accuracy = true, basePower = 0, category = "Status", name = "Iron Defense", pp = 15, priority = 0, flags = {snatch = 1}, boosts = {def = 2}, secondary = nil, target = "self", type = "Steel", zMove = {effect = "clearnegativeboost"}, contestType = "Tough"},
-    ironhead = {num = 442, accuracy = 100, basePower = 80, category = "Physical", name = "Iron Head", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Steel", contestType = "Tough"},
-    irontail = {num = 231, accuracy = 75, basePower = 100, category = "Physical", name = "Iron Tail", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, boosts = {def = -1}}, target = "normal", type = "Steel", contestType = "Cool"},
+    irondefense = {
+        num = 334,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Iron Defense",
+        pp = 15,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 2},
+        secondary = nil,
+        target = "self",
+        type = "Steel",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Tough"
+    },
+    ironhead = {
+        num = 442,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Iron Head",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Steel",
+        contestType = "Tough"
+    },
+    irontail = {
+        num = 231,
+        accuracy = 75,
+        basePower = 100,
+        category = "Physical",
+        name = "Iron Tail",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, boosts = {def = -1}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     jawlock = {
         num = 746,
         accuracy = 100,
@@ -5724,12 +9279,7 @@ ____exports.Moves = {
         flags = {contact = 1, protect = 1, mirror = 1, gravity = 1},
         hasCrashDamage = true,
         onMoveFail = function(self, target, source, move)
-            self:damage(
-                source.baseMaxhp / 2,
-                source,
-                source,
-                self.dex.conditions:get("Jump Kick")
-            )
+            self:damage(source.baseMaxhp / 2, source, source, self.dex.conditions:get("Jump Kick"))
         end,
         secondary = nil,
         target = "normal",
@@ -5746,17 +9296,45 @@ ____exports.Moves = {
         priority = 0,
         flags = {heal = 1, authentic = 1, mystery = 1},
         onHit = function(self, pokemon)
-            local success = not (not self:heal(
-                self:modify(pokemon.maxhp, 0.25)
-            ))
+            local success = not (not self:heal(self:modify(pokemon.maxhp, 0.25)))
             return pokemon:cureStatus() or success
         end,
         secondary = nil,
         target = "allies",
         type = "Grass"
     },
-    karatechop = {num = 2, accuracy = 100, basePower = 50, category = "Physical", isNonstandard = "Past", name = "Karate Chop", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
-    kinesis = {num = 134, accuracy = 80, basePower = 0, category = "Status", name = "Kinesis", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {accuracy = -1}, secondary = nil, target = "normal", type = "Psychic", zMove = {boost = {evasion = 1}}, contestType = "Clever"},
+    karatechop = {
+        num = 2,
+        accuracy = 100,
+        basePower = 50,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Karate Chop",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
+    kinesis = {
+        num = 134,
+        accuracy = 80,
+        basePower = 0,
+        category = "Status",
+        name = "Kinesis",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {accuracy = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        zMove = {boost = {evasion = 1}},
+        contestType = "Clever"
+    },
     kingsshield = {
         num = 588,
         accuracy = true,
@@ -5802,23 +9380,13 @@ ____exports.Moves = {
                     end
                 end
                 if self:checkMoveMakesContact(move, source, target) then
-                    self:boost(
-                        {atk = -1},
-                        source,
-                        target,
-                        self.dex:getActiveMove("King's Shield")
-                    )
+                    self:boost({atk = -1}, source, target, self.dex:getActiveMove("King's Shield"))
                 end
                 return self.NOT_FAIL
             end,
             onHit = function(self, target, source, move)
                 if move.isZOrMaxPowered and self:checkMoveMakesContact(move, source, target) then
-                    self:boost(
-                        {atk = -1},
-                        source,
-                        target,
-                        self.dex:getActiveMove("King's Shield")
-                    )
+                    self:boost({atk = -1}, source, target, self.dex:getActiveMove("King's Shield"))
                 end
             end
         },
@@ -5850,13 +9418,7 @@ ____exports.Moves = {
             if source.hp then
                 local item = target:takeItem()
                 if item then
-                    self:add(
-                        "-enditem",
-                        target,
-                        item.name,
-                        "[from] move: Knock Off",
-                        "[of] " .. tostring(source)
-                    )
+                    self:add("-enditem", target, item.name, "[from] move: Knock Off", "[of] " .. tostring(source))
                 end
             end
         end,
@@ -5865,7 +9427,21 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Clever"
     },
-    landswrath = {num = 616, accuracy = 100, basePower = 90, category = "Physical", name = "Land's Wrath", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = nil, target = "allAdjacentFoes", type = "Ground", zMove = {basePower = 185}, contestType = "Beautiful"},
+    landswrath = {
+        num = 616,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Land's Wrath",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Ground",
+        zMove = {basePower = 185},
+        contestType = "Beautiful"
+    },
     laserfocus = {
         num = 673,
         accuracy = true,
@@ -5954,12 +9530,93 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cute"
     },
-    lavaplume = {num = 436, accuracy = 100, basePower = 80, category = "Special", name = "Lava Plume", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "brn"}, target = "allAdjacent", type = "Fire", contestType = "Tough"},
-    leafage = {num = 670, accuracy = 100, basePower = 40, category = "Physical", name = "Leafage", pp = 40, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Tough"},
-    leafblade = {num = 348, accuracy = 100, basePower = 90, category = "Physical", name = "Leaf Blade", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Grass", contestType = "Cool"},
-    leafstorm = {num = 437, accuracy = 90, basePower = 130, category = "Special", name = "Leaf Storm", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {boosts = {spa = -2}}, secondary = nil, target = "normal", type = "Grass", contestType = "Beautiful"},
-    leaftornado = {num = 536, accuracy = 90, basePower = 65, category = "Special", name = "Leaf Tornado", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {accuracy = -1}}, target = "normal", type = "Grass", contestType = "Cool"},
-    leechlife = {num = 141, accuracy = 100, basePower = 80, category = "Physical", name = "Leech Life", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Bug", contestType = "Clever"},
+    lavaplume = {
+        num = 436,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Lava Plume",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "brn"},
+        target = "allAdjacent",
+        type = "Fire",
+        contestType = "Tough"
+    },
+    leafage = {
+        num = 670,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Leafage",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Tough"
+    },
+    leafblade = {
+        num = 348,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Leaf Blade",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    leafstorm = {
+        num = 437,
+        accuracy = 90,
+        basePower = 130,
+        category = "Special",
+        name = "Leaf Storm",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {boosts = {spa = -2}},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Beautiful"
+    },
+    leaftornado = {
+        num = 536,
+        accuracy = 90,
+        basePower = 65,
+        category = "Special",
+        name = "Leaf Tornado",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    leechlife = {
+        num = 141,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Leech Life",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Clever"
+    },
     leechseed = {
         num = 73,
         accuracy = 90,
@@ -5996,11 +9653,82 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Clever"
     },
-    leer = {num = 43, accuracy = 100, basePower = 0, category = "Status", name = "Leer", pp = 30, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {def = -1}, secondary = nil, target = "allAdjacentFoes", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Cool"},
-    letssnuggleforever = {num = 726, accuracy = true, basePower = 190, category = "Physical", isNonstandard = "Past", name = "Let's Snuggle Forever", pp = 1, priority = 0, flags = {contact = 1}, isZ = "mimikiumz", secondary = nil, target = "normal", type = "Fairy", contestType = "Cool"},
-    lick = {num = 122, accuracy = 100, basePower = 30, category = "Physical", name = "Lick", pp = 30, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "par"}, target = "normal", type = "Ghost", contestType = "Cute"},
-    lifedew = {num = 791, accuracy = true, basePower = 0, category = "Status", name = "Life Dew", pp = 10, priority = 0, flags = {snatch = 1, heal = 1, authentic = 1}, heal = {1, 4}, secondary = nil, target = "allies", type = "Water"},
-    lightofruin = {num = 617, accuracy = 90, basePower = 140, category = "Special", isNonstandard = "Past", name = "Light of Ruin", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, recoil = {1, 2}, secondary = nil, target = "normal", type = "Fairy", contestType = "Beautiful"},
+    leer = {
+        num = 43,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Leer",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {def = -1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cool"
+    },
+    letssnuggleforever = {
+        num = 726,
+        accuracy = true,
+        basePower = 190,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Let's Snuggle Forever",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "mimikiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Cool"
+    },
+    lick = {
+        num = 122,
+        accuracy = 100,
+        basePower = 30,
+        category = "Physical",
+        name = "Lick",
+        pp = 30,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cute"
+    },
+    lifedew = {
+        num = 791,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Life Dew",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1, authentic = 1},
+        heal = {1, 4},
+        secondary = nil,
+        target = "allies",
+        type = "Water"
+    },
+    lightofruin = {
+        num = 617,
+        accuracy = 90,
+        basePower = 140,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Light of Ruin",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        recoil = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Beautiful"
+    },
     lightscreen = {
         num = 113,
         accuracy = true,
@@ -6020,7 +9748,10 @@ ____exports.Moves = {
                 return 5
             end,
             onAnyModifyDamage = function(self, damage, source, target, move)
-                if ((target ~= source) and self.effectState.target:hasAlly(target)) and (self:getCategory(move) == "Special") then
+                if
+                    ((target ~= source) and self.effectState.target:hasAlly(target)) and
+                        (self:getCategory(move) == "Special")
+                 then
                     if (not target:getMoveHitData(move).crit) and (not move.infiltrates) then
                         self:debug("Light Screen weaken")
                         if self.activePerHalf > 1 then
@@ -6067,7 +9798,20 @@ ____exports.Moves = {
         type = "Psychic",
         contestType = "Cool"
     },
-    liquidation = {num = 710, accuracy = 100, basePower = 85, category = "Physical", name = "Liquidation", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, boosts = {def = -1}}, target = "normal", type = "Water", contestType = "Cool"},
+    liquidation = {
+        num = 710,
+        accuracy = 100,
+        basePower = 85,
+        category = "Physical",
+        name = "Liquidation",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, boosts = {def = -1}},
+        target = "normal",
+        type = "Water",
+        contestType = "Cool"
+    },
     lockon = {
         num = 199,
         accuracy = true,
@@ -6084,12 +9828,7 @@ ____exports.Moves = {
         end,
         onHit = function(self, target, source)
             source:addVolatile("lockon", target)
-            self:add(
-                "-activate",
-                source,
-                "move: Lock-On",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Lock-On", "[of] " .. tostring(target))
         end,
         condition = {
             noCopy = true,
@@ -6112,7 +9851,22 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Clever"
     },
-    lovelykiss = {num = 142, accuracy = 75, basePower = 0, category = "Status", name = "Lovely Kiss", pp = 10, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "slp", secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spe = 1}}, contestType = "Beautiful"},
+    lovelykiss = {
+        num = 142,
+        accuracy = 75,
+        basePower = 0,
+        category = "Status",
+        name = "Lovely Kiss",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spe = 1}},
+        contestType = "Beautiful"
+    },
     lowkick = {
         num = 67,
         accuracy = 100,
@@ -6154,7 +9908,20 @@ ____exports.Moves = {
         zMove = {basePower = 160},
         contestType = "Tough"
     },
-    lowsweep = {num = 490, accuracy = 100, basePower = 65, category = "Physical", name = "Low Sweep", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "normal", type = "Fighting", contestType = "Clever"},
+    lowsweep = {
+        num = 490,
+        accuracy = 100,
+        basePower = 65,
+        category = "Physical",
+        name = "Low Sweep",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Clever"
+    },
     luckychant = {
         num = 381,
         accuracy = true,
@@ -6203,9 +9970,15 @@ ____exports.Moves = {
         slotCondition = "lunardance",
         condition = {
             onSwap = function(self, target)
-                if (not target.fainted) and (((target.hp < target.maxhp) or target.status) or target.moveSlots:some(
-                    function(____, moveSlot) return moveSlot.pp < moveSlot.maxpp end
-                )) then
+                if
+                    (not target.fainted) and
+                        (((target.hp < target.maxhp) or target.status) or
+                            target.moveSlots:some(
+                                function(____, moveSlot)
+                                    return moveSlot.pp < moveSlot.maxpp
+                                end
+                            ))
+                 then
                     target:heal(target.maxhp)
                     target:setStatus("")
                     for ____, moveSlot in __TS__Iterator(target.moveSlots) do
@@ -6221,10 +9994,62 @@ ____exports.Moves = {
         type = "Psychic",
         contestType = "Beautiful"
     },
-    lunge = {num = 679, accuracy = 100, basePower = 80, category = "Physical", name = "Lunge", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {atk = -1}}, target = "normal", type = "Bug", contestType = "Cute"},
-    lusterpurge = {num = 295, accuracy = 100, basePower = 70, category = "Special", name = "Luster Purge", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {spd = -1}}, target = "normal", type = "Psychic", contestType = "Clever"},
-    machpunch = {num = 183, accuracy = 100, basePower = 40, category = "Physical", name = "Mach Punch", pp = 30, priority = 1, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    magicalleaf = {num = 345, accuracy = true, basePower = 60, category = "Special", name = "Magical Leaf", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Beautiful"},
+    lunge = {
+        num = 679,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Lunge",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {atk = -1}},
+        target = "normal",
+        type = "Bug",
+        contestType = "Cute"
+    },
+    lusterpurge = {
+        num = 295,
+        accuracy = 100,
+        basePower = 70,
+        category = "Special",
+        name = "Luster Purge",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {spd = -1}},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    machpunch = {
+        num = 183,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Mach Punch",
+        pp = 30,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    magicalleaf = {
+        num = 345,
+        accuracy = true,
+        basePower = 60,
+        category = "Special",
+        name = "Magical Leaf",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Beautiful"
+    },
     magiccoat = {
         num = 277,
         accuracy = true,
@@ -6310,11 +10135,7 @@ ____exports.Moves = {
                 return 5
             end,
             onFieldStart = function(self, target, source)
-                self:add(
-                    "-fieldstart",
-                    "move: Magic Room",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-fieldstart", "move: Magic Room", "[of] " .. tostring(source))
             end,
             onFieldRestart = function(self, target, source)
                 self.field:removePseudoWeather("magicroom")
@@ -6322,11 +10143,7 @@ ____exports.Moves = {
             onFieldResidualOrder = 27,
             onFieldResidualSubOrder = 6,
             onFieldEnd = function(self)
-                self:add(
-                    "-fieldend",
-                    "move: Magic Room",
-                    "[of] " .. tostring(self.effectState.source)
-                )
+                self:add("-fieldend", "move: Magic Room", "[of] " .. tostring(self.effectState.source))
             end
         },
         secondary = nil,
@@ -6335,8 +10152,36 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Clever"
     },
-    magmastorm = {num = 463, accuracy = 75, basePower = 100, category = "Special", name = "Magma Storm", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Fire", contestType = "Tough"},
-    magnetbomb = {num = 443, accuracy = true, basePower = 60, category = "Physical", isNonstandard = "Past", name = "Magnet Bomb", pp = 20, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Steel", contestType = "Cool"},
+    magmastorm = {
+        num = 463,
+        accuracy = 75,
+        basePower = 100,
+        category = "Special",
+        name = "Magma Storm",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Tough"
+    },
+    magnetbomb = {
+        num = 443,
+        accuracy = true,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Magnet Bomb",
+        pp = 20,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     magneticflux = {
         num = 602,
         accuracy = true,
@@ -6347,8 +10192,12 @@ ____exports.Moves = {
         priority = 0,
         flags = {snatch = 1, distance = 1, authentic = 1},
         onHitSide = function(self, side, source, move)
-            local targets = side:allies():filter(
-                function(____, ally) return ally:hasAbility({"plus", "minus"}) and ((not ally.volatiles.maxguard) or self:runEvent("TryHit", ally, source, move)) end
+            local targets =
+                side:allies():filter(
+                function(____, ally)
+                    return ally:hasAbility({"plus", "minus"}) and
+                        ((not ally.volatiles.maxguard) or self:runEvent("TryHit", ally, source, move))
+                end
             )
             if not targets.length then
                 return false
@@ -6450,7 +10299,22 @@ ____exports.Moves = {
         maxMove = {basePower = 140},
         contestType = "Tough"
     },
-    maliciousmoonsault = {num = 696, accuracy = true, basePower = 180, category = "Physical", isNonstandard = "Past", name = "Malicious Moonsault", pp = 1, priority = 0, flags = {contact = 1}, isZ = "inciniumz", secondary = nil, target = "normal", type = "Dark", contestType = "Cool"},
+    maliciousmoonsault = {
+        num = 696,
+        accuracy = true,
+        basePower = 180,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Malicious Moonsault",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "inciniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Cool"
+    },
     matblock = {
         num = 561,
         accuracy = true,
@@ -6519,9 +10383,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:boost({spe = 1}, pokemon)
                 end
             end
@@ -6545,9 +10407,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({spd = -1}, pokemon)
                 end
             end
@@ -6593,9 +10453,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({spa = -1}, pokemon)
                 end
             end
@@ -6654,8 +10512,20 @@ ____exports.Moves = {
                 if ({"gmaxoneblow", "gmaxrapidflow"}):includes(move.id) then
                     return
                 end
-                local overrideBypassProtect = {"block", "flowershield", "gearup", "magneticflux", "phantomforce", "psychup", "shadowforce", "teatime", "transform"}
-                local blockedByMaxGuard = ((self.dex.moves:get(move.id).flags.protect or move.isZ) or move.isMax) or overrideBypassProtect:includes(move.id)
+                local overrideBypassProtect = {
+                    "block",
+                    "flowershield",
+                    "gearup",
+                    "magneticflux",
+                    "phantomforce",
+                    "psychup",
+                    "shadowforce",
+                    "teatime",
+                    "transform"
+                }
+                local blockedByMaxGuard =
+                    ((self.dex.moves:get(move.id).flags.protect or move.isZ) or move.isMax) or
+                    overrideBypassProtect:includes(move.id)
                 if not blockedByMaxGuard then
                     return
                 end
@@ -6715,9 +10585,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:boost({atk = 1}, pokemon)
                 end
             end
@@ -6785,9 +10653,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:boost({spa = 1}, pokemon)
                 end
             end
@@ -6833,9 +10699,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({def = -1}, pokemon)
                 end
             end
@@ -6859,9 +10723,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:boost({spd = 1}, pokemon)
                 end
             end
@@ -6929,9 +10791,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:alliesAndSelf()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:alliesAndSelf()) do
                     self:boost({def = 1}, pokemon)
                 end
             end
@@ -6955,9 +10815,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({spe = -1}, pokemon)
                 end
             end
@@ -6981,9 +10839,7 @@ ____exports.Moves = {
                 if not source.volatiles.dynamax then
                     return
                 end
-                for ____, pokemon in __TS__Iterator(
-                    source:foes()
-                ) do
+                for ____, pokemon in __TS__Iterator(source:foes()) do
                     self:boost({atk = -1}, pokemon)
                 end
             end
@@ -7010,7 +10866,23 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Beautiful"
     },
-    meditate = {num = 96, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Meditate", pp = 40, priority = 0, flags = {snatch = 1}, boosts = {atk = 1}, secondary = nil, target = "self", type = "Psychic", zMove = {boost = {atk = 1}}, contestType = "Beautiful"},
+    meditate = {
+        num = 96,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Meditate",
+        pp = 40,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1},
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {boost = {atk = 1}},
+        contestType = "Beautiful"
+    },
     mefirst = {
         num = 382,
         accuracy = true,
@@ -7026,7 +10898,19 @@ ____exports.Moves = {
             if not action then
                 return false
             end
-            local noMeFirst = {"beakblast", "chatter", "counter", "covet", "focuspunch", "mefirst", "metalburst", "mirrorcoat", "shelltrap", "struggle", "thief"}
+            local noMeFirst = {
+                "beakblast",
+                "chatter",
+                "counter",
+                "covet",
+                "focuspunch",
+                "mefirst",
+                "metalburst",
+                "mirrorcoat",
+                "shelltrap",
+                "struggle",
+                "thief"
+            }
             local move = self.dex:getActiveMove(action.move.id)
             if (action.zmove or move.isZ) or move.isMax then
                 return false
@@ -7054,12 +10938,98 @@ ____exports.Moves = {
         zMove = {boost = {spe = 2}},
         contestType = "Clever"
     },
-    megadrain = {num = 72, accuracy = 100, basePower = 40, category = "Special", name = "Mega Drain", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "normal", type = "Grass", zMove = {basePower = 120}, contestType = "Clever"},
-    megahorn = {num = 224, accuracy = 85, basePower = 120, category = "Physical", name = "Megahorn", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Bug", contestType = "Cool"},
-    megakick = {num = 25, accuracy = 75, basePower = 120, category = "Physical", name = "Mega Kick", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    megapunch = {num = 5, accuracy = 85, basePower = 80, category = "Physical", name = "Mega Punch", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    memento = {num = 262, accuracy = 100, basePower = 0, category = "Status", name = "Memento", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, boosts = {atk = -2, spa = -2}, selfdestruct = "ifHit", secondary = nil, target = "normal", type = "Dark", zMove = {effect = "healreplacement"}, contestType = "Tough"},
-    menacingmoonrazemaelstrom = {num = 725, accuracy = true, basePower = 200, category = "Special", isNonstandard = "Past", name = "Menacing Moonraze Maelstrom", pp = 1, priority = 0, flags = {}, isZ = "lunaliumz", ignoreAbility = true, secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
+    megadrain = {
+        num = 72,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Mega Drain",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {basePower = 120},
+        contestType = "Clever"
+    },
+    megahorn = {
+        num = 224,
+        accuracy = 85,
+        basePower = 120,
+        category = "Physical",
+        name = "Megahorn",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Cool"
+    },
+    megakick = {
+        num = 25,
+        accuracy = 75,
+        basePower = 120,
+        category = "Physical",
+        name = "Mega Kick",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    megapunch = {
+        num = 5,
+        accuracy = 85,
+        basePower = 80,
+        category = "Physical",
+        name = "Mega Punch",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    memento = {
+        num = 262,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Memento",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        boosts = {atk = -2, spa = -2},
+        selfdestruct = "ifHit",
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        zMove = {effect = "healreplacement"},
+        contestType = "Tough"
+    },
+    menacingmoonrazemaelstrom = {
+        num = 725,
+        accuracy = true,
+        basePower = 200,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Menacing Moonraze Maelstrom",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "lunaliumz",
+        ignoreAbility = true,
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
     metalburst = {
         num = 368,
         accuracy = 100,
@@ -7093,9 +11063,50 @@ ____exports.Moves = {
         type = "Steel",
         contestType = "Cool"
     },
-    metalclaw = {num = 232, accuracy = 95, basePower = 50, category = "Physical", name = "Metal Claw", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, self = {boosts = {atk = 1}}}, target = "normal", type = "Steel", contestType = "Cool"},
-    metalsound = {num = 319, accuracy = 85, basePower = 0, category = "Status", name = "Metal Sound", pp = 40, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1}, boosts = {spd = -2}, secondary = nil, target = "normal", type = "Steel", zMove = {boost = {spa = 1}}, contestType = "Clever"},
-    meteorassault = {num = 794, accuracy = 100, basePower = 150, category = "Physical", name = "Meteor Assault", pp = 5, priority = 0, flags = {protect = 1, recharge = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Fighting"},
+    metalclaw = {
+        num = 232,
+        accuracy = 95,
+        basePower = 50,
+        category = "Physical",
+        name = "Metal Claw",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, self = {boosts = {atk = 1}}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
+    metalsound = {
+        num = 319,
+        accuracy = 85,
+        basePower = 0,
+        category = "Status",
+        name = "Metal Sound",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1},
+        boosts = {spd = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        zMove = {boost = {spa = 1}},
+        contestType = "Clever"
+    },
+    meteorassault = {
+        num = 794,
+        accuracy = 100,
+        basePower = 150,
+        category = "Physical",
+        name = "Meteor Assault",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, recharge = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting"
+    },
     meteorbeam = {
         num = 800,
         accuracy = 90,
@@ -7121,7 +11132,20 @@ ____exports.Moves = {
         target = "normal",
         type = "Rock"
     },
-    meteormash = {num = 309, accuracy = 90, basePower = 90, category = "Physical", name = "Meteor Mash", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 20, self = {boosts = {atk = 1}}}, target = "normal", type = "Steel", contestType = "Cool"},
+    meteormash = {
+        num = 309,
+        accuracy = 90,
+        basePower = 90,
+        category = "Physical",
+        name = "Meteor Mash",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 20, self = {boosts = {atk = 1}}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     metronome = {
         num = 118,
         accuracy = true,
@@ -7131,7 +11155,113 @@ ____exports.Moves = {
         pp = 10,
         priority = 0,
         flags = {},
-        noMetronome = {"After You", "Apple Acid", "Assist", "Astral Barrage", "Aura Wheel", "Baneful Bunker", "Beak Blast", "Behemoth Bash", "Behemoth Blade", "Belch", "Bestow", "Body Press", "Branch Poke", "Breaking Swipe", "Celebrate", "Chatter", "Clangorous Soul", "Copycat", "Counter", "Covet", "Crafty Shield", "Decorate", "Destiny Bond", "Detect", "Diamond Storm", "Double Iron Bash", "Dragon Ascent", "Dragon Energy", "Drum Beating", "Dynamax Cannon", "Endure", "Eternabeam", "False Surrender", "Feint", "Fiery Wrath", "Fleur Cannon", "Focus Punch", "Follow Me", "Freeze Shock", "Freezing Glare", "Glacial Lance", "Grav Apple", "Helping Hand", "Hold Hands", "Hyperspace Fury", "Hyperspace Hole", "Ice Burn", "Instruct", "Jungle Healing", "King's Shield", "Life Dew", "Light of Ruin", "Mat Block", "Me First", "Meteor Assault", "Metronome", "Mimic", "Mind Blown", "Mirror Coat", "Mirror Move", "Moongeist Beam", "Nature Power", "Nature's Madness", "Obstruct", "Origin Pulse", "Overdrive", "Photon Geyser", "Plasma Fists", "Precipice Blades", "Protect", "Pyro Ball", "Quash", "Quick Guard", "Rage Powder", "Relic Song", "Secret Sword", "Shell Trap", "Sketch", "Sleep Talk", "Snap Trap", "Snarl", "Snatch", "Snore", "Spectral Thief", "Spiky Shield", "Spirit Break", "Spotlight", "Steam Eruption", "Steel Beam", "Strange Steam", "Struggle", "Sunsteel Strike", "Surging Strikes", "Switcheroo", "Techno Blast", "Thief", "Thousand Arrows", "Thousand Waves", "Thunder Cage", "Thunderous Kick", "Transform", "Trick", "V-create", "Wicked Blow", "Wide Guard"},
+        noMetronome = {
+            "After You",
+            "Apple Acid",
+            "Assist",
+            "Astral Barrage",
+            "Aura Wheel",
+            "Baneful Bunker",
+            "Beak Blast",
+            "Behemoth Bash",
+            "Behemoth Blade",
+            "Belch",
+            "Bestow",
+            "Body Press",
+            "Branch Poke",
+            "Breaking Swipe",
+            "Celebrate",
+            "Chatter",
+            "Clangorous Soul",
+            "Copycat",
+            "Counter",
+            "Covet",
+            "Crafty Shield",
+            "Decorate",
+            "Destiny Bond",
+            "Detect",
+            "Diamond Storm",
+            "Double Iron Bash",
+            "Dragon Ascent",
+            "Dragon Energy",
+            "Drum Beating",
+            "Dynamax Cannon",
+            "Endure",
+            "Eternabeam",
+            "False Surrender",
+            "Feint",
+            "Fiery Wrath",
+            "Fleur Cannon",
+            "Focus Punch",
+            "Follow Me",
+            "Freeze Shock",
+            "Freezing Glare",
+            "Glacial Lance",
+            "Grav Apple",
+            "Helping Hand",
+            "Hold Hands",
+            "Hyperspace Fury",
+            "Hyperspace Hole",
+            "Ice Burn",
+            "Instruct",
+            "Jungle Healing",
+            "King's Shield",
+            "Life Dew",
+            "Light of Ruin",
+            "Mat Block",
+            "Me First",
+            "Meteor Assault",
+            "Metronome",
+            "Mimic",
+            "Mind Blown",
+            "Mirror Coat",
+            "Mirror Move",
+            "Moongeist Beam",
+            "Nature Power",
+            "Nature's Madness",
+            "Obstruct",
+            "Origin Pulse",
+            "Overdrive",
+            "Photon Geyser",
+            "Plasma Fists",
+            "Precipice Blades",
+            "Protect",
+            "Pyro Ball",
+            "Quash",
+            "Quick Guard",
+            "Rage Powder",
+            "Relic Song",
+            "Secret Sword",
+            "Shell Trap",
+            "Sketch",
+            "Sleep Talk",
+            "Snap Trap",
+            "Snarl",
+            "Snatch",
+            "Snore",
+            "Spectral Thief",
+            "Spiky Shield",
+            "Spirit Break",
+            "Spotlight",
+            "Steam Eruption",
+            "Steel Beam",
+            "Strange Steam",
+            "Struggle",
+            "Sunsteel Strike",
+            "Surging Strikes",
+            "Switcheroo",
+            "Techno Blast",
+            "Thief",
+            "Thousand Arrows",
+            "Thousand Waves",
+            "Thunder Cage",
+            "Thunderous Kick",
+            "Transform",
+            "Trick",
+            "V-create",
+            "Wicked Blow",
+            "Wide Guard"
+        },
         onHit = function(self, target, source, effect)
             local moves = {}
             for id in pairs(____exports.Moves) do
@@ -7157,7 +11287,9 @@ ____exports.Moves = {
             if #moves then
                 __TS__ArraySort(
                     moves,
-                    function(____, a, b) return a.num - b.num end
+                    function(____, a, b)
+                        return a.num - b.num
+                    end
                 )
                 randomMove = self:sample(moves).name
             end
@@ -7171,7 +11303,22 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cute"
     },
-    milkdrink = {num = 208, accuracy = true, basePower = 0, category = "Status", name = "Milk Drink", pp = 10, priority = 0, flags = {snatch = 1, heal = 1}, heal = {1, 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
+    milkdrink = {
+        num = 208,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Milk Drink",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1},
+        heal = {1, 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
     mimic = {
         num = 102,
         accuracy = true,
@@ -7184,7 +11331,10 @@ ____exports.Moves = {
         onHit = function(self, target, source)
             local disallowedMoves = {"chatter", "mimic", "sketch", "struggle", "transform"}
             local move = target.lastMove
-            if ((source.transformed or (not move)) or disallowedMoves:includes(move.id)) or source.moves:includes(move.id) then
+            if
+                ((source.transformed or (not move)) or disallowedMoves:includes(move.id)) or
+                    source.moves:includes(move.id)
+             then
                 return false
             end
             if move.isZ or move.isMax then
@@ -7194,7 +11344,16 @@ ____exports.Moves = {
             if mimicIndex < 0 then
                 return false
             end
-            source.moveSlots[mimicIndex] = {move = move.name, id = move.id, pp = move.pp, maxpp = move.pp, target = move.target, disabled = false, used = false, virtual = true}
+            source.moveSlots[mimicIndex] = {
+                move = move.name,
+                id = move.id,
+                pp = move.pp,
+                maxpp = move.pp,
+                target = move.target,
+                disabled = false,
+                used = false,
+                virtual = true
+            }
             self:add("-start", source, "Mimic", move.name)
         end,
         secondary = nil,
@@ -7245,12 +11404,7 @@ ____exports.Moves = {
         end,
         onHit = function(self, target, source)
             source:addVolatile("lockon", target)
-            self:add(
-                "-activate",
-                source,
-                "move: Mind Reader",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Mind Reader", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
@@ -7271,13 +11425,31 @@ ____exports.Moves = {
         condition = {
             noCopy = true,
             onSourceModifyDamage = function(self, damage, source, target, move)
-                local boostedMoves = {"stomp", "steamroller", "bodyslam", "flyingpress", "dragonrush", "heatcrash", "heavyslam", "maliciousmoonsault"}
+                local boostedMoves = {
+                    "stomp",
+                    "steamroller",
+                    "bodyslam",
+                    "flyingpress",
+                    "dragonrush",
+                    "heatcrash",
+                    "heavyslam",
+                    "maliciousmoonsault"
+                }
                 if boostedMoves:includes(move.id) then
                     return self:chainModify(2)
                 end
             end,
             onAccuracy = function(self, accuracy, target, source, move)
-                local boostedMoves = {"stomp", "steamroller", "bodyslam", "flyingpress", "dragonrush", "heatcrash", "heavyslam", "maliciousmoonsault"}
+                local boostedMoves = {
+                    "stomp",
+                    "steamroller",
+                    "bodyslam",
+                    "flyingpress",
+                    "dragonrush",
+                    "heatcrash",
+                    "heavyslam",
+                    "maliciousmoonsault"
+                }
                 if boostedMoves:includes(move.id) then
                     return true
                 end
@@ -7408,7 +11580,21 @@ ____exports.Moves = {
         zMove = {boost = {atk = 2}},
         contestType = "Clever"
     },
-    mirrorshot = {num = 429, accuracy = 85, basePower = 65, category = "Special", isNonstandard = "Past", name = "Mirror Shot", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, boosts = {accuracy = -1}}, target = "normal", type = "Steel", contestType = "Beautiful"},
+    mirrorshot = {
+        num = 429,
+        accuracy = 85,
+        basePower = 65,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Mirror Shot",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Beautiful"
+    },
     mist = {
         num = 54,
         accuracy = true,
@@ -7455,7 +11641,20 @@ ____exports.Moves = {
         zMove = {effect = "heal"},
         contestType = "Beautiful"
     },
-    mistball = {num = 296, accuracy = 100, basePower = 70, category = "Special", name = "Mist Ball", pp = 5, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {spa = -1}}, target = "normal", type = "Psychic", contestType = "Clever"},
+    mistball = {
+        num = 296,
+        accuracy = 100,
+        basePower = 70,
+        category = "Special",
+        name = "Mist Ball",
+        pp = 5,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {spa = -1}},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
     mistyexplosion = {
         num = 802,
         accuracy = 100,
@@ -7545,8 +11744,35 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Beautiful"
     },
-    moonblast = {num = 585, accuracy = 100, basePower = 95, category = "Special", name = "Moonblast", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, boosts = {spa = -1}}, target = "normal", type = "Fairy", contestType = "Beautiful"},
-    moongeistbeam = {num = 714, accuracy = 100, basePower = 100, category = "Special", name = "Moongeist Beam", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, ignoreAbility = true, secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
+    moonblast = {
+        num = 585,
+        accuracy = 100,
+        basePower = 95,
+        category = "Special",
+        name = "Moonblast",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, boosts = {spa = -1}},
+        target = "normal",
+        type = "Fairy",
+        contestType = "Beautiful"
+    },
+    moongeistbeam = {
+        num = 714,
+        accuracy = 100,
+        basePower = 100,
+        category = "Special",
+        name = "Moongeist Beam",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        ignoreAbility = true,
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
     moonlight = {
         num = 236,
         accuracy = true,
@@ -7596,9 +11822,7 @@ ____exports.Moves = {
                 goto ____switch1006_end
             end
             ::____switch1006_end::
-            return not (not self:heal(
-                self:modify(pokemon.maxhp, factor)
-            ))
+            return not (not self:heal(self:modify(pokemon.maxhp, factor)))
         end,
         secondary = nil,
         target = "self",
@@ -7655,9 +11879,7 @@ ____exports.Moves = {
                 goto ____switch1008_end
             end
             ::____switch1008_end::
-            return not (not self:heal(
-                self:modify(pokemon.maxhp, factor)
-            ))
+            return not (not self:heal(self:modify(pokemon.maxhp, factor)))
         end,
         secondary = nil,
         target = "self",
@@ -7665,9 +11887,49 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Beautiful"
     },
-    mudbomb = {num = 426, accuracy = 85, basePower = 65, category = "Special", isNonstandard = "Past", name = "Mud Bomb", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 30, boosts = {accuracy = -1}}, target = "normal", type = "Ground", contestType = "Cute"},
-    mudshot = {num = 341, accuracy = 95, basePower = 55, category = "Special", name = "Mud Shot", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "normal", type = "Ground", contestType = "Tough"},
-    mudslap = {num = 189, accuracy = 100, basePower = 20, category = "Special", name = "Mud-Slap", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {accuracy = -1}}, target = "normal", type = "Ground", contestType = "Cute"},
+    mudbomb = {
+        num = 426,
+        accuracy = 85,
+        basePower = 65,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Mud Bomb",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Ground",
+        contestType = "Cute"
+    },
+    mudshot = {
+        num = 341,
+        accuracy = 95,
+        basePower = 55,
+        category = "Special",
+        name = "Mud Shot",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "normal",
+        type = "Ground",
+        contestType = "Tough"
+    },
+    mudslap = {
+        num = 189,
+        accuracy = 100,
+        basePower = 20,
+        category = "Special",
+        name = "Mud-Slap",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Ground",
+        contestType = "Cute"
+    },
     mudsport = {
         num = 300,
         accuracy = true,
@@ -7682,11 +11944,7 @@ ____exports.Moves = {
         condition = {
             duration = 5,
             onFieldStart = function(self, field, source)
-                self:add(
-                    "-fieldstart",
-                    "move: Mud Sport",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-fieldstart", "move: Mud Sport", "[of] " .. tostring(source))
             end,
             onBasePowerPriority = 1,
             onBasePower = function(self, basePower, attacker, defender, move)
@@ -7707,7 +11965,20 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Cute"
     },
-    muddywater = {num = 330, accuracy = 85, basePower = 90, category = "Special", name = "Muddy Water", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = {chance = 30, boosts = {accuracy = -1}}, target = "allAdjacentFoes", type = "Water", contestType = "Tough"},
+    muddywater = {
+        num = 330,
+        accuracy = 85,
+        basePower = 90,
+        category = "Special",
+        name = "Muddy Water",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = {chance = 30, boosts = {accuracy = -1}},
+        target = "allAdjacentFoes",
+        type = "Water",
+        contestType = "Tough"
+    },
     multiattack = {
         num = 718,
         accuracy = 100,
@@ -7730,8 +12001,36 @@ ____exports.Moves = {
         maxMove = {basePower = 95},
         contestType = "Tough"
     },
-    mysticalfire = {num = 595, accuracy = 100, basePower = 75, category = "Special", name = "Mystical Fire", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spa = -1}}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    nastyplot = {num = 417, accuracy = true, basePower = 0, category = "Status", name = "Nasty Plot", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {spa = 2}, secondary = nil, target = "self", type = "Dark", zMove = {effect = "clearnegativeboost"}, contestType = "Clever"},
+    mysticalfire = {
+        num = 595,
+        accuracy = 100,
+        basePower = 75,
+        category = "Special",
+        name = "Mystical Fire",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spa = -1}},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    nastyplot = {
+        num = 417,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Nasty Plot",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spa = 2},
+        secondary = nil,
+        target = "self",
+        type = "Dark",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Clever"
+    },
     naturalgift = {
         num = 363,
         accuracy = 100,
@@ -7806,12 +12105,7 @@ ____exports.Moves = {
         accuracy = 90,
         basePower = 0,
         damageCallback = function(self, pokemon, target)
-            return self:clampIntRange(
-                math.floor(
-                    target:getUndynamaxedHP() / 2
-                ),
-                1
-            )
+            return self:clampIntRange(math.floor(target:getUndynamaxedHP() / 2), 1)
         end,
         category = "Special",
         name = "Nature's Madness",
@@ -7823,9 +12117,51 @@ ____exports.Moves = {
         type = "Fairy",
         contestType = "Tough"
     },
-    needlearm = {num = 302, accuracy = 100, basePower = 60, category = "Physical", isNonstandard = "Past", name = "Needle Arm", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Grass", contestType = "Clever"},
-    neverendingnightmare = {num = 636, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Never-Ending Nightmare", pp = 1, priority = 0, flags = {}, isZ = "ghostiumz", secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
-    nightdaze = {num = 539, accuracy = 95, basePower = 85, category = "Special", name = "Night Daze", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 40, boosts = {accuracy = -1}}, target = "normal", type = "Dark", contestType = "Cool"},
+    needlearm = {
+        num = 302,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Needle Arm",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Grass",
+        contestType = "Clever"
+    },
+    neverendingnightmare = {
+        num = 636,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Never-Ending Nightmare",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "ghostiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
+    nightdaze = {
+        num = 539,
+        accuracy = 95,
+        basePower = 85,
+        category = "Special",
+        name = "Night Daze",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 40, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Dark",
+        contestType = "Cool"
+    },
     nightmare = {
         num = 171,
         accuracy = 100,
@@ -7856,9 +12192,52 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Clever"
     },
-    nightshade = {num = 101, accuracy = 100, basePower = 0, damage = "level", category = "Special", name = "Night Shade", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ghost", contestType = "Clever"},
-    nightslash = {num = 400, accuracy = 100, basePower = 70, category = "Physical", name = "Night Slash", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Dark", contestType = "Cool"},
-    nobleroar = {num = 568, accuracy = 100, basePower = 0, category = "Status", name = "Noble Roar", pp = 30, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1}, boosts = {atk = -1, spa = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Tough"},
+    nightshade = {
+        num = 101,
+        accuracy = 100,
+        basePower = 0,
+        damage = "level",
+        category = "Special",
+        name = "Night Shade",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    nightslash = {
+        num = 400,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Night Slash",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Dark",
+        contestType = "Cool"
+    },
+    nobleroar = {
+        num = 568,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Noble Roar",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        boosts = {atk = -1, spa = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Tough"
+    },
     noretreat = {
         num = 748,
         accuracy = true,
@@ -7890,8 +12269,35 @@ ____exports.Moves = {
         target = "self",
         type = "Fighting"
     },
-    nuzzle = {num = 609, accuracy = 100, basePower = 20, category = "Physical", name = "Nuzzle", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, status = "par"}, target = "normal", type = "Electric", contestType = "Cute"},
-    oblivionwing = {num = 613, accuracy = 100, basePower = 80, category = "Special", name = "Oblivion Wing", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, distance = 1, heal = 1}, drain = {3, 4}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
+    nuzzle = {
+        num = 609,
+        accuracy = 100,
+        basePower = 20,
+        category = "Physical",
+        name = "Nuzzle",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cute"
+    },
+    oblivionwing = {
+        num = 613,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Oblivion Wing",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, distance = 1, heal = 1},
+        drain = {3, 4},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
     obstruct = {
         num = 792,
         accuracy = 100,
@@ -7937,23 +12343,13 @@ ____exports.Moves = {
                     end
                 end
                 if self:checkMoveMakesContact(move, source, target) then
-                    self:boost(
-                        {def = -2},
-                        source,
-                        target,
-                        self.dex:getActiveMove("Obstruct")
-                    )
+                    self:boost({def = -2}, source, target, self.dex:getActiveMove("Obstruct"))
                 end
                 return self.NOT_FAIL
             end,
             onHit = function(self, target, source, move)
                 if move.isZOrMaxPowered and self:checkMoveMakesContact(move, source, target) then
-                    self:boost(
-                        {def = -2},
-                        source,
-                        target,
-                        self.dex:getActiveMove("Obstruct")
-                    )
+                    self:boost({def = -2}, source, target, self.dex:getActiveMove("Obstruct"))
                 end
             end
         },
@@ -7961,8 +12357,36 @@ ____exports.Moves = {
         target = "self",
         type = "Dark"
     },
-    oceanicoperetta = {num = 697, accuracy = true, basePower = 195, category = "Special", isNonstandard = "Past", name = "Oceanic Operetta", pp = 1, priority = 0, flags = {}, isZ = "primariumz", secondary = nil, target = "normal", type = "Water", contestType = "Cool"},
-    octazooka = {num = 190, accuracy = 85, basePower = 65, category = "Special", name = "Octazooka", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {accuracy = -1}}, target = "normal", type = "Water", contestType = "Tough"},
+    oceanicoperetta = {
+        num = 697,
+        accuracy = true,
+        basePower = 195,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Oceanic Operetta",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "primariumz",
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Cool"
+    },
+    octazooka = {
+        num = 190,
+        accuracy = 85,
+        basePower = 65,
+        category = "Special",
+        name = "Octazooka",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {accuracy = -1}},
+        target = "normal",
+        type = "Water",
+        contestType = "Tough"
+    },
     octolock = {
         num = 753,
         accuracy = 100,
@@ -7978,12 +12402,7 @@ ____exports.Moves = {
         volatileStatus = "octolock",
         condition = {
             onStart = function(self, pokemon, source)
-                self:add(
-                    "-start",
-                    pokemon,
-                    "move: Octolock",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-start", pokemon, "move: Octolock", "[of] " .. tostring(source))
             end,
             onResidualOrder = 14,
             onResidual = function(self, pokemon)
@@ -7993,12 +12412,7 @@ ____exports.Moves = {
                     self:add("-end", pokemon, "Octolock", "[partiallytrapped]", "[silent]")
                     return
                 end
-                self:boost(
-                    {def = -1, spd = -1},
-                    pokemon,
-                    source,
-                    self.dex:getActiveMove("octolock")
-                )
+                self:boost({def = -1, spd = -1}, pokemon, source, self.dex:getActiveMove("octolock"))
             end,
             onTrapPokemon = function(self, pokemon)
                 if self.effectState.source and self.effectState.source.isActive then
@@ -8032,8 +12446,34 @@ ____exports.Moves = {
         zMove = {boost = {atk = 1}},
         contestType = "Clever"
     },
-    ominouswind = {num = 466, accuracy = 100, basePower = 60, category = "Special", isNonstandard = "Past", name = "Ominous Wind", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}}, target = "normal", type = "Ghost", contestType = "Beautiful"},
-    originpulse = {num = 618, accuracy = 85, basePower = 110, category = "Special", name = "Origin Pulse", pp = 10, priority = 0, flags = {protect = 1, pulse = 1, mirror = 1}, target = "allAdjacentFoes", type = "Water", contestType = "Beautiful"},
+    ominouswind = {
+        num = 466,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Ominous Wind",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Beautiful"
+    },
+    originpulse = {
+        num = 618,
+        accuracy = 85,
+        basePower = 110,
+        category = "Special",
+        name = "Origin Pulse",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, pulse = 1, mirror = 1},
+        target = "allAdjacentFoes",
+        type = "Water",
+        contestType = "Beautiful"
+    },
     outrage = {
         num = 200,
         accuracy = 100,
@@ -8054,8 +12494,34 @@ ____exports.Moves = {
         type = "Dragon",
         contestType = "Cool"
     },
-    overdrive = {num = 786, accuracy = 100, basePower = 80, category = "Special", name = "Overdrive", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = nil, target = "allAdjacentFoes", type = "Electric"},
-    overheat = {num = 315, accuracy = 90, basePower = 130, category = "Special", name = "Overheat", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {boosts = {spa = -2}}, secondary = nil, target = "normal", type = "Fire", contestType = "Beautiful"},
+    overdrive = {
+        num = 786,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Overdrive",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Electric"
+    },
+    overheat = {
+        num = 315,
+        accuracy = 90,
+        basePower = 130,
+        category = "Special",
+        name = "Overheat",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {boosts = {spa = -2}},
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
     painsplit = {
         num = 220,
         accuracy = true,
@@ -8080,8 +12546,36 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Clever"
     },
-    paleowave = {num = 0, accuracy = 100, basePower = 85, category = "Special", isNonstandard = "CAP", name = "Paleo Wave", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, boosts = {atk = -1}}, target = "normal", type = "Rock", contestType = "Beautiful"},
-    paraboliccharge = {num = 570, accuracy = 100, basePower = 65, category = "Special", name = "Parabolic Charge", pp = 20, priority = 0, flags = {protect = 1, mirror = 1, heal = 1}, drain = {1, 2}, secondary = nil, target = "allAdjacent", type = "Electric", contestType = "Clever"},
+    paleowave = {
+        num = 0,
+        accuracy = 100,
+        basePower = 85,
+        category = "Special",
+        isNonstandard = "CAP",
+        name = "Paleo Wave",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, boosts = {atk = -1}},
+        target = "normal",
+        type = "Rock",
+        contestType = "Beautiful"
+    },
+    paraboliccharge = {
+        num = 570,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        name = "Parabolic Charge",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, heal = 1},
+        drain = {1, 2},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Electric",
+        contestType = "Clever"
+    },
     partingshot = {
         num = 575,
         accuracy = 100,
@@ -8143,7 +12637,20 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Clever"
     },
-    peck = {num = 64, accuracy = 100, basePower = 35, category = "Physical", name = "Peck", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
+    peck = {
+        num = 64,
+        accuracy = 100,
+        basePower = 35,
+        category = "Physical",
+        name = "Peck",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
     perishsong = {
         num = 195,
         accuracy = true,
@@ -8156,9 +12663,7 @@ ____exports.Moves = {
         onHitField = function(self, target, source, move)
             local result = false
             local message = false
-            for ____, pokemon in __TS__Iterator(
-                self:getAllActive()
-            ) do
+            for ____, pokemon in __TS__Iterator(self:getAllActive()) do
                 if self:runEvent("Invulnerability", pokemon, source, move) == false then
                     self:add("-miss", source, pokemon)
                     result = true
@@ -8187,11 +12692,7 @@ ____exports.Moves = {
             onResidualOrder = 24,
             onResidual = function(self, pokemon)
                 local duration = pokemon.volatiles.perishsong.duration
-                self:add(
-                    "-start",
-                    pokemon,
-                    "perish" .. tostring(duration)
-                )
+                self:add("-start", pokemon, "perish" .. tostring(duration))
             end
         },
         secondary = nil,
@@ -8200,7 +12701,20 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Beautiful"
     },
-    petalblizzard = {num = 572, accuracy = 100, basePower = 90, category = "Physical", name = "Petal Blizzard", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "allAdjacent", type = "Grass", contestType = "Beautiful"},
+    petalblizzard = {
+        num = 572,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Petal Blizzard",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Grass",
+        contestType = "Beautiful"
+    },
     petaldance = {
         num = 80,
         accuracy = 100,
@@ -8286,10 +12800,68 @@ ____exports.Moves = {
         type = "Electric",
         contestType = "Cute"
     },
-    pinmissile = {num = 42, accuracy = 95, basePower = 25, category = "Physical", name = "Pin Missile", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Bug", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Cool"},
-    plasmafists = {num = 721, accuracy = 100, basePower = 100, category = "Physical", name = "Plasma Fists", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, pseudoWeather = "iondeluge", secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
-    playnice = {num = 589, accuracy = true, basePower = 0, category = "Status", name = "Play Nice", pp = 20, priority = 0, flags = {reflectable = 1, mirror = 1, authentic = 1}, boosts = {atk = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Cute"},
-    playrough = {num = 583, accuracy = 90, basePower = 90, category = "Physical", name = "Play Rough", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {atk = -1}}, target = "normal", type = "Fairy", contestType = "Cute"},
+    pinmissile = {
+        num = 42,
+        accuracy = 95,
+        basePower = 25,
+        category = "Physical",
+        name = "Pin Missile",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Cool"
+    },
+    plasmafists = {
+        num = 721,
+        accuracy = 100,
+        basePower = 100,
+        category = "Physical",
+        name = "Plasma Fists",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        pseudoWeather = "iondeluge",
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    playnice = {
+        num = 589,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Play Nice",
+        pp = 20,
+        priority = 0,
+        flags = {reflectable = 1, mirror = 1, authentic = 1},
+        boosts = {atk = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
+    playrough = {
+        num = 583,
+        accuracy = 90,
+        basePower = 90,
+        category = "Physical",
+        name = "Play Rough",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {atk = -1}},
+        target = "normal",
+        type = "Fairy",
+        contestType = "Cute"
+    },
     pluck = {
         num = 365,
         accuracy = 100,
@@ -8302,14 +12874,7 @@ ____exports.Moves = {
         onHit = function(self, target, source)
             local item = target:getItem()
             if (source.hp and item.isBerry) and target:takeItem(source) then
-                self:add(
-                    "-enditem",
-                    target,
-                    item.name,
-                    "[from] stealeat",
-                    "[move] Pluck",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-enditem", target, item.name, "[from] stealeat", "[move] Pluck", "[of] " .. tostring(source))
                 if self:singleEvent("Eat", item, nil, source, nil, nil) then
                     self:runEvent("EatItem", source, nil, nil, item)
                     if item.id == "leppaberry" then
@@ -8326,12 +12891,95 @@ ____exports.Moves = {
         type = "Flying",
         contestType = "Cute"
     },
-    poisonfang = {num = 305, accuracy = 100, basePower = 50, category = "Physical", name = "Poison Fang", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondary = {chance = 50, status = "tox"}, target = "normal", type = "Poison", contestType = "Clever"},
-    poisongas = {num = 139, accuracy = 90, basePower = 0, category = "Status", name = "Poison Gas", pp = 40, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "psn", secondary = nil, target = "allAdjacentFoes", type = "Poison", zMove = {boost = {def = 1}}, contestType = "Clever"},
-    poisonjab = {num = 398, accuracy = 100, basePower = 80, category = "Physical", name = "Poison Jab", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "psn"}, target = "normal", type = "Poison", contestType = "Tough"},
-    poisonpowder = {num = 77, accuracy = 75, basePower = 0, category = "Status", name = "Poison Powder", pp = 35, priority = 0, flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1}, status = "psn", secondary = nil, target = "normal", type = "Poison", zMove = {boost = {def = 1}}, contestType = "Clever"},
-    poisonsting = {num = 40, accuracy = 100, basePower = 15, category = "Physical", name = "Poison Sting", pp = 35, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "psn"}, target = "normal", type = "Poison", contestType = "Clever"},
-    poisontail = {num = 342, accuracy = 100, basePower = 50, category = "Physical", name = "Poison Tail", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = {chance = 10, status = "psn"}, target = "normal", type = "Poison", contestType = "Clever"},
+    poisonfang = {
+        num = 305,
+        accuracy = 100,
+        basePower = 50,
+        category = "Physical",
+        name = "Poison Fang",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, status = "tox"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Clever"
+    },
+    poisongas = {
+        num = 139,
+        accuracy = 90,
+        basePower = 0,
+        category = "Status",
+        name = "Poison Gas",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "psn",
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Poison",
+        zMove = {boost = {def = 1}},
+        contestType = "Clever"
+    },
+    poisonjab = {
+        num = 398,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Poison Jab",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
+    poisonpowder = {
+        num = 77,
+        accuracy = 75,
+        basePower = 0,
+        category = "Status",
+        name = "Poison Powder",
+        pp = 35,
+        priority = 0,
+        flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1},
+        status = "psn",
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        zMove = {boost = {def = 1}},
+        contestType = "Clever"
+    },
+    poisonsting = {
+        num = 40,
+        accuracy = 100,
+        basePower = 15,
+        category = "Physical",
+        name = "Poison Sting",
+        pp = 35,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Clever"
+    },
+    poisontail = {
+        num = 342,
+        accuracy = 100,
+        basePower = 50,
+        category = "Physical",
+        name = "Poison Tail",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = {chance = 10, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Clever"
+    },
     pollenpuff = {
         num = 676,
         accuracy = 100,
@@ -8349,9 +12997,7 @@ ____exports.Moves = {
         end,
         onHit = function(self, target, source)
             if source:isAlly(target) then
-                if not self:heal(
-                    math.floor(target.baseMaxhp * 0.5)
-                ) then
+                if not self:heal(math.floor(target.baseMaxhp * 0.5)) then
                     self:add("-immune", target)
                 end
             end
@@ -8374,18 +13020,26 @@ ____exports.Moves = {
             return not (not target.item)
         end,
         onTryHit = function(self, target, source, move)
-            self:add(
-                "-activate",
-                target,
-                "move: Poltergeist",
-                self.dex.items:get(target.item).name
-            )
+            self:add("-activate", target, "move: Poltergeist", self.dex.items:get(target.item).name)
         end,
         secondary = nil,
         target = "normal",
         type = "Ghost"
     },
-    pound = {num = 1, accuracy = 100, basePower = 40, category = "Physical", name = "Pound", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
+    pound = {
+        num = 1,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Pound",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     powder = {
         num = 600,
         accuracy = 100,
@@ -8406,12 +13060,7 @@ ____exports.Moves = {
             onTryMove = function(self, pokemon, target, move)
                 if move.type == "Fire" then
                     self:add("-activate", pokemon, "move: Powder")
-                    self:damage(
-                        self:clampIntRange(
-                            math.floor((pokemon.maxhp / 4) + 0.5),
-                            1
-                        )
-                    )
+                    self:damage(self:clampIntRange(math.floor((pokemon.maxhp / 4) + 0.5), 1))
                     return false
                 end
             end
@@ -8422,8 +13071,34 @@ ____exports.Moves = {
         zMove = {boost = {spd = 2}},
         contestType = "Clever"
     },
-    powdersnow = {num = 181, accuracy = 100, basePower = 40, category = "Special", name = "Powder Snow", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "frz"}, target = "allAdjacentFoes", type = "Ice", contestType = "Beautiful"},
-    powergem = {num = 408, accuracy = 100, basePower = 80, category = "Special", name = "Power Gem", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Rock", contestType = "Beautiful"},
+    powdersnow = {
+        num = 181,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Powder Snow",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "frz"},
+        target = "allAdjacentFoes",
+        type = "Ice",
+        contestType = "Beautiful"
+    },
+    powergem = {
+        num = 408,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Power Gem",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Beautiful"
+    },
     powersplit = {
         num = 471,
         accuracy = true,
@@ -8440,12 +13115,7 @@ ____exports.Moves = {
             local newspa = math.floor((target.storedStats.spa + source.storedStats.spa) / 2)
             target.storedStats.spa = newspa
             source.storedStats.spa = newspa
-            self:add(
-                "-activate",
-                source,
-                "move: Power Split",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Power Split", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
@@ -8540,9 +13210,47 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Clever"
     },
-    poweruppunch = {num = 612, accuracy = 100, basePower = 40, category = "Physical", name = "Power-Up Punch", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 100, self = {boosts = {atk = 1}}}, target = "normal", type = "Fighting", contestType = "Tough"},
-    powerwhip = {num = 438, accuracy = 85, basePower = 120, category = "Physical", name = "Power Whip", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Tough"},
-    precipiceblades = {num = 619, accuracy = 85, basePower = 120, category = "Physical", name = "Precipice Blades", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, target = "allAdjacentFoes", type = "Ground", contestType = "Cool"},
+    poweruppunch = {
+        num = 612,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Power-Up Punch",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 100, self = {boosts = {atk = 1}}},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
+    powerwhip = {
+        num = 438,
+        accuracy = 85,
+        basePower = 120,
+        category = "Physical",
+        name = "Power Whip",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Tough"
+    },
+    precipiceblades = {
+        num = 619,
+        accuracy = 85,
+        basePower = 120,
+        category = "Physical",
+        name = "Precipice Blades",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        target = "allAdjacentFoes",
+        type = "Ground",
+        contestType = "Cool"
+    },
     present = {
         num = 217,
         accuracy = 90,
@@ -8570,7 +13278,21 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cute"
     },
-    prismaticlaser = {num = 711, accuracy = 100, basePower = 160, category = "Special", name = "Prismatic Laser", pp = 10, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Psychic", contestType = "Cool"},
+    prismaticlaser = {
+        num = 711,
+        accuracy = 100,
+        basePower = 160,
+        category = "Special",
+        name = "Prismatic Laser",
+        pp = 10,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cool"
+    },
     protect = {
         num = 182,
         accuracy = true,
@@ -8624,7 +13346,20 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Cute"
     },
-    psybeam = {num = 60, accuracy = 100, basePower = 65, category = "Special", name = "Psybeam", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "confusion"}, target = "normal", type = "Psychic", contestType = "Beautiful"},
+    psybeam = {
+        num = 60,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        name = "Psybeam",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Beautiful"
+    },
     psychup = {
         num = 244,
         accuracy = true,
@@ -8659,7 +13394,20 @@ ____exports.Moves = {
         zMove = {effect = "heal"},
         contestType = "Clever"
     },
-    psychic = {num = 94, accuracy = 100, basePower = 90, category = "Special", name = "Psychic", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, boosts = {spd = -1}}, target = "normal", type = "Psychic", contestType = "Clever"},
+    psychic = {
+        num = 94,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Psychic",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, boosts = {spd = -1}},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
     psychicfangs = {
         num = 706,
         accuracy = 100,
@@ -8746,8 +13494,37 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Clever"
     },
-    psychoboost = {num = 354, accuracy = 90, basePower = 140, category = "Special", isNonstandard = "Past", name = "Psycho Boost", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, self = {boosts = {spa = -2}}, secondary = nil, target = "normal", type = "Psychic", contestType = "Clever"},
-    psychocut = {num = 427, accuracy = 100, basePower = 70, category = "Physical", name = "Psycho Cut", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Psychic", contestType = "Cool"},
+    psychoboost = {
+        num = 354,
+        accuracy = 90,
+        basePower = 140,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Psycho Boost",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        self = {boosts = {spa = -2}},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    psychocut = {
+        num = 427,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Psycho Cut",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cool"
+    },
     psychoshift = {
         num = 375,
         accuracy = 100,
@@ -8774,8 +13551,36 @@ ____exports.Moves = {
         zMove = {boost = {spa = 2}},
         contestType = "Clever"
     },
-    psyshock = {num = 473, accuracy = 100, basePower = 80, category = "Special", defensiveCategory = "Physical", name = "Psyshock", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Psychic", contestType = "Beautiful"},
-    psystrike = {num = 540, accuracy = 100, basePower = 100, category = "Special", defensiveCategory = "Physical", name = "Psystrike", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Psychic", contestType = "Cool"},
+    psyshock = {
+        num = 473,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        defensiveCategory = "Physical",
+        name = "Psyshock",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Beautiful"
+    },
+    psystrike = {
+        num = 540,
+        accuracy = 100,
+        basePower = 100,
+        category = "Special",
+        defensiveCategory = "Physical",
+        name = "Psystrike",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cool"
+    },
     psywave = {
         num = 149,
         accuracy = 100,
@@ -8794,7 +13599,22 @@ ____exports.Moves = {
         type = "Psychic",
         contestType = "Clever"
     },
-    pulverizingpancake = {num = 701, accuracy = true, basePower = 210, category = "Physical", isNonstandard = "Past", name = "Pulverizing Pancake", pp = 1, priority = 0, flags = {contact = 1}, isZ = "snorliumz", secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
+    pulverizingpancake = {
+        num = 701,
+        accuracy = true,
+        basePower = 210,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Pulverizing Pancake",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "snorliumz",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     punishment = {
         num = 386,
         accuracy = 100,
@@ -8832,10 +13652,7 @@ ____exports.Moves = {
             if not target:cureStatus() then
                 return false
             end
-            self:heal(
-                math.ceil(source.maxhp * 0.5),
-                source
-            )
+            self:heal(math.ceil(source.maxhp * 0.5), source)
         end,
         secondary = nil,
         target = "normal",
@@ -8900,9 +13717,7 @@ ____exports.Moves = {
                             alreadyAdded = true
                         end
                         if source.canMegaEvo or source.canUltraBurst then
-                            for ____, ____value in __TS__Iterator(
-                                self.queue:entries()
-                            ) do
+                            for ____, ____value in __TS__Iterator(self.queue:entries()) do
                                 local actionIndex
                                 actionIndex = ____value[1]
                                 local action
@@ -8914,11 +13729,7 @@ ____exports.Moves = {
                                 end
                             end
                         end
-                        self.actions:runMove(
-                            "pursuit",
-                            source,
-                            source:getLocOf(pokemon)
-                        )
+                        self.actions:runMove("pursuit", source, source:getLocOf(pokemon))
                     end
                     ::__continue1159::
                 end
@@ -8929,7 +13740,19 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Clever"
     },
-    pyroball = {num = 780, accuracy = 90, basePower = 120, category = "Physical", name = "Pyro Ball", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, defrost = 1, bullet = 1}, secondary = {chance = 10, status = "brn"}, target = "normal", type = "Fire"},
+    pyroball = {
+        num = 780,
+        accuracy = 90,
+        basePower = 120,
+        category = "Physical",
+        name = "Pyro Ball",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, defrost = 1, bullet = 1},
+        secondary = {chance = 10, status = "brn"},
+        target = "normal",
+        type = "Fire"
+    },
     quash = {
         num = 511,
         accuracy = 100,
@@ -8956,7 +13779,20 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Clever"
     },
-    quickattack = {num = 98, accuracy = 100, basePower = 40, category = "Physical", name = "Quick Attack", pp = 30, priority = 1, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
+    quickattack = {
+        num = 98,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Quick Attack",
+        pp = 30,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
     quickguard = {
         num = 501,
         accuracy = true,
@@ -9008,7 +13844,22 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Cool"
     },
-    quiverdance = {num = 483, accuracy = true, basePower = 0, category = "Status", name = "Quiver Dance", pp = 20, priority = 0, flags = {snatch = 1, dance = 1}, boosts = {spa = 1, spd = 1, spe = 1}, secondary = nil, target = "self", type = "Bug", zMove = {effect = "clearnegativeboost"}, contestType = "Beautiful"},
+    quiverdance = {
+        num = 483,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Quiver Dance",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1, dance = 1},
+        boosts = {spa = 1, spd = 1, spe = 1},
+        secondary = nil,
+        target = "self",
+        type = "Bug",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Beautiful"
+    },
     rage = {
         num = 99,
         accuracy = 100,
@@ -9079,7 +13930,22 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Clever"
     },
-    raindance = {num = 240, accuracy = true, basePower = 0, category = "Status", name = "Rain Dance", pp = 5, priority = 0, flags = {}, weather = "RainDance", secondary = nil, target = "all", type = "Water", zMove = {boost = {spe = 1}}, contestType = "Beautiful"},
+    raindance = {
+        num = 240,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Rain Dance",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        weather = "RainDance",
+        secondary = nil,
+        target = "all",
+        type = "Water",
+        zMove = {boost = {spe = 1}},
+        contestType = "Beautiful"
+    },
     rapidspin = {
         num = 229,
         accuracy = 100,
@@ -9091,13 +13957,7 @@ ____exports.Moves = {
         flags = {contact = 1, protect = 1, mirror = 1},
         onAfterHit = function(self, target, pokemon)
             if pokemon.hp and pokemon:removeVolatile("leechseed") then
-                self:add(
-                    "-end",
-                    pokemon,
-                    "Leech Seed",
-                    "[from] move: Rapid Spin",
-                    "[of] " .. tostring(pokemon)
-                )
+                self:add("-end", pokemon, "Leech Seed", "[from] move: Rapid Spin", "[of] " .. tostring(pokemon))
             end
             local sideConditions = {"spikes", "toxicspikes", "stealthrock", "stickyweb", "gmaxsteelsurge"}
             for ____, condition in ipairs(sideConditions) do
@@ -9117,13 +13977,7 @@ ____exports.Moves = {
         end,
         onAfterSubDamage = function(self, damage, target, pokemon)
             if pokemon.hp and pokemon:removeVolatile("leechseed") then
-                self:add(
-                    "-end",
-                    pokemon,
-                    "Leech Seed",
-                    "[from] move: Rapid Spin",
-                    "[of] " .. tostring(pokemon)
-                )
+                self:add("-end", pokemon, "Leech Seed", "[from] move: Rapid Spin", "[of] " .. tostring(pokemon))
             end
             local sideConditions = {"spikes", "toxicspikes", "stealthrock", "stickyweb", "gmaxsteelsurge"}
             for ____, condition in ipairs(sideConditions) do
@@ -9146,8 +14000,35 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    razorleaf = {num = 75, accuracy = 95, basePower = 55, category = "Physical", name = "Razor Leaf", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "allAdjacentFoes", type = "Grass", contestType = "Cool"},
-    razorshell = {num = 534, accuracy = 95, basePower = 75, category = "Physical", name = "Razor Shell", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {def = -1}}, target = "normal", type = "Water", contestType = "Cool"},
+    razorleaf = {
+        num = 75,
+        accuracy = 95,
+        basePower = 55,
+        category = "Physical",
+        name = "Razor Leaf",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    razorshell = {
+        num = 534,
+        accuracy = 95,
+        basePower = 75,
+        category = "Physical",
+        name = "Razor Shell",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {def = -1}},
+        target = "normal",
+        type = "Water",
+        contestType = "Cool"
+    },
     razorwind = {
         num = 13,
         accuracy = 100,
@@ -9175,7 +14056,22 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    recover = {num = 105, accuracy = true, basePower = 0, category = "Status", name = "Recover", pp = 10, priority = 0, flags = {snatch = 1, heal = 1}, heal = {1, 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Clever"},
+    recover = {
+        num = 105,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Recover",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1},
+        heal = {1, 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Clever"
+    },
     recycle = {
         num = 278,
         accuracy = true,
@@ -9191,12 +14087,7 @@ ____exports.Moves = {
             end
             local item = pokemon.lastItem
             pokemon.lastItem = ""
-            self:add(
-                "-item",
-                pokemon,
-                self.dex.items:get(item),
-                "[from] move: Recycle"
-            )
+            self:add("-item", pokemon, self.dex.items:get(item), "[from] move: Recycle")
             pokemon:setItem(item)
         end,
         secondary = nil,
@@ -9224,7 +14115,10 @@ ____exports.Moves = {
                 return 5
             end,
             onAnyModifyDamage = function(self, damage, source, target, move)
-                if ((target ~= source) and self.effectState.target:hasAlly(target)) and (self:getCategory(move) == "Physical") then
+                if
+                    ((target ~= source) and self.effectState.target:hasAlly(target)) and
+                        (self:getCategory(move) == "Physical")
+                 then
                     if (not target:getMoveHitData(move).crit) and (not move.infiltrates) then
                         self:debug("Reflect weaken")
                         if self.activePerHalf > 1 then
@@ -9262,8 +14156,11 @@ ____exports.Moves = {
             if source.species and ((source.species.num == 493) or (source.species.num == 773)) then
                 return false
             end
-            local newBaseTypes = target:getTypes(true):filter(
-                function(____, ____type) return ____type ~= "???" end
+            local newBaseTypes =
+                target:getTypes(true):filter(
+                function(____, ____type)
+                    return ____type ~= "???"
+                end
             )
             if not newBaseTypes.length then
                 if target.addedType then
@@ -9272,13 +14169,7 @@ ____exports.Moves = {
                     return false
                 end
             end
-            self:add(
-                "-start",
-                source,
-                "typechange",
-                "[from] move: Reflect Type",
-                "[of] " .. tostring(target)
-            )
+            self:add("-start", source, "typechange", "[from] move: Reflect Type", "[of] " .. tostring(target))
             source:setType(newBaseTypes)
             source.addedType = target.addedType
             source.knownType = target:isAlly(source) and target.knownType
@@ -9330,12 +14221,7 @@ ____exports.Moves = {
         onAfterMoveSecondarySelf = function(self, pokemon, target, move)
             if move.willChangeForme then
                 local meloettaForme = ((pokemon.species.id == "meloettapirouette") and "") or "-Pirouette"
-                pokemon:formeChange(
-                    "Meloetta" .. tostring(meloettaForme),
-                    self.effect,
-                    false,
-                    "[msg]"
-                )
+                pokemon:formeChange("Meloetta" .. tostring(meloettaForme), self.effect, false, "[msg]")
             end
         end,
         target = "allAdjacentFoes",
@@ -9363,9 +14249,7 @@ ____exports.Moves = {
                 self:add(
                     "-fail",
                     source,
-                    "[from] ability: " .. tostring(
-                        source:getAbility().name
-                    ),
+                    "[from] ability: " .. tostring(source:getAbility().name),
                     "[of] " .. tostring(source)
                 )
                 return nil
@@ -9452,13 +14336,14 @@ ____exports.Moves = {
         accuracy = 100,
         basePower = 60,
         basePowerCallback = function(self, pokemon, target, move)
-            local damagedByTarget = pokemon.attackedBy:some(
-                function(____, p) return ((p.source == target) and (p.damage > 0)) and p.thisTurn end
+            local damagedByTarget =
+                pokemon.attackedBy:some(
+                function(____, p)
+                    return ((p.source == target) and (p.damage > 0)) and p.thisTurn
+                end
             )
             if damagedByTarget then
-                self:debug(
-                    "Boosted for getting hit by " .. tostring(target)
-                )
+                self:debug("Boosted for getting hit by " .. tostring(target))
                 return move.basePower * 2
             end
             return move.basePower
@@ -9527,16 +14412,156 @@ ____exports.Moves = {
         type = "Electric",
         maxMove = {basePower = 140}
     },
-    roar = {num = 46, accuracy = true, basePower = 0, category = "Status", name = "Roar", pp = 20, priority = -6, flags = {reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1}, forceSwitch = true, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Cool"},
-    roaroftime = {num = 459, accuracy = 90, basePower = 150, category = "Special", name = "Roar of Time", pp = 5, priority = 0, flags = {recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Dragon", contestType = "Beautiful"},
-    rockblast = {num = 350, accuracy = 90, basePower = 25, category = "Physical", name = "Rock Blast", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Rock", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Tough"},
-    rockclimb = {num = 431, accuracy = 85, basePower = 90, category = "Physical", isNonstandard = "Past", name = "Rock Climb", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "confusion"}, target = "normal", type = "Normal", contestType = "Tough"},
-    rockpolish = {num = 397, accuracy = true, basePower = 0, category = "Status", name = "Rock Polish", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {spe = 2}, secondary = nil, target = "self", type = "Rock", zMove = {effect = "clearnegativeboost"}, contestType = "Tough"},
-    rockslide = {num = 157, accuracy = 90, basePower = 75, category = "Physical", name = "Rock Slide", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "allAdjacentFoes", type = "Rock", contestType = "Tough"},
-    rocksmash = {num = 249, accuracy = 100, basePower = 40, category = "Physical", name = "Rock Smash", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {def = -1}}, target = "normal", type = "Fighting", contestType = "Tough"},
-    rockthrow = {num = 88, accuracy = 90, basePower = 50, category = "Physical", name = "Rock Throw", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Rock", contestType = "Tough"},
-    rocktomb = {num = 317, accuracy = 95, basePower = 60, category = "Physical", name = "Rock Tomb", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spe = -1}}, target = "normal", type = "Rock", contestType = "Clever"},
-    rockwrecker = {num = 439, accuracy = 90, basePower = 150, category = "Physical", name = "Rock Wrecker", pp = 5, priority = 0, flags = {bullet = 1, recharge = 1, protect = 1, mirror = 1}, self = {volatileStatus = "mustrecharge"}, secondary = nil, target = "normal", type = "Rock", contestType = "Tough"},
+    roar = {
+        num = 46,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Roar",
+        pp = 20,
+        priority = -6,
+        flags = {reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1},
+        forceSwitch = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Cool"
+    },
+    roaroftime = {
+        num = 459,
+        accuracy = 90,
+        basePower = 150,
+        category = "Special",
+        name = "Roar of Time",
+        pp = 5,
+        priority = 0,
+        flags = {recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Beautiful"
+    },
+    rockblast = {
+        num = 350,
+        accuracy = 90,
+        basePower = 25,
+        category = "Physical",
+        name = "Rock Blast",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Tough"
+    },
+    rockclimb = {
+        num = 431,
+        accuracy = 85,
+        basePower = 90,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Rock Climb",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    rockpolish = {
+        num = 397,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Rock Polish",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spe = 2},
+        secondary = nil,
+        target = "self",
+        type = "Rock",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Tough"
+    },
+    rockslide = {
+        num = 157,
+        accuracy = 90,
+        basePower = 75,
+        category = "Physical",
+        name = "Rock Slide",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "allAdjacentFoes",
+        type = "Rock",
+        contestType = "Tough"
+    },
+    rocksmash = {
+        num = 249,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Rock Smash",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {def = -1}},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
+    rockthrow = {
+        num = 88,
+        accuracy = 90,
+        basePower = 50,
+        category = "Physical",
+        name = "Rock Throw",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Tough"
+    },
+    rocktomb = {
+        num = 317,
+        accuracy = 95,
+        basePower = 60,
+        category = "Physical",
+        name = "Rock Tomb",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spe = -1}},
+        target = "normal",
+        type = "Rock",
+        contestType = "Clever"
+    },
+    rockwrecker = {
+        num = 439,
+        accuracy = 90,
+        basePower = 150,
+        category = "Physical",
+        name = "Rock Wrecker",
+        pp = 5,
+        priority = 0,
+        flags = {bullet = 1, recharge = 1, protect = 1, mirror = 1},
+        self = {volatileStatus = "mustrecharge"},
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Tough"
+    },
     roleplay = {
         num = 272,
         accuracy = true,
@@ -9550,8 +14575,23 @@ ____exports.Moves = {
             if target.ability == source.ability then
                 return false
             end
-            local additionalBannedTargetAbilities = {"flowergift", "forecast", "hungerswitch", "illusion", "imposter", "neutralizinggas", "powerofalchemy", "receiver", "trace", "wonderguard", "zenmode"}
-            if (target:getAbility().isPermanent or additionalBannedTargetAbilities:includes(target.ability)) or source:getAbility().isPermanent then
+            local additionalBannedTargetAbilities = {
+                "flowergift",
+                "forecast",
+                "hungerswitch",
+                "illusion",
+                "imposter",
+                "neutralizinggas",
+                "powerofalchemy",
+                "receiver",
+                "trace",
+                "wonderguard",
+                "zenmode"
+            }
+            if
+                (target:getAbility().isPermanent or additionalBannedTargetAbilities:includes(target.ability)) or
+                    source:getAbility().isPermanent
+             then
                 return false
             end
         end,
@@ -9575,7 +14615,21 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Cute"
     },
-    rollingkick = {num = 27, accuracy = 85, basePower = 60, category = "Physical", isNonstandard = "Past", name = "Rolling Kick", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Fighting", contestType = "Cool"},
+    rollingkick = {
+        num = 27,
+        accuracy = 85,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Rolling Kick",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     rollout = {
         num = 205,
         accuracy = 90,
@@ -9591,9 +14645,7 @@ ____exports.Moves = {
             if pokemon.volatiles.defensecurl then
                 bp = bp * 2
             end
-            self:debug(
-                "Rollout bp: " .. tostring(bp)
-            )
+            self:debug("Rollout bp: " .. tostring(bp))
             return bp
         end,
         category = "Physical",
@@ -9646,7 +14698,9 @@ ____exports.Moves = {
             onType = function(self, types, pokemon)
                 self.effectState.typeWas = types
                 return types:filter(
-                    function(____, ____type) return ____type ~= "Flying" end
+                    function(____, ____type)
+                        return ____type ~= "Flying"
+                    end
                 )
             end
         },
@@ -9669,9 +14723,7 @@ ____exports.Moves = {
         onHitField = function(self, target, source)
             local targets = {}
             local anyAirborne = false
-            for ____, pokemon in __TS__Iterator(
-                self:getAllActive()
-            ) do
+            for ____, pokemon in __TS__Iterator(self:getAllActive()) do
                 do
                     if not pokemon:runImmunity("Ground") then
                         self:add("-immune", pokemon)
@@ -9684,7 +14736,7 @@ ____exports.Moves = {
                 end
                 ::__continue1263::
             end
-            if (not #targets) and (not anyAirborne) then
+            if (not (#targets)) and (not anyAirborne) then
                 return false
             end
             for ____, pokemon in ipairs(targets) do
@@ -9731,8 +14783,36 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Beautiful"
     },
-    sacredfire = {num = 221, accuracy = 95, basePower = 100, category = "Physical", name = "Sacred Fire", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, defrost = 1}, secondary = {chance = 50, status = "brn"}, target = "normal", type = "Fire", contestType = "Beautiful"},
-    sacredsword = {num = 533, accuracy = 100, basePower = 90, category = "Physical", name = "Sacred Sword", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ignoreEvasion = true, ignoreDefensive = true, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
+    sacredfire = {
+        num = 221,
+        accuracy = 95,
+        basePower = 100,
+        category = "Physical",
+        name = "Sacred Fire",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, defrost = 1},
+        secondary = {chance = 50, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Beautiful"
+    },
+    sacredsword = {
+        num = 533,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Sacred Sword",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ignoreEvasion = true,
+        ignoreDefensive = true,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     safeguard = {
         num = 219,
         accuracy = true,
@@ -9799,9 +14879,53 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Beautiful"
     },
-    sandattack = {num = 28, accuracy = 100, basePower = 0, category = "Status", name = "Sand Attack", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {accuracy = -1}, secondary = nil, target = "normal", type = "Ground", zMove = {boost = {evasion = 1}}, contestType = "Cute"},
-    sandstorm = {num = 201, accuracy = true, basePower = 0, category = "Status", name = "Sandstorm", pp = 10, priority = 0, flags = {}, weather = "Sandstorm", secondary = nil, target = "all", type = "Rock", zMove = {boost = {spe = 1}}, contestType = "Tough"},
-    sandtomb = {num = 328, accuracy = 85, basePower = 35, category = "Physical", name = "Sand Tomb", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Ground", contestType = "Clever"},
+    sandattack = {
+        num = 28,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Sand Attack",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {accuracy = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        zMove = {boost = {evasion = 1}},
+        contestType = "Cute"
+    },
+    sandstorm = {
+        num = 201,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Sandstorm",
+        pp = 10,
+        priority = 0,
+        flags = {},
+        weather = "Sandstorm",
+        secondary = nil,
+        target = "all",
+        type = "Rock",
+        zMove = {boost = {spe = 1}},
+        contestType = "Tough"
+    },
+    sandtomb = {
+        num = 328,
+        accuracy = 85,
+        basePower = 35,
+        category = "Physical",
+        name = "Sand Tomb",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        contestType = "Clever"
+    },
     sappyseed = {
         num = 738,
         accuracy = 90,
@@ -9823,15 +14947,145 @@ ____exports.Moves = {
         type = "Grass",
         contestType = "Clever"
     },
-    savagespinout = {num = 634, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Savage Spin-Out", pp = 1, priority = 0, flags = {}, isZ = "buginiumz", secondary = nil, target = "normal", type = "Bug", contestType = "Cool"},
-    scald = {num = 503, accuracy = 100, basePower = 80, category = "Special", name = "Scald", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, defrost = 1}, thawsTarget = true, secondary = {chance = 30, status = "brn"}, target = "normal", type = "Water", contestType = "Tough"},
-    scaleshot = {num = 799, accuracy = 90, basePower = 25, category = "Physical", name = "Scale Shot", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, multihit = {2, 5}, selfBoost = {boosts = {def = -1, spe = 1}}, secondary = nil, target = "normal", type = "Dragon", zMove = {basePower = 140}, maxMove = {basePower = 130}},
-    scaryface = {num = 184, accuracy = 100, basePower = 0, category = "Status", name = "Scary Face", pp = 10, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, boosts = {spe = -2}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spe = 1}}, contestType = "Tough"},
-    scorchingsands = {num = 815, accuracy = 100, basePower = 70, category = "Special", name = "Scorching Sands", pp = 10, priority = 0, flags = {protect = 1, mirror = 1, defrost = 1}, thawsTarget = true, secondary = {chance = 30, status = "brn"}, target = "normal", type = "Ground"},
-    scratch = {num = 10, accuracy = 100, basePower = 40, category = "Physical", name = "Scratch", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    screech = {num = 103, accuracy = 85, basePower = 0, category = "Status", name = "Screech", pp = 40, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1}, boosts = {def = -2}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Clever"},
-    searingshot = {num = 545, accuracy = 100, basePower = 100, category = "Special", name = "Searing Shot", pp = 5, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "brn"}, target = "allAdjacent", type = "Fire", contestType = "Cool"},
-    searingsunrazesmash = {num = 724, accuracy = true, basePower = 200, category = "Physical", isNonstandard = "Past", name = "Searing Sunraze Smash", pp = 1, priority = 0, flags = {contact = 1}, isZ = "solganiumz", ignoreAbility = true, secondary = nil, target = "normal", type = "Steel", contestType = "Cool"},
+    savagespinout = {
+        num = 634,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Savage Spin-Out",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "buginiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Cool"
+    },
+    scald = {
+        num = 503,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Scald",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, defrost = 1},
+        thawsTarget = true,
+        secondary = {chance = 30, status = "brn"},
+        target = "normal",
+        type = "Water",
+        contestType = "Tough"
+    },
+    scaleshot = {
+        num = 799,
+        accuracy = 90,
+        basePower = 25,
+        category = "Physical",
+        name = "Scale Shot",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = {2, 5},
+        selfBoost = {boosts = {def = -1, spe = 1}},
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130}
+    },
+    scaryface = {
+        num = 184,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Scary Face",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        boosts = {spe = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spe = 1}},
+        contestType = "Tough"
+    },
+    scorchingsands = {
+        num = 815,
+        accuracy = 100,
+        basePower = 70,
+        category = "Special",
+        name = "Scorching Sands",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, defrost = 1},
+        thawsTarget = true,
+        secondary = {chance = 30, status = "brn"},
+        target = "normal",
+        type = "Ground"
+    },
+    scratch = {
+        num = 10,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Scratch",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    screech = {
+        num = 103,
+        accuracy = 85,
+        basePower = 0,
+        category = "Status",
+        name = "Screech",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1, mystery = 1},
+        boosts = {def = -2},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Clever"
+    },
+    searingshot = {
+        num = 545,
+        accuracy = 100,
+        basePower = 100,
+        category = "Special",
+        name = "Searing Shot",
+        pp = 5,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "brn"},
+        target = "allAdjacent",
+        type = "Fire",
+        contestType = "Cool"
+    },
+    searingsunrazesmash = {
+        num = 724,
+        accuracy = true,
+        basePower = 200,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Searing Sunraze Smash",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "solganiumz",
+        ignoreAbility = true,
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     secretpower = {
         num = 290,
         accuracy = 100,
@@ -9862,14 +15116,124 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Clever"
     },
-    secretsword = {num = 548, accuracy = 100, basePower = 85, category = "Special", defensiveCategory = "Physical", name = "Secret Sword", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Beautiful"},
-    seedbomb = {num = 402, accuracy = 100, basePower = 80, category = "Physical", name = "Seed Bomb", pp = 15, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Tough"},
-    seedflare = {num = 465, accuracy = 85, basePower = 120, category = "Special", isNonstandard = "Past", name = "Seed Flare", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 40, boosts = {spd = -2}}, target = "normal", type = "Grass", contestType = "Beautiful"},
-    seismictoss = {num = 69, accuracy = 100, basePower = 0, damage = "level", category = "Physical", name = "Seismic Toss", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1}, secondary = nil, target = "normal", type = "Fighting", maxMove = {basePower = 75}, contestType = "Tough"},
-    selfdestruct = {num = 120, accuracy = 100, basePower = 200, category = "Physical", name = "Self-Destruct", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, selfdestruct = "always", secondary = nil, target = "allAdjacent", type = "Normal", contestType = "Beautiful"},
-    shadowball = {num = 247, accuracy = 100, basePower = 80, category = "Special", name = "Shadow Ball", pp = 15, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 20, boosts = {spd = -1}}, target = "normal", type = "Ghost", contestType = "Clever"},
-    shadowbone = {num = 708, accuracy = 100, basePower = 85, category = "Physical", name = "Shadow Bone", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, boosts = {def = -1}}, target = "normal", type = "Ghost", contestType = "Cool"},
-    shadowclaw = {num = 421, accuracy = 100, basePower = 70, category = "Physical", name = "Shadow Claw", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
+    secretsword = {
+        num = 548,
+        accuracy = 100,
+        basePower = 85,
+        category = "Special",
+        defensiveCategory = "Physical",
+        name = "Secret Sword",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Beautiful"
+    },
+    seedbomb = {
+        num = 402,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Seed Bomb",
+        pp = 15,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Tough"
+    },
+    seedflare = {
+        num = 465,
+        accuracy = 85,
+        basePower = 120,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Seed Flare",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 40, boosts = {spd = -2}},
+        target = "normal",
+        type = "Grass",
+        contestType = "Beautiful"
+    },
+    seismictoss = {
+        num = 69,
+        accuracy = 100,
+        basePower = 0,
+        damage = "level",
+        category = "Physical",
+        name = "Seismic Toss",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        maxMove = {basePower = 75},
+        contestType = "Tough"
+    },
+    selfdestruct = {
+        num = 120,
+        accuracy = 100,
+        basePower = 200,
+        category = "Physical",
+        name = "Self-Destruct",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        selfdestruct = "always",
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Normal",
+        contestType = "Beautiful"
+    },
+    shadowball = {
+        num = 247,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Shadow Ball",
+        pp = 15,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, boosts = {spd = -1}},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    shadowbone = {
+        num = 708,
+        accuracy = 100,
+        basePower = 85,
+        category = "Physical",
+        name = "Shadow Bone",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, boosts = {def = -1}},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
+    shadowclaw = {
+        num = 421,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Shadow Claw",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
     shadowforce = {
         num = 467,
         accuracy = 100,
@@ -9897,12 +15261,99 @@ ____exports.Moves = {
         type = "Ghost",
         contestType = "Cool"
     },
-    shadowpunch = {num = 325, accuracy = true, basePower = 60, category = "Physical", name = "Shadow Punch", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = nil, target = "normal", type = "Ghost", contestType = "Clever"},
-    shadowsneak = {num = 425, accuracy = 100, basePower = 40, category = "Physical", name = "Shadow Sneak", pp = 30, priority = 1, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Ghost", contestType = "Clever"},
-    shadowstrike = {num = 0, accuracy = 95, basePower = 80, category = "Physical", isNonstandard = "CAP", name = "Shadow Strike", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 50, boosts = {def = -1}}, target = "normal", type = "Ghost", contestType = "Clever"},
-    sharpen = {num = 159, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Sharpen", pp = 30, priority = 0, flags = {snatch = 1}, boosts = {atk = 1}, secondary = nil, target = "self", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Cute"},
-    shatteredpsyche = {num = 648, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Shattered Psyche", pp = 1, priority = 0, flags = {}, isZ = "psychiumz", secondary = nil, target = "normal", type = "Psychic", contestType = "Cool"},
-    sheercold = {num = 329, accuracy = 30, basePower = 0, category = "Special", name = "Sheer Cold", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, ohko = "Ice", target = "normal", type = "Ice", zMove = {basePower = 180}, maxMove = {basePower = 130}, contestType = "Beautiful"},
+    shadowpunch = {
+        num = 325,
+        accuracy = true,
+        basePower = 60,
+        category = "Physical",
+        name = "Shadow Punch",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    shadowsneak = {
+        num = 425,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Shadow Sneak",
+        pp = 30,
+        priority = 1,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    shadowstrike = {
+        num = 0,
+        accuracy = 95,
+        basePower = 80,
+        category = "Physical",
+        isNonstandard = "CAP",
+        name = "Shadow Strike",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 50, boosts = {def = -1}},
+        target = "normal",
+        type = "Ghost",
+        contestType = "Clever"
+    },
+    sharpen = {
+        num = 159,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Sharpen",
+        pp = 30,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cute"
+    },
+    shatteredpsyche = {
+        num = 648,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Shattered Psyche",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "psychiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Psychic",
+        contestType = "Cool"
+    },
+    sheercold = {
+        num = 329,
+        accuracy = 30,
+        basePower = 0,
+        category = "Special",
+        name = "Sheer Cold",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        ohko = "Ice",
+        target = "normal",
+        type = "Ice",
+        zMove = {basePower = 180},
+        maxMove = {basePower = 130},
+        contestType = "Beautiful"
+    },
     shellsidearm = {
         num = 801,
         accuracy = 100,
@@ -9914,9 +15365,7 @@ ____exports.Moves = {
         flags = {protect = 1, mirror = 1},
         onPrepareHit = function(self, target, source, move)
             if not source:isAlly(target) then
-                self:attrLastMove(
-                    "[anim] Shell Side Arm " .. tostring(move.category)
-                )
+                self:attrLastMove("[anim] Shell Side Arm " .. tostring(move.category))
             end
         end,
         onModifyMove = function(self, move, pokemon, target)
@@ -9927,20 +15376,10 @@ ____exports.Moves = {
             local spa = pokemon:getStat("spa", false, true)
             local def = target:getStat("def", false, true)
             local spd = target:getStat("spd", false, true)
-            local physical = math.floor(
-                math.floor(
-                    math.floor(
-                        (math.floor(((2 * pokemon.level) / 5) + 2) * 90) * atk
-                    ) / def
-                ) / 50
-            )
-            local special = math.floor(
-                math.floor(
-                    math.floor(
-                        (math.floor(((2 * pokemon.level) / 5) + 2) * 90) * spa
-                    ) / spd
-                ) / 50
-            )
+            local physical =
+                math.floor(math.floor(math.floor((math.floor(((2 * pokemon.level) / 5) + 2) * 90) * atk) / def) / 50)
+            local special =
+                math.floor(math.floor(math.floor((math.floor(((2 * pokemon.level) / 5) + 2) * 90) * spa) / spd) / 50)
             if (physical > special) or ((physical == special) and (self:random(2) == 0)) then
                 move.category = "Physical"
                 move.flags.contact = 1
@@ -9948,23 +15387,34 @@ ____exports.Moves = {
         end,
         onHit = function(self, target, source, move)
             if not source:isAlly(target) then
-                self:hint(
-                    tostring(move.category) .. " Shell Side Arm"
-                )
+                self:hint(tostring(move.category) .. " Shell Side Arm")
             end
         end,
         onAfterSubDamage = function(self, damage, target, source, move)
             if not source:isAlly(target) then
-                self:hint(
-                    tostring(move.category) .. " Shell Side Arm"
-                )
+                self:hint(tostring(move.category) .. " Shell Side Arm")
             end
         end,
         secondary = {chance = 20, status = "psn"},
         target = "normal",
         type = "Poison"
     },
-    shellsmash = {num = 504, accuracy = true, basePower = 0, category = "Status", name = "Shell Smash", pp = 15, priority = 0, flags = {snatch = 1}, boosts = {def = -1, spd = -1, atk = 2, spa = 2, spe = 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Tough"},
+    shellsmash = {
+        num = 504,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Shell Smash",
+        pp = 15,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = -1, spd = -1, atk = 2, spa = 2, spe = 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Tough"
+    },
     shelltrap = {
         num = 704,
         accuracy = 100,
@@ -10004,8 +15454,36 @@ ____exports.Moves = {
         type = "Fire",
         contestType = "Tough"
     },
-    shiftgear = {num = 508, accuracy = true, basePower = 0, category = "Status", name = "Shift Gear", pp = 10, priority = 0, flags = {snatch = 1}, boosts = {spe = 2, atk = 1}, secondary = nil, target = "self", type = "Steel", zMove = {effect = "clearnegativeboost"}, contestType = "Clever"},
-    shockwave = {num = 351, accuracy = true, basePower = 60, category = "Special", name = "Shock Wave", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
+    shiftgear = {
+        num = 508,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Shift Gear",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spe = 2, atk = 1},
+        secondary = nil,
+        target = "self",
+        type = "Steel",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Clever"
+    },
+    shockwave = {
+        num = 351,
+        accuracy = true,
+        basePower = 60,
+        category = "Special",
+        name = "Shock Wave",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
     shoreup = {
         num = 659,
         accuracy = true,
@@ -10020,9 +15498,7 @@ ____exports.Moves = {
             if self.field:isWeather("sandstorm") then
                 factor = 0.667
             end
-            return not (not self:heal(
-                self:modify(pokemon.maxhp, factor)
-            ))
+            return not (not self:heal(self:modify(pokemon.maxhp, factor)))
         end,
         secondary = nil,
         target = "self",
@@ -10030,8 +15506,36 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Beautiful"
     },
-    signalbeam = {num = 324, accuracy = 100, basePower = 75, category = "Special", isNonstandard = "Past", name = "Signal Beam", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, volatileStatus = "confusion"}, target = "normal", type = "Bug", contestType = "Beautiful"},
-    silverwind = {num = 318, accuracy = 100, basePower = 60, category = "Special", isNonstandard = "Past", name = "Silver Wind", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}}, target = "normal", type = "Bug", contestType = "Beautiful"},
+    signalbeam = {
+        num = 324,
+        accuracy = 100,
+        basePower = 75,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Signal Beam",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Bug",
+        contestType = "Beautiful"
+    },
+    silverwind = {
+        num = 318,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Silver Wind",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, self = {boosts = {atk = 1, def = 1, spa = 1, spd = 1, spe = 1}}},
+        target = "normal",
+        type = "Bug",
+        contestType = "Beautiful"
+    },
     simplebeam = {
         num = 493,
         accuracy = 100,
@@ -10060,9 +15564,53 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Cute"
     },
-    sing = {num = 47, accuracy = 55, basePower = 0, category = "Status", name = "Sing", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1}, status = "slp", secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spe = 1}}, contestType = "Cute"},
-    sinisterarrowraid = {num = 695, accuracy = true, basePower = 180, category = "Physical", isNonstandard = "Past", name = "Sinister Arrow Raid", pp = 1, priority = 0, flags = {}, isZ = "decidiumz", secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
-    sizzlyslide = {num = 735, accuracy = 100, basePower = 60, category = "Physical", isNonstandard = "LGPE", name = "Sizzly Slide", pp = 20, priority = 0, flags = {contact = 1, protect = 1, defrost = 1}, secondary = {chance = 100, status = "brn"}, target = "normal", type = "Fire", contestType = "Clever"},
+    sing = {
+        num = 47,
+        accuracy = 55,
+        basePower = 0,
+        category = "Status",
+        name = "Sing",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spe = 1}},
+        contestType = "Cute"
+    },
+    sinisterarrowraid = {
+        num = 695,
+        accuracy = true,
+        basePower = 180,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Sinister Arrow Raid",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "decidiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
+    sizzlyslide = {
+        num = 735,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        isNonstandard = "LGPE",
+        name = "Sizzly Slide",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, defrost = 1},
+        secondary = {chance = 100, status = "brn"},
+        target = "normal",
+        type = "Fire",
+        contestType = "Clever"
+    },
     sketch = {
         num = 166,
         accuracy = true,
@@ -10087,7 +15635,15 @@ ____exports.Moves = {
             if sketchIndex < 0 then
                 return false
             end
-            local sketchedMove = {move = move.name, id = move.id, pp = move.pp, maxpp = move.pp, target = move.target, disabled = false, used = false}
+            local sketchedMove = {
+                move = move.name,
+                id = move.id,
+                pp = move.pp,
+                maxpp = move.pp,
+                target = move.target,
+                disabled = false,
+                used = false
+            }
             source.moveSlots[sketchIndex] = sketchedMove
             source.baseMoveSlots[sketchIndex] = sketchedMove
             self:add("-activate", source, "move: Sketch", move.name)
@@ -10110,7 +15666,11 @@ ____exports.Moves = {
         flags = {protect = 1, mirror = 1, authentic = 1, mystery = 1},
         onTryHit = function(self, target, source)
             local additionalBannedAbilities = {"hungerswitch", "illusion", "neutralizinggas", "wonderguard"}
-            if (((target.volatiles.dynamax or target:getAbility().isPermanent) or source:getAbility().isPermanent) or additionalBannedAbilities:includes(target.ability)) or additionalBannedAbilities:includes(source.ability) then
+            if
+                (((target.volatiles.dynamax or target:getAbility().isPermanent) or source:getAbility().isPermanent) or
+                    additionalBannedAbilities:includes(target.ability)) or
+                    additionalBannedAbilities:includes(source.ability)
+             then
                 return false
             end
         end,
@@ -10118,14 +15678,7 @@ ____exports.Moves = {
             local targetAbility = target:getAbility()
             local sourceAbility = source:getAbility()
             if target:isAlly(source) then
-                self:add(
-                    "-activate",
-                    source,
-                    "move: Skill Swap",
-                    "",
-                    "",
-                    "[of] " .. tostring(target)
-                )
+                self:add("-activate", source, "move: Skill Swap", "", "", "[of] " .. tostring(target))
             else
                 self:add(
                     "-activate",
@@ -10160,7 +15713,19 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Clever"
     },
-    skittersmack = {num = 806, accuracy = 90, basePower = 70, category = "Physical", name = "Skitter Smack", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spa = -1}}, target = "normal", type = "Bug"},
+    skittersmack = {
+        num = 806,
+        accuracy = 90,
+        basePower = 70,
+        category = "Physical",
+        name = "Skitter Smack",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spa = -1}},
+        target = "normal",
+        type = "Bug"
+    },
     skullbash = {
         num = 130,
         accuracy = 100,
@@ -10307,7 +15872,11 @@ ____exports.Moves = {
                 if (source == self.effectState.target) and (target == self.effectState.source) then
                     return
                 end
-                if ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(move.id) then
+                if
+                    ({"gust", "twister", "skyuppercut", "thunder", "hurricane", "smackdown", "thousandarrows"}):includes(
+                        move.id
+                    )
+                 then
                     return
                 end
                 return false
@@ -10334,11 +15903,82 @@ ____exports.Moves = {
         type = "Flying",
         contestType = "Tough"
     },
-    skyuppercut = {num = 327, accuracy = 90, basePower = 85, category = "Physical", isNonstandard = "Past", name = "Sky Uppercut", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    slackoff = {num = 303, accuracy = true, basePower = 0, category = "Status", name = "Slack Off", pp = 10, priority = 0, flags = {snatch = 1, heal = 1}, heal = {1, 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
-    slam = {num = 21, accuracy = 75, basePower = 80, category = "Physical", name = "Slam", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    slash = {num = 163, accuracy = 100, basePower = 70, category = "Physical", name = "Slash", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    sleeppowder = {num = 79, accuracy = 75, basePower = 0, category = "Status", name = "Sleep Powder", pp = 15, priority = 0, flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1}, status = "slp", secondary = nil, target = "normal", type = "Grass", zMove = {boost = {spe = 1}}, contestType = "Clever"},
+    skyuppercut = {
+        num = 327,
+        accuracy = 90,
+        basePower = 85,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Sky Uppercut",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    slackoff = {
+        num = 303,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Slack Off",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1},
+        heal = {1, 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
+    slam = {
+        num = 21,
+        accuracy = 75,
+        basePower = 80,
+        category = "Physical",
+        name = "Slam",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    slash = {
+        num = 163,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Slash",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    sleeppowder = {
+        num = 79,
+        accuracy = 75,
+        basePower = 0,
+        category = "Status",
+        name = "Sleep Powder",
+        pp = 15,
+        priority = 0,
+        flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {boost = {spe = 1}},
+        contestType = "Clever"
+    },
     sleeptalk = {
         num = 214,
         accuracy = true,
@@ -10353,7 +15993,26 @@ ____exports.Moves = {
             return (source.status == "slp") or source:hasAbility("comatose")
         end,
         onHit = function(self, pokemon)
-            local noSleepTalk = {"assist", "beakblast", "belch", "bide", "celebrate", "chatter", "copycat", "dynamaxcannon", "focuspunch", "mefirst", "metronome", "mimic", "mirrormove", "naturepower", "shelltrap", "sketch", "sleeptalk", "uproar"}
+            local noSleepTalk = {
+                "assist",
+                "beakblast",
+                "belch",
+                "bide",
+                "celebrate",
+                "chatter",
+                "copycat",
+                "dynamaxcannon",
+                "focuspunch",
+                "mefirst",
+                "metronome",
+                "mimic",
+                "mirrormove",
+                "naturepower",
+                "shelltrap",
+                "sketch",
+                "sleeptalk",
+                "uproar"
+            }
             local moves = {}
             for ____, moveSlot in __TS__Iterator(pokemon.moveSlots) do
                 do
@@ -10384,9 +16043,48 @@ ____exports.Moves = {
         zMove = {effect = "crit2"},
         contestType = "Cute"
     },
-    sludge = {num = 124, accuracy = 100, basePower = 65, category = "Special", name = "Sludge", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 30, status = "psn"}, target = "normal", type = "Poison", contestType = "Tough"},
-    sludgebomb = {num = 188, accuracy = 100, basePower = 90, category = "Special", name = "Sludge Bomb", pp = 10, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "psn"}, target = "normal", type = "Poison", contestType = "Tough"},
-    sludgewave = {num = 482, accuracy = 100, basePower = 95, category = "Special", name = "Sludge Wave", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "psn"}, target = "allAdjacent", type = "Poison", contestType = "Tough"},
+    sludge = {
+        num = 124,
+        accuracy = 100,
+        basePower = 65,
+        category = "Special",
+        name = "Sludge",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
+    sludgebomb = {
+        num = 188,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Sludge Bomb",
+        pp = 10,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
+    sludgewave = {
+        num = 482,
+        accuracy = 100,
+        basePower = 95,
+        category = "Special",
+        name = "Sludge Wave",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "psn"},
+        target = "allAdjacent",
+        type = "Poison",
+        contestType = "Tough"
+    },
     smackdown = {
         num = 479,
         accuracy = 100,
@@ -10437,7 +16135,20 @@ ____exports.Moves = {
         type = "Rock",
         contestType = "Tough"
     },
-    smartstrike = {num = 684, accuracy = true, basePower = 70, category = "Physical", name = "Smart Strike", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Steel", contestType = "Cool"},
+    smartstrike = {
+        num = 684,
+        accuracy = true,
+        basePower = 70,
+        category = "Physical",
+        name = "Smart Strike",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     smellingsalts = {
         num = 265,
         accuracy = 100,
@@ -10464,10 +16175,64 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Tough"
     },
-    smog = {num = 123, accuracy = 70, basePower = 30, category = "Special", name = "Smog", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 40, status = "psn"}, target = "normal", type = "Poison", contestType = "Tough"},
-    smokescreen = {num = 108, accuracy = 100, basePower = 0, category = "Status", name = "Smokescreen", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {accuracy = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {evasion = 1}}, contestType = "Clever"},
-    snaptrap = {num = 779, accuracy = 100, basePower = 35, category = "Physical", name = "Snap Trap", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Grass"},
-    snarl = {num = 555, accuracy = 95, basePower = 55, category = "Special", name = "Snarl", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, sound = 1, authentic = 1}, secondary = {chance = 100, boosts = {spa = -1}}, target = "allAdjacentFoes", type = "Dark", contestType = "Tough"},
+    smog = {
+        num = 123,
+        accuracy = 70,
+        basePower = 30,
+        category = "Special",
+        name = "Smog",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 40, status = "psn"},
+        target = "normal",
+        type = "Poison",
+        contestType = "Tough"
+    },
+    smokescreen = {
+        num = 108,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Smokescreen",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {accuracy = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {evasion = 1}},
+        contestType = "Clever"
+    },
+    snaptrap = {
+        num = 779,
+        accuracy = 100,
+        basePower = 35,
+        category = "Physical",
+        name = "Snap Trap",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Grass"
+    },
+    snarl = {
+        num = 555,
+        accuracy = 95,
+        basePower = 55,
+        category = "Special",
+        name = "Snarl",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, sound = 1, authentic = 1},
+        secondary = {chance = 100, boosts = {spa = -1}},
+        target = "allAdjacentFoes",
+        type = "Dark",
+        contestType = "Tough"
+    },
     snatch = {
         num = 289,
         accuracy = true,
@@ -10490,16 +16255,14 @@ ____exports.Moves = {
                 if snatchUser:isSkyDropped() then
                     return
                 end
-                if ((((not move) or move.isZ) or move.isMax) or (not move.flags.snatch)) or (move.sourceEffect == "snatch") then
+                if
+                    ((((not move) or move.isZ) or move.isMax) or (not move.flags.snatch)) or
+                        (move.sourceEffect == "snatch")
+                 then
                     return
                 end
                 snatchUser:removeVolatile("snatch")
-                self:add(
-                    "-activate",
-                    snatchUser,
-                    "move: Snatch",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-activate", snatchUser, "move: Snatch", "[of] " .. tostring(source))
                 self.actions:useMove(move.id, snatchUser)
                 return nil
             end
@@ -10511,7 +16274,21 @@ ____exports.Moves = {
         zMove = {boost = {spe = 2}},
         contestType = "Clever"
     },
-    snipeshot = {num = 745, accuracy = 100, basePower = 80, category = "Special", name = "Snipe Shot", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, tracksTarget = true, secondary = nil, target = "normal", type = "Water"},
+    snipeshot = {
+        num = 745,
+        accuracy = 100,
+        basePower = 80,
+        category = "Special",
+        name = "Snipe Shot",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        tracksTarget = true,
+        secondary = nil,
+        target = "normal",
+        type = "Water"
+    },
     snore = {
         num = 173,
         accuracy = 100,
@@ -10552,7 +16329,22 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Cute"
     },
-    softboiled = {num = 135, accuracy = true, basePower = 0, category = "Status", name = "Soft-Boiled", pp = 10, priority = 0, flags = {snatch = 1, heal = 1}, heal = {1, 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
+    softboiled = {
+        num = 135,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Soft-Boiled",
+        pp = 10,
+        priority = 0,
+        flags = {snatch = 1, heal = 1},
+        heal = {1, 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
     solarbeam = {
         num = 76,
         accuracy = 100,
@@ -10567,9 +16359,7 @@ ____exports.Moves = {
                 return
             end
             self:add("-prepare", attacker, move.name)
-            if ({"sunnyday", "desolateland"}):includes(
-                attacker:effectiveWeather()
-            ) then
+            if ({"sunnyday", "desolateland"}):includes(attacker:effectiveWeather()) then
                 self:attrLastMove("[still]")
                 self:addMove("-anim", attacker, move.name, defender)
                 return
@@ -10581,9 +16371,7 @@ ____exports.Moves = {
             return nil
         end,
         onBasePower = function(self, basePower, pokemon, target)
-            if ({"raindance", "primordialsea", "sandstorm", "hail"}):includes(
-                pokemon:effectiveWeather()
-            ) then
+            if ({"raindance", "primordialsea", "sandstorm", "hail"}):includes(pokemon:effectiveWeather()) then
                 self:debug("weakened by weather")
                 return self:chainModify(0.5)
             end
@@ -10607,9 +16395,7 @@ ____exports.Moves = {
                 return
             end
             self:add("-prepare", attacker, move.name)
-            if ({"sunnyday", "desolateland"}):includes(
-                attacker:effectiveWeather()
-            ) then
+            if ({"sunnyday", "desolateland"}):includes(attacker:effectiveWeather()) then
                 self:attrLastMove("[still]")
                 self:addMove("-anim", attacker, move.name, defender)
                 return
@@ -10621,9 +16407,7 @@ ____exports.Moves = {
             return nil
         end,
         onBasePower = function(self, basePower, pokemon, target)
-            if ({"raindance", "primordialsea", "sandstorm", "hail"}):includes(
-                pokemon:effectiveWeather()
-            ) then
+            if ({"raindance", "primordialsea", "sandstorm", "hail"}):includes(pokemon:effectiveWeather()) then
                 self:debug("weakened by weather")
                 return self:chainModify(0.5)
             end
@@ -10633,10 +16417,67 @@ ____exports.Moves = {
         type = "Grass",
         contestType = "Cool"
     },
-    sonicboom = {num = 49, accuracy = 90, basePower = 0, damage = 20, category = "Special", isNonstandard = "Past", name = "Sonic Boom", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Cool"},
-    soulstealing7starstrike = {num = 699, accuracy = true, basePower = 195, category = "Physical", isNonstandard = "Past", name = "Soul-Stealing 7-Star Strike", pp = 1, priority = 0, flags = {contact = 1}, isZ = "marshadiumz", secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
-    spacialrend = {num = 460, accuracy = 95, basePower = 100, category = "Special", name = "Spacial Rend", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Dragon", contestType = "Beautiful"},
-    spark = {num = 209, accuracy = 100, basePower = 65, category = "Physical", name = "Spark", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
+    sonicboom = {
+        num = 49,
+        accuracy = 90,
+        basePower = 0,
+        damage = 20,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Sonic Boom",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Cool"
+    },
+    soulstealing7starstrike = {
+        num = 699,
+        accuracy = true,
+        basePower = 195,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Soul-Stealing 7-Star Strike",
+        pp = 1,
+        priority = 0,
+        flags = {contact = 1},
+        isZ = "marshadiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
+    spacialrend = {
+        num = 460,
+        accuracy = 95,
+        basePower = 100,
+        category = "Special",
+        name = "Spacial Rend",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Dragon",
+        contestType = "Beautiful"
+    },
+    spark = {
+        num = 209,
+        accuracy = 100,
+        basePower = 65,
+        category = "Physical",
+        name = "Spark",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
     sparklingaria = {
         num = 664,
         accuracy = 100,
@@ -10688,7 +16529,21 @@ ____exports.Moves = {
         type = "Fairy",
         contestType = "Clever"
     },
-    spectralthief = {num = 712, accuracy = 100, basePower = 90, category = "Physical", name = "Spectral Thief", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, authentic = 1}, stealsBoosts = true, secondary = nil, target = "normal", type = "Ghost", contestType = "Cool"},
+    spectralthief = {
+        num = 712,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Spectral Thief",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, authentic = 1},
+        stealsBoosts = true,
+        secondary = nil,
+        target = "normal",
+        type = "Ghost",
+        contestType = "Cool"
+    },
     speedswap = {
         num = 683,
         accuracy = true,
@@ -10702,12 +16557,7 @@ ____exports.Moves = {
             local targetSpe = target.storedStats.spe
             target.storedStats.spe = source.storedStats.spe
             source.storedStats.spe = targetSpe
-            self:add(
-                "-activate",
-                source,
-                "move: Speed Swap",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Speed Swap", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
@@ -10734,7 +16584,23 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Clever"
     },
-    spikecannon = {num = 131, accuracy = 100, basePower = 20, category = "Physical", isNonstandard = "Past", name = "Spike Cannon", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", maxMove = {basePower = 120}, contestType = "Cool"},
+    spikecannon = {
+        num = 131,
+        accuracy = 100,
+        basePower = 20,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Spike Cannon",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        maxMove = {basePower = 120},
+        contestType = "Cool"
+    },
     spikes = {
         num = 191,
         accuracy = true,
@@ -10836,7 +16702,19 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Tough"
     },
-    spiritbreak = {num = 789, accuracy = 100, basePower = 75, category = "Physical", name = "Spirit Break", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spa = -1}}, target = "normal", type = "Fairy"},
+    spiritbreak = {
+        num = 789,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Spirit Break",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spa = -1}},
+        target = "normal",
+        type = "Fairy"
+    },
     spiritshackle = {
         num = 662,
         accuracy = 100,
@@ -10956,8 +16834,37 @@ ____exports.Moves = {
         type = "Rock",
         contestType = "Cool"
     },
-    splishysplash = {num = 730, accuracy = 100, basePower = 90, category = "Special", isNonstandard = "LGPE", name = "Splishy Splash", pp = 15, priority = 0, flags = {protect = 1}, secondary = {chance = 30, status = "par"}, target = "allAdjacentFoes", type = "Water", contestType = "Cool"},
-    spore = {num = 147, accuracy = 100, basePower = 0, category = "Status", name = "Spore", pp = 15, priority = 0, flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1}, status = "slp", secondary = nil, target = "normal", type = "Grass", zMove = {effect = "clearnegativeboost"}, contestType = "Beautiful"},
+    splishysplash = {
+        num = 730,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        isNonstandard = "LGPE",
+        name = "Splishy Splash",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1},
+        secondary = {chance = 30, status = "par"},
+        target = "allAdjacentFoes",
+        type = "Water",
+        contestType = "Cool"
+    },
+    spore = {
+        num = 147,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Spore",
+        pp = 15,
+        priority = 0,
+        flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1},
+        status = "slp",
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Beautiful"
+    },
     spotlight = {
         num = 671,
         accuracy = true,
@@ -11011,16 +16918,9 @@ ____exports.Moves = {
                 if pokemon:hasItem("heavydutyboots") then
                     return
                 end
-                local typeMod = self:clampIntRange(
-                    pokemon:runEffectiveness(
-                        self.dex:getActiveMove("stealthrock")
-                    ),
-                    -6,
-                    6
-                )
-                self:damage(
-                    (pokemon.maxhp * math.pow(2, typeMod)) / 8
-                )
+                local typeMod =
+                    self:clampIntRange(pokemon:runEffectiveness(self.dex:getActiveMove("stealthrock")), -6, 6)
+                self:damage((pokemon.maxhp * math.pow(2, typeMod)) / 8)
             end
         },
         secondary = nil,
@@ -11029,8 +16929,36 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Cool"
     },
-    steameruption = {num = 592, accuracy = 95, basePower = 110, category = "Special", name = "Steam Eruption", pp = 5, priority = 0, flags = {protect = 1, mirror = 1, defrost = 1}, thawsTarget = true, secondary = {chance = 30, status = "brn"}, target = "normal", type = "Water", contestType = "Beautiful"},
-    steamroller = {num = 537, accuracy = 100, basePower = 65, category = "Physical", isNonstandard = "Past", name = "Steamroller", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Bug", contestType = "Tough"},
+    steameruption = {
+        num = 592,
+        accuracy = 95,
+        basePower = 110,
+        category = "Special",
+        name = "Steam Eruption",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, defrost = 1},
+        thawsTarget = true,
+        secondary = {chance = 30, status = "brn"},
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    steamroller = {
+        num = 537,
+        accuracy = 100,
+        basePower = 65,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Steamroller",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Bug",
+        contestType = "Tough"
+    },
     steelbeam = {
         num = 796,
         accuracy = 95,
@@ -11075,7 +17003,20 @@ ____exports.Moves = {
         target = "normal",
         type = "Steel"
     },
-    steelwing = {num = 211, accuracy = 90, basePower = 70, category = "Physical", name = "Steel Wing", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 10, self = {boosts = {def = 1}}}, target = "normal", type = "Steel", contestType = "Cool"},
+    steelwing = {
+        num = 211,
+        accuracy = 90,
+        basePower = 70,
+        category = "Physical",
+        name = "Steel Wing",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 10, self = {boosts = {def = 1}}},
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     stickyweb = {
         num = 564,
         accuracy = true,
@@ -11098,12 +17039,7 @@ ____exports.Moves = {
                     return
                 end
                 self:add("-activate", pokemon, "move: Sticky Web")
-                self:boost(
-                    {spe = -1},
-                    pokemon,
-                    self.effectState.source,
-                    self.dex:getActiveMove("stickyweb")
-                )
+                self:boost({spe = -1}, pokemon, self.effectState.source, self.dex:getActiveMove("stickyweb"))
             end
         },
         secondary = nil,
@@ -11134,11 +17070,7 @@ ____exports.Moves = {
                 self.effectState.layers = 1
                 self.effectState.def = 0
                 self.effectState.spd = 0
-                self:add(
-                    "-start",
-                    target,
-                    "stockpile" .. tostring(self.effectState.layers)
-                )
+                self:add("-start", target, "stockpile" .. tostring(self.effectState.layers))
                 local curDef, curSpD = target.boosts.def, target.boosts.spd
                 self:boost({def = 1, spd = 1}, target, target)
                 if curDef ~= target.boosts.def then
@@ -11156,11 +17088,7 @@ ____exports.Moves = {
                 end
                 local ____obj, ____index = self.effectState, "layers"
                 ____obj[____index] = ____obj[____index] + 1
-                self:add(
-                    "-start",
-                    target,
-                    "stockpile" .. tostring(self.effectState.layers)
-                )
+                self:add("-start", target, "stockpile" .. tostring(self.effectState.layers))
                 local curDef = target.boosts.def
                 local curSpD = target.boosts.spd
                 self:boost({def = 1, spd = 1}, target, target)
@@ -11185,8 +17113,13 @@ ____exports.Moves = {
                     self:boost(boosts, target, target)
                 end
                 self:add("-end", target, "Stockpile")
-                if (self.effectState.def ~= (self.effectState.layers * -1)) or (self.effectState.spd ~= (self.effectState.layers * -1)) then
-                    self:hint("In Gen 7, Stockpile keeps track of how many times it successfully altered each stat individually.")
+                if
+                    (self.effectState.def ~= (self.effectState.layers * -1)) or
+                        (self.effectState.spd ~= (self.effectState.layers * -1))
+                 then
+                    self:hint(
+                        "In Gen 7, Stockpile keeps track of how many times it successfully altered each stat individually."
+                    )
                 end
             end
         },
@@ -11196,8 +17129,36 @@ ____exports.Moves = {
         zMove = {effect = "heal"},
         contestType = "Tough"
     },
-    stokedsparksurfer = {num = 700, accuracy = true, basePower = 175, category = "Special", isNonstandard = "Past", name = "Stoked Sparksurfer", pp = 1, priority = 0, flags = {}, isZ = "aloraichiumz", secondary = {chance = 100, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
-    stomp = {num = 23, accuracy = 100, basePower = 65, category = "Physical", name = "Stomp", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Normal", contestType = "Tough"},
+    stokedsparksurfer = {
+        num = 700,
+        accuracy = true,
+        basePower = 175,
+        category = "Special",
+        isNonstandard = "Past",
+        name = "Stoked Sparksurfer",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "aloraichiumz",
+        secondary = {chance = 100, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    stomp = {
+        num = 23,
+        accuracy = 100,
+        basePower = 65,
+        category = "Physical",
+        name = "Stomp",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, nonsky = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     stompingtantrum = {
         num = 707,
         accuracy = 100,
@@ -11219,7 +17180,21 @@ ____exports.Moves = {
         type = "Ground",
         contestType = "Tough"
     },
-    stoneedge = {num = 444, accuracy = 80, basePower = 100, category = "Physical", name = "Stone Edge", pp = 5, priority = 0, flags = {protect = 1, mirror = 1}, critRatio = 2, secondary = nil, target = "normal", type = "Rock", contestType = "Tough"},
+    stoneedge = {
+        num = 444,
+        accuracy = 80,
+        basePower = 100,
+        category = "Physical",
+        name = "Stone Edge",
+        pp = 5,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        critRatio = 2,
+        secondary = nil,
+        target = "normal",
+        type = "Rock",
+        contestType = "Tough"
+    },
     storedpower = {
         num = 500,
         accuracy = 100,
@@ -11239,9 +17214,48 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Clever"
     },
-    stormthrow = {num = 480, accuracy = 100, basePower = 60, category = "Physical", name = "Storm Throw", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, willCrit = true, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    strangesteam = {num = 790, accuracy = 95, basePower = 90, category = "Special", name = "Strange Steam", pp = 10, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "confusion"}, target = "normal", type = "Fairy"},
-    strength = {num = 70, accuracy = 100, basePower = 80, category = "Physical", name = "Strength", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
+    stormthrow = {
+        num = 480,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Storm Throw",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        willCrit = true,
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    strangesteam = {
+        num = 790,
+        accuracy = 95,
+        basePower = 90,
+        category = "Special",
+        name = "Strange Steam",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "confusion"},
+        target = "normal",
+        type = "Fairy"
+    },
+    strength = {
+        num = 70,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Strength",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     strengthsap = {
         num = 668,
         accuracy = 100,
@@ -11265,7 +17279,22 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Cute"
     },
-    stringshot = {num = 81, accuracy = 95, basePower = 0, category = "Status", name = "String Shot", pp = 40, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {spe = -2}, secondary = nil, target = "allAdjacentFoes", type = "Bug", zMove = {boost = {spe = 1}}, contestType = "Clever"},
+    stringshot = {
+        num = 81,
+        accuracy = 95,
+        basePower = 0,
+        category = "Status",
+        name = "String Shot",
+        pp = 40,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {spe = -2},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Bug",
+        zMove = {boost = {spe = 1}},
+        contestType = "Clever"
+    },
     struggle = {
         num = 165,
         accuracy = true,
@@ -11287,7 +17316,20 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Tough"
     },
-    strugglebug = {num = 522, accuracy = 100, basePower = 50, category = "Special", name = "Struggle Bug", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {spa = -1}}, target = "allAdjacentFoes", type = "Bug", contestType = "Cute"},
+    strugglebug = {
+        num = 522,
+        accuracy = 100,
+        basePower = 50,
+        category = "Special",
+        name = "Struggle Bug",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {spa = -1}},
+        target = "allAdjacentFoes",
+        type = "Bug",
+        contestType = "Cute"
+    },
     stuffcheeks = {
         num = 747,
         accuracy = true,
@@ -11309,8 +17351,37 @@ ____exports.Moves = {
         target = "self",
         type = "Normal"
     },
-    stunspore = {num = 78, accuracy = 75, basePower = 0, category = "Status", name = "Stun Spore", pp = 30, priority = 0, flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1}, status = "par", secondary = nil, target = "normal", type = "Grass", zMove = {boost = {spd = 1}}, contestType = "Clever"},
-    submission = {num = 66, accuracy = 80, basePower = 80, category = "Physical", name = "Submission", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {1, 4}, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
+    stunspore = {
+        num = 78,
+        accuracy = 75,
+        basePower = 0,
+        category = "Status",
+        name = "Stun Spore",
+        pp = 30,
+        priority = 0,
+        flags = {powder = 1, protect = 1, reflectable = 1, mirror = 1},
+        status = "par",
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        zMove = {boost = {spd = 1}},
+        contestType = "Clever"
+    },
+    submission = {
+        num = 66,
+        accuracy = 80,
+        basePower = 80,
+        category = "Physical",
+        name = "Submission",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {1, 4},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
     substitute = {
         num = 164,
         accuracy = true,
@@ -11339,7 +17410,13 @@ ____exports.Moves = {
                 self:add("-start", target, "Substitute")
                 self.effectState.hp = math.floor(target.maxhp / 4)
                 if target.volatiles.partiallytrapped then
-                    self:add("-end", target, target.volatiles.partiallytrapped.sourceEffect, "[partiallytrapped]", "[silent]")
+                    self:add(
+                        "-end",
+                        target,
+                        target.volatiles.partiallytrapped.sourceEffect,
+                        "[partiallytrapped]",
+                        "[silent]"
+                    )
                     __TS__Delete(target.volatiles, "partiallytrapped")
                 end
             end,
@@ -11373,20 +17450,10 @@ ____exports.Moves = {
                     self:add("-activate", target, "move: Substitute", "[damage]")
                 end
                 if move.recoil then
-                    self:damage(
-                        self.actions:calcRecoilDamage(damage, move),
-                        source,
-                        target,
-                        "recoil"
-                    )
+                    self:damage(self.actions:calcRecoilDamage(damage, move), source, target, "recoil")
                 end
                 if move.drain then
-                    self:heal(
-                        math.ceil((damage * move.drain[0]) / move.drain[1]),
-                        source,
-                        target,
-                        "drain"
-                    )
+                    self:heal(math.ceil((damage * move.drain[0]) / move.drain[1]), source, target, "drain")
                 end
                 self:singleEvent("AfterSubDamage", move, nil, target, source, move, damage)
                 self:runEvent("AfterSubDamage", target, source, move, damage)
@@ -11402,7 +17469,22 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Cute"
     },
-    subzeroslammer = {num = 650, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Subzero Slammer", pp = 1, priority = 0, flags = {}, isZ = "iciumz", secondary = nil, target = "normal", type = "Ice", contestType = "Cool"},
+    subzeroslammer = {
+        num = 650,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Subzero Slammer",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "iciumz",
+        secondary = nil,
+        target = "normal",
+        type = "Ice",
+        contestType = "Cool"
+    },
     suckerpunch = {
         num = 389,
         accuracy = 100,
@@ -11414,7 +17496,11 @@ ____exports.Moves = {
         flags = {contact = 1, protect = 1, mirror = 1},
         onTry = function(self, source, target)
             local action = self.queue:willMove(target)
-            local move = (((action.choice == "move") and (function() return action.move end)) or (function() return nil end))()
+            local move = (((action.choice == "move") and (function()
+                    return action.move
+                end)) or (function()
+                    return nil
+                end))()
             if ((not move) or ((move.category == "Status") and (move.id ~= "mefirst"))) or target.volatiles.mustrecharge then
                 return false
             end
@@ -11424,17 +17510,43 @@ ____exports.Moves = {
         type = "Dark",
         contestType = "Clever"
     },
-    sunnyday = {num = 241, accuracy = true, basePower = 0, category = "Status", name = "Sunny Day", pp = 5, priority = 0, flags = {}, weather = "sunnyday", secondary = nil, target = "all", type = "Fire", zMove = {boost = {spe = 1}}, contestType = "Beautiful"},
-    sunsteelstrike = {num = 713, accuracy = 100, basePower = 100, category = "Physical", name = "Sunsteel Strike", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, ignoreAbility = true, secondary = nil, target = "normal", type = "Steel", contestType = "Cool"},
+    sunnyday = {
+        num = 241,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Sunny Day",
+        pp = 5,
+        priority = 0,
+        flags = {},
+        weather = "sunnyday",
+        secondary = nil,
+        target = "all",
+        type = "Fire",
+        zMove = {boost = {spe = 1}},
+        contestType = "Beautiful"
+    },
+    sunsteelstrike = {
+        num = 713,
+        accuracy = 100,
+        basePower = 100,
+        category = "Physical",
+        name = "Sunsteel Strike",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        ignoreAbility = true,
+        secondary = nil,
+        target = "normal",
+        type = "Steel",
+        contestType = "Cool"
+    },
     superfang = {
         num = 162,
         accuracy = 90,
         basePower = 0,
         damageCallback = function(self, pokemon, target)
-            return self:clampIntRange(
-                target:getUndynamaxedHP() / 2,
-                1
-            )
+            return self:clampIntRange(target:getUndynamaxedHP() / 2, 1)
         end,
         category = "Physical",
         name = "Super Fang",
@@ -11446,12 +17558,101 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Tough"
     },
-    superpower = {num = 276, accuracy = 100, basePower = 120, category = "Physical", name = "Superpower", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, self = {boosts = {atk = -1, def = -1}}, secondary = nil, target = "normal", type = "Fighting", contestType = "Tough"},
-    supersonic = {num = 48, accuracy = 55, basePower = 0, category = "Status", name = "Supersonic", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1}, volatileStatus = "confusion", secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spe = 1}}, contestType = "Clever"},
-    supersonicskystrike = {num = 626, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Supersonic Skystrike", pp = 1, priority = 0, flags = {}, isZ = "flyiniumz", secondary = nil, target = "normal", type = "Flying", contestType = "Cool"},
-    surf = {num = 57, accuracy = 100, basePower = 90, category = "Special", name = "Surf", pp = 15, priority = 0, flags = {protect = 1, mirror = 1, nonsky = 1}, secondary = nil, target = "allAdjacent", type = "Water", contestType = "Beautiful"},
-    surgingstrikes = {num = 818, accuracy = 100, basePower = 25, category = "Physical", name = "Surging Strikes", pp = 5, priority = 0, flags = {contact = 1, protect = 1, punch = 1, mirror = 1}, willCrit = true, multihit = 3, secondary = nil, target = "normal", type = "Water", zMove = {basePower = 140}, maxMove = {basePower = 130}},
-    swagger = {num = 207, accuracy = 85, basePower = 0, category = "Status", name = "Swagger", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, volatileStatus = "confusion", boosts = {atk = 2}, secondary = nil, target = "normal", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Cute"},
+    superpower = {
+        num = 276,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Superpower",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        self = {boosts = {atk = -1, def = -1}},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Tough"
+    },
+    supersonic = {
+        num = 48,
+        accuracy = 55,
+        basePower = 0,
+        category = "Status",
+        name = "Supersonic",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, sound = 1, authentic = 1},
+        volatileStatus = "confusion",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spe = 1}},
+        contestType = "Clever"
+    },
+    supersonicskystrike = {
+        num = 626,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Supersonic Skystrike",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "flyiniumz",
+        secondary = nil,
+        target = "normal",
+        type = "Flying",
+        contestType = "Cool"
+    },
+    surf = {
+        num = 57,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Surf",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, nonsky = 1},
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    surgingstrikes = {
+        num = 818,
+        accuracy = 100,
+        basePower = 25,
+        category = "Physical",
+        name = "Surging Strikes",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, punch = 1, mirror = 1},
+        willCrit = true,
+        multihit = 3,
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130}
+    },
+    swagger = {
+        num = 207,
+        accuracy = 85,
+        basePower = 0,
+        category = "Status",
+        name = "Swagger",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        volatileStatus = "confusion",
+        boosts = {atk = 2},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Cute"
+    },
     swallow = {
         num = 256,
         accuracy = true,
@@ -11466,9 +17667,7 @@ ____exports.Moves = {
         end,
         onHit = function(self, pokemon)
             local healAmount = {0.25, 0.5, 1}
-            local healedBy = self:heal(
-                self:modify(pokemon.maxhp, healAmount[pokemon.volatiles.stockpile.layers])
-            )
+            local healedBy = self:heal(self:modify(pokemon.maxhp, healAmount[pokemon.volatiles.stockpile.layers]))
             pokemon:removeVolatile("stockpile")
             return not (not healedBy)
         end,
@@ -11478,9 +17677,52 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Tough"
     },
-    sweetkiss = {num = 186, accuracy = 75, basePower = 0, category = "Status", name = "Sweet Kiss", pp = 10, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, volatileStatus = "confusion", secondary = nil, target = "normal", type = "Fairy", zMove = {boost = {spa = 1}}, contestType = "Cute"},
-    sweetscent = {num = 230, accuracy = 100, basePower = 0, category = "Status", name = "Sweet Scent", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {evasion = -2}, secondary = nil, target = "allAdjacentFoes", type = "Normal", zMove = {boost = {accuracy = 1}}, contestType = "Cute"},
-    swift = {num = 129, accuracy = true, basePower = 60, category = "Special", name = "Swift", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "allAdjacentFoes", type = "Normal", contestType = "Cool"},
+    sweetkiss = {
+        num = 186,
+        accuracy = 75,
+        basePower = 0,
+        category = "Status",
+        name = "Sweet Kiss",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        volatileStatus = "confusion",
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        zMove = {boost = {spa = 1}},
+        contestType = "Cute"
+    },
+    sweetscent = {
+        num = 230,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Sweet Scent",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {evasion = -2},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        zMove = {boost = {accuracy = 1}},
+        contestType = "Cute"
+    },
+    swift = {
+        num = 129,
+        accuracy = true,
+        basePower = 60,
+        category = "Special",
+        name = "Swift",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        contestType = "Cool"
+    },
     switcheroo = {
         num = 415,
         accuracy = 100,
@@ -11505,7 +17747,11 @@ ____exports.Moves = {
                 end
                 return false
             end
-            if (myItem and (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem))) or (yourItem and (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem))) then
+            if
+                (myItem and (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem))) or
+                    (yourItem and
+                        (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)))
+             then
                 if yourItem then
                     target.item = yourItem.id
                 end
@@ -11514,12 +17760,7 @@ ____exports.Moves = {
                 end
                 return false
             end
-            self:add(
-                "-activate",
-                source,
-                "move: Trick",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Trick", "[of] " .. tostring(target))
             if myItem then
                 target:setItem(myItem)
                 self:add("-item", target, myItem, "[from] move: Switcheroo")
@@ -11539,7 +17780,22 @@ ____exports.Moves = {
         zMove = {boost = {spe = 2}},
         contestType = "Clever"
     },
-    swordsdance = {num = 14, accuracy = true, basePower = 0, category = "Status", name = "Swords Dance", pp = 20, priority = 0, flags = {snatch = 1, dance = 1}, boosts = {atk = 2}, secondary = nil, target = "self", type = "Normal", zMove = {effect = "clearnegativeboost"}, contestType = "Beautiful"},
+    swordsdance = {
+        num = 14,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Swords Dance",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1, dance = 1},
+        boosts = {atk = 2},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Beautiful"
+    },
     synchronoise = {
         num = 485,
         accuracy = 100,
@@ -11551,9 +17807,7 @@ ____exports.Moves = {
         priority = 0,
         flags = {protect = 1, mirror = 1},
         onTryImmunity = function(self, target, source)
-            return target:hasType(
-                source:getTypes()
-            )
+            return target:hasType(source:getTypes())
         end,
         secondary = nil,
         target = "allAdjacent",
@@ -11609,9 +17863,7 @@ ____exports.Moves = {
                 goto ____switch1527_end
             end
             ::____switch1527_end::
-            return not (not self:heal(
-                self:modify(pokemon.maxhp, factor)
-            ))
+            return not (not self:heal(self:modify(pokemon.maxhp, factor)))
         end,
         secondary = nil,
         target = "self",
@@ -11619,10 +17871,70 @@ ____exports.Moves = {
         zMove = {effect = "clearnegativeboost"},
         contestType = "Clever"
     },
-    tackle = {num = 33, accuracy = 100, basePower = 40, category = "Physical", name = "Tackle", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    tailglow = {num = 294, accuracy = true, basePower = 0, category = "Status", isNonstandard = "Past", name = "Tail Glow", pp = 20, priority = 0, flags = {snatch = 1}, boosts = {spa = 3}, secondary = nil, target = "self", type = "Bug", zMove = {effect = "clearnegativeboost"}, contestType = "Beautiful"},
-    tailslap = {num = 541, accuracy = 85, basePower = 25, category = "Physical", name = "Tail Slap", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, multihit = {2, 5}, secondary = nil, target = "normal", type = "Normal", zMove = {basePower = 140}, maxMove = {basePower = 130}, contestType = "Cute"},
-    tailwhip = {num = 39, accuracy = 100, basePower = 0, category = "Status", name = "Tail Whip", pp = 30, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, boosts = {def = -1}, secondary = nil, target = "allAdjacentFoes", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Cute"},
+    tackle = {
+        num = 33,
+        accuracy = 100,
+        basePower = 40,
+        category = "Physical",
+        name = "Tackle",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    tailglow = {
+        num = 294,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Tail Glow",
+        pp = 20,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {spa = 3},
+        secondary = nil,
+        target = "self",
+        type = "Bug",
+        zMove = {effect = "clearnegativeboost"},
+        contestType = "Beautiful"
+    },
+    tailslap = {
+        num = 541,
+        accuracy = 85,
+        basePower = 25,
+        category = "Physical",
+        name = "Tail Slap",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        multihit = {2, 5},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {basePower = 140},
+        maxMove = {basePower = 130},
+        contestType = "Cute"
+    },
+    tailwhip = {
+        num = 39,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Tail Whip",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        boosts = {def = -1},
+        secondary = nil,
+        target = "allAdjacentFoes",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Cute"
+    },
     tailwind = {
         num = 366,
         accuracy = true,
@@ -11660,7 +17972,21 @@ ____exports.Moves = {
         zMove = {effect = "crit2"},
         contestType = "Cool"
     },
-    takedown = {num = 36, accuracy = 85, basePower = 90, category = "Physical", name = "Take Down", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {1, 4}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
+    takedown = {
+        num = 36,
+        accuracy = 85,
+        basePower = 90,
+        category = "Physical",
+        name = "Take Down",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {1, 4},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     tarshot = {
         num = 749,
         accuracy = 100,
@@ -11739,7 +18065,22 @@ ____exports.Moves = {
         zMove = {boost = {atk = 1}},
         contestType = "Clever"
     },
-    tearfullook = {num = 715, accuracy = true, basePower = 0, category = "Status", name = "Tearful Look", pp = 20, priority = 0, flags = {reflectable = 1, mirror = 1}, boosts = {atk = -1, spa = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Cute"},
+    tearfullook = {
+        num = 715,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Tearful Look",
+        pp = 20,
+        priority = 0,
+        flags = {reflectable = 1, mirror = 1},
+        boosts = {atk = -1, spa = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
     teatime = {
         num = 752,
         accuracy = true,
@@ -11751,9 +18092,7 @@ ____exports.Moves = {
         flags = {authentic = 1},
         onHitField = function(self, target, source, move)
             local result = false
-            for ____, active in __TS__Iterator(
-                self:getAllActive()
-            ) do
+            for ____, active in __TS__Iterator(self:getAllActive()) do
                 if self:runEvent("Invulnerability", active, source, move) == false then
                     self:add("-miss", source, active)
                     result = true
@@ -11791,8 +18130,38 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cool"
     },
-    tectonicrage = {num = 630, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Tectonic Rage", pp = 1, priority = 0, flags = {}, isZ = "groundiumz", secondary = nil, target = "normal", type = "Ground", contestType = "Cool"},
-    teeterdance = {num = 298, accuracy = 100, basePower = 0, category = "Status", name = "Teeter Dance", pp = 20, priority = 0, flags = {protect = 1, mirror = 1, dance = 1}, volatileStatus = "confusion", secondary = nil, target = "allAdjacent", type = "Normal", zMove = {boost = {spa = 1}}, contestType = "Cute"},
+    tectonicrage = {
+        num = 630,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Tectonic Rage",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "groundiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Ground",
+        contestType = "Cool"
+    },
+    teeterdance = {
+        num = 298,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Teeter Dance",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1, dance = 1},
+        volatileStatus = "confusion",
+        secondary = nil,
+        target = "allAdjacent",
+        type = "Normal",
+        zMove = {boost = {spa = 1}},
+        contestType = "Cute"
+    },
     telekinesis = {
         num = 477,
         accuracy = true,
@@ -11814,7 +18183,10 @@ ____exports.Moves = {
         condition = {
             duration = 3,
             onStart = function(self, target)
-                if ({"Diglett", "Dugtrio", "Palossand", "Sandygast"}):includes(target.baseSpecies.baseSpecies) or (target.baseSpecies.name == "Gengar-Mega") then
+                if
+                    ({"Diglett", "Dugtrio", "Palossand", "Sandygast"}):includes(target.baseSpecies.baseSpecies) or
+                        (target.baseSpecies.name == "Gengar-Mega")
+                 then
                     self:add("-immune", target)
                     return nil
                 end
@@ -11851,7 +18223,23 @@ ____exports.Moves = {
         zMove = {boost = {spa = 1}},
         contestType = "Clever"
     },
-    teleport = {num = 100, accuracy = true, basePower = 0, category = "Status", name = "Teleport", pp = 20, priority = -6, flags = {}, selfSwitch = true, onTryHit = true, secondary = nil, target = "self", type = "Psychic", zMove = {effect = "heal"}, contestType = "Cool"},
+    teleport = {
+        num = 100,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Teleport",
+        pp = 20,
+        priority = -6,
+        flags = {},
+        selfSwitch = true,
+        onTryHit = true,
+        secondary = nil,
+        target = "self",
+        type = "Psychic",
+        zMove = {effect = "heal"},
+        contestType = "Cool"
+    },
     terrainpulse = {
         num = 805,
         accuracy = 100,
@@ -11926,25 +18314,15 @@ ____exports.Moves = {
             if not yourItem then
                 return
             end
-            if (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)) or (not source:setItem(yourItem)) then
+            if
+                (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)) or
+                    (not source:setItem(yourItem))
+             then
                 target.item = yourItem.id
                 return
             end
-            self:add(
-                "-enditem",
-                target,
-                yourItem,
-                "[silent]",
-                "[from] move: Thief",
-                "[of] " .. tostring(source)
-            )
-            self:add(
-                "-item",
-                source,
-                yourItem,
-                "[from] move: Thief",
-                "[of] " .. tostring(target)
-            )
+            self:add("-enditem", target, yourItem, "[silent]", "[from] move: Thief", "[of] " .. tostring(source))
+            self:add("-item", source, yourItem, "[from] move: Thief", "[of] " .. tostring(target))
         end,
         secondary = nil,
         target = "normal",
@@ -12113,14 +18491,122 @@ ____exports.Moves = {
         type = "Electric",
         contestType = "Cool"
     },
-    thunderbolt = {num = 85, accuracy = 100, basePower = 90, category = "Special", name = "Thunderbolt", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
-    thundercage = {num = 819, accuracy = 90, basePower = 80, category = "Special", name = "Thunder Cage", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Electric"},
-    thunderfang = {num = 422, accuracy = 95, basePower = 65, category = "Physical", name = "Thunder Fang", pp = 15, priority = 0, flags = {bite = 1, contact = 1, protect = 1, mirror = 1}, secondaries = {{chance = 10, status = "par"}, {chance = 10, volatileStatus = "flinch"}}, target = "normal", type = "Electric", contestType = "Cool"},
-    thunderouskick = {num = 823, accuracy = 100, basePower = 90, category = "Physical", name = "Thunderous Kick", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {def = -1}}, target = "normal", type = "Fighting"},
-    thunderpunch = {num = 9, accuracy = 100, basePower = 75, category = "Physical", name = "Thunder Punch", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, punch = 1}, secondary = {chance = 10, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
-    thundershock = {num = 84, accuracy = 100, basePower = 40, category = "Special", name = "Thunder Shock", pp = 30, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 10, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
-    thunderwave = {num = 86, accuracy = 90, basePower = 0, category = "Status", name = "Thunder Wave", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "par", ignoreImmunity = false, secondary = nil, target = "normal", type = "Electric", zMove = {boost = {spd = 1}}, contestType = "Cool"},
-    tickle = {num = 321, accuracy = 100, basePower = 0, category = "Status", name = "Tickle", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1}, boosts = {atk = -1, def = -1}, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {def = 1}}, contestType = "Cute"},
+    thunderbolt = {
+        num = 85,
+        accuracy = 100,
+        basePower = 90,
+        category = "Special",
+        name = "Thunderbolt",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    thundercage = {
+        num = 819,
+        accuracy = 90,
+        basePower = 80,
+        category = "Special",
+        name = "Thunder Cage",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Electric"
+    },
+    thunderfang = {
+        num = 422,
+        accuracy = 95,
+        basePower = 65,
+        category = "Physical",
+        name = "Thunder Fang",
+        pp = 15,
+        priority = 0,
+        flags = {bite = 1, contact = 1, protect = 1, mirror = 1},
+        secondaries = {{chance = 10, status = "par"}, {chance = 10, volatileStatus = "flinch"}},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    thunderouskick = {
+        num = 823,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Thunderous Kick",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {def = -1}},
+        target = "normal",
+        type = "Fighting"
+    },
+    thunderpunch = {
+        num = 9,
+        accuracy = 100,
+        basePower = 75,
+        category = "Physical",
+        name = "Thunder Punch",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, punch = 1},
+        secondary = {chance = 10, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    thundershock = {
+        num = 84,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Thunder Shock",
+        pp = 30,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 10, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    thunderwave = {
+        num = 86,
+        accuracy = 90,
+        basePower = 0,
+        category = "Status",
+        name = "Thunder Wave",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "par",
+        ignoreImmunity = false,
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        zMove = {boost = {spd = 1}},
+        contestType = "Cool"
+    },
+    tickle = {
+        num = 321,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        name = "Tickle",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1, mystery = 1},
+        boosts = {atk = -1, def = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
     topsyturvy = {
         num = 576,
         accuracy = true,
@@ -12189,7 +18675,22 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Tough"
     },
-    toxic = {num = 92, accuracy = 90, basePower = 0, category = "Status", name = "Toxic", pp = 10, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "tox", secondary = nil, target = "normal", type = "Poison", zMove = {boost = {def = 1}}, contestType = "Clever"},
+    toxic = {
+        num = 92,
+        accuracy = 90,
+        basePower = 0,
+        category = "Status",
+        name = "Toxic",
+        pp = 10,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "tox",
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        zMove = {boost = {def = 1}},
+        contestType = "Clever"
+    },
     toxicspikes = {
         num = 390,
         accuracy = true,
@@ -12218,12 +18719,7 @@ ____exports.Moves = {
                     return
                 end
                 if pokemon:hasType("Poison") then
-                    self:add(
-                        "-sideend",
-                        pokemon.side,
-                        "move: Toxic Spikes",
-                        "[of] " .. tostring(pokemon)
-                    )
+                    self:add("-sideend", pokemon.side, "move: Toxic Spikes", "[of] " .. tostring(pokemon))
                     pokemon.side:removeSideCondition("toxicspikes")
                 elseif pokemon:hasType("Steel") or pokemon:hasItem("heavydutyboots") then
                     return
@@ -12240,7 +18736,24 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Clever"
     },
-    toxicthread = {num = 672, accuracy = 100, basePower = 0, category = "Status", isNonstandard = "Past", name = "Toxic Thread", pp = 20, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "psn", boosts = {spe = -1}, secondary = nil, target = "normal", type = "Poison", zMove = {boost = {spe = 1}}, contestType = "Tough"},
+    toxicthread = {
+        num = 672,
+        accuracy = 100,
+        basePower = 0,
+        category = "Status",
+        isNonstandard = "Past",
+        name = "Toxic Thread",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "psn",
+        boosts = {spe = -1},
+        secondary = nil,
+        target = "normal",
+        type = "Poison",
+        zMove = {boost = {spe = 1}},
+        contestType = "Tough"
+    },
     transform = {
         num = 144,
         accuracy = true,
@@ -12311,7 +18824,11 @@ ____exports.Moves = {
                 end
                 return false
             end
-            if (myItem and (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem))) or (yourItem and (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem))) then
+            if
+                (myItem and (not self:singleEvent("TakeItem", myItem, source.itemState, target, source, move, myItem))) or
+                    (yourItem and
+                        (not self:singleEvent("TakeItem", yourItem, target.itemState, source, target, move, yourItem)))
+             then
                 if yourItem then
                     target.item = yourItem.id
                 end
@@ -12320,12 +18837,7 @@ ____exports.Moves = {
                 end
                 return false
             end
-            self:add(
-                "-activate",
-                source,
-                "move: Trick",
-                "[of] " .. tostring(target)
-            )
+            self:add("-activate", source, "move: Trick", "[of] " .. tostring(target))
             if myItem then
                 target:setItem(myItem)
                 self:add("-item", target, myItem, "[from] move: Trick")
@@ -12395,11 +18907,7 @@ ____exports.Moves = {
                 return 5
             end,
             onFieldStart = function(self, target, source)
-                self:add(
-                    "-fieldstart",
-                    "move: Trick Room",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-fieldstart", "move: Trick Room", "[of] " .. tostring(source))
             end,
             onFieldRestart = function(self, target, source)
                 self.field:removePseudoWeather("trickroom")
@@ -12457,14 +18965,31 @@ ____exports.Moves = {
         maxMove = {basePower = 80},
         contestType = "Cool"
     },
-    tropkick = {num = 688, accuracy = 100, basePower = 70, category = "Physical", name = "Trop Kick", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 100, boosts = {atk = -1}}, target = "normal", type = "Grass", contestType = "Cute"},
+    tropkick = {
+        num = 688,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "Trop Kick",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, boosts = {atk = -1}},
+        target = "normal",
+        type = "Grass",
+        contestType = "Cute"
+    },
     trumpcard = {
         num = 376,
         accuracy = true,
         basePower = 0,
         basePowerCallback = function(self, source, target, move)
             local callerMoveId = move.sourceEffect or move.id
-            local moveSlot = (((callerMoveId == "instruct") and (function() return source:getMoveData(move.id) end)) or (function() return source:getMoveData(callerMoveId) end))()
+            local moveSlot = (((callerMoveId == "instruct") and (function()
+                    return source:getMoveData(move.id)
+                end)) or (function()
+                    return source:getMoveData(callerMoveId)
+                end))()
             if not moveSlot then
                 return 40
             end
@@ -12515,10 +19040,68 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Cool"
     },
-    twineedle = {num = 41, accuracy = 100, basePower = 25, category = "Physical", isNonstandard = "Past", name = "Twineedle", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, multihit = 2, secondary = {chance = 20, status = "psn"}, target = "normal", type = "Bug", maxMove = {basePower = 100}, contestType = "Cool"},
-    twinkletackle = {num = 656, accuracy = true, basePower = 1, category = "Physical", isNonstandard = "Past", name = "Twinkle Tackle", pp = 1, priority = 0, flags = {}, isZ = "fairiumz", secondary = nil, target = "normal", type = "Fairy", contestType = "Cool"},
-    twister = {num = 239, accuracy = 100, basePower = 40, category = "Special", name = "Twister", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "allAdjacentFoes", type = "Dragon", contestType = "Cool"},
-    uturn = {num = 369, accuracy = 100, basePower = 70, category = "Physical", name = "U-turn", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, selfSwitch = true, secondary = nil, target = "normal", type = "Bug", contestType = "Cute"},
+    twineedle = {
+        num = 41,
+        accuracy = 100,
+        basePower = 25,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Twineedle",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        multihit = 2,
+        secondary = {chance = 20, status = "psn"},
+        target = "normal",
+        type = "Bug",
+        maxMove = {basePower = 100},
+        contestType = "Cool"
+    },
+    twinkletackle = {
+        num = 656,
+        accuracy = true,
+        basePower = 1,
+        category = "Physical",
+        isNonstandard = "Past",
+        name = "Twinkle Tackle",
+        pp = 1,
+        priority = 0,
+        flags = {},
+        isZ = "fairiumz",
+        secondary = nil,
+        target = "normal",
+        type = "Fairy",
+        contestType = "Cool"
+    },
+    twister = {
+        num = 239,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Twister",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "allAdjacentFoes",
+        type = "Dragon",
+        contestType = "Cool"
+    },
+    uturn = {
+        num = 369,
+        accuracy = 100,
+        basePower = 70,
+        category = "Physical",
+        name = "U-turn",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        selfSwitch = true,
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Cute"
+    },
     uproar = {
         num = 253,
         accuracy = 100,
@@ -12532,9 +19115,7 @@ ____exports.Moves = {
         onTryHit = function(self, target)
             local activeTeam = target.side:activeTeam()
             local foeActiveTeam = target.side.foe:activeTeam()
-            for ____, ____value in __TS__Iterator(
-                activeTeam:entries()
-            ) do
+            for ____, ____value in __TS__Iterator(activeTeam:entries()) do
                 local i
                 i = ____value[1]
                 local allyActive
@@ -12585,8 +19166,36 @@ ____exports.Moves = {
         type = "Normal",
         contestType = "Cute"
     },
-    vacuumwave = {num = 410, accuracy = 100, basePower = 40, category = "Special", name = "Vacuum Wave", pp = 30, priority = 1, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    vcreate = {num = 557, accuracy = 95, basePower = 180, category = "Physical", name = "V-create", pp = 5, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, self = {boosts = {spe = -1, def = -1, spd = -1}}, secondary = nil, target = "normal", type = "Fire", zMove = {basePower = 220}, contestType = "Cool"},
+    vacuumwave = {
+        num = 410,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Vacuum Wave",
+        pp = 30,
+        priority = 1,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    vcreate = {
+        num = 557,
+        accuracy = 95,
+        basePower = 180,
+        category = "Physical",
+        name = "V-create",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        self = {boosts = {spe = -1, def = -1, spd = -1}},
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        zMove = {basePower = 220},
+        contestType = "Cool"
+    },
     veeveevolley = {
         num = 741,
         accuracy = true,
@@ -12645,11 +19254,78 @@ ____exports.Moves = {
         type = "Poison",
         contestType = "Beautiful"
     },
-    vinewhip = {num = 22, accuracy = 100, basePower = 45, category = "Physical", name = "Vine Whip", pp = 25, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Grass", contestType = "Cool"},
-    visegrip = {num = 11, accuracy = 100, basePower = 55, category = "Physical", name = "Vise Grip", pp = 30, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
-    vitalthrow = {num = 233, accuracy = true, basePower = 70, category = "Physical", name = "Vital Throw", pp = 10, priority = -1, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Fighting", contestType = "Cool"},
-    voltswitch = {num = 521, accuracy = 100, basePower = 70, category = "Special", name = "Volt Switch", pp = 20, priority = 0, flags = {protect = 1, mirror = 1}, selfSwitch = true, secondary = nil, target = "normal", type = "Electric", contestType = "Cool"},
-    volttackle = {num = 344, accuracy = 100, basePower = 120, category = "Physical", name = "Volt Tackle", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {33, 100}, secondary = {chance = 10, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
+    vinewhip = {
+        num = 22,
+        accuracy = 100,
+        basePower = 45,
+        category = "Physical",
+        name = "Vine Whip",
+        pp = 25,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Cool"
+    },
+    visegrip = {
+        num = 11,
+        accuracy = 100,
+        basePower = 55,
+        category = "Physical",
+        name = "Vise Grip",
+        pp = 30,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
+    vitalthrow = {
+        num = 233,
+        accuracy = true,
+        basePower = 70,
+        category = "Physical",
+        name = "Vital Throw",
+        pp = 10,
+        priority = -1,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Fighting",
+        contestType = "Cool"
+    },
+    voltswitch = {
+        num = 521,
+        accuracy = 100,
+        basePower = 70,
+        category = "Special",
+        name = "Volt Switch",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        selfSwitch = true,
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    volttackle = {
+        num = 344,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Volt Tackle",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {33, 100},
+        secondary = {chance = 10, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
     wakeupslap = {
         num = 358,
         accuracy = 100,
@@ -12676,8 +19352,34 @@ ____exports.Moves = {
         type = "Fighting",
         contestType = "Tough"
     },
-    waterfall = {num = 127, accuracy = 100, basePower = 80, category = "Physical", name = "Waterfall", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "normal", type = "Water", contestType = "Tough"},
-    watergun = {num = 55, accuracy = 100, basePower = 40, category = "Special", name = "Water Gun", pp = 25, priority = 0, flags = {protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Water", contestType = "Cute"},
+    waterfall = {
+        num = 127,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Waterfall",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Water",
+        contestType = "Tough"
+    },
+    watergun = {
+        num = 55,
+        accuracy = 100,
+        basePower = 40,
+        category = "Special",
+        name = "Water Gun",
+        pp = 25,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Cute"
+    },
     waterpledge = {
         num = 518,
         accuracy = 100,
@@ -12702,7 +19404,12 @@ ____exports.Moves = {
                     end
                     local otherMove = action.move
                     local otherMoveUser = action.pokemon
-                    if (((((not otherMove) or (not action.pokemon)) or (not otherMoveUser.isActive)) or otherMoveUser.fainted) or action.maxMove) or action.zmove then
+                    if
+                        (((((not otherMove) or (not action.pokemon)) or (not otherMoveUser.isActive)) or
+                            otherMoveUser.fainted) or
+                            action.maxMove) or
+                            action.zmove
+                     then
                         goto __continue1671
                     end
                     if otherMoveUser:isAlly(source) and ({"firepledge", "grasspledge"}):includes(otherMove.id) then
@@ -12762,7 +19469,20 @@ ____exports.Moves = {
         type = "Water",
         contestType = "Beautiful"
     },
-    waterpulse = {num = 352, accuracy = 100, basePower = 60, category = "Special", name = "Water Pulse", pp = 20, priority = 0, flags = {protect = 1, pulse = 1, mirror = 1, distance = 1}, secondary = {chance = 20, volatileStatus = "confusion"}, target = "any", type = "Water", contestType = "Beautiful"},
+    waterpulse = {
+        num = 352,
+        accuracy = 100,
+        basePower = 60,
+        category = "Special",
+        name = "Water Pulse",
+        pp = 20,
+        priority = 0,
+        flags = {protect = 1, pulse = 1, mirror = 1, distance = 1},
+        secondary = {chance = 20, volatileStatus = "confusion"},
+        target = "any",
+        type = "Water",
+        contestType = "Beautiful"
+    },
     watershuriken = {
         num = 594,
         accuracy = 100,
@@ -12798,11 +19518,7 @@ ____exports.Moves = {
         condition = {
             duration = 5,
             onFieldStart = function(self, field, source)
-                self:add(
-                    "-fieldstart",
-                    "move: Water Sport",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-fieldstart", "move: Water Sport", "[of] " .. tostring(source))
             end,
             onBasePowerPriority = 1,
             onBasePower = function(self, basePower, attacker, defender, move)
@@ -12944,9 +19660,51 @@ ____exports.Moves = {
         maxMove = {basePower = 130},
         contestType = "Beautiful"
     },
-    whirlpool = {num = 250, accuracy = 85, basePower = 35, category = "Special", name = "Whirlpool", pp = 15, priority = 0, flags = {protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Water", contestType = "Beautiful"},
-    whirlwind = {num = 18, accuracy = true, basePower = 0, category = "Status", name = "Whirlwind", pp = 20, priority = -6, flags = {reflectable = 1, mirror = 1, authentic = 1, mystery = 1}, forceSwitch = true, secondary = nil, target = "normal", type = "Normal", zMove = {boost = {spd = 1}}, contestType = "Clever"},
-    wickedblow = {num = 817, accuracy = 100, basePower = 80, category = "Physical", name = "Wicked Blow", pp = 5, priority = 0, flags = {contact = 1, protect = 1, punch = 1, mirror = 1}, willCrit = true, secondary = nil, target = "normal", type = "Dark"},
+    whirlpool = {
+        num = 250,
+        accuracy = 85,
+        basePower = 35,
+        category = "Special",
+        name = "Whirlpool",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Water",
+        contestType = "Beautiful"
+    },
+    whirlwind = {
+        num = 18,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Whirlwind",
+        pp = 20,
+        priority = -6,
+        flags = {reflectable = 1, mirror = 1, authentic = 1, mystery = 1},
+        forceSwitch = true,
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        zMove = {boost = {spd = 1}},
+        contestType = "Clever"
+    },
+    wickedblow = {
+        num = 817,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Wicked Blow",
+        pp = 5,
+        priority = 0,
+        flags = {contact = 1, protect = 1, punch = 1, mirror = 1},
+        willCrit = true,
+        secondary = nil,
+        target = "normal",
+        type = "Dark"
+    },
     wideguard = {
         num = 469,
         accuracy = true,
@@ -12996,9 +19754,51 @@ ____exports.Moves = {
         zMove = {boost = {def = 1}},
         contestType = "Tough"
     },
-    wildcharge = {num = 528, accuracy = 100, basePower = 90, category = "Physical", name = "Wild Charge", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {1, 4}, secondary = nil, target = "normal", type = "Electric", contestType = "Tough"},
-    willowisp = {num = 261, accuracy = 85, basePower = 0, category = "Status", name = "Will-O-Wisp", pp = 15, priority = 0, flags = {protect = 1, reflectable = 1, mirror = 1}, status = "brn", secondary = nil, target = "normal", type = "Fire", zMove = {boost = {atk = 1}}, contestType = "Beautiful"},
-    wingattack = {num = 17, accuracy = 100, basePower = 60, category = "Physical", name = "Wing Attack", pp = 35, priority = 0, flags = {contact = 1, protect = 1, mirror = 1, distance = 1}, secondary = nil, target = "any", type = "Flying", contestType = "Cool"},
+    wildcharge = {
+        num = 528,
+        accuracy = 100,
+        basePower = 90,
+        category = "Physical",
+        name = "Wild Charge",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {1, 4},
+        secondary = nil,
+        target = "normal",
+        type = "Electric",
+        contestType = "Tough"
+    },
+    willowisp = {
+        num = 261,
+        accuracy = 85,
+        basePower = 0,
+        category = "Status",
+        name = "Will-O-Wisp",
+        pp = 15,
+        priority = 0,
+        flags = {protect = 1, reflectable = 1, mirror = 1},
+        status = "brn",
+        secondary = nil,
+        target = "normal",
+        type = "Fire",
+        zMove = {boost = {atk = 1}},
+        contestType = "Beautiful"
+    },
+    wingattack = {
+        num = 17,
+        accuracy = 100,
+        basePower = 60,
+        category = "Physical",
+        name = "Wing Attack",
+        pp = 35,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1, distance = 1},
+        secondary = nil,
+        target = "any",
+        type = "Flying",
+        contestType = "Cool"
+    },
     wish = {
         num = 273,
         accuracy = true,
@@ -13036,7 +19836,22 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Cute"
     },
-    withdraw = {num = 110, accuracy = true, basePower = 0, category = "Status", name = "Withdraw", pp = 40, priority = 0, flags = {snatch = 1}, boosts = {def = 1}, secondary = nil, target = "self", type = "Water", zMove = {boost = {def = 1}}, contestType = "Cute"},
+    withdraw = {
+        num = 110,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Withdraw",
+        pp = 40,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {def = 1},
+        secondary = nil,
+        target = "self",
+        type = "Water",
+        zMove = {boost = {def = 1}},
+        contestType = "Cute"
+    },
     wonderroom = {
         num = 472,
         accuracy = true,
@@ -13057,11 +19872,7 @@ ____exports.Moves = {
                 return 5
             end,
             onFieldStart = function(self, field, source)
-                self:add(
-                    "-fieldstart",
-                    "move: Wonder Room",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-fieldstart", "move: Wonder Room", "[of] " .. tostring(source))
             end,
             onFieldRestart = function(self, target, source)
                 self.field:removePseudoWeather("wonderroom")
@@ -13078,8 +19889,37 @@ ____exports.Moves = {
         zMove = {boost = {spd = 1}},
         contestType = "Clever"
     },
-    woodhammer = {num = 452, accuracy = 100, basePower = 120, category = "Physical", name = "Wood Hammer", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, recoil = {33, 100}, secondary = nil, target = "normal", type = "Grass", contestType = "Tough"},
-    workup = {num = 526, accuracy = true, basePower = 0, category = "Status", name = "Work Up", pp = 30, priority = 0, flags = {snatch = 1}, boosts = {atk = 1, spa = 1}, secondary = nil, target = "self", type = "Normal", zMove = {boost = {atk = 1}}, contestType = "Tough"},
+    woodhammer = {
+        num = 452,
+        accuracy = 100,
+        basePower = 120,
+        category = "Physical",
+        name = "Wood Hammer",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        recoil = {33, 100},
+        secondary = nil,
+        target = "normal",
+        type = "Grass",
+        contestType = "Tough"
+    },
+    workup = {
+        num = 526,
+        accuracy = true,
+        basePower = 0,
+        category = "Status",
+        name = "Work Up",
+        pp = 30,
+        priority = 0,
+        flags = {snatch = 1},
+        boosts = {atk = 1, spa = 1},
+        secondary = nil,
+        target = "self",
+        type = "Normal",
+        zMove = {boost = {atk = 1}},
+        contestType = "Tough"
+    },
     worryseed = {
         num = 388,
         accuracy = 100,
@@ -13116,16 +19956,28 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Clever"
     },
-    wrap = {num = 35, accuracy = 90, basePower = 15, category = "Physical", name = "Wrap", pp = 20, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, volatileStatus = "partiallytrapped", secondary = nil, target = "normal", type = "Normal", contestType = "Tough"},
+    wrap = {
+        num = 35,
+        accuracy = 90,
+        basePower = 15,
+        category = "Physical",
+        name = "Wrap",
+        pp = 20,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        volatileStatus = "partiallytrapped",
+        secondary = nil,
+        target = "normal",
+        type = "Normal",
+        contestType = "Tough"
+    },
     wringout = {
         num = 378,
         accuracy = 100,
         basePower = 0,
         basePowerCallback = function(self, pokemon, target)
             return math.floor(
-                math.floor(
-                    (((120 * (100 * math.floor((target.hp * 4096) / target.maxhp))) + 2048) - 1) / 4096
-                ) / 100
+                math.floor((((120 * (100 * math.floor((target.hp * 4096) / target.maxhp))) + 2048) - 1) / 4096) / 100
             ) or 1
         end,
         category = "Special",
@@ -13141,7 +19993,20 @@ ____exports.Moves = {
         maxMove = {basePower = 140},
         contestType = "Tough"
     },
-    xscissor = {num = 404, accuracy = 100, basePower = 80, category = "Physical", name = "X-Scissor", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = nil, target = "normal", type = "Bug", contestType = "Cool"},
+    xscissor = {
+        num = 404,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "X-Scissor",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = nil,
+        target = "normal",
+        type = "Bug",
+        contestType = "Cool"
+    },
     yawn = {
         num = 281,
         accuracy = true,
@@ -13161,12 +20026,7 @@ ____exports.Moves = {
             noCopy = true,
             duration = 2,
             onStart = function(self, target, source)
-                self:add(
-                    "-start",
-                    target,
-                    "move: Yawn",
-                    "[of] " .. tostring(source)
-                )
+                self:add("-start", target, "move: Yawn", "[of] " .. tostring(source))
             end,
             onResidualOrder = 23,
             onEnd = function(self, target)
@@ -13180,10 +20040,63 @@ ____exports.Moves = {
         zMove = {boost = {spe = 1}},
         contestType = "Cute"
     },
-    zapcannon = {num = 192, accuracy = 50, basePower = 120, category = "Special", name = "Zap Cannon", pp = 5, priority = 0, flags = {bullet = 1, protect = 1, mirror = 1}, secondary = {chance = 100, status = "par"}, target = "normal", type = "Electric", contestType = "Cool"},
-    zenheadbutt = {num = 428, accuracy = 90, basePower = 80, category = "Physical", name = "Zen Headbutt", pp = 15, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 20, volatileStatus = "flinch"}, target = "normal", type = "Psychic", contestType = "Clever"},
-    zingzap = {num = 716, accuracy = 100, basePower = 80, category = "Physical", name = "Zing Zap", pp = 10, priority = 0, flags = {contact = 1, protect = 1, mirror = 1}, secondary = {chance = 30, volatileStatus = "flinch"}, target = "normal", type = "Electric", contestType = "Cool"},
-    zippyzap = {num = 729, accuracy = 100, basePower = 80, category = "Physical", isNonstandard = "LGPE", name = "Zippy Zap", pp = 10, priority = 2, flags = {contact = 1, protect = 1}, secondary = {chance = 100, self = {boosts = {evasion = 1}}}, target = "normal", type = "Electric", contestType = "Cool"}
+    zapcannon = {
+        num = 192,
+        accuracy = 50,
+        basePower = 120,
+        category = "Special",
+        name = "Zap Cannon",
+        pp = 5,
+        priority = 0,
+        flags = {bullet = 1, protect = 1, mirror = 1},
+        secondary = {chance = 100, status = "par"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    zenheadbutt = {
+        num = 428,
+        accuracy = 90,
+        basePower = 80,
+        category = "Physical",
+        name = "Zen Headbutt",
+        pp = 15,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 20, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Psychic",
+        contestType = "Clever"
+    },
+    zingzap = {
+        num = 716,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        name = "Zing Zap",
+        pp = 10,
+        priority = 0,
+        flags = {contact = 1, protect = 1, mirror = 1},
+        secondary = {chance = 30, volatileStatus = "flinch"},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    },
+    zippyzap = {
+        num = 729,
+        accuracy = 100,
+        basePower = 80,
+        category = "Physical",
+        isNonstandard = "LGPE",
+        name = "Zippy Zap",
+        pp = 10,
+        priority = 2,
+        flags = {contact = 1, protect = 1},
+        secondary = {chance = 100, self = {boosts = {evasion = 1}}},
+        target = "normal",
+        type = "Electric",
+        contestType = "Cool"
+    }
 }
 
 return ____exports
