@@ -1,6 +1,6 @@
 # PokeLua
 
- A completely shameless attempt to port Pokemon Showdowns simulator and dex to Lua (I will remove the CAP mons once this actually works since those were made for pokemon showdown.)
+ A completely shameless attempt to port Pokemon Showdowns simulator and data to Lua (I will remove the CAP mons once this actually works since those were made for pokemon showdown.)
  
  The goal of this repository is to allow one to simulate most things that are possible in the games normally, in Lua.
  
