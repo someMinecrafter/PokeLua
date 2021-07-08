@@ -166,7 +166,7 @@ function DexMoves.prototype.getByID(self, id)
         return move
     end
     if id:startsWith("hiddenpower") then
-        id = nil:exec(id)[2]
+        id = exec(id)[2] -- was nil:exec() ...
     end
     if id and (rawget(self.dex.data.Moves, id) ~= nil) then
         local moveData = self.dex.data.Moves[id]

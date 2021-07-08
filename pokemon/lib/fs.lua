@@ -1,13 +1,15 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
 local ____exports = {}
-local fs = require("lib/fs")
-local pathModule = require("lib/path")
-local ____streams = require("lib/streams")
+--local fs = require("lib.fs") -- what?
+--local pathModule = require("lib.path") -- doesn't exist?
+local ____streams = require("lib.streams")
 local ReadStream = ____streams.ReadStream
 local WriteStream = ____streams.WriteStream
 local FileReadStream
-local ROOT_PATH = pathModule:resolve(__dirname, "..")
+
+local ROOT_PATH = "" -- pathModule:resolve(__dirname, "..") -- wont work because lib.path doesnt exist
+local global = _G -- lol transpiler didnt do this for me
 if not global.__fsState then
     global.__fsState = {
         pendingUpdates = __TS__New(Map)
@@ -17,7 +19,7 @@ ____exports.FSPath = __TS__Class()
 local FSPath = ____exports.FSPath
 FSPath.name = "FSPath"
 function FSPath.prototype.____constructor(self, path)
-    self.path = pathModule:resolve(ROOT_PATH, path)
+    self.path = ROOT_PATH -- pathModule:resolve(ROOT_PATH, path) -- wont work because lib.path doesnt exist
 end
 function FSPath.prototype.parentDir(self)
     return __TS__New(

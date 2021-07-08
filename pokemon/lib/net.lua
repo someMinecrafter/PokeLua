@@ -1,10 +1,11 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
+--[[
 local ____exports = {}
-local https = require("lib/https")
-local http = require("lib/http")
-local url = require("lib/url")
-local Streams = require("lib/streams")
+local https = require("lib.https")
+local http = require("lib.http")
+local url = require("lib.url")
+local Streams = require("lib.streams")
 ____exports.HttpError = __TS__Class()
 local HttpError = ____exports.HttpError
 HttpError.name = "HttpError"
@@ -251,3 +252,5 @@ ____exports.Net = __TS__ObjectAssign(
     {NetRequest = ____exports.NetRequest, NetStream = ____exports.NetStream}
 )
 return ____exports
+--]]
+return {}

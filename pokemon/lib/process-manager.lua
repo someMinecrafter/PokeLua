@@ -1,11 +1,11 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
 local ____exports = {}
-local child_process = require("lib/child_process")
-local cluster = require("lib/cluster")
-local path = require("lib/path")
-local Streams = require("lib/streams")
-local ROOT_DIR = path:resolve(__dirname, "..")
+--local child_process = require("lib.child_process")
+--local cluster = require("lib.cluster")
+--local path = require("lib.path") -- none of the above exist
+local Streams = require("lib.streams")
+local ROOT_DIR = "" -- path:resolve(__dirname, "..") -- nor this
 ____exports.processManagers = {}
 ____exports.disabled = false
 function ____exports.exec(self, args, execOptions)

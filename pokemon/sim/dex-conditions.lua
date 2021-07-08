@@ -11,7 +11,8 @@ __TS__ClassExtends(Condition, BasicEffect)
 function Condition.prototype.____constructor(self, data)
     BasicEffect.prototype.____constructor(self, data)
     data = self
-    self.effectType = ((({"Weather", "Status"}):includes(data.effectType) and (function() return data.effectType end)) or (function() return "Condition" end))()
+	-- slight rewrite
+    self.effectType = ( data.effectType == "Weather" or data.effectType == "Status" ) and data.effectType or "Condition"
 end
 local EMPTY_CONDITION = __TS__New(____exports.Condition, {name = "", exists = false})
 ____exports.DexConditions = __TS__Class()

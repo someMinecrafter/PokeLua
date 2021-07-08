@@ -11,9 +11,7 @@ function ____exports.forceWrap(self, text)
             do
                 local i = 1
                 while i < #word do
-                    if ((i - lastBreak) >= 10) or nil:test(
-                        __TS__StringSlice(word, i - 1, i + 1)
-                    ) then
+                    if ((i - lastBreak) >= 10) or test( __TS__StringSlice(word, i - 1, i + 1) ) then -- was nil:test() ...
                         brokenWord = tostring(brokenWord) .. (tostring(
                             __TS__StringSlice(word, lastBreak, i)
                         ) .. "​")
@@ -123,7 +121,7 @@ function ____exports.visualize(self, value, depth)
     else
         constructor = "null"
     end
-    local baseClass = (value.toString and nil:exec(
+    local baseClass = (value.toString and exec( -- was nil:exec() ...
         tostring(value)
     )[2]) or constructor
     local ____switch22 = baseClass
@@ -195,7 +193,7 @@ function ____exports.visualize(self, value, depth)
                 buf = tostring(buf) .. ", "
             end
             local displayedKey = key
-            if not nil:test(key) then
+            if not test(key) then -- was nil:test() ...
                 displayedKey = JSON:stringify(key)
             end
             buf = tostring(buf) .. ((displayedKey .. ": ") .. tostring(

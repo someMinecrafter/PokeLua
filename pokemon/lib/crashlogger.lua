@@ -1,11 +1,11 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
 local ____exports = {}
-local fs = require("lib/fs")
-local path = require("lib/path")
+local fs = require("lib.fs")
+--local path = require("lib.path") -- not existing
 local CRASH_EMAIL_THROTTLE = (5 * 60) * 1000
 local LOCKDOWN_PERIOD = (30 * 60) * 1000
-local logPath = path:resolve(__dirname, "../logs/errors.txt")
+local logPath = "logs/errors.txt" -- path:resolve(__dirname, "../logs/errors.txt")
 local lastCrashLog = 0
 local transport
 function ____exports.crashlogger(self, ____error, description, data)

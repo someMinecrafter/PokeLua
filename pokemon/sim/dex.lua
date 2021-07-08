@@ -1,33 +1,33 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
 local ____exports = {}
-local fs = require("lib/fs")
-local path = require("sim/path")
-local Data = require("sim/dex-data")
-local ____dex_2Dconditions = require("sim/dex-conditions")
+local fs = require("lib.fs")
+--local path = require("lib.path") -- doesnt exist, sad
+local Data = require("sim.dex-data")
+local ____dex_2Dconditions = require("sim.dex-conditions")
 local Condition = ____dex_2Dconditions.Condition
 local DexConditions = ____dex_2Dconditions.DexConditions
-local ____dex_2Dmoves = require("sim/dex-moves")
+local ____dex_2Dmoves = require("sim.dex-moves")
 local DataMove = ____dex_2Dmoves.DataMove
 local DexMoves = ____dex_2Dmoves.DexMoves
-local ____dex_2Ditems = require("sim/dex-items")
+local ____dex_2Ditems = require("sim.dex-items")
 local Item = ____dex_2Ditems.Item
 local DexItems = ____dex_2Ditems.DexItems
-local ____dex_2Dabilities = require("sim/dex-abilities")
+local ____dex_2Dabilities = require("sim.dex-abilities")
 local Ability = ____dex_2Dabilities.Ability
 local DexAbilities = ____dex_2Dabilities.DexAbilities
-local ____dex_2Dspecies = require("sim/dex-species")
+local ____dex_2Dspecies = require("sim.dex-species")
 local Species = ____dex_2Dspecies.Species
 local DexSpecies = ____dex_2Dspecies.DexSpecies
-local ____dex_2Dformats = require("sim/dex-formats")
+local ____dex_2Dformats = require("sim.dex-formats")
 local Format = ____dex_2Dformats.Format
 local DexFormats = ____dex_2Dformats.DexFormats
-local ____lib = require("lib/index")
+local ____lib = require("lib.index")
 local Utils = ____lib.Utils
 local BASE_MOD = "gen8"
-local DATA_DIR = path:resolve(__dirname, "../.data-dist")
-local MODS_DIR = path:resolve(__dirname, "../.data-dist/mods")
-local dexes = Object:create(nil)
+local DATA_DIR = ""-- path:resolve(__dirname, "../.data-dist") -- nah
+local MODS_DIR = ""-- path:resolve(__dirname, "../.data-dist/mods")
+local dexes = {} -- was Object:create(nil) , what?! just make an empty table!
 local DATA_TYPES = {"Abilities", "Rulesets", "FormatsData", "Items", "Learnsets", "Moves", "Natures", "Pokedex", "Scripts", "Conditions", "TypeChart"}
 local DATA_FILES = {Abilities = "abilities", Aliases = "aliases", Rulesets = "rulesets", FormatsData = "formats-data", Items = "items", Learnsets = "learnsets", Moves = "moves", Natures = "natures", Pokedex = "pokedex", Scripts = "scripts", Conditions = "conditions", TypeChart = "typechart"}
 ____exports.toID = Data.toID

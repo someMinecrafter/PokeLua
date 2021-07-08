@@ -1071,7 +1071,7 @@ end
 
 function __TS__ObjectAssign(to, ...)
     local sources = {...}
-    if to == nil then
+    if type(to) ~= "table" then -- why was this a nil check before?
         return to
     end
     for ____, source in ipairs(sources) do
@@ -1674,7 +1674,7 @@ function __TS__StringPadStart(self, maxLength, fillString)
 end
 
 function __TS__StringReplace(source, searchValue, replaceValue)
-    searchValue = string.gsub(searchValue, "[%%%(%)%.%+%-%*%?%[%^%$]", "%%%1")
+    searchValue = string.gsub(searchValue or "", "[%%%(%)%.%+%-%*%?%[%^%$]", "%%%1") -- safety check added
     if type(replaceValue) == "string" then
         replaceValue = string.gsub(replaceValue, "%%", "%%%%")
         local result = string.gsub(source, searchValue, replaceValue, 1)

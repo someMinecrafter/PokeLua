@@ -127,7 +127,7 @@ function RuleTable.prototype.getTagRules(self)
     for ____, ruleid in __TS__Iterator(
         self:keys()
     ) do
-        if nil:test(ruleid) then
+        if test(ruleid) then -- was nil:test() ...
             local banid = ruleid:slice(12)
             if ((((banid == "allpokemon") or (banid == "allitems")) or (banid == "allmoves")) or (banid == "allabilities")) or (banid == "allnatures") then
             else
@@ -1149,7 +1149,7 @@ function DexFormats.prototype.validateRule(self, rule, format)
             local buf = string.sub(rule, 2)
             local gtIndex = buf:lastIndexOf(">")
             local limit = ((rule:startsWith("+") and (function() return math.huge end)) or (function() return 0 end))()
-            if (gtIndex >= 0) and nil:test(
+            if (gtIndex >= 0) and test( -- was nil:test() ...
                 __TS__StringTrim(
                     __TS__StringSlice(buf, gtIndex + 1)
                 )

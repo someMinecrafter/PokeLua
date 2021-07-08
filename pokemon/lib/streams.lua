@@ -868,9 +868,12 @@ function ObjectReadStream.prototype.destroy(self)
     self:resolvePush()
     return self:_destroy()
 end
+-- epic transpiler fail
+--[[ --???? Symbol is undefined here, what is the ranspiler trying to accomplish?
 ObjectReadStream.prototype[Symbol.asyncIterator] = function(self)
     return self
 end
+--]]
 function ObjectReadStream.prototype.next(self)
     if #self.buf then
         return {

@@ -1,11 +1,11 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 require("lualib_bundle");
 local ____exports = {}
-local fs = require("lib/fs")
-local net = require("lib/net")
-local path = require("lib/path")
-local repl = require("lib/repl")
-local ____crashlogger = require("lib/crashlogger")
+local fs = require("lib.fs")
+local net = require("lib.net")
+--local path = require("lib.path") -- doesnt exist....
+--local repl = require("lib.repl") -- why recursively again?
+local ____crashlogger = require("lib.crashlogger")
 local crashlogger = ____crashlogger.crashlogger
 ____exports.Repl = __TS__New(
     (function()
