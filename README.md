@@ -6,7 +6,7 @@
  
  The reason for this is because Lua is easy and my use-case for the simulator would be as a script add-on to another game, since I was unhappy with the existing alternatives for it.
  
- I want to be able to do something like pokemon:create("Name/ID/name:space") to create any vanilla pokemon or any custom pokemon (defined in pokemon/mods/*).
+ I want to be able to do something like pokemon:create("Name/ID/name:space", specs...) to create any vanilla pokemon or any custom pokemon (defined in pokemon/mods/*).
  
- Then I want to be able to do something like pokemon:levelup() which would then do whatever happens on levelup, pokemon:attack(slot,target), pokemon:teach(tm/tr), pokemon:use(item), pokemon:give(item), pokemon:take(), etc...
+ Then I want to be able to do something like pokemon:levelup() which would then do whatever happens on levelup, pokemon:attack(slot,target), pokemon:teach(tm/tr), pokemon:exp(int), pokemon:evs(ints), pokemon:use(item), pokemon:give(item), pokemon:take(), pokemon:deposit(), pokemon:withdraw(), pokemon:move(position) etc... (roughly)
  Very little thought has been put into this whole thing, feel free to leave any and all advice.
