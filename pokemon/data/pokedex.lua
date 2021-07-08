@@ -1,5 +1,6 @@
 --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 local ____exports = {}
+
 ____exports.Pokedex = {
     bulbasaur = {
         num = 1,
@@ -16194,7 +16195,7 @@ ____exports.Pokedex = {
     }
 }
 
-____exports.glitchdex = {
+____exports.GlitchPokedex = {
     missingno = {
         num = 0,
         name = "MissingNo.",
@@ -16208,7 +16209,7 @@ ____exports.glitchdex = {
     }
 }
 
-____exports.CAPdex = {
+____exports.CAPPokedex = {
     syclar = {
         num = -1,
         name = "Syclar",
@@ -17056,7 +17057,7 @@ ____exports.CAPdex = {
     }
 }
 
-____exports.pokestardex = {
+____exports.PokestarPokedex = {
 
     pokestarsmeargle = {
         num = -5000,
