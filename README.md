@@ -4,7 +4,7 @@
  
  The goal of this repository is to allow one to simulate most things that are possible in the games normally, in Lua.
  
- The reason for this is because Lua is easy and my use-case for the simulator would be as a script add-on to another game, since I was unhappy with the existing alternatives for it.
+ The reason for this is because Lua is easy and my use-case for the simulator would be as a script add-on to another game, since I was unhappy with the existing alternatives for it (pokemon).
  
  I want to be able to do something like pokemon:create("Name/ID/name:space", specs...) to create any vanilla pokemon or any custom pokemon (defined in pokemon/mods/*).
  
