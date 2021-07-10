@@ -5,11 +5,31 @@
 		Secret ID
 		Badges
 		Pokedollars
-		Items
+		Pokedex
+		Various Gizmos to-be-listed (Pokenav, Pokegear, P*DA, C-Gear)
+		Bag
 		Party
 		PC
 		Purification Chamber
 		Daycare Center
+		
+	What is in a Bag?
+		Items
+		Medicine
+		Power-Up Pocket
+		Candy Jar
+		Poke Balls
+		TMs/HMs/TRs
+		Berries
+		Mail
+		Battle Items
+		Key Items
+		Mega Stones
+		Z-Crystals
+		Rotom Powers
+		Treasure
+		Free Space
+		
 		
 	What is in a Party?
 		Zero-Six ordered Pokemon
@@ -84,8 +104,11 @@
             Current HP
             Gender
             Shadow
+			Heart Gauge
             Shiny Leaves
             Seals
             Seal Coordinates
 --]]
+
+
 
