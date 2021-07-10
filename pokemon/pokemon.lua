@@ -110,5 +110,3 @@
             Seal Coordinates
 --]]
 
-
-
