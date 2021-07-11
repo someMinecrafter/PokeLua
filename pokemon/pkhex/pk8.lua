@@ -49,8 +49,11 @@ end
 -- I can just infer the amount of bits something has, if they were all used, however, they are not all used.
 -- I will use the unused alignment bytes data for this, since we can safely assume we have 8 bits between each value
 -- have to figure out good way to read and write from/to these as well...
-local hex_mappings = {
+-- if a read/write function is not defined (or possibly regardless if it is defined or not) define one based on the unused bytes.
+-- goal is to be able to either append data at the end of the file(ideal if pkhex simply ignores them), or to use the unused bytes for storing data(if the bytes get discarded).
+local hex_mappings
 
+hex_mappings = {
 	-- region Block A
 	["EncryptionConstant"] = {data=0x00}, -- 32
 	["Sanity"] = {data=0x04}, -- 16
@@ -271,5 +274,64 @@ local hex_mappings = {
 	
 	-- 2 bytes for \0, automatically handled above -- so, we just need to write at most the amount of space between 0x58 and 0x70, so 12 bytes.
 	
+	["Move1"] = {data=0x72},
+	["Move2"] = {data=0x74},
+	["Move3"] = {data=0x76},
+	["Move4"] = {data=0x78},
+	
+	["Move1_PP"] = {data=0x7A},
+	["Move2_PP"] = {data=0x7B},
+	["Move3_PP"] = {data=0x7C},
+	["Move4_PP"] = {data=0x7D},
+	
+	["Move1_PPUps"] = {data=0x7E},
+	["Move2_PPUps"] = {data=0x7F},
+	["Move3_PPUps"] = {data=0x80},
+	["Move4_PPUps"] = {data=0x81},
+	
+	["RelearnMove1"] = {data=0x82},
+	["RelearnMove2"] = {data=0x84},
+	["RelearnMove3"] = {data=0x86},
+	["RelearnMove4"] = {data=0x88},
+	
+	["Stat_HPCurrent"] = {data=0x8A},
+	
+	["IV32"] = {data=0x8C}, -- 32 bits
+	["IV_HP"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 00) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 00)) | ((value > 31 and 31 or value) << 00) end},
+	["IV_ATK"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 05) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 05)) | ((value > 31 and 31 or value) << 00) end},
+	["IV_DEF"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 10) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 10)) | ((value > 31 and 31 or value) << 00) end},
+	["IV_SPE"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 15) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 15)) | ((value > 31 and 31 or value) << 00) end},
+	["IV_SPA"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 20) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 20)) | ((value > 31 and 31 or value) << 00) end},
+	["IV_SPD"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 25) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 25)) | ((value > 31 and 31 or value) << 00) end},
+	["IsEgg"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 30) & 1) == 1 end, write=function(value) (hex_mappings.IV32.read() & ~0x40000000) | ((value > 31 and 31 or value) << 00) end) end},
+	["IsNicknamed"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 31) & 1) == 1 end, write=function(value) (hex_mappings.IV32.read() & 0x7FFFFFFF) | (value and 0x80000000 or 0) end},
+	
+	["DynamaxLevel"] = {data=0x90},
+	
+	-- 0x90-0x93 unused
+	
+	["Status_Condition"] = {data=0x94},
+	["Unk98"] = {data=0x98},
+	
+	-- 0x9C-0xA7 unused
+	
+	-- endregion
+	-- region Block C
+	
+	["HT_Name"] = {data=0xA8}, -- 12 bytes
+	["HT_Gender"] = {data=0xC2},
+	["HT_Language"] = {data=0xC3},
+	["CurrentHandler"] = {data=0xC4},
+	-- 0xC5 unused (alignment)
+	["HT_TrainerID"] = {data=0xC6}, -- unused?
+	["HT_Friendship"] = {data=0xC8},
+	["HT_Intensity"] = {data=0xC9},
+	["HT_Memory"] = {data=0xCA},
+	["HT_Feeling"] = {data=0xCB},
+	["HT_TextVar"] = {data=0xCC},
+
+	-- 0xCE-0xDB unused
+
+	["Fullness"] = {data=0xDC},
 	
 }
