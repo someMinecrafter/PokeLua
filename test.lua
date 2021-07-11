@@ -202,7 +202,12 @@ local Pokemon = {
 		},
 		
 		EncryptionConstant = 0
-	}
+	},
+	
+	BattleStats = {
+		HP = 1,
+		
+	},
 	
 	
 	-- I decided that I may as well just store all pokemon in PCs using memory-effecient formats, and just general party pokemon using the above.

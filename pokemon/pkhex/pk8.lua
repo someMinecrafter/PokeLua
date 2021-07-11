@@ -333,5 +333,67 @@ hex_mappings = {
 	-- 0xCE-0xDB unused
 
 	["Fullness"] = {data=0xDC},
+	["Enjoyment"] = {data=0xDD},
+	["Version"] = {data=0xDE},
+	["BattleVersion"] = {data=0xDF},
+	-- ["Region"] = {data=0xE0},
+	-- ["ConsoleRegion"] = {data=0xE1},
+	["Language"] = {data=0xE2},
+	["Unk3"] = {data=0xE3},
+	["FormArgument"] = {data=0xE4},
+	["FormArgumentRemain"] = {data=0xE4},
+	["FormArgumentElapsed"] = {data=0xE4},
+	["FormArgumentMaximum"] = {data=0xE4},
+	["AffixedRibbon"] = {data=0xE4},
+	-- remainder unused
+	
+	-- endregion
+	-- region Block D
+	["OT_Name"] = {data=0xF8}, -- 12 bytes
+	["OT_Friendship"] = {data=0x112},
+	["OT_Intensity"] = {data=0x113},
+	["OT_Memory"] = {data=0x114},
+	-- 0x115 unused align
+	["OT_TextVar"] = {data=0x116},
+	["OT_Feeling"] = {data=0x118},
+	["Egg_Year"] = {data=0x119},
+	["Egg_Month"] = {data=0x11A},
+	["Egg_Day"] = {data=0x11B},
+	["Met_Year"] = {data=0x11C},
+	["Met_Month"] = {data=0x11D},
+	["Met_Day"] = {data=0x11E},
+	-- 0x11F unused align
+	["Egg_Location"] = {data=0x120},
+	["Met_Location"] = {data=0x122},
+	["Ball"] = {data=0x124},
+	["Met_Level"] = {data=0x125},
+	["OT_Gender"] = {data=0x125},
+	["HyperTrainFlags"] = {data=0x126},
+	["HT_HP"] = {data=0x126},
+	["HT_ATK"] = {data=0x126},
+	["HT_DEF"] = {data=0x126},
+	["HT_SPA"] = {data=0x126},
+	["HT_SPD"] = {data=0x126},
+	["HT_SPE"] = {data=0x126},
+
+	["MoveRecordFlag"] = {data=0x127, HasAnyMoveRecordFlag=function()end},
+
+	-- Why did you mis-align this field, GameFreak?
+	["Tracker"] = {data=0x135},
+	
+	-- endregion
+	-- region Battle Stats
+	["Stat_Level"] = {data=0x148},
+	-- 0x149 unused alignment
+	["Stat_HPMax"] = {data=0x14A},
+	["Stat_ATK"] = {data=0x14C},
+	["Stat_DEF"] = {data=0x14E},
+	["Stat_SPE"] = {data=0x150},
+	["Stat_SPA"] = {data=0x152},
+	["Stat_SPD"] = {data=0x154},
+	["DynamaxType"] = {data=0x156},
+	
+	-- endregion
+	
 	
 }
