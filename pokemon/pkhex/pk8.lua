@@ -111,8 +111,8 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	for k,v in ipairs(list_of_data) do
 		if k < #list_of_data then
 			hex_mappings[v.key].data_size = list_of_data[k+1].data - v.data -- we now know the size of our things
+			--print(hex_mappings[v.key].data_size)
 		end
-		print(hex_mappings[v.key].data_size)
 	end
 end
 -- todo: rename data to address?, makes more sense sort of
@@ -133,7 +133,7 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 		v.write = function(data)
 			-- uhhhh?????
 			pk8:seek(v.data) -- seek to byte at this index
-			if tonumber(data) and data/(8*v.data_size) <= v.data_size or tostring(data):len() < (v.data_size - 2) / 2 then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF)
+			if tonumber(data) and data/(8*v.data_size) <= v.data_size or tostring(data):len() < (v.data_size - 2) / 2 then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?)
 				pk8:write(data) -- write the data here, but only up to data_size (Todo!)
 			else
 				print("What are you doing this is not correct?", data)
@@ -526,6 +526,8 @@ print("Testing read function: OT_Name")
 print(hex_mappings.OT_Name.read())
 print("Testing read function: Nickname")
 print(hex_mappings.Nickname.read())
+print("Testing read function: Stat_HPMax") -- ok this thing is 2 bytes, how will this print?
+print(utf8.codepoint(hex_mappings.Stat_HPMax.read()))
 --[[
 Testing read function: OT_Name
  G r e e n     a r 7   n
