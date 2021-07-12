@@ -18,7 +18,69 @@ local PokemonToMappings = {
 }
 
 
--- I'm making use of https://github.com/kwsch/PKHeX/blob/master/PKHeX.Core/PKM/PK8.cs
+
+local function getPersonalInfo(species, form)
+	
+end
+
+local function getCheckSum(pokemon)
+
+end
+
+--[[
+	I'm making use of https://github.com/kwsch/PKHeX/blob/master/PKHeX.Core/PKM/PK8.cs
+
+	I can just infer the amount of bits something has, if they were all used, however, they are not all used.
+	I will use the unused alignment bytes data for this, since we can safely assume we have 8 bits between each value
+	have to figure out good way to read and write from/to these as well...
+	if a read/write function is not defined (or possibly regardless if it is defined or not) define one based on the unused bytes.
+	goal is to be able to either append data at the end of the file(ideal if pkhex simply ignores them), or to use the unused bytes for storing data(if the bytes get discarded).
+--]]
+
+-- very lazy code, leaving as is in case I decide to change it, but this should only be run once. I can simply dump the table and paste it afterwards in order to avoid doing it again, in which case this will all be included in the comment block above.
+local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
+	local sorted_by_data = {}
+	local current_data, previous_data = 0, 0
+	for k,v in pairs(hex_mappings) do
+		previous_data = current_data
+		current_data = hex_mappings.data
+		sorted_by_data[current_data] = k -- swaps data and other thing, we dont really care too much about the key.
+	end
+	local current_data, previous_data = 0, 0
+	for k,v in pairs(unused) do
+		previous_data = current_data
+		current_data = v
+		sorted_by_data[current_data] = string.format("Unused_%s", v)
+	end
+	local current_data, previous_data = 0, 0
+	for k,v in pairs(sorted_by_data) do
+		previous_data = current_data
+		current_data = k
+		if not hex_mappings[v] then
+			hex_mappings[v] = {data=k}
+		end
+		hex_mappings[v].data_size = k - current_data -- we now know the size of our things
+	end
+end
+
+local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
+	for k,v in pairs(hex_mappings) do
+		if v.bit then
+			v.read = function()
+				
+			end
+		else
+			v.read = function()
+				
+			end
+		end
+		v.write = function(data)
+		
+		end
+	end
+end
+
+
 local unused = { -- aka extra bytes?
 	-- Alignment bytes
 	0x17, 0x1A, 0x1B, 0x23, 0x33, 0x3E, 0x3F,
@@ -38,19 +100,6 @@ local unused = { -- aka extra bytes?
 	0x140, 0x141, 0x142, 0x143, 0x144, 0x145, 0x146, 0x147,
 }
 
-local function getPersonalInfo(species, form)
-	
-end
-
-local function getCheckSum(pokemon)
-
-end
-
--- I can just infer the amount of bits something has, if they were all used, however, they are not all used.
--- I will use the unused alignment bytes data for this, since we can safely assume we have 8 bits between each value
--- have to figure out good way to read and write from/to these as well...
--- if a read/write function is not defined (or possibly regardless if it is defined or not) define one based on the unused bytes.
--- goal is to be able to either append data at the end of the file(ideal if pkhex simply ignores them), or to use the unused bytes for storing data(if the bytes get discarded).
 local hex_mappings
 
 hex_mappings = {
