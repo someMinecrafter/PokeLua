@@ -52,6 +52,7 @@ end
 	goal is to be able to either append data at the end of the file(ideal if pkhex simply ignores them), or to use the unused bytes for storing data(if the bytes get discarded).
 --]]
 
+-- very lazy code, leaving as is in case I decide to change it, but this should only be run once. I can simply dump the table and paste it afterwards in order to avoid doing it again, in which case this will all be included in the comment block above.
 local function lazySort(t)
 	local checked = {}
 	local indexed = {}
@@ -73,7 +74,6 @@ local function lazySort(t)
 	return indexed
 end
 
--- very lazy code, leaving as is in case I decide to change it, but this should only be run once. I can simply dump the table and paste it afterwards in order to avoid doing it again, in which case this will all be included in the comment block above.
 local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	local sorted_by_data = {}
 	local current_data, previous_data = 0, 0
@@ -112,6 +112,7 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 		if k < #list_of_data then
 			hex_mappings[v.key].data_size = list_of_data[k+1].data - v.data -- we now know the size of our things
 		end
+		print(hex_mappings[v.key].data_size)
 	end
 end
 -- todo: rename data to address?, makes more sense sort of
@@ -124,19 +125,15 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 				return pk8:bits(1,v.bit) -- read the following (1) bits offset by v.bit
 			end
 		else
-			if k == "OT_Name" then	
-				print(k)
-				print(v.data_size)
-			end
 			v.read = function()
 				pk8:seek(v.data) -- seek to byte at this index
-				return pk8:bytes(v.data_size) -- read the following v.data_size bytes
+				return pk8:bytes(v.data_size > 26 and 24 or v.data_size) -- read the following v.data_size bytes, unless we are reading a string in which case it has two termination bytes which should be ZEROed (does lua even read them in? might be an unneeded check for reading specifically.)
 			end
 		end
 		v.write = function(data)
 			-- uhhhh?????
 			pk8:seek(v.data) -- seek to byte at this index
-			if tonumber(data) and data/(8*data_size) <= data_size or tostring(data):len() < data_size then
+			if tonumber(data) and data/(8*v.data_size) <= v.data_size or tostring(data):len() < (v.data_size - 2) / 2 then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF)
 				pk8:write(data) -- write the data here, but only up to data_size (Todo!)
 			else
 				print("What are you doing this is not correct?", data)
@@ -523,7 +520,7 @@ addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
 
 for k,v in pairs(pk8) do
-print(k,v)
+	print(k,v)
 end
 print("Testing read function: OT_Name")
 print(hex_mappings.OT_Name.read())
