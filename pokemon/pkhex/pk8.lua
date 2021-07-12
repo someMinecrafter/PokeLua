@@ -52,6 +52,27 @@ end
 	goal is to be able to either append data at the end of the file(ideal if pkhex simply ignores them), or to use the unused bytes for storing data(if the bytes get discarded).
 --]]
 
+local function lazySort(t)
+	local checked = {}
+	local indexed = {}
+	local smallest = 9999
+	local key
+	for k,v in pairs(t) do
+		smallest = 9999
+		for a,b in pairs(t) do
+			if not checked[a] then
+				if a < smallest then
+					smallest = a
+					key = b
+				end
+			end
+		end
+		checked[smallest] = true
+		indexed[#indexed+1] = {data=smallest,key=key}
+	end
+	return indexed
+end
+
 -- very lazy code, leaving as is in case I decide to change it, but this should only be run once. I can simply dump the table and paste it afterwards in order to avoid doing it again, in which case this will all be included in the comment block above.
 local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	local sorted_by_data = {}
@@ -67,34 +88,54 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 		current_data = v
 		sorted_by_data[current_data] = string.format("Unused_%s", v)
 	end
-	local current_data, previous_data = 0, 0
+	
+	local current_data, previous_data
 	for k,v in pairs(sorted_by_data) do
+		if not current_data then
+			previous_data = k
+			--print(k)
+		end
 		previous_data = current_data
 		current_data = k
 		if not hex_mappings[v] then
+			--print(k)
 			hex_mappings[v] = {data=k}
 		end
-		hex_mappings[v].data_size = k - current_data -- we now know the size of our things
+	end
+	
+	local list_of_data = lazySort(sorted_by_data)
+	list_of_data[#list_of_data+1] = {data=list_of_data[#list_of_data].data + 2} -- we need to end it somewhere, so on what byte do we end it?
+	
+	-- figure out data_size
+	local current_data, previous_data
+	for k,v in ipairs(list_of_data) do
+		if k < #list_of_data then
+			hex_mappings[v.key].data_size = list_of_data[k+1].data - v.data -- we now know the size of our things
+		end
 	end
 end
-
+-- todo: rename data to address?, makes more sense sort of
 -- todo: replace pk8 with something so I can just freely read/write to something bla bla its 6 am
 local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 	for k,v in pairs(hex_mappings) do
 		if v.bit then -- or data_size = 0 if i wrote a more complex function above, but im lazy so im only gonna check v.bit and pray i dont forget something
 			v.read = function()
-				pk8:seek(k) -- seek to byte at this index
-				pk8:bits(1,v.bit) -- read the following (1) bits offset by v.bit
+				pk8:seek(v.data) -- seek to byte at this index
+				return pk8:bits(1,v.bit) -- read the following (1) bits offset by v.bit
 			end
 		else
+			if k == "OT_Name" then	
+				print(k)
+				print(v.data_size)
+			end
 			v.read = function()
-				pk8:seek(k) -- seek to byte at this index
-				pk8:bytes(data_size) -- read the following v.data_size bytes
+				pk8:seek(v.data) -- seek to byte at this index
+				return pk8:bytes(v.data_size) -- read the following v.data_size bytes
 			end
 		end
 		v.write = function(data)
 			-- uhhhh?????
-			pk8:seek(k) -- seek to byte at this index
+			pk8:seek(v.data) -- seek to byte at this index
 			if tonumber(data) and data/(8*data_size) <= data_size or tostring(data):len() < data_size then
 				pk8:write(data) -- write the data here, but only up to data_size (Todo!)
 			else
@@ -475,7 +516,22 @@ hex_mappings = {
 
 calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
+
+--lazySort(hex_mappings)
+
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
+
+
 for k,v in pairs(pk8) do
 print(k,v)
 end
+print("Testing read function: OT_Name")
+print(hex_mappings.OT_Name.read())
+print("Testing read function: Nickname")
+print(hex_mappings.Nickname.read())
+--[[
+Testing read function: OT_Name
+ G r e e n     a r 7   n
+Testing read function: Nickname
+ S y l v e o n
+--]]
