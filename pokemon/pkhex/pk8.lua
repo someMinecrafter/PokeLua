@@ -27,6 +27,21 @@ local function getCheckSum(pokemon)
 
 end
 
+local Blob = require("pkhex.Blob") -- lua requires from wherever shell was called
+
+local pk8 = Blob.load("testpokemon.pk8")
+
+-- lazy for now, can change later if even needed but this will probably be the only file io, otherwise I'll probably just do copy/paste json since this format has actual community support.
+local function writeBinary(file, data)
+	
+end
+
+local function readBinary(file)
+	local data
+	return data
+end
+
+
 --[[
 	I'm making use of https://github.com/kwsch/PKHeX/blob/master/PKHeX.Core/PKM/PK8.cs
 
@@ -63,23 +78,31 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	end
 end
 
+-- todo: replace pk8 with something so I can just freely read/write to something bla bla its 6 am
 local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 	for k,v in pairs(hex_mappings) do
-		if v.bit then
+		if v.bit then -- or data_size = 0 if i wrote a more complex function above, but im lazy so im only gonna check v.bit and pray i dont forget something
 			v.read = function()
-				
+				pk8:seek(k) -- seek to byte at this index
+				pk8:bits(1,v.bit) -- read the following (1) bits offset by v.bit
 			end
 		else
 			v.read = function()
-				
+				pk8:seek(k) -- seek to byte at this index
+				pk8:bytes(data_size) -- read the following v.data_size bytes
 			end
 		end
 		v.write = function(data)
-		
+			-- uhhhh?????
+			pk8:seek(k) -- seek to byte at this index
+			if tonumber(data) and data/(8*data_size) <= data_size or tostring(data):len() < data_size then
+				pk8:write(data) -- write the data here, but only up to data_size (Todo!)
+			else
+				print("What are you doing this is not correct?", data)
+			end
 		end
 	end
 end
-
 
 local unused = { -- aka extra bytes?
 	-- Alignment bytes
@@ -346,6 +369,7 @@ hex_mappings = {
 	["Stat_HPCurrent"] = {data=0x8A},
 	
 	["IV32"] = {data=0x8C}, -- 32 bits
+	-- todo: use hex_mappings.IV32.write() here, tired do this when im not tired
 	["IV_HP"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 00) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 00)) | ((value > 31 and 31 or value) << 00) end},
 	["IV_ATK"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 05) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 05)) | ((value > 31 and 31 or value) << 00) end},
 	["IV_DEF"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 10) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 10)) | ((value > 31 and 31 or value) << 00) end},
@@ -443,6 +467,8 @@ hex_mappings = {
 	["DynamaxType"] = {data=0x156},
 	
 	-- endregion
-	
-	
 }
+
+calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
+
+addStandardReadAndWriteToUndefinedEntries(hex_mappings)
