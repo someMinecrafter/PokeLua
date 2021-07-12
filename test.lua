@@ -66,11 +66,17 @@ Key: ModdedDex, Value: table: 00000000006efe00
 
 printkvRecursively(pokedex.Dex)
 
-local Pokedex = require("data.pokedex")
+local Pokedex = require("data.pokedex").Pokedex -- vanilla
 
 local Balls = require("data.balls")
 
 local languages = require("data.languages")
+
+local items = require("data.items")
+
+local natures = require("data.natures")
+
+local moves = require("data.moves")
 
 -- default pokemon will be bulbasaur
 -- Copying this order from PKHeX as I will be using it to help myself convert to and from the relevant format (pk8)
@@ -84,9 +90,9 @@ local Pokemon = {
 		EXP = 0,
 		Level = 1,
 		Nature = natures.Hardy,
-		StatNature = ,
+		StatNature = natures.Hardy,
 		Form = 0,
-		HeldItem = , -- point to the actual item?
+		HeldItem = items.stick, -- point to the actual item?
 		Ability = 0, -- Hidden is -1
 		Friendship = 69,
 		Language = languages.Japanese,
@@ -104,13 +110,13 @@ local Pokemon = {
 		MetLocation = 0,
 		Ball = Balls.pokeball,
 		MetLevel = 1,
-		MetDate = ,
+		MetDate = 4343434, -- unix?
 		FatefulEncounter = false,
 		AsEgg = false,
 		EggMetLocation = false,
 		EggMetDate = false,
 		HOMETracker = 0,
-	}
+	},
 	
 	-- Stats
 	Stats = {
@@ -160,7 +166,7 @@ local Pokemon = {
 			--moves.skyattack,
 			--4,
 			--3
-		}
+		},
 		
 		RelearnMoves = {
 			moves.batonpass
@@ -290,5 +296,9 @@ function Pokemon:create(specs)
 	self.__level = specs.level
 end
 
-local PKM = pokemon:c
+local PKM
+
+-- ok lets try deserializing a pk8 file a bits
+
+local pk8 = require("pkhex.pk8")
 

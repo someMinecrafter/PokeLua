@@ -58,7 +58,7 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	local current_data, previous_data = 0, 0
 	for k,v in pairs(hex_mappings) do
 		previous_data = current_data
-		current_data = hex_mappings.data
+		current_data = v.data
 		sorted_by_data[current_data] = k -- swaps data and other thing, we dont really care too much about the key.
 	end
 	local current_data, previous_data = 0, 0
@@ -370,14 +370,18 @@ hex_mappings = {
 	
 	["IV32"] = {data=0x8C}, -- 32 bits
 	-- todo: use hex_mappings.IV32.write() here, tired do this when im not tired
-	["IV_HP"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 00) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 00)) | ((value > 31 and 31 or value) << 00) end},
-	["IV_ATK"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 05) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 05)) | ((value > 31 and 31 or value) << 00) end},
-	["IV_DEF"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 10) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 10)) | ((value > 31 and 31 or value) << 00) end},
-	["IV_SPE"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 15) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 15)) | ((value > 31 and 31 or value) << 00) end},
-	["IV_SPA"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 20) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 20)) | ((value > 31 and 31 or value) << 00) end},
-	["IV_SPD"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 25) & 0x1F end, write=function(value) (hex_mappings.IV32.read() & ~(0x1F << 25)) | ((value > 31 and 31 or value) << 00) end},
-	["IsEgg"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 30) & 1) == 1 end, write=function(value) (hex_mappings.IV32.read() & ~0x40000000) | ((value > 31 and 31 or value) << 00) end) end},
-	["IsNicknamed"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 31) & 1) == 1 end, write=function(value) (hex_mappings.IV32.read() & 0x7FFFFFFF) | (value and 0x80000000 or 0) end},
+	["IV_HP"] = {
+		data=0x8C,
+		read=function() return (hex_mappings.IV32.read() >> 00) & 0x1F end,
+		write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 00)) | ((value > 31 and 31 or value) << 00)) end
+	},
+	["IV_ATK"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 05) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 05)) | ((value > 31 and 31 or value) << 00)) end},
+	["IV_DEF"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 10) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 10)) | ((value > 31 and 31 or value) << 00)) end},
+	["IV_SPE"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 15) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 15)) | ((value > 31 and 31 or value) << 00)) end},
+	["IV_SPA"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 20) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 20)) | ((value > 31 and 31 or value) << 00)) end},
+	["IV_SPD"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 25) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 25)) | ((value > 31 and 31 or value) << 00)) end},
+	["IsEgg"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 30) & 1) == 1 end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~0x40000000) | ((value > 31 and 31 or value) << 00)) end},
+	["IsNicknamed"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 31) & 1) == 1 end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & 0x7FFFFFFF) | (value and 0x80000000 or 0)) end},
 	
 	["DynamaxLevel"] = {data=0x90},
 	
@@ -472,3 +476,6 @@ hex_mappings = {
 calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
+for k,v in pairs(pk8) do
+print(k,v)
+end

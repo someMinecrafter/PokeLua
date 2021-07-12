@@ -1,6 +1,6 @@
 local balls = {}
 
-local items = require(data.items)
+local items = require("data.items")
 
 for k, v in pairs(items) do
 	if v.isPokeball then

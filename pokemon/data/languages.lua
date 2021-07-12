@@ -10,7 +10,7 @@ local languages = {
 	"Chinese 2"
 }
 
-for k, v in pairs(langauges) do
+for k, v in pairs(languages) do
 	languages[v] = k
 end
 
