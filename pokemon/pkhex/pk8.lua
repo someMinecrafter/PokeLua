@@ -118,14 +118,32 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	-- im lazy, lets just manually add the first one
 	hex_mappings.EncryptionConstant.data_size = 0x4
 end
+
+function toBits(num,bits)
+    -- returns a table of bits, most significant first.
+    bits = bits or math.max(1, select(2, math.frexp(num)))
+    local t = {} -- will contain the bits        
+    for b = bits, 1, -1 do
+        t[b] = math.fmod(num, 2)
+        num = math.floor((num - t[b]) / 2)
+    end
+    return t
+end
+
+local isBoolean = {[true] = true, [false] = true}
 -- todo: rename data to address?, makes more sense sort of
 -- todo: replace pk8 with something so I can just freely read/write to something bla bla its 6 am
 local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 	for k,v in pairs(hex_mappings) do
 		if v.bit then -- or data_size = 0 if i wrote a more complex function above, but im lazy so im only gonna check v.bit and pray i dont forget something
-			v.read = function()
-				pk8:seek(v.data) -- seek to byte at this index
-				return pk8:bits(1,v.bit) -- read the following (1) bits offset by v.bit
+			v.read = function(specific_bit)
+				if specific_bit then
+					pk8:seek(v.data)
+					return pk8:bits(1,15-specific_bit) -- 0 to 7
+				else
+					pk8:seek(v.data) -- seek to byte at this index
+					return pk8:bits(1,15-v.bit) -- read the following (1) bits offset by v.bit'
+				end
 			end
 		else
 			v.read = function()
@@ -136,7 +154,25 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 		v.write = function(data)
 			-- uhhhh?????
 			pk8:seek(v.data) -- seek to byte at this index
-			if tonumber(data) and 0x100 ^ v.data_size > data then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
+			if v.bit and isBoolean[data] then
+				local bits = 0x100 -- we just create an integer
+				 -- 10101111
+				local x = 0
+				for i = 0, 7 do
+					bits = bits >> 1 -- shift it left once every loop
+
+					if v.bit == i then
+						bits = bits | (data and 0x100 or 0)
+					else
+						bits = bits | (v.read(i) and 0x100 or 0)
+					end
+					--print(7 - i, data, bits)
+				end
+				
+				bits = bits >> 1 --remove lsb since we started at 0x100
+				--print(bits)
+				pk8:write( string.char(bits), v.data, 0 )
+			elseif tonumber(data) and 0x100 ^ v.data_size > data then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
 				local hex_data = string.format("%0" .. string.format("%sx", v.data_size + v.data_size), data)
 				local padded_data = ""
 				for i = 1, hex_data:len() / 2 do
@@ -145,7 +181,6 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 						(i-1)*2  +2
 					)))
 				end
-				print(padded_data)
 				--[[
 				local padding = ""
 				if v.data_size > 1 then-- if the data should have a size greater than one byte, but does not 
@@ -381,7 +416,6 @@ hex_mappings = {
 	["RIB47_5"] = {data=0x47,bit=5},
 	["RIB47_6"] = {data=0x47,bit=6},
 	["RIB47_7"] = {data=0x47,bit=7},
-	["RIB47_7"] = {data=0x47,bit=7},
 	
 	-- I dont really understand why this was at this spot but I will have to change it
 	["HasMark"] = {data=0x00, Specific=function(data, value)
@@ -541,7 +575,7 @@ calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
---[[--]]
+--[[
 print(pk8.buffer:sub(0,14))
 print(pk8.buffer:len())
 
@@ -572,6 +606,38 @@ print(hex_mappings.EncryptionConstant.read():sub(4,4):byte())
 
 print(pk8.buffer:sub(0,14))
 print(pk8.buffer:len())
+
+print("Testing read function: Ribbons")
+print(hex_mappings.RibbonMarkDawn.read())
+print(hex_mappings.RibbonMarkRainy.read())
+print(hex_mappings.RibbonMarkStormy.read()) -- all true ^
+print(hex_mappings.RibbonMarkSandstorm.read()) -- false
+print("Testing read function: Ribbons")
+print(hex_mappings.RibbonMarkDawn.read())
+print(hex_mappings.RibbonMarkCloudy.read())
+print(hex_mappings.RibbonMarkRainy.read())
+print(hex_mappings.RibbonMarkStormy.read())
+print(hex_mappings.RibbonMarkSnowy.read())
+print(hex_mappings.RibbonMarkBlizzard.read())
+print(hex_mappings.RibbonMarkDry.read())
+print(hex_mappings.RibbonMarkSandstorm.read())
+print("Testing write+read function: Ribbons")
+hex_mappings.RibbonMarkDawn.write(true) -- 10101111
+hex_mappings.RibbonMarkCloudy.write(false)
+hex_mappings.RibbonMarkRainy.write(true)
+hex_mappings.RibbonMarkStormy.write(false)
+hex_mappings.RibbonMarkSnowy.write(true)
+hex_mappings.RibbonMarkBlizzard.write(true)
+hex_mappings.RibbonMarkDry.write(true)
+hex_mappings.RibbonMarkSandstorm.write(true)
+print(hex_mappings.RibbonMarkDawn.read())
+print(hex_mappings.RibbonMarkCloudy.read())
+print(hex_mappings.RibbonMarkRainy.read())
+print(hex_mappings.RibbonMarkStormy.read())
+print(hex_mappings.RibbonMarkSnowy.read())
+print(hex_mappings.RibbonMarkBlizzard.read())
+print(hex_mappings.RibbonMarkDry.read())
+print(hex_mappings.RibbonMarkSandstorm.read())
 --]]
 
 --[[
