@@ -221,9 +221,25 @@ hex_mappings = {
 	["SID"] = {data=0x0E},
 	["EXP"] = {data=0x10},
 	["Ability"] = {data=0x14},
-	["AbilityNumber"] = {data=0x16,Specific=function(data, value) data = data & 7; data = (data & ~7) | (value & 7) ; return data end},
-	["Favorite"] = {data=0x16,Specific=function(data, value) data = data & 8; data = (data & ~8) | ((value and 1 or 0) << 3) ; return data end},
-	["CanGigantamax"] = {data=0x16,Specific=function(data, value) data = data & 16; data = (data & ~16) | (value and 16 or 0) ; return data end},
+	["AbilityNumber"] = {data=0x16,
+		specific_read = function(self)
+			return self.read() & 7
+		end,
+		specific_write = function(self, data)
+			self.write( (self.read() & ~7) | (data & 7) )
+		end
+	},
+	["Favorite"] = {data=0x16, -- unused, was in LGPE but not in SWSH
+		specific_read = function(self)
+			return (self.read() & 8) ~= 0
+		end,
+		specific_write = function(self, data)
+			self.write( (self.read() & ~8) | ((data and 1 or 0) << 3) )
+		end
+	},
+	["CanGigantamax"] = {data=0x16,
+	
+	Specific=function(data, value) data = data & 16; data = (data & ~16) | (value and 16 or 0) ; return data end},
 	-- 0x17 alignment unused
 	["MarkValue"] = {data=0x18},
 	-- 0x1A alignment unused
