@@ -1,7 +1,3 @@
---[[
-	https://github.com/25A0/blob
-	All code contained in this file was written by Moritz Neikes / 25A0 on github.
---]]
 local Blob = {}
 
 local lib = {}
@@ -243,6 +239,7 @@ Blob.load = function(filename)
   local buffer = f:read("*all")
   f:close()
   local blob = Blob.new(buffer)
+  blob.filename = filename -- how else?
   return blob
 end
 
@@ -254,6 +251,60 @@ Blob.split = function(blob, length)
   local new = Blob.new(blob.buffer, blob.pos - 1 + blob.offset)
   blob.pos = blob.pos + (length or 0)
   return new
+end
+
+function string:explode(d)
+   local p = self
+   local t, ll
+   t={}
+   ll=0
+   if(#p == 1) then
+      return {p}
+   end
+   while true do
+      l = string.find(p, d, ll, true) -- find the next d in the string
+      if l ~= nil then -- if "not not" found then..
+         table.insert(t, string.sub(p,ll,l-1)) -- Save it in our array.
+         ll = l + 1 -- save just after where we found it for searching next time.
+      else
+         table.insert(t, string.sub(p,ll)) -- Save what's left in our array.
+         break -- Break at end, as it should be, according to the lua manual.
+      end
+   end
+   return t
+end
+
+Blob.write = function(self, data, seek_pos, data_length)
+	local full_buffer = self.buffer -- string
+	local existing_data = full_buffer:sub(seek_pos, seek_pos + data_length)
+	-- ok, so because pokemon expects 0x0000 for the size, this means all EVEN bytes MUST contain some values.
+	-- in other words, uneven bytes will either be 0, or they will represent a non-standard character.
+	-- regardless, when reading writing data, we only need to consider every second byte
+	--[[ -- reading
+	local pos = 0
+	for i = 1, data:len()/2 do
+		pos = i + i
+		print(i)
+		print(string.byte(data:sub(pos,pos)))
+	end
+	--]]
+	-- PKHeX behavior is to dummy out the byte after the last byte that is being written to. Presumably we only need to do this unless we are at the final byte.
+	-- instead of doing it as PKHeX does, we will simply Zero out the remaining bytes.
+	local padding = ""
+	if data:len() < existing_data:len() then
+		padding = (" "):rep( data_length - data:len() + 1 )
+	end
+	local target_data = full_buffer:gsub(existing_data, data .. padding )
+	self.buffer = target_data -- replace the string stored in buffer.
+end
+
+Blob.save = function(self)
+  local f = assert(io.open(filename, "wb"), "Could not open file ".. filename)
+  -- write it one byte at a time?
+  -- use self.buffer
+  for k, v in pairs(self) do
+	
+  end
 end
 
 return Blob

@@ -302,3 +302,4 @@ local PKM
 
 local pk8 = require("pkhex.pk8")
 
+print(pk8)

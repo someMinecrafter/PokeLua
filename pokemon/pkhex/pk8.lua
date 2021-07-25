@@ -114,6 +114,9 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 			--print(hex_mappings[v.key].data_size)
 		end
 	end
+	
+	-- im lazy, lets just manually add the first one
+	hex_mappings.EncryptionConstant.data_size = 0x4
 end
 -- todo: rename data to address?, makes more sense sort of
 -- todo: replace pk8 with something so I can just freely read/write to something bla bla its 6 am
@@ -133,8 +136,28 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 		v.write = function(data)
 			-- uhhhh?????
 			pk8:seek(v.data) -- seek to byte at this index
-			if tonumber(data) and data/(8*v.data_size) <= v.data_size or tostring(data):len() < (v.data_size - 2) / 2 then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?)
-				pk8:write(data) -- write the data here, but only up to data_size (Todo!)
+			if tonumber(data) and 0x100 ^ v.data_size > data then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
+				local hex_data = string.format("%0" .. string.format("%sx", v.data_size + v.data_size), data)
+				local padded_data = ""
+				for i = 1, hex_data:len() / 2 do
+					padded_data = padded_data .. string.char(tonumber("0x" .. hex_data:sub(
+						(i-1)*2  +1,
+						(i-1)*2  +2
+					)))
+				end
+				print(padded_data)
+				--[[
+				local padding = ""
+				if v.data_size > 1 then-- if the data should have a size greater than one byte, but does not 
+					padding = ( (" "):rep( v.data_size - math.ceil(data / 0x100) ) )
+				end
+				--]]
+				local padded_string = padded_data -- padding ..
+				pk8:write( padded_string, v.data, v.data_size )
+			elseif tostring(data):len() < (v.data_size - 2) / 2 then
+				local padded_string = data:gsub(".", " %1") -- add space before each character
+				--print(padded_string)
+				pk8:write( padded_string, v.data, v.data_size ) -- write the data here, but only up to data_size (Todo!)
 			else
 				print("What are you doing this is not correct?", data)
 			end
@@ -518,16 +541,39 @@ calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
+--[[--]]
+print(pk8.buffer:sub(0,14))
+print(pk8.buffer:len())
 
-for k,v in pairs(pk8) do
-	print(k,v)
-end
+print("Testing read function: OT_Name")
+print(hex_mappings.OT_Name.read())
+
+print("Testing write function: OT_Name")
+hex_mappings.OT_Name.write("Testing")
+
 print("Testing read function: OT_Name")
 print(hex_mappings.OT_Name.read())
 print("Testing read function: Nickname")
 print(hex_mappings.Nickname.read())
-print("Testing read function: Stat_HPMax") -- ok this thing is 2 bytes, how will this print?
-print(utf8.codepoint(hex_mappings.Stat_HPMax.read()))
+
+print("Testing read function: Stat_HPMax") -- ok this thing is 2 bytes, how will this print?: badly. Lua reads one char as 0x00-0xFF instead of 0x0000-0xFFFF. How to fix? We try to read it as one number, starting with 0x00XX?
+print(hex_mappings.Stat_HPMax.read())
+print("Testing write+read function: Stat_HPMax")
+hex_mappings.Stat_HPMax.write(0x11F5) -- upercase C, but thats whatever really
+print(hex_mappings.Stat_HPMax.read():sub(1,1):byte())
+print(hex_mappings.Stat_HPMax.read():sub(2,2):byte())
+print(hex_mappings.Stat_HPMax.read())
+print("Testing write+read function: EncryptionConstant")
+hex_mappings.EncryptionConstant.write(0x41424344) --ABCD
+print(hex_mappings.EncryptionConstant.read():sub(1,1):byte())
+print(hex_mappings.EncryptionConstant.read():sub(2,2):byte())
+print(hex_mappings.EncryptionConstant.read():sub(3,3):byte())
+print(hex_mappings.EncryptionConstant.read():sub(4,4):byte())
+
+print(pk8.buffer:sub(0,14))
+print(pk8.buffer:len())
+--]]
+
 --[[
 Testing read function: OT_Name
  G r e e n     a r 7   n
