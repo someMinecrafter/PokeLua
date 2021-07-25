@@ -119,17 +119,6 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 	hex_mappings.EncryptionConstant.data_size = 0x4
 end
 
-function toBits(num,bits)
-    -- returns a table of bits, most significant first.
-    bits = bits or math.max(1, select(2, math.frexp(num)))
-    local t = {} -- will contain the bits        
-    for b = bits, 1, -1 do
-        t[b] = math.fmod(num, 2)
-        num = math.floor((num - t[b]) / 2)
-    end
-    return t
-end
-
 local isBoolean = {[true] = true, [false] = true}
 -- todo: rename data to address?, makes more sense sort of
 -- todo: replace pk8 with something so I can just freely read/write to something bla bla its 6 am
