@@ -263,6 +263,9 @@ hex_mappings = {
 			fw( (r & ~0x7) | (data & 0x7) )
 		end
 	},
+	
+	-- the specific functions with ternary operators may need adjustments
+	
 	["Favorite"] = {data=0x16, -- unused, was in LGPE but not in SWSH
 		specific_read = function(r)
 			return (r:byte() & 8) ~= 0
@@ -272,8 +275,13 @@ hex_mappings = {
 		end
 	},
 	["CanGigantamax"] = {data=0x16,
-	
-	Specific=function(data, value) data = data & 16; data = (data & ~16) | (value and 16 or 0) ; return data end},
+		specific_read = function(r)
+			return r:byte() & 16
+		end,
+		specific_write = function(fw, r, data)
+			fw( (r & ~16) | (data and 16 or 0) )
+		end
+	},
 	-- 0x17 alignment unused
 	["MarkValue"] = {data=0x18},
 	-- 0x1A alignment unused
@@ -281,7 +289,14 @@ hex_mappings = {
 	["PID"] = {data=0x1C},
 	["Nature"] = {data=0x20},
 	["StatNature"] = {data=0x21},
-	["FatefulEncounter"] = {data=0x22,Specific=function(data, value) data = (data & 1) == 1; data = (data & ~0x01) | (value and 1 or 0) ; return data end},
+	["FatefulEncounter"] = {data=0x22,
+		specific_read = function(r)
+			return (r:byte() & 1) == 1
+		end,
+		specific_write = function(fw, r, data)
+			fw( ((r and 1 or 0) & ~0x01) | (data and 1 or 0) )
+		end
+	},
 	["Flag2"] = {data=0x22,Specific=function(data, value) data = (data & 2) == 2; data = (data & ~0x02) | (value and 2 or 0) ; return data end},
 	["Gender"] = {data=0x22,Specific=function(data, value) data = (data >> 2) & 0x3; data = (data & 0xF3) | (value << 2) ; return data end},
 	-- 0x23 alignment unused
