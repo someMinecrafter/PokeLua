@@ -162,7 +162,7 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 			end
 		else
 			v.read = function()
-				pk8:seek(v.data)
+				pk8:seek(v.data+1)
 				return v.specific_read(pk8:bytes(1))
 			end
 		end
@@ -186,10 +186,9 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 				
 				bits = bits >> 1 --remove lsb since we started at 0x100
 				--print(bits)
-				pk8:write( string.char(bits), v.data, 0 )
+				pk8:write( string.char(bits), v.data+1, 0 )
 			elseif v.specific_write and tonumber(data) and 0x100 > data then
 				local hex_data = string.format("%02x", data)
-				print(v.data_size)
 				pk8:write( string.char( tonumber( hex_data ) ), v.data+1, v.data_size ) --why do i need to offset this by 1? I do not at all understand
 			elseif tonumber(data) and 0x100 ^ v.data_size > data then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
 				local hex_data = string.format("%0" .. string.format("%sx", v.data_size > 0 and v.data_size + v.data_size or 2), data)
@@ -688,6 +687,8 @@ print("Testing write function: AbilityNumber")
 hex_mappings.AbilityNumber.write(2)
 print("Testing read function: AbilityNumber")
 print(tostring( hex_mappings.AbilityNumber.read() ))
+
+hex_mappings.RibbonMarkJittery.write(true)
 
 pk8:save()
 --[[
