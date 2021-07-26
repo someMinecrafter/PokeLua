@@ -295,8 +295,15 @@ Blob.write = function(self, data, seek_pos, data_length)
 	if data:len() < existing_data:len() then
 		padding = (string.char(0x00)):rep( data_length - data:len() + 1 )
 	end
-	print(tostring(data):len())
-	local target_data = full_buffer:gsub(existing_data, data .. padding )
+	
+	-- PROBLEM: DUPLICATE BYTES WILL EXIST; DO THIS IN A SMARTER WAY TO AVOID THIS PROBLEM!!!!!!
+--	local target_data = full_buffer:gsub(existing_data, data .. padding )
+	local target_data
+	if seek_pos > 0 then
+		target_data = full_buffer:sub(0,seek_pos-1) .. data .. padding .. full_buffer:sub(seek_pos+existing_data:len(), full_buffer:len())
+	else
+		target_data = data .. padding .. full_buffer:sub(existing_data:len()+1, full_buffer:len())
+	end
 	self.buffer = target_data -- replace the string stored in buffer.
 end
 
