@@ -297,8 +297,22 @@ hex_mappings = {
 			fw( ((r and 1 or 0) & ~0x01) | (data and 1 or 0) )
 		end
 	},
-	["Flag2"] = {data=0x22,Specific=function(data, value) data = (data & 2) == 2; data = (data & ~0x02) | (value and 2 or 0) ; return data end},
-	["Gender"] = {data=0x22,Specific=function(data, value) data = (data >> 2) & 0x3; data = (data & 0xF3) | (value << 2) ; return data end},
+	["Flag2"] = {data=0x22,
+		specific_read = function(r)
+			return (r:byte() & 2) == 2
+		end,
+		specific_write = function(fw, r, data)
+			fw( ((r and 1 or 0) & ~0x02) | (data and 2 or 0) )
+		end
+	},
+	["Gender"] = {data=0x22,
+		specific_read = function(r)
+			return (r:byte() >> 2) & 0x3
+		end,
+		specific_write = function(fw, r, data)
+			fw( (r & 0xF3) | (data << 2) )
+		end
+	},
 	-- 0x23 alignment unused
 	["Form"] = {data=0x24},
 	["EV_HP"] = {data=0x26},
@@ -699,6 +713,13 @@ print("Testing write function: AbilityNumber")
 hex_mappings.AbilityNumber.write(2)
 print("Testing read function: AbilityNumber")
 print(tostring( hex_mappings.AbilityNumber.read() ))
+
+print("Testing read function: Gender")
+print(tostring( hex_mappings.Gender.read() ))
+print("Testing write function: Gender")
+hex_mappings.Gender.write(0x0)
+print("Testing read function: Gender")
+print(tostring( hex_mappings.Gender.read() ))
 
 hex_mappings.RibbonMarkJittery.write(true)
 
