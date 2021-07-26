@@ -54,22 +54,52 @@ end
 
 -- very lazy code, leaving as is in case I decide to change it, but this should only be run once. I can simply dump the table and paste it afterwards in order to avoid doing it again, in which case this will all be included in the comment block above.
 local function lazySort(t)
-	local checked = {}
+	local data_checked = {}
+	local key_checked = {}
 	local indexed = {}
 	local smallest = 9999
 	local key
 	for k,v in pairs(t) do
 		smallest = 9999
 		for a,b in pairs(t) do
+			-- have we checked the key before?
+			if not key_checked[a] then
+				-- have we checked the data before?
+				if not data_checked[b.data] then
+					-- if we haven't, is this the smallest one available?
+					if b.data <= smallest then
+						smallest = b.data
+						key = a
+					end
+					
+				-- if we have, is the current value of a equal to the most recent index.data?
+				elseif indexed[#indexed].data == b.data then
+					-- if this is true, are we selecting the smallest a?
+					if b.data <= smallest then
+						smallest = b.data
+						key = a
+					end
+				end
+			end
+			--[[
+			if #indexed > 0 and indexed[#indexed].data == a then
+				key = b
+			end
 			if not checked[a] then
 				if a < smallest then
 					smallest = a
 					key = b
 				end
 			end
+			--]]
 		end
-		checked[smallest] = true
-		indexed[#indexed+1] = {data=smallest,key=key}
+		if smallest ~= 9999 then
+			print(smallest, key)
+			data_checked[smallest] = true
+			key_checked[key] = true
+			indexed[#indexed+1] = {data=smallest,key=key}
+		end
+		--print(key)
 	end
 	return indexed
 end
@@ -103,7 +133,7 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 		end
 	end
 	
-	local list_of_data = lazySort(sorted_by_data)
+	local list_of_data = lazySort(hex_mappings)
 	list_of_data[#list_of_data+1] = {data=list_of_data[#list_of_data].data + 2} -- we need to end it somewhere, so on what byte do we end it?
 	
 	-- figure out data_size
@@ -134,10 +164,15 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 					return pk8:bits(1,15-v.bit) -- read the following (1) bits offset by v.bit'
 				end
 			end
-		else
+		elseif not v.specific_read then
 			v.read = function()
 				pk8:seek(v.data) -- seek to byte at this index
 				return pk8:bytes(v.data_size > 26 and 24 or v.data_size) -- read the following v.data_size bytes, unless we are reading a string in which case it has two termination bytes which should be ZEROed (does lua even read them in? might be an unneeded check for reading specifically.)
+			end
+		else
+			v.read = function()
+				pk8:seek(v.data)
+				return v.specific_read(pk8:bytes(1))
 			end
 		end
 		v.write = function(data)
@@ -161,8 +196,8 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 				bits = bits >> 1 --remove lsb since we started at 0x100
 				--print(bits)
 				pk8:write( string.char(bits), v.data, 0 )
-			elseif tonumber(data) and 0x100 ^ v.data_size > data then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
-				local hex_data = string.format("%0" .. string.format("%sx", v.data_size + v.data_size), data)
+			elseif tonumber(data) and ( 0x100 ^ v.data_size > data or v.specific_write and 0x100 > data ) then -- for normal data, align to bytes, for strings, remove termination bytes and divide by two (each char is 0x0000-0xFFFF, but lua wants each char to be 0x00-0xFF normally. Use utf8. builtin?) -- and data/(8*v.data_size) <= v.data_size
+				local hex_data = string.format("%0" .. string.format("%sx", v.data_size > 0 and v.data_size + v.data_size or 2), data)
 				local padded_data = ""
 				for i = 1, hex_data:len() / 2 do
 					padded_data = padded_data .. string.char(tonumber("0x" .. hex_data:sub(
@@ -179,12 +214,16 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 				local padded_string = padded_data -- padding ..
 				pk8:write( padded_string, v.data, v.data_size )
 			elseif tostring(data):len() < (v.data_size - 2) / 2 then
-				local padded_string = data:gsub(".", " %1") -- add space before each character
+				local padded_string = data:gsub(".", string.char(0x00) .. "%1") -- add space before each character
 				--print(padded_string)
 				pk8:write( padded_string, v.data, v.data_size ) -- write the data here, but only up to data_size (Todo!)
 			else
 				print("What are you doing this is not correct?", data)
 			end
+		end
+		if v.specific_write then
+			v._write = v.write
+			v.write = function(data) v.specific_write(v._write, v._read, data) end
 		end
 	end
 end
@@ -222,19 +261,19 @@ hex_mappings = {
 	["EXP"] = {data=0x10},
 	["Ability"] = {data=0x14},
 	["AbilityNumber"] = {data=0x16,
-		specific_read = function(self)
-			return self.read() & 7
+		specific_read = function(r)
+			return (r:byte() & 0x7)
 		end,
-		specific_write = function(self, data)
-			self.write( (self.read() & ~7) | (data & 7) )
+		specific_write = function(fw, r, data)
+			fw( (r:byte() & ~0x7) | (data & 0x7) )
 		end
 	},
 	["Favorite"] = {data=0x16, -- unused, was in LGPE but not in SWSH
 		specific_read = function(self)
-			return (self.read() & 8) ~= 0
+			return (self._read() & 8) ~= 0
 		end,
 		specific_write = function(self, data)
-			self.write( (self.read() & ~8) | ((data and 1 or 0) << 3) )
+			self._write( (self._read() & ~8) | ((data and 1 or 0) << 3) )
 		end
 	},
 	["CanGigantamax"] = {data=0x16,
@@ -422,14 +461,6 @@ hex_mappings = {
 	["RIB47_6"] = {data=0x47,bit=6},
 	["RIB47_7"] = {data=0x47,bit=7},
 	
-	-- I dont really understand why this was at this spot but I will have to change it
-	["HasMark"] = {data=0x00, Specific=function(data, value)
-		if (mappings[0x3A] & 0xFFE0 ~= 0) or (mappings[0x40] ~= 0) then
-			return true
-		end
-		return (mappings[0x44] & 3) ~= 0	
-	end},
-	
 	["Sociability"] = {data=0x48},
 	
 	-- 0x4C-0x4F unused
@@ -580,7 +611,16 @@ calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
---[[
+local hex_mappings_helper_functions = {
+	-- I dont really understand why this was at this spot but I will have to change it
+	["HasMark"] = {data=0x00, Specific=function(data, value)
+		if (mappings[0x3A] & 0xFFE0 ~= 0) or (mappings[0x40] ~= 0) then
+			return true
+		end
+		return (mappings[0x44] & 3) ~= 0	
+	end},
+}
+
 print(pk8.buffer:sub(0,14))
 print(pk8.buffer:len())
 
@@ -609,9 +649,10 @@ print(hex_mappings.EncryptionConstant.read():sub(2,2):byte())
 print(hex_mappings.EncryptionConstant.read():sub(3,3):byte())
 print(hex_mappings.EncryptionConstant.read():sub(4,4):byte())
 
-print(pk8.buffer:sub(0,14))
+print(pk8.buffer)
 print(pk8.buffer:len())
 
+--[[
 print("Testing read function: Ribbons")
 print(hex_mappings.RibbonMarkDawn.read())
 print(hex_mappings.RibbonMarkRainy.read())
@@ -643,8 +684,18 @@ print(hex_mappings.RibbonMarkSnowy.read())
 print(hex_mappings.RibbonMarkBlizzard.read())
 print(hex_mappings.RibbonMarkDry.read())
 print(hex_mappings.RibbonMarkSandstorm.read())
---]]
+print(pk8.buffer)
+print(pk8.buffer:len())
 
+--]]
+print("Testing read function: AbilityNumber")
+print(tostring( hex_mappings.AbilityNumber.read() ))
+print("Testing write function: AbilityNumber")
+hex_mappings.AbilityNumber.write(2)
+print("Testing read function: AbilityNumber")
+print(tostring( hex_mappings.AbilityNumber.read() ))
+
+pk8:save()
 --[[
 Testing read function: OT_Name
  G r e e n     a r 7   n

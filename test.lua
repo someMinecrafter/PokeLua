@@ -301,5 +301,4 @@ local PKM
 -- ok lets try deserializing a pk8 file a bits
 
 local pk8 = require("pkhex.pk8")
-
 --print(pk8)

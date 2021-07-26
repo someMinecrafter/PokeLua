@@ -274,6 +274,7 @@ function string:explode(d)
    return t
 end
 
+-- why, when data_length is 0, does it write to the byte before the specified one?
 Blob.write = function(self, data, seek_pos, data_length)
 	local full_buffer = self.buffer -- string
 	local existing_data = full_buffer:sub(seek_pos, seek_pos + data_length)
@@ -292,19 +293,26 @@ Blob.write = function(self, data, seek_pos, data_length)
 	-- instead of doing it as PKHeX does, we will simply Zero out the remaining bytes.
 	local padding = ""
 	if data:len() < existing_data:len() then
-		padding = (" "):rep( data_length - data:len() + 1 )
+		padding = (string.char(0x00)):rep( data_length - data:len() + 1 )
 	end
+	print(tostring(data):len())
 	local target_data = full_buffer:gsub(existing_data, data .. padding )
 	self.buffer = target_data -- replace the string stored in buffer.
 end
 
 Blob.save = function(self)
-  local f = assert(io.open(filename, "wb"), "Could not open file ".. filename)
-  -- write it one byte at a time?
-  -- use self.buffer
-  for k, v in pairs(self) do
-	
-  end
+	local f = assert(io.open(self.filename, "wb"), "Could not open file ".. self.filename)
+	-- write it one byte at a time?
+	-- use self.buffer
+	--[[
+	for k, v in pairs(self.buffer:byte()) do
+		
+	end
+	--]]
+	if f then
+		f:write(self.buffer)
+		f:close()
+	end
 end
 
 return Blob
