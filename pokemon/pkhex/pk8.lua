@@ -157,7 +157,6 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 		elseif not v.specific_read then
 			v.read = function()
 				pk8:seek(v.data) -- seek to byte at this index
-				print(v.data_size)
 				return pk8:bytes(v.data_size > 26 and 24 or v.data_size) -- read the following v.data_size bytes, unless we are reading a string in which case it has two termination bytes which should be ZEROed (does lua even read them in? might be an unneeded check for reading specifically.)
 			end
 		else
@@ -265,11 +264,11 @@ hex_mappings = {
 		end
 	},
 	["Favorite"] = {data=0x16, -- unused, was in LGPE but not in SWSH
-		specific_read = function(self)
-			return (self._read() & 8) ~= 0
+		specific_read = function(r)
+			return (r:byte() & 8) ~= 0
 		end,
-		specific_write = function(self, data)
-			self._write( (self._read() & ~8) | ((data and 1 or 0) << 3) )
+		specific_write = function(fw, r, data)
+			fw( ((r and 1 or 0) & ~0x8) | ((data and 1 or 0) << 3) )
 		end
 	},
 	["CanGigantamax"] = {data=0x16,
@@ -678,8 +677,6 @@ print(hex_mappings.RibbonMarkSnowy.read())
 print(hex_mappings.RibbonMarkBlizzard.read())
 print(hex_mappings.RibbonMarkDry.read())
 print(hex_mappings.RibbonMarkSandstorm.read())
-print(pk8.buffer)
-print(pk8.buffer:len())
 
 print("Testing read function: AbilityNumber")
 print(tostring( hex_mappings.AbilityNumber.read() ))
@@ -690,6 +687,9 @@ print(tostring( hex_mappings.AbilityNumber.read() ))
 
 hex_mappings.RibbonMarkJittery.write(true)
 
+hex_mappings.Favorite.write(1)
+
+print(pk8.buffer:len())
 pk8:save()
 --[[
 Testing read function: OT_Name
