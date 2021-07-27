@@ -224,6 +224,38 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 	end
 end
 
+local function getValueAt(seek_pos, data_size)
+	pk8:seek(seek_pos)
+	return pk8:bytes(data_size)
+end
+
+local SIZE_8BLOCK = 80 -- 0x50
+local SIZE_8STORED = 8 + (4 * SIZE_8BLOCK) -- 0x148
+local SIZE_8PARTY = SIZE_8STORED + 0x10 -- 0x158
+
+local function calculateChecksum()
+	local chk = 0
+	local x = 8
+	for i = x, SIZE_8STORED do
+		if x < SIZE_8STORED then
+			local num = getValueAt(x,2)
+			num = (num:sub(1,1):byte() * 0x100) + num:sub(2,2):byte()
+			if chk + num > 0xFFFF then
+				chk = tonumber("0x" .. string.format("%X",chk+num):sub(-4))
+			else
+				chk = chk + num
+			end
+			x = x + 2
+		end
+	end
+	if chk >= 0x100 ^ 2 then
+		chk = chk -- remove everything larger than 0xFFFF
+	end
+	return chk
+end
+
+print(string.format("%X",calculateChecksum()))
+
 local unused = { -- aka extra bytes?
 	-- Alignment bytes
 	0x17, 0x1A, 0x1B, 0x23, 0x33, 0x3E, 0x3F,
@@ -749,19 +781,53 @@ calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
+
 local hex_mappings_helper_functions = {
 	-- I dont really understand why this was at this spot but I will have to change it
 	["HasMark"] = {data=0x00,
-	Specific=function(data, value)
-		if (mappings[0x3A] & 0xFFE0 ~= 0) or (mappings[0x40] ~= 0) then
-			return true
+		read = function()
+			local a = getValueAt(0x3A,2)
+			local b = getValueAt(0x40,4)
+			
+			local a_total = 0
+			for i = 1, a:len() do
+				a_total = ( a_total * 0x100 ) | a:sub(i,i):byte()
+			end
+			
+			if a_total & 0xFFE0 ~= 0 then
+				return true
+			end
+			
+			for i = 1, b:len() do
+				if b:sub(i,i):byte() ~= 0 then
+					return true
+				end
+			end
+
+			return (getValueAt(0x44,1):byte() & 3) ~= 0	
 		end
-		return (mappings[0x44] & 3) ~= 0	
-	end},
-	["HasAnyMoveRecordFlag"] = {data=
-	
-	}
+	},
+	["HasMemoryContestRibbon"] = {data=0x3C,
+		read = function(r)
+			return hex_mappings.RibbonCountMemoryContest.read():byte() ~= 0
+		end
+	},
+	["HasBattleMemoryRibbon"] = {data=0x3D,
+		read = function()
+			return hex_mappings.RibbonCountMemoryBattle.read():byte() ~= 0
+		end
+	},
+	["HasAnyMoveRecordFlag"] = {data=0x127,
+		read = function()
+			return hex_mappings.MoveRecordFlag.read():byte() ~= 0
+		end
+	},
 }
+
+-- add helper functions
+for k,v in pairs(hex_mappings_helper_functions) do
+	hex_mappings[k] = v
+end
 
 print(pk8.buffer:len())
 
@@ -824,6 +890,14 @@ print(hex_mappings.RibbonMarkSnowy.read())
 print(hex_mappings.RibbonMarkBlizzard.read())
 print(hex_mappings.RibbonMarkDry.read())
 print(hex_mappings.RibbonMarkSandstorm.read())
+hex_mappings.RibbonMarkDawn.write(false) -- 10101111
+hex_mappings.RibbonMarkCloudy.write(false)
+hex_mappings.RibbonMarkRainy.write(false)
+hex_mappings.RibbonMarkStormy.write(false)
+hex_mappings.RibbonMarkSnowy.write(false)
+hex_mappings.RibbonMarkBlizzard.write(false)
+hex_mappings.RibbonMarkDry.write(false)
+hex_mappings.RibbonMarkSandstorm.write(false)
 
 print("Testing read function: AbilityNumber")
 print(tostring( hex_mappings.AbilityNumber.read() ))
@@ -853,9 +927,15 @@ hex_mappings.IV_SPD.write(14)
 print(tostring( hex_mappings.IV_SPD.read() ))
 
 
-hex_mappings.RibbonMarkJittery.write(true)
 
 hex_mappings.Favorite.write(1)
+
+print("Testing HasMark")
+hex_mappings.RibbonMarkJittery.write(false)
+print(hex_mappings.HasMark.read())
+print("Testing HasMark after writing a mark")
+hex_mappings.RibbonMarkJittery.write(true)
+print(hex_mappings.HasMark.read()) -- it works!
 
 print(pk8.buffer:len())
 pk8:save()
