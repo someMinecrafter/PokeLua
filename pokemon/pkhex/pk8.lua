@@ -88,6 +88,8 @@ local function lazySort(t)
 			data_checked[smallest] = true
 			key_checked[key] = true
 			indexed[#indexed+1] = {data=smallest,key=key}
+			
+			print(string.format([[[""] = "%s",]], key))
 		end
 		--print(key)
 	end
@@ -778,7 +780,6 @@ hex_mappings = {
 
 calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 
-
 --lazySort(hex_mappings)
 
 addStandardReadAndWriteToUndefinedEntries(hex_mappings)
@@ -829,6 +830,9 @@ local hex_mappings_helper_functions = {
 -- add helper functions
 for k,v in pairs(hex_mappings_helper_functions) do
 	hex_mappings[k] = v
+end
+
+for k,v in pairs(hex_mappings) do
 end
 
 print(pk8.buffer:len())
