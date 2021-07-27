@@ -274,6 +274,10 @@ function string:explode(d)
    return t
 end
 
+Blob.read = function(self, seek_pos, data_length)
+	
+end
+
 -- why, when data_length is 0, does it write to the byte before the specified one?
 Blob.write = function(self, data, seek_pos, data_length)
 	local full_buffer = self.buffer -- string

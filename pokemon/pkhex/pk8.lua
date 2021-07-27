@@ -135,8 +135,9 @@ local function calculateAndAddLengthToHex_Mappings(hex_mappings, unused)
 		end
 	end
 	
-	-- im lazy, lets just manually add the first one
+	-- im lazy, lets just manually add the first one, and also iv32
 	hex_mappings.EncryptionConstant.data_size = 0x4
+	hex_mappings.IV32.data_size = 0x4
 end
 
 local isBoolean = {[true] = true, [false] = true}
@@ -155,7 +156,7 @@ local function addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 				end
 			end
 		elseif not v.specific_read then
-			v.read = function()
+			v.read = function(asNumber)
 				pk8:seek(v.data) -- seek to byte at this index
 				return pk8:bytes(v.data_size > 26 and 24 or v.data_size) -- read the following v.data_size bytes, unless we are reading a string in which case it has two termination bytes which should be ZEROed (does lua even read them in? might be an unneeded check for reading specifically.)
 			end
@@ -328,8 +329,22 @@ hex_mappings = {
 	["CNT_Tough"] = {data=0x30},
 	["CNT_Sheen"] = {data=0x31},
 	["PKRS"] = {data=0x32},
-	["PKRS_Days"] = {data=0x32,Specific=function(data, value) data = data & 0xF; data = (data & ~0xF) | value end},
-	["PKRS_Strain"] = {data=0x32,Specific=function(data, value) data = data >> 4; data = (data & ~0xF) | value << 4 end},
+	["PKRS_Days"] = {data=0x32,
+		specific_read = function(r)
+			return r:byte() & 0xF
+		end,
+		specific_write = function(fw, r, data)
+			fw( (r & ~0xF) | data )
+		end
+	},
+	["PKRS_Strain"] = {data=0x32,
+		specific_read = function(r)
+			return r:byte() >> 4
+		end,
+		specific_write = function(fw, r, data)
+			fw( (r & ~0xF) | data << 4 )
+		end
+	},
 	-- 0x33 unused padding
 	
 
@@ -406,8 +421,8 @@ hex_mappings = {
 	["RibbonMarkBlizzard"] = {data=0x3B,bit=5},
 	["RibbonMarkDry"] = {data=0x3B,bit=6},
 	["RibbonMarkSandstorm"] = {data=0x3B,bit=7},
-	["RibbonCountMemoryContest"] = {data=0x3C,Specific = function(data,value) data = value ~= 0; return data end},
-	["RibbonCountMemoryBattle"] = {data=0x3D,Specific = function(data,value) data = value ~= 0; return data end},
+	["RibbonCountMemoryContest"] = {data=0x3C}, -- TODO: HasMemoryContestRibbon (r:byte() ~= 0)
+	["RibbonCountMemoryBattle"] = {data=0x3D}, -- TODO: HasBattleMemoryRibbon (r:byte() ~= 0)
 	-- 0x3E padding
 	-- 0x3F padding
 	
@@ -497,7 +512,7 @@ hex_mappings = {
 	-- endregion
 	
 	-- region Block B
-	["Nickname"] = {data=0x58,Specific=function(data,value) local str = data; return str end},
+	["Nickname"] = {data=0x58},
 	
 	-- 2 bytes for \0, automatically handled above -- so, we just need to write at most the amount of space between 0x58 and 0x70, so 12 bytes.
 	
@@ -523,20 +538,119 @@ hex_mappings = {
 	
 	["Stat_HPCurrent"] = {data=0x8A},
 	
-	["IV32"] = {data=0x8C}, -- 32 bits
+	["IV32"] = {
+		data=0x8C,
+		specific_read = function()
+			pk8:seek(hex_mappings.IV32.data+1)
+			local str = pk8:bytes(hex_mappings.IV32.data_size)
+			local num = ""
+			for i = 1, str:len() do
+				num = num .. string.format("%X",str:sub(str:len()-i+1,str:len()-i+1):byte()) -- alternatively: num = (num * 0x100 ) | str:sub(i,i):byte()
+			end
+			num = "0x" .. num
+			return tonumber(num)
+		end,
+		specific_write = function(_,_,data)
+			pk8:seek(hex_mappings.IV32.data+1)
+			
+			local hex_data = string.format("%0" .. string.format("%sx", hex_mappings.IV32.data_size > 0 and hex_mappings.IV32.data_size + hex_mappings.IV32.data_size or 2), data)
+
+			local reversed = ""
+			for i = 1, hex_data:len() / 2 do
+				reversed = reversed .. hex_data:sub(
+					(math.floor(hex_data:len()/2)-i)*2  +1,
+					(math.floor(hex_data:len()/2)-i)*2  +2
+				)
+			end
+			hex_data = reversed
+			print(hex_data)
+			local padded_data = ""
+			for i = 1, hex_data:len() / 2 do
+				padded_data = padded_data .. string.char(tonumber("0x" .. hex_data:sub(
+					(i-1)*2  +1,
+					(i-1)*2  +2
+				)))
+			end
+			--[[
+			local padding = ""
+			if v.data_size > 1 then-- if the data should have a size greater than one byte, but does not 
+				padding = ( (" "):rep( v.data_size - math.ceil(data / 0x100) ) )
+			end
+			--]]
+			local padded_string = padded_data -- padding ..
+			pk8:write( padded_string, hex_mappings.IV32.data+1, hex_mappings.IV32.data_size )
+		end
+	}, -- 32 bits
 	-- todo: use hex_mappings.IV32.write() here, tired do this when im not tired
+	
+	-- 5 bits is 2^5 = 32
 	["IV_HP"] = {
 		data=0x8C,
-		read=function() return (hex_mappings.IV32.read() >> 00) & 0x1F end,
-		write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 00)) | ((value > 31 and 31 or value) << 00)) end
+		specific_read = function()
+			return (hex_mappings.IV32.read(true) >> 00) & 0x1F
+		end,
+		specific_write = function(_,_,data)
+			hex_mappings.IV32.write(
+				(hex_mappings.IV32.read(true) & ~(0x1F << 00)) | ((data > 31 and 31 or data) << 00)
+			)
+		end
 	},
-	["IV_ATK"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 05) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 05)) | ((value > 31 and 31 or value) << 00)) end},
-	["IV_DEF"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 10) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 10)) | ((value > 31 and 31 or value) << 00)) end},
-	["IV_SPE"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 15) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 15)) | ((value > 31 and 31 or value) << 00)) end},
-	["IV_SPA"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 20) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 20)) | ((value > 31 and 31 or value) << 00)) end},
-	["IV_SPD"] = {data=0x8C, read=function() return (hex_mappings.IV32.read() >> 25) & 0x1F end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~(0x1F << 25)) | ((value > 31 and 31 or value) << 00)) end},
-	["IsEgg"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 30) & 1) == 1 end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & ~0x40000000) | ((value > 31 and 31 or value) << 00)) end},
-	["IsNicknamed"] = {data=0x8C, read=function() return ((hex_mappings.IV32.read() >> 31) & 1) == 1 end, write=function(value) hex_mappings.IV32.write((hex_mappings.IV32.read() & 0x7FFFFFFF) | (value and 0x80000000 or 0)) end},
+	["IV_ATK"] = {data=0x8C,
+		specific_read = function()
+			return (hex_mappings.IV32.read(true) >> 05) & 0x1F
+		end,
+		specific_write = function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~(0x1F << 05)) | ((data > 31 and 31 or data) << 05))
+		end
+	},
+	["IV_DEF"] = {data=0x8C,
+		specific_read=function()
+			return (hex_mappings.IV32.read(true) >> 10) & 0x1F
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~(0x1F << 10)) | ((data > 31 and 31 or data) << 10))
+		end
+	},
+	["IV_SPE"] = {data=0x8C,
+		specific_read=function()
+			return (hex_mappings.IV32.read(true) >> 15) & 0x1F
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~(0x1F << 15)) | ((data > 31 and 31 or data) << 15))
+		end
+	},
+	["IV_SPA"] = {data=0x8C,
+		specific_read=function()
+			return (hex_mappings.IV32.read(true) >> 20) & 0x1F
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~(0x1F << 20)) | ((data > 31 and 31 or data) << 20))
+		end
+	},
+	["IV_SPD"] = {data=0x8C,
+		specific_read=function()
+			return (hex_mappings.IV32.read(true) >> 25) & 0x1F
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~(0x1F << 25)) | ((data > 31 and 31 or data) << 25))
+		end
+	},
+	["IsEgg"] = {data=0x8C,
+		specific_read=function()
+			return ((hex_mappings.IV32.read(true) >> 30) & 1) == 1
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & ~0x40000000) | (data and 0x40000000 or 0))
+		end
+	},
+	["IsNicknamed"] = {data=0x8C,
+		specific_read=function()
+			return ((hex_mappings.IV32.read(true) >> 31) & 1) == 1
+		end,
+		specific_write=function(_,_,data)
+			hex_mappings.IV32.write((hex_mappings.IV32.read(true) & 0x7FFFFFFF) | ( data and 0x80000000 or 0))
+		end
+	},
 	
 	["DynamaxLevel"] = {data=0x90},
 	
@@ -608,7 +722,7 @@ hex_mappings = {
 	["HT_SPD"] = {data=0x126},
 	["HT_SPE"] = {data=0x126},
 
-	["MoveRecordFlag"] = {data=0x127, HasAnyMoveRecordFlag=function()end},
+	["MoveRecordFlag"] = {data=0x127}, -- HasAnyMoveRecordFlag
 
 	-- Why did you mis-align this field, GameFreak?
 	["Tracker"] = {data=0x135},
@@ -637,12 +751,16 @@ addStandardReadAndWriteToUndefinedEntries(hex_mappings)
 
 local hex_mappings_helper_functions = {
 	-- I dont really understand why this was at this spot but I will have to change it
-	["HasMark"] = {data=0x00, Specific=function(data, value)
+	["HasMark"] = {data=0x00,
+	Specific=function(data, value)
 		if (mappings[0x3A] & 0xFFE0 ~= 0) or (mappings[0x40] ~= 0) then
 			return true
 		end
 		return (mappings[0x44] & 3) ~= 0	
 	end},
+	["HasAnyMoveRecordFlag"] = {data=
+	
+	}
 }
 
 print(pk8.buffer:len())
@@ -720,6 +838,20 @@ print("Testing write function: Gender")
 hex_mappings.Gender.write(0x0)
 print("Testing read function: Gender")
 print(tostring( hex_mappings.Gender.read() ))
+
+
+print("Testing read function: IV_*")
+print(tostring(hex_mappings.IV32.read()))
+print(tostring( hex_mappings.IV_HP.read() ))
+print(tostring( hex_mappings.IV_ATK.read() ))
+print(tostring( hex_mappings.IV_DEF.read() ))
+print(tostring( hex_mappings.IV_SPE.read() ))
+print(tostring( hex_mappings.IV_SPA.read() ))
+print(tostring( hex_mappings.IV_SPD.read() ))
+
+hex_mappings.IV_SPD.write(14)
+print(tostring( hex_mappings.IV_SPD.read() ))
+
 
 hex_mappings.RibbonMarkJittery.write(true)
 
