@@ -583,7 +583,7 @@ hex_mappings = {
 			return tonumber(num)
 		end,
 		specific_write = function(_,_,data)
-			pk8:seek(hex_mappings.IV32.data+1)
+			pk8:seek(hex_mappings.IV32.data)
 			
 			local hex_data = string.format("%0" .. string.format("%sx", hex_mappings.IV32.data_size > 0 and hex_mappings.IV32.data_size + hex_mappings.IV32.data_size or 2), data)
 
@@ -611,8 +611,8 @@ hex_mappings = {
 			--]]
 			local padded_string = padded_data -- padding ..
 			print("asd")
-			print(padded_string:len())
-			pk8:write( padded_string, hex_mappings.IV32.data+1, hex_mappings.IV32.data_size )
+			print(hex_mappings.IV32.data_size)
+			pk8:write( padded_string, hex_mappings.IV32.data+1, hex_mappings.IV32.data_size-1 )
 		end
 	}, -- 32 bits
 	-- todo: use hex_mappings.IV32.write() here, tired do this when im not tired
