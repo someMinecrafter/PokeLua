@@ -240,7 +240,7 @@ local function calculateChecksum()
 		if x < SIZE_8STORED then
 			local num = getValueAt(x,2)
 			num = (num:sub(1,1):byte() * 0x100) + num:sub(2,2):byte()
-			if chk + num > 0xFFFF then
+			if chk + num > 0xFFFF then -- pretend ushort
 				chk = tonumber("0x" .. string.format("%X",chk+num):sub(-4))
 			else
 				chk = chk + num
@@ -610,6 +610,8 @@ hex_mappings = {
 			end
 			--]]
 			local padded_string = padded_data -- padding ..
+			print("asd")
+			print(padded_string:len())
 			pk8:write( padded_string, hex_mappings.IV32.data+1, hex_mappings.IV32.data_size )
 		end
 	}, -- 32 bits
@@ -936,6 +938,19 @@ print(hex_mappings.HasMark.read())
 print("Testing HasMark after writing a mark")
 hex_mappings.RibbonMarkJittery.write(true)
 print(hex_mappings.HasMark.read()) -- it works!
+
+
+print("Testing checksum read")
+print(tostring(hex_mappings.Checksum.read()))
+
+print("Testing checksum calculation")
+print(calculateChecksum())
+
+print("Testing checksum write")
+hex_mappings.Checksum.write(calculateChecksum())
+
+print("Testing checksum read")
+print(tostring(hex_mappings.Checksum.read()))
 
 print(pk8.buffer:len())
 pk8:save()
