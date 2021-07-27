@@ -110,12 +110,6 @@
             Seal Coordinates
 --]]
 
-
-local pokemon = {
-	species = 0,
-	
-}
-
 local pokemon_pkhex_mappings = {
 	["encryption_constant"] = "EncryptionConstant",
 	["sanity"] = "Sanity",
