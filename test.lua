@@ -95,38 +95,44 @@ end
 local function generateIndexFromTable(tbl)
 	-- generated index should be based on alphanumerical order
 	-- this should then be printed and used as hardcoded, so as to make it easier to control and manage, as keys are loaded in a random order in lua (not part of lua specs to load things in specific order if not indexed by integers)
+	local indexed_table = {}
+	for k,v in pairs(tbl) do
+		indexed_table[#indexed_table+1] = k
+	end
+	
 	local i = 0
-	for k,v in ipairs(alphanumsort(tbl)) do
-		print(string.format([["%s",[%s]=%s,]], k, k, i))
+	for k,v in ipairs(alphanumsort(indexed_table)) do
 		i = i + 1
+		print(string.format([["%s",["%s"]=%s,]], v, v, i))
 	end	
 end
 
-generateIndexFromTable(balls)
+-- this is only worth it if not doing this is a considerable increase in space used (will this bring filesize above 1kb?
+-- probably not worth it, but it might make it easier to deal with things like custom dex entries?
+-- need to think.
+--generateIndexFromTable(pokedex)
+--print("dex printed")
 
 -- use something like binser to write these into binary and then read them back, instead of storing them in pkhex.
 -- only export/import pkhex format manually (?)
 
 -- TODO: use index thingies to decrease used space, and to allow easy de/serialization of the pokemon.
 
+-- all custom pokemon should probably use smeargle or mew as a base, so that they can learn any move legally (maybe)
+
 -- use metatable nonsense to allow tables be non-case-sensitive
 local Pokemon = {
 	-- Main
 	main = {
-		pokemon_id = 0, -- determines shininess
+		pokemon_id = 0, -- determines shininess, just use a function to recalculate this id if we want to force shininess. or use some preset value(?)
 		dex_name = "bulbasaur", -- maybe just point directly to the relevant entry? would mean we need pokedex accessible globally but thats not a problem probably
-		dex_type = "pokedex", -- which dex to look in
+		dex_no = 1, -- you know what, why not, i can just load the dex_no into the table when i load the pokemon.
+		--dex_type = "pokedex", -- which dex to look in| edit: probably easiest to just merge all dexes at runtime. this means a pokemon named "cthulu" does not need "cthuludex" specified, and will make programming easier. however, it disallows checking which dex it came from, so that information needs to be inserted at runtime, into each pokemon. this will use less space on disc, but more in memory.
 		nickname = "Chika", -- well, if this is not false then it's true so we dont need a separate field for the flag.
-		experience = 0,
-		level = 1,
-		nature = natures.Hardy,
-		stat_nature = natures.Hardy,
 		form = 0,
-		held_item = items.stick, -- point to the actual item?
-		ability = 0, -- Hidden is -1
-		ability_number = 0, -- important for legality
+		gender = 0,
 		friendship = 69,
-		language = languages.Japanese,
+		language = "japanese",
 		is_egg = false,
 		pokerus = {
 			infected = false,
@@ -136,8 +142,8 @@ local Pokemon = {
 		height = 127,
 		weight = 127,
 		shadow = {
-			is_shadow_pokemon = false,
-			is_purified = false,
+			is_shadow_pokemon = false, -- should allow a trainer to snag this pokemon in battle using the snag machine
+			is_purified = false, -- provided this is set to false, if it at any point was a shadow pokemon
 			heart_gauge = 0,
 		},
 		ball_decorations = {
@@ -152,7 +158,7 @@ local Pokemon = {
 	met = {
 		origin_game = 0,
 		battle_version = 0,
-		ball = balls.pokeball,
+		ball = "pokeball",
 		
 		met_level = 1,
 		met_location = 0,
@@ -176,6 +182,14 @@ local Pokemon = {
 	
 	-- Stats
 	stats = {
+		level = 1,
+		experience = 0,
+		nature = "hardy",
+		stat_nature = "hardy",
+		ability = 0, -- Hidden is -1
+		ability_number = 0, -- important for legality
+		held_item = "stick", -- point to the actual item?
+		
 		ivs = {
 			hp = 0,
 			attack = 0,
@@ -203,8 +217,8 @@ local Pokemon = {
 			speed = 0,
 		},
 		
-		dynamaxLevel = 0,
-		gigantamax = false,
+		dynamax_level = 0,
+		can_gigantamax = false,
 		
 		contest = {
 			cool = 0,
@@ -239,12 +253,15 @@ local Pokemon = {
 	-- OT/Misc
 	
 	misc = {
+		
+		favorite = false,
+	
 		original_trainer = {
 			name = "Minecraft Steve",
 			trainer_id = 123456,
 			secret_id = 678910,
 			gender = 0,
-			language = languages.English,
+			language = "english",
 			intensity = 0,
 			memory = 0,
 			feeling = 0,
@@ -255,7 +272,7 @@ local Pokemon = {
 			trainer_id = 654321,
 			secret_id = 019876,
 			gender = 1,
-			language = languages.French,
+			language = "french",
 			intensity = 0,
 			memory = 0,
 			feeling = 0,
@@ -265,7 +282,8 @@ local Pokemon = {
 		markings = {
 			"square", -- use index thingy for this as well?
 			"triangle",
-			"heart"
+			"heart",
+			mark_value = 0x1+0x2+0x4, -- calculate this every time the markings change. use table with booleans?
 		},
 		
 		ribbons = {
@@ -277,7 +295,8 @@ local Pokemon = {
 		},
 		
 		checksum = 0, -- only update when writing to pk8
-		encryptionConstant = 0
+		sanity = 0,
+		encryption_constant = 0
 	},
 	
 	battle_stats = {
@@ -292,7 +311,7 @@ local Pokemon = {
 	},
 	
 	unknown = {
-	
+		flag_2 = 0,
 	},
 	
 	unused = {

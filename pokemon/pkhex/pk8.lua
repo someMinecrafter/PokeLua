@@ -938,7 +938,7 @@ print("Testing HasMark after writing a mark")
 hex_mappings.RibbonMarkJittery.write(true)
 print(hex_mappings.HasMark.read()) -- it works!
 
-
+--[[ checksums borked, at least writing it is
 print("Testing checksum read")
 print(tostring(hex_mappings.Checksum.read()))
 
@@ -950,6 +950,7 @@ hex_mappings.Checksum.write(calculateChecksum())
 
 print("Testing checksum read")
 print(tostring(hex_mappings.Checksum.read()))
+--]]
 
 print(pk8.buffer:len())
 pk8:save()
